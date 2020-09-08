@@ -66,7 +66,7 @@
                     <div class="dropdown-header text-center">
                         <strong>Opciones</strong>
                     </div>
-                    <a class="dropdown-item" href="{{ route('users.index') }}">
+                    <a class="dropdown-item" href="{{ action('HomeController@usuario') }}">
                     <i class="fa fa-user"></i> Perfil</a>
                     <a class="dropdown-item" href="{{ route('logout') }}" 
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
