@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container-fluid">
 
         <div class="animated fadeIn">
@@ -20,7 +19,7 @@
                       </div>
                      <div class="text-value-lg"><i class="fa fa-prescription-bottle-alt"></i> 87</div><small class="text-muted text-uppercase font-weight-bold"> Recuperados</small>
                       <div class="progress progress-xs mt-3 mb-0">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-primay" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div>
                   </div>

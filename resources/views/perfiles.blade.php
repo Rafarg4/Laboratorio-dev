@@ -36,7 +36,7 @@
 
   <!-- Card image -->
   <div class="view overlay">
-    <img class="card-img-top rounded-0" src="perfil.jpg" width="80px" height="400px" alt="Card image cap">
+    <img class="card-img-top rounded-0" src="perfil.png" width="80px" height="400px" alt="Card image cap">
     <a href="#!">
       <div class="mask rgba-white-slight"></div>
     </a>
