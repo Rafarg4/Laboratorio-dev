@@ -17,11 +17,15 @@
                 <td>
                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('users.show', [$user->id]) }}" class='btn btn-ghost-info'><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('users.show', [$user->id]) }}" class='btn btn-ghost-info btn-sm'><i class="fa fa-eye"></i></a>
                     </div>
-                        <a href="{{ route('users.edit', [$user->id]) }}" class='btn btn-ghost-warning'><i class="fa fa-edit"></i></a>
+                    <div class='btn-group'>
+                        <a href="{{ route('users.edit', [$user->id]) }}" class='btn btn-ghost-warning btn-sm'><i class="fa fa-edit"></i></a>
                     </div>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', ' button type="button" class' => 'btn btn-danger btn-rounded', 'onclick' => "return confirm('Estas seguro?')"]) !!}
+                     <div class='btn-group'>
+                    
+                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', ' button type="button" class' => 'btn btn-danger btn-rounded btn-sm', 'onclick' => "return confirm('Estas seguro?')"]) !!}
+                    </div>
                     </div>
                     {!! Form::close() !!}
                 </td>
