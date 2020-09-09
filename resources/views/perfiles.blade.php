@@ -10,39 +10,26 @@
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
  <div class="container">
-              
-<!-- Card -->
-<div class="card promoting-card">
-
-  <!-- Card content -->
-  <div class="card-body d-flex flex-row">
-
-    <!-- Avatar -->
-    <img src="logo.png" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar">
-
-    <!-- Content -->
-    <div>
-      <!-- Title -->
-      <h4 class="card-title font-weight-bold mb-2">Detalles de Usuario</h4>
+ <div class="card">
+  <div class="card-header">
+    Mi perfil de Usuario
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <h4 class="card-title font-weight-bold mb-2">  <img src="usuario.jpg" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar">Detalles de Usuario</h4>
       <p class="card-text"><i class="fa fa-id-card-alt pr-2"></i>Identificador: {{Auth::user()->id}}</p>
         <p class="card-text"><i class="far fa-user pr-2"></i>Usuario: {{Auth::user()->name}}</p>
-          <p class="card-text"><i class="fa fa-at pr-2"></i>Correo: {{Auth::user()->email}}</p>
-      <!-- Subtitle -->
-      <p class="card-text"><i class="far fa-clock pr-2"></i> Miembro desde {{ Auth::user()->created_at->toFormattedDateString() }}</p>
-       <p class="card-text"><i class="far fa-clock pr-2"></i> Actualizado {{ Auth::user()->updated_at }}</p>
-
-    </div>
+         <p class="card-text"><i class="fa fa-at pr-2"></i>Correo: {{Auth::user()->email}}</p>
+          <!-- Subtitle -->
+            <p class="card-text"><i class="fa fa-user-tie"></i> Rol:Administrador</p>
+              <p class="card-text"><i class="fa fa-flask"></i> Laboratorio: RM|Positivo+ </p>
+               <p class="card-text"><i class="far fa-clock pr-2"></i> Miembro desde {{ Auth::user()->created_at->toFormattedDateString() }}</p>
+                <p class="card-text"><i class="far fa-clock pr-2"></i> Actualizado {{ Auth::user()->updated_at }}</p>
+      
+      <footer class="blockquote-footer">Datos segun  <cite title="Source Title">su membresia</cite></footer>
+    </blockquote>
   </div>
-
-  <!-- Card image -->
-  <div class="view overlay">
-    <img class="card-img-top rounded-0" src="perfil.png" width="80px" height="400px" alt="Card image cap">
-    <a href="#!">
-      <div class="mask rgba-white-slight"></div>
-    </a>
-  </div>
-  </div>
-
+</div>             
 </div>
 <!-- Card -->
 </div>
