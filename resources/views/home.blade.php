@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+ 
 <div class="container-fluid">
 
         <div class="animated fadeIn">
@@ -174,7 +175,7 @@
                       name: 'Año 2019',
                       data: [4, 8, 34, 72, 31]
                   }, {
-                      name: 'Año 2010',
+                      name: 'Año 2020',
                       data: [12, 10, 46, 78, 40]
                   }]
               });
@@ -236,10 +237,25 @@
           </script>
         </div>
          </div>
+          <style type="text/css">
+             #mapid { height: 680px; }
+           </style>
+             <div id="mapid"></div>
+          <script type="text/javascript">
+            var map = L.map('mapid').setView([-27.33056,  -55.86667], 15);
 
-      </div>
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
 
-   </div>
+          L.marker([-27.33545, -55.864037]).addTo(map)
+              .bindPopup('Casos Totales en Encarnacion 90.')
+              .openPopup();
+          </script>
+
+                </div>
+ 
+             </div>
 
 @section('javascript')
     <script src="{{ asset('js/Chart.min.js') }}"></script>
