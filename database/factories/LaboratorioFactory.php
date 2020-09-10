@@ -9,7 +9,7 @@ $factory->define(Laboratorio::class, function (Faker $faker) {
 
     return [
         'nombre_laboratorio' => $faker->text,
-        'descripción' => $faker->text,
+        'descripcion' => $faker->text,
         'direccion' => $faker->text,
         'telefono' => $faker->randomDigitNotNull,
         'representante' => $faker->text,

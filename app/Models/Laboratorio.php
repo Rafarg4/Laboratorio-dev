@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Laboratorio
  * @package App\Models
- * @version September 9, 2020, 7:49 pm -04
+ * @version September 9, 2020, 9:29 pm -04
  *
  * @property string $nombre_laboratorio
- * @property string $descripción
+ * @property string $descripcion
  * @property string $direccion
  * @property integer $telefono
  * @property string $representante
@@ -29,7 +29,7 @@ class Laboratorio extends Model
 
     public $fillable = [
         'nombre_laboratorio',
-        'descripción',
+        'descripcion',
         'direccion',
         'telefono',
         'representante'
@@ -43,7 +43,7 @@ class Laboratorio extends Model
     protected $casts = [
         'id' => 'integer',
         'nombre_laboratorio' => 'string',
-        'descripción' => 'string',
+        'descripcion' => 'string',
         'direccion' => 'string',
         'telefono' => 'integer',
         'representante' => 'string'
@@ -56,7 +56,7 @@ class Laboratorio extends Model
      */
     public static $rules = [
         'nombre_laboratorio' => 'required',
-        'descripción' => 'required',
+        'descripcion' => 'required',
         'direccion' => 'required',
         'telefono' => 'required',
         'representante' => 'required'

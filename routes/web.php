@@ -26,4 +26,5 @@ Route::resource('tipoPruebas', 'Tipo_pruebaController')->middleware('auth');
 Route::resource('pacientes', 'PacienteController')->middleware('auth');
 Route::get('perfiles', 'HomeController@usuario');
 
+
 Route::resource('laboratorios', 'LaboratorioController');

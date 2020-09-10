@@ -14,8 +14,8 @@
                      <div class="col-lg-12">
                          <div class="card">
                              <div class="card-header">
-                                 <strong>Detalles</strong>
-                                  <a href="{{ route('laboratorios.index') }}" class="btn btn-light">Atras</a>
+                                 <strong>Details</strong>
+                                  <a href="{{ route('laboratorios.index') }}" class="btn btn-primary">Volver</a>
                              </div>
                              <div class="card-body">
                                  @include('laboratorios.show_fields')

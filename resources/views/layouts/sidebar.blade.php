@@ -41,7 +41,7 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-desktop"></i> Laboraotrios</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=5" class="nav-item">
-                                <a class="nav-link" href="{{ route('laboratorios.index') }}"><i class="icon-basket-loaded"></i> Lista de Laboratorios</a>
+                                <a class="nav-link" href="{{ route('laboratorios.index') }}"><i class="fa fa-vials"></i> Lista de Laboratorios</a>
                             </li>
                             <li @click="menu=6" class="nav-item">
                                 <a class="nav-link" href="#"><i class="icon-notebook"></i> proximamente</a>

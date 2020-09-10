@@ -1,13 +1,13 @@
 <!-- Nombre Laboratorio Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('nombre_laboratorio', 'Nombre Laboratorio:') !!}
+    {!! Form::label('nombre_laboratorio', 'Nombre del Laboratorio:') !!}
     {!! Form::text('nombre_laboratorio', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Descripci?n Field -->
+<!-- Descripcion Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('descripción', 'Descripcion:') !!}
-    {!! Form::text('descripción', null, ['class' => 'form-control']) !!}
+    {!! Form::label('descripcion', 'Descripcion:') !!}
+    {!! Form::text('descripcion', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Direccion Field -->
@@ -30,6 +30,6 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('laboratorios.index') }}" class="btn btn-secondary">Cancelar</a>
 </div>
