@@ -26,3 +26,9 @@
         <span>Pacientes</span>
     </a>
 </li>
+<li class="nav-item {{ Request::is('laboratorios*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('laboratorios.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Laboratorios</span>
+    </a>
+</li>
