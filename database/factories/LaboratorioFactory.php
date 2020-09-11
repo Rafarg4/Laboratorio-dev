@@ -15,5 +15,6 @@ $factory->define(Laboratorio::class, function (Faker $faker) {
         'representante' => $faker->text,
         'created_at' => $faker->date('Y-m-d H:i:s'),
         'updated_at' => $faker->date('Y-m-d H:i:s')
+      
     ];
 });

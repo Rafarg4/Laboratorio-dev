@@ -60,7 +60,14 @@
     {!! Form::label('enfermedad_referencial', 'Enfermedad Referencial:') !!}
     <p>{{ $paciente->enfermedad_referencial }}</p>
 </div>
-
+<div class="form-group col-md-6 pull-left">
+    {!! Form::label('latitud', 'Latitud:') !!}
+    <p>{{ $paciente->latitud }}</p>
+</div>
+<div class="form-group col-md-6 pull-left">
+    {!! Form::label('longitud', 'Longuitud:') !!}
+    <p>{{ $paciente->longitud }}</p>
+</div>
 <!-- Created At Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('created_at', 'Creado:') !!}

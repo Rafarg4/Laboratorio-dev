@@ -19,6 +19,8 @@ $factory->define(Paciente::class, function (Faker $faker) {
         'grupo_sanguineo' => $faker->text,
         'enfermedad_referencial' => $faker->text,
         'created_at' => $faker->date('Y-m-d H:i:s'),
-        'updated_at' => $faker->date('Y-m-d H:i:s')
+        'updated_at' => $faker->date('Y-m-d H:i:s'),
+         'latitud' => $faker->text,
+        'longitud' => $faker->text
     ];
 });

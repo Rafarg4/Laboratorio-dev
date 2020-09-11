@@ -42,7 +42,9 @@ class Paciente extends Model
         'barrio',
         'telefono',
         'grupo_sanguineo',
-        'enfermedad_referencial'
+        'enfermedad_referencial',
+        'latitud', 
+        'longitud'
     ];
 
     /**
@@ -61,7 +63,9 @@ class Paciente extends Model
         'barrio' => 'string',
         'telefono' => 'integer',
         'grupo_sanguineo' => 'string',
-        'enfermedad_referencial' => 'string'
+        'enfermedad_referencial' => 'string',
+        'latitud' => 'string',
+        'longitud' => 'string'
     ];
 
     /**
@@ -79,7 +83,9 @@ class Paciente extends Model
         'barrio' => 'required',
         'telefono' => 'required',
         'grupo_sanguineo' => 'required',
-        'enfermedad_referencial' => 'required'
+        'enfermedad_referencial' => 'required',
+        'latitud' => 'required',
+        'longitud' => 'required'
     ];
 
     

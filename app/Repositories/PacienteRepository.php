@@ -26,7 +26,9 @@ class PacienteRepository extends BaseRepository
         'barrio',
         'telefono',
         'grupo_sanguineo',
-        'enfermedad_referencial'
+        'enfermedad_referencial',
+        'latitud',
+        'longitud'
     ];
 
     /**

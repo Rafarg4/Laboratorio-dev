@@ -31,7 +31,6 @@
     {!! Form::label('representante', 'Representante:') !!}
     <p>{{ $laboratorio->representante }}</p>
 </div>
-
 <!-- Created At Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('created_at', 'Creado:') !!}
