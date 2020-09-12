@@ -1,12 +1,12 @@
 <!-- Nombre Field -->
 <div class="form-group col-md-6 pull-left">
-    {!! Form::label('nombre', 'Nombre:') !!}
+    {!! Form::label('nombre', 'Nombres:') !!}
     {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Apellido Field -->
 <div class="form-group col-sm-6 pull-left">
-    {!! Form::label('apellido', 'Apellido:') !!}
+    {!! Form::label('apellido', 'Apellidos:') !!}
     {!! Form::text('apellido', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -28,7 +28,7 @@
 
 <!-- Ci Field -->
 <div class="form-group col-sm-6 pull-left">
-    {!! Form::label('ci', 'Ci:') !!}
+    {!! Form::label('ci', 'C.I.:') !!}
     {!! Form::number('ci', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -51,7 +51,7 @@
 </div>
 <!-- Enfermedad Referencial Field -->
 <div class="form-group col-sm-12 pull-left">
-    {!! Form::label('enfermedad_referencial', 'Enfermedad Referencial:') !!}
+    {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}
     {!! Form::textarea('enfermedad_referencial', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group col-sm-6 pull-left">

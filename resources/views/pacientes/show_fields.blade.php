@@ -3,13 +3,13 @@
 <!-- Nombre Field -->
   <li class="list-group-item">
 <div class="form-group col-md-6 pull-left">
-    {!! Form::label('nombre', 'Nombre:') !!}
+    {!! Form::label('nombre', 'Nombres:') !!}
     <p>{{ $paciente->nombre }}</p>
 </div>
 
 <!-- Apellido Field -->
 <div class="form-group col-md-6 pull-left">
-    {!! Form::label('apellido', 'Apellido:') !!}
+    {!! Form::label('apellido', 'Apellidos:') !!}
     <p>{{ $paciente->apellido }}</p>
 </div>
 
@@ -33,7 +33,7 @@
 
 <!-- Ci Field -->
 <div class="form-group col-md-6 pull-left">
-    {!! Form::label('ci', 'Ci:') !!}
+    {!! Form::label('ci', 'C.I.:') !!}
     <p>{{ $paciente->ci }}</p>
 </div>
 
@@ -57,7 +57,7 @@
 
 <!-- Enfermedad Referencial Field -->
 <div class="form-group col-md-6 pull-left">
-    {!! Form::label('enfermedad_referencial', 'Enfermedad Referencial:') !!}
+    {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}
     <p>{{ $paciente->enfermedad_referencial }}</p>
 </div>
 <div class="form-group col-md-6 pull-left">

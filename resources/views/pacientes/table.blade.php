@@ -12,8 +12,7 @@
         <th>Telefono</th>
         <th>Grupo Sanguineo</th>
         <th>Enfermedad Referencial</th>
-        <th>Latitud</th>
-        <th>Longitud</th>
+        
 
                 <th><center> <i class="fas fa-user-edit fa-2x"></i></center></th>
             </tr>
@@ -31,8 +30,7 @@
             <td>{{ $paciente->telefono }}</td>
             <td>{{ $paciente->grupo_sanguineo }}</td>
             <td>{{ $paciente->enfermedad_referencial }}</td>
-            <td>{{ $paciente->latitud }}</td>
-            <td>{{ $paciente->longitud }}</td>
+            
                 <td>
                     {!! Form::open(['route' => ['pacientes.destroy', $paciente->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
