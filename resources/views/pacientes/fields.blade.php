@@ -3,7 +3,6 @@
     {!! Form::label('nombre', 'Nombres:') !!}
     {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
 </div>
-
 <!-- Apellido Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('apellido', 'Apellidos:') !!}
@@ -20,6 +19,27 @@
     {!! Form::label('fechanac', 'Fecha de nacimiento:') !!}
     {!! Form::date('fechanac', null, ['class' => 'form-control','id'=>'fechanac']) !!}
 </div>
+<!-- Scrpit de calcular edad  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+            $('#fechanac').on('change', calcularEdad);
+        });
+        
+        function calcularEdad() {
+            
+            fecha = $(this).val();
+            var hoy = new Date();
+            var cumpleanos = new Date(fecha);
+            var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+            var m = hoy.getMonth() - cumpleanos.getMonth();
+
+            if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+                edad--;
+            }
+            $('#edad').val(edad);
+        }
+</script>
 <!-- Edad Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('edad', 'Edad:') !!}
@@ -62,7 +82,40 @@
     {!! Form::label('longitud', 'Longitud:') !!}
     {!! Form::number('longitud', null, ['class' => 'form-control']) !!}
 </div>
+ <div class="col-sm-12 pull-left">
+            <div class="card border-primary mb-3">
+                <div class="card-body">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+    <script type="text/javascript" src='https://maps.googleapis.com/maps/api/js?&libraries=places'></script>
+
+    <script type="text/javascript" src="{{asset('js/locationpicker.jquery.js')}}"></script>
+<script>
+    $('#map').locationpicker({
+        location: {
+            latitude: -27.33056,
+            longitude: -55.86667
+        },
+        radius: 3000,
+        inputBinding: {
+            latitudeInput: $('#latitud'),
+            longitudeInput: $('#longitud'),
+            locationNameInput: $('#location')
+        },
+        // Para cargar vista satelital
+        mapTypeId: google.maps.MapTypeId.SATELLITE,
+        enableAutocomplete: true,
+        onchanged: function (currentLocation, radius, isMarkerDropped) {
+            // Uncomment line below to show alert on each Location Changed event
+            //alert("Location changed. New location (" + currentLocation.latitude + ", " + currentLocation.longitude + ")");
+        }
+    });
+</script>
 <!-- Submit Field -->
 <div class="form-group col-sm-12 pull-left">
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}

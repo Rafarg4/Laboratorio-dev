@@ -11,7 +11,7 @@
         <th>Barrio</th>
         <th>Telefono</th>
         <th>Grupo Sanguineo</th>
-        <th>Enfermedad Referencial</th>
+        <th>Comorbilidad</th>
         
 
                 <th><center> <i class="fas fa-user-edit fa-2x"></i></center></th>
