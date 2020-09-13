@@ -32,6 +32,10 @@
    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
+   <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/all.min.css">
+   <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/free.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/brand.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/flag.min.css">
      <!-- PRO version // if you have PRO version licence than remove comment and use it. -->
     {{--<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/brand.min.css">--}}
     {{--<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/flag.min.css">--}}
@@ -72,13 +76,13 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="dropdown-header text-center">
-                        <strong>Opciones</strong>
+                        <strong><i class="cil-settings"></i> Opciones</strong>
                     </div>
                     <a class="dropdown-item" href="{{ action('HomeController@usuario') }}">
-                    <i class="fa fa-user"></i> Perfil</a>
+                    <i class="cil-user"></i> Perfil</a>
                     <a class="dropdown-item" href="{{ route('logout') }}" 
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fa fa-lock"></i> Cerrar sesión</a>
+                    <i class="cil-exit-to-app"></i> Cerrar sesión</a>
 
                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                     @csrf

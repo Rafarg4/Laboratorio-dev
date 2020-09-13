@@ -14,34 +14,34 @@
                                 <a class="nav-link" href="#"><i class="icon-bag"></i> Casos positivos</a>
                             </li>
                             <li @click="menu=2" class="nav-item">
-                                <a class="nav-link" href="{{ route('tipoPruebas.index') }}"><i class="icon-bag"></i> Tipo de Prueba</a>
+                                <a class="nav-link" href="{{ route('tipoPruebas.index') }}"><i class="cil-eyedropper"></i> Tipo de Prueba</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-address-card"></i> Pacientes</a>
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-contact"></i> Pacientes</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=5" class="nav-item">
-                                <a class="nav-link" href="{{ route('pacientes.index') }}"><i class="fa fa-list-alt"></i></i> Lista de Pacientes</a>
+                                <a class="nav-link" href="{{ route('pacientes.index') }}"><i class="cil-people"></i> Lista de Pacientes</a>
                             </li>
                             <li @click="menu=6" class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-clipboard-check"></i> Control</a>
+                                <a class="nav-link" href="#"><i class="cil-address-book"></i> Control</a>
                             </li>
                         </ul>
                     </li>
                      <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-book-medical"></i> Historial</a>
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-layers"></i> Historial</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=5" class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-notes-medical"></i> Historial de paciente</a>
+                                <a class="nav-link" href="#"><i class="cil-group"></i> Historial de paciente</a>
                             </li>
                         </ul>
                     </li>
                      <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-desktop"></i> Laboraotrios</a>
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-laptop"></i> Laboraotrios</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=5" class="nav-item">
-                                <a class="nav-link" href="{{ route('laboratorios.index') }}"><i class="fa fa-flask"></i> Lista de Laboratorios</a>
+                                <a class="nav-link" href="{{ route('laboratorios.index') }}"><i class="cil-beaker"></i>     Lista de Laboratorios</a>
                             </li>
                         </ul>
                     </li>
@@ -63,7 +63,7 @@
                                 <a class="nav-link" href="#"><i class="icon-chart"></i> Reporte Usuario</a>
                             </li>
                             <li @click="menu=10" class="nav-item">
-                                <a class="nav-link" href="#"><i class="icon-chart"></i> Reporte por Casos</a>
+                                <a class="nav-link" href="#"><i class="cil-chart-line"></i> Reporte por Casos</a>
                             </li>
                         </ul>
                     </li>
@@ -71,12 +71,12 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="fab fa-audible"></i> Auditoria</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=6" class="nav-item">
-                                <a class="nav-link" href="#"><i class="icon-notebook"></i> Auditoria Interna</a>
+                                <a class="nav-link" href="#"><i class="cil-book"></i> Auditoria Interna</a>
                             </li>
                         </ul>
                     </li>
                     <li @click="menu=11" class="nav-item">
-                        <a class="nav-link" href="#"><i class="icon-book-open"></i>Manual <span class="badge badge-danger">PDF</span></a>
+                        <a class="nav-link" href="#"><i class="cil-notes"></i> Manual <span class="badge badge-danger">PDF</span></a>
                     </li>
                     <li @click="menu=12" class="nav-item">
                         <a class="nav-link" href="#"><i class="icon-info"></i> Acerca de..<span class="badge badge-info">IT</span></a>
