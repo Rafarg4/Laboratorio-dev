@@ -46,7 +46,6 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
-
     </head>
     <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
    
@@ -59,13 +58,12 @@
              alt="RM Logo">
              <strong> RM|Positivo+</strong>
     </a>
-    
-    <button class="navbar-white sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <span class="navbar-white sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+        <div class="container">
+           <i class="cil-indent-decrease fa-2x"></i></div>
+    </span>
     <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item d-md-down-none">
-           
+        <li class="nav-item d-md-down-none">   
         </li>
          <ul class="nav navbar-nav ml-auto">
             <notification :notifications="notifications"></notification>

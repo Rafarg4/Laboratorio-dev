@@ -89,7 +89,7 @@
                 <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
                     <div class="card-body text-center">
                         <div>
-                            <h2>RM Positivo +</h2>
+                            <h2>RM | Positivo +</h2>
                             <i class="fa fa-flask fa-4x"></i>
                             <p>Si desea iniciar sesion y no tiene memebresia, solicite a un administrador que le brinde una memebresia para obtener acceso a la plataforma.</p>
                                 

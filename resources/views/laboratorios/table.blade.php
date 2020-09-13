@@ -27,7 +27,7 @@
                         <a href="{{ route('laboratorios.edit', [$laboratorio->id]) }}" class='btn btn-ghost-warning btn-sm'><i class="fa fa-edit"></i></a>
                     </div>
                         <div class='btn-group'>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-ghost-danger btn-sm', 'onclick' => "return confirm('Estas Seguro?')"]) !!}
+                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-rounded btn-sm', 'onclick' => "return confirm('Estas Seguro?')"]) !!}
                     </div>
                 </div>
                     {!! Form::close() !!}
