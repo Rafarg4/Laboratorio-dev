@@ -13,7 +13,7 @@
         <tbody>
         @foreach($controls as $control)
             <tr>
-                <td>{{ $control->paciente->nombre }}</td>
+                <td>{{ $control->paciente->nombre_apellido }}</td>
             <td>{{ $control->fecha_analisis }}</td>
             <td>{{ $control->estado_paciente }}</td>
             <td>{{ $control->recomendacion }}</td>

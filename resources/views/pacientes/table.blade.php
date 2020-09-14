@@ -2,8 +2,7 @@
     <table class="table table-bordered" id="data-table">
         <thead>
             <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
+        <th>Nombre y Apellido</th>
         <th>Genero</th>
         <th>Fecha de Nacimiento</th>
         <th>Edad</th>
@@ -20,8 +19,7 @@
         <tbody>
         @foreach($pacientes as $paciente)
             <tr>
-                <td>{{ $paciente->nombre }}</td>
-            <td>{{ $paciente->apellido }}</td>
+                <td>{{ $paciente->nombre_apellido }}</td>
             <td>{{ $paciente->genero }}</td>
             <td>{{ $paciente->fechanac }}</td>
             <td>{{ $paciente->edad }}</td>

@@ -1,14 +1,8 @@
 <!-- Nombre Field -->
 <div class="form-group col-md-6 pull-left">
-    {!! Form::label('nombre', 'Nombres:') !!}
-    {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
+    {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
+    {!! Form::text('nombre_apellido', null, ['class' => 'form-control']) !!}
 </div>
-<!-- Apellido Field -->
-<div class="form-group col-sm-6 pull-left">
-    {!! Form::label('apellido', 'Apellidos:') !!}
-    {!! Form::text('apellido', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Genero Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('genero', 'Genero:') !!}
@@ -76,11 +70,11 @@
 </div>
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('latitud', 'Latitud:') !!}
-    {!! Form::number('latitud', null, ['class' => 'form-control']) !!}
+    {!! Form::text('latitud', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('longitud', 'Longitud:') !!}
-    {!! Form::number('longitud', null, ['class' => 'form-control']) !!}
+    {!! Form::text('longitud', null, ['class' => 'form-control']) !!}
 </div>
  <div class="col-sm-12 pull-left">
             <div class="card border-primary mb-3">

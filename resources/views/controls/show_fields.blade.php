@@ -3,7 +3,7 @@
 <!-- Paciente Id Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('paciente_id', 'Nombre Paciente:') !!}
-    <p>{{ $control->paciente->nombre }}</p>
+    <p>{{ $control->paciente->nombre_apellido }}</p>
 </div>
 
 <!-- Fecha Analisis Field -->

@@ -10,8 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App\Models
  * @version September 5, 2020, 4:05 pm -04
  *
- * @property string $nombre
- * @property string $apellido
+ * @property string $nombre_apellido
  * @property string $genero
  * @property string $fechanac
  * @property integer $edad
@@ -33,8 +32,7 @@ class Paciente extends Model
 
 
     public $fillable = [
-        'nombre',
-        'apellido',
+        'nombre_apellido',
         'genero',
         'fechanac',
         'edad',
@@ -54,8 +52,7 @@ class Paciente extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'nombre' => 'string',
-        'apellido' => 'string',
+        'nombre_apellido' => 'string',
         'genero' => 'string',
         'fechanac' => 'string',
         'edad' => 'integer',
@@ -74,8 +71,7 @@ class Paciente extends Model
      * @var array
      */
     public static $rules = [
-        'nombre' => 'required',
-        'apellido' => 'required',
+        'nombre_apellido' => 'required',
         'genero' => 'required',
         'fechanac' => 'required',
         'edad' => 'required',

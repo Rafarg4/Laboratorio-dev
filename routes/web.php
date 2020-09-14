@@ -29,6 +29,4 @@ Route::get('perfiles', 'HomeController@usuario');
 
 Route::resource('laboratorios', 'LaboratorioController')->middleware('auth');
 
-
-
-Route::resource('controls', 'ControlController');
+Route::resource('controls', 'ControlController')->middleware('auth');

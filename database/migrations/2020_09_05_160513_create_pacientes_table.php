@@ -16,8 +16,7 @@ class CreatePacientesTable extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('nombre');
-            $table->text('apellido');
+            $table->text('nombre_apellido');
             $table->text('genero');
             $table->text('fechanac');
             $table->integer('edad');

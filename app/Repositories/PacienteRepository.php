@@ -17,8 +17,7 @@ class PacienteRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'nombre',
-        'apellido',
+        'nombre_apellido',
         'genero',
         'fechanac',
         'edad',

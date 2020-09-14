@@ -3,16 +3,9 @@
 <!-- Nombre Field -->
   <li class="list-group-item">
 <div class="form-group col-md-6 pull-left">
-    {!! Form::label('nombre', 'Nombres:') !!}
-    <p>{{ $paciente->nombre }}</p>
+    {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
+    <p>{{ $paciente->nombre_apellido }}</p>
 </div>
-
-<!-- Apellido Field -->
-<div class="form-group col-md-6 pull-left">
-    {!! Form::label('apellido', 'Apellidos:') !!}
-    <p>{{ $paciente->apellido }}</p>
-</div>
-
 <!-- Genero Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('genero', 'Genero:') !!}

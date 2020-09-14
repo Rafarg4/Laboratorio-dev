@@ -43,7 +43,7 @@ class ControlController extends AppBaseController
      */
     public function create()
     {
-       $pacientes= Paciente::pluck('nombre', 'id');
+       $pacientes= Paciente::pluck('nombre_apellido','id');
         return view('controls.create',compact(
             'pacientes'));
     }
@@ -96,7 +96,7 @@ class ControlController extends AppBaseController
     public function edit($id)
     {
         $control = $this->controlRepository->find($id);
-        $pacientes = Paciente::pluck('nombre','id');
+        $pacientes = Paciente::pluck('nombre_apellido','id');
 
         if (empty($control)) {
             Flash::error('Control not found');

@@ -14,7 +14,7 @@
 <!-- Estado Paciente Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('estado_paciente', 'Estado Paciente:') !!}
-    {!! Form::text('estado_paciente', null, ['class' => 'form-control']) !!}
+    {!! Form::select('estado_paciente',array('Sin eleccion' => 'Sin eleccion','Activo' => 'Activo', 'Inactivo' => 'Inactivo','Muerto' => 'Muerto'),null, ['class' => 'form-control' ])!!}
 </div>
 
 
