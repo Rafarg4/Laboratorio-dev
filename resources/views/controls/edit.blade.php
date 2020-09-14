@@ -5,7 +5,7 @@
           <li class="breadcrumb-item">
              <a href="{!! route('controls.index') !!}">Control</a>
           </li>
-          <li class="breadcrumb-item active">Edit</li>
+          <li class="breadcrumb-item active">Editar</li>
         </ol>
     <div class="container-fluid">
          <div class="animated fadeIn">
@@ -14,8 +14,8 @@
                  <div class="col-lg-12">
                       <div class="card">
                           <div class="card-header">
-                              <i class="fa fa-edit fa-lg"></i>
-                              <strong>Edit Control</strong>
+                              <i class="fas fa-align-justify"></i>
+                              <strong>Editar Control</strong>
                           </div>
                           <div class="card-body">
                               {!! Form::model($control, ['route' => ['controls.update', $control->id], 'method' => 'patch']) !!}

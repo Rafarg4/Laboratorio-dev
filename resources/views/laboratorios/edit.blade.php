@@ -14,7 +14,7 @@
                  <div class="col-lg-12">
                       <div class="card">
                           <div class="card-header">
-                              <i class="fa fa-edit fa-lg"></i>
+                              <i class="fas fa-align-justify"></i>
                               <strong>Editar Laboratorio</strong>
                           </div>
                           <div class="card-body">

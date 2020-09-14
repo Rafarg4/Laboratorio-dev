@@ -1,13 +1,13 @@
 <div class="table-responsive-sm">
-    <table class="table table-striped" id="controls-table">
+    <table class="table table-bordered" id="data-table">
         <thead>
             <tr>
-                <th>Paciente Id</th>
+                <th>Nombre Paciente</th>
         <th>Fecha Analisis</th>
         <th>Estado Paciente</th>
         <th>Recomendacion</th>
         <th>Fecha Alta</th>
-                <th colspan="3">Action</th>
+                <th><center> <i class="fas fa-user-edit fa-2x"></i></center></th>
             </tr>
         </thead>
         <tbody>
@@ -21,10 +21,15 @@
                 <td>
                     {!! Form::open(['route' => ['controls.destroy', $control->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('controls.show', [$control->id]) }}" class='btn btn-ghost-success'><i class="fa fa-eye"></i></a>
-                        <a href="{{ route('controls.edit', [$control->id]) }}" class='btn btn-ghost-info'><i class="fa fa-edit"></i></a>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-ghost-danger', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        <a href="{{ route('controls.show', [$control->id]) }}" class='btn btn-ghost-info btn-sm'><i class="fa fa-eye"></i></a>
                     </div>
+                    <div class='btn-group'>
+                        <a href="{{ route('controls.edit', [$control->id]) }}" class='btn btn-ghost-warning btn-sm'><i class="fa fa-edit"></i></a>
+                    </div>
+                    <div class='btn-group'>
+                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-rounded btn-sm', 'onclick' => "return confirm('Estas seguro?')"]) !!}
+                    </div>
+
                     {!! Form::close() !!}
                 </td>
             </tr>
