@@ -32,3 +32,9 @@
         <span>Laboratorios</span>
     </a>
 </li>
+<li class="nav-item {{ Request::is('controls*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('controls.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Controls</span>
+    </a>
+</li>

@@ -89,4 +89,8 @@ class Paciente extends Model
     ];
 
     
+    public function control (){
+     return $this-> hasMany('App\Models\Control');
+
+    }
 }

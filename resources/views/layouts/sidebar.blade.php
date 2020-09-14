@@ -25,7 +25,7 @@
                                 <a class="nav-link" href="{{ route('pacientes.index') }}"><i class="cil-people"></i> Lista de Pacientes</a>
                             </li>
                             <li @click="menu=6" class="nav-item">
-                                <a class="nav-link" href="#"><i class="cil-address-book"></i> Control</a>
+                                <a class="nav-link" href="{{ route('controls.index') }}"><i class="cil-address-book"></i> Control</a>
                             </li>
                         </ul>
                     </li>
@@ -38,7 +38,7 @@
                         </ul>
                     </li>
                      <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-laptop"></i> Laboraotrios</a>
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-laptop"></i> Laboratorios</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=5" class="nav-item">
                                 <a class="nav-link" href="{{ route('laboratorios.index') }}"><i class="cil-beaker"></i>     Lista de Laboratorios</a>

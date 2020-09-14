@@ -28,3 +28,7 @@ Route::resource('pacientes', 'PacienteController')->middleware('auth');
 Route::get('perfiles', 'HomeController@usuario');
 
 Route::resource('laboratorios', 'LaboratorioController')->middleware('auth');
+
+
+
+Route::resource('controls', 'ControlController');
