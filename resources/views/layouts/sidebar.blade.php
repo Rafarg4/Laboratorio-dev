@@ -52,6 +52,9 @@
                                 <a class="nav-link" href="{{ route('users.index') }}"><i class="icon-user"></i> Usuarios</a>
                             </li>
                             <li @click="menu=8" class="nav-item">
+                                <a class="nav-link" href="{{ action('HomeController@usuario') }}"><i class="icon-user-following"></i> Mi Perfil</a>
+                            </li>
+                            <li @click="menu=8" class="nav-item">
                                 <a class="nav-link" href="#"><i class="icon-user-following"></i> Roles</a>
                             </li>
                         </ul>
@@ -83,6 +86,7 @@
                     </li>
                 </ul>
             </nav>
+        
         </div>
 
 

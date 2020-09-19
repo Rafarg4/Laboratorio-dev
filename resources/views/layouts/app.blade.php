@@ -93,7 +93,7 @@
     <main class="main">
         @yield('content')
     </main>
-</div>
+</div><!--
 <footer class="app-footer">
     <div>
         <a>RM|Positivo + </a>
@@ -103,7 +103,7 @@
         <span>Powered by  Escobar|Gimenez. <i class="fab fa-laravel"></i></span>
        
     </div>
-</footer>
+</footer>-->
 </body>
 <!-- jQuery 3.1.1 -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

@@ -242,15 +242,22 @@
            </style>
              <div id="mapid"></div>
           <script type="text/javascript">
-            var map = L.map('mapid').setView([-27.33056,  -55.86667], 15);
+            var map = L.map('mapid').setView([-27.33056,  -55.86667], 12);
 
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }).addTo(map);
 
           L.marker([-27.33545, -55.864037]).addTo(map)
-              .bindPopup('Casos Totales en Encarnacion 90.')
-              .openPopup();
+              .bindPopup('Encarnacion.')
+          L.marker([-27.372516806071435, -55.83320617675782]).addTo(map)
+              .bindPopup('San Isidro.')
+          L.marker([-27.33513692677947, -55.87059021010646]).addTo(map)
+              .bindPopup('Quiteria.')
+          L.marker([-27.372516806071435, -55.82365035661497]).addTo(map)
+              .bindPopup('San Miguel')
+           L.marker([-27.350626596805373, -55.852489467943094]).addTo(map)
+              .bindPopup('Ciudad Nueva')
           </script>
 
                 </div>
