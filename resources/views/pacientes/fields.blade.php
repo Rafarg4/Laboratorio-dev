@@ -86,11 +86,11 @@
     <a href="{{ route('pacientes.index') }}" class="btn btn-secondary">Cancelar</a>
 </div>
 <style type="text/css">
-             #mapid { height: 400px; width:1020px; }
+             #mapid { height: 600px; width:1300px; }
            </style>
            
           <script>
-            var map = L.map('mapid').setView([-27.33056,  -55.86667], 15);
+            var map = L.map('mapid').setView([-27.33056,  -55.86667], 13);
 
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

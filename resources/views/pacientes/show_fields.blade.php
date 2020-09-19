@@ -78,7 +78,7 @@
 </li>
 </ul>
     <style type="text/css">
-                   #mapid { height: 400px; width:1020px; }
+                   #mapid { height: 600px; width:1300px; }
            </style>
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" type="text/css">

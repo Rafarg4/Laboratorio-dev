@@ -33,7 +33,7 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-layers"></i> Historial</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=5" class="nav-item">
-                                <a class="nav-link" href="#"><i class="cil-group"></i> Historial de paciente</a>
+                                <a class="nav-link" href="#"><i class="cil-list"></i> Historial de paciente</a>
                             </li>
                         </ul>
                     </li>
@@ -55,7 +55,7 @@
                                 <a class="nav-link" href="{{ action('HomeController@usuario') }}"><i class="icon-user-following"></i> Mi Perfil</a>
                             </li>
                             <li @click="menu=8" class="nav-item">
-                                <a class="nav-link" href="#"><i class="icon-user-following"></i> Roles</a>
+                                <a class="nav-link" href="#"><i class="cil-people"></i> Roles</a>
                             </li>
                         </ul>
                     </li>

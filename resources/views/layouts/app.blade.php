@@ -7,7 +7,7 @@
     <!-- Bootstrap 4.1.1 -->
     <!--  leaflt -->
      <ltlink rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css"type="text/css">
     <link href="{{ asset('css/leaflet.css') }}"  rel="stylesheet">
     <script type="text/javascript" src="{{ asset('js/leaflet.js') }}"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
@@ -19,21 +19,24 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/coreui-icons-free@1.0.1-alpha.1/coreui-icons-free.css">
     <link rel="stylesheet" type="text/css" href="{{asset('css/maps.css')}}">
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
-    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+    <!-- core ui dashboard-->
+    <link href="{{ asset('css/dashboard.css') }}"  rel="stylesheet">
+    <script type="text/javascript" src="{{ asset('js/dashscript.js') }}"></script>
      <!-- Font Awesome -->
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-   <!-- Google Fonts -->
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-   <!-- Bootstrap core CSS -->
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-   <!-- Material Design Bootstrap -->
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-    <!-- Leaflet cdn-->
-   <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/all.min.css">
-   <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/free.min.css">
-<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/brand.min.css">
-<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/flag.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+    <!-- core ui icons -->
+    <link href="{{ asset('css/all.min.css') }}"  rel="stylesheet">
+    <link href="{{ asset('css/flag.min.css') }}"  rel="stylesheet">
+    <link href="{{ asset('css/brand.min.css') }}"  rel="stylesheet">
+    <link href="{{ asset('css/free.min.css') }}"  rel="stylesheet">
+
      <!-- PRO version // if you have PRO version licence than remove comment and use it. -->
     {{--<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/brand.min.css">--}}
     {{--<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/flag.min.css">--}}
@@ -87,13 +90,16 @@
         </li>
     </ul>
 </header>
-
+</ul>
+</header>
+</body>
+</ltlink>
 <div class="app-body">
     @include('layouts.sidebar')
     <main class="main">
         @yield('content')
     </main>
-</div><!--
+</div>
 <footer class="app-footer">
     <div>
         <a>RM|Positivo + </a>
@@ -103,7 +109,7 @@
         <span>Powered by  Escobar|Gimenez. <i class="fab fa-laravel"></i></span>
        
     </div>
-</footer>-->
+</footer>
 </body>
 <!-- jQuery 3.1.1 -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

@@ -248,16 +248,26 @@
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }).addTo(map);
 
-          L.marker([-27.33545, -55.864037]).addTo(map)
+          L.marker([-27.337004949626625, -55.8664512669202]).addTo(map)
               .bindPopup('Encarnacion.')
-          L.marker([-27.372516806071435, -55.83320617675782]).addTo(map)
+          L.marker([-27.319619683648703, -55.88392256875523]).addTo(map)
+              .bindPopup('Mboi ka e.')
+          L.marker([-27.384266881102295, -55.823650377569734]).addTo(map)
               .bindPopup('San Isidro.')
-          L.marker([-27.33513692677947, -55.87059021010646]).addTo(map)
-              .bindPopup('Quiteria.')
-          L.marker([-27.372516806071435, -55.82365035661497]).addTo(map)
-              .bindPopup('San Miguel')
-           L.marker([-27.350626596805373, -55.852489467943094]).addTo(map)
+          L.marker([-27.37017510957327, -55.844497689977295]).addTo(map)
+              .bindPopup('Sagrada Familia')
+          L.marker([-27.352422344233265, -55.8535003673751]).addTo(map)
               .bindPopup('Ciudad Nueva')
+          L.marker([-27.30929907159278, -55.84188461070881]).addTo(map)
+              .bindPopup('Chaipe')
+          L.marker([-27.359401831819117, -55.76108931913041]).addTo(map)
+              .bindPopup('Cambyreta')
+          L.marker([-27.286366591508596, -55.8185577322729]).addTo(map)
+              .bindPopup('Santa Maria')
+          L.marker([-27.272838774583402, -55.928955076960854]).addTo(map)
+              .bindPopup('Ita Paso')
+          L.marker([-27.35787721652415, -55.853843690129004]).addTo(map)
+              .bindPopup('Buena Vista')
           </script>
 
                 </div>
