@@ -1,3 +1,4 @@
+
 <!-- Nombre Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
@@ -76,42 +77,39 @@
     {!! Form::label('longitud', 'Longitud:') !!}
     {!! Form::text('longitud', null, ['class' => 'form-control']) !!}
 </div>
- <div class="col-sm-12 pull-left">
-            <div class="card border-primary mb-3">
-                <div class="card-body">
-                    <div id="map"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="form-group col-sm-12 pull-left">
+  <div id="mapid"></div>
 </div>
-
-    <script type="text/javascript" src='https://maps.googleapis.com/maps/api/js?&libraries=places'></script>
-
-    <script type="text/javascript" src="{{asset('js/locationpicker.jquery.js')}}"></script>
-<script>
-    $('#map').locationpicker({
-        location: {
-            latitude: -27.33056,
-            longitude: -55.86667
-        },
-        radius: 3000,
-        inputBinding: {
-            latitudeInput: $('#latitud'),
-            longitudeInput: $('#longitud'),
-            locationNameInput: $('#location')
-        },
-        // Para cargar vista satelital
-        mapTypeId: google.maps.MapTypeId.SATELLITE,
-        enableAutocomplete: true,
-        onchanged: function (currentLocation, radius, isMarkerDropped) {
-            // Uncomment line below to show alert on each Location Changed event
-            //alert("Location changed. New location (" + currentLocation.latitude + ", " + currentLocation.longitude + ")");
-        }
-    });
-</script>
 <!-- Submit Field -->
 <div class="form-group col-sm-12 pull-left">
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('pacientes.index') }}" class="btn btn-secondary">Cancelar</a>
 </div>
+<style type="text/css">
+             #mapid { height: 400px; width:1020px; }
+           </style>
+           
+          <script>
+            var map = L.map('mapid').setView([-27.33056,  -55.86667], 15);
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+           marker = new L.marker([-27.33056,  -55.86667], {draggable:'true'});
+            map.addLayer(marker);
+            function onMapClick(e) {
+            marker.on('dragend', function(event){
+            var marker = event.target;
+            var position = marker.getLatLng();
+            marker.setLatLng(new L.LatLng(position.lat, position.lng),{draggable:'true'});
+            map.panTo(new L.LatLng(position.lat, position.lng));
+            console.log(marker.getLatLng());
+            document.getElementById('latitud').value = marker.getLatLng().lat;
+            document.getElementById('longitud').value = marker.getLatLng().lng;
+          });
+          
+          map.addLayer(marker);
+        };
+    
+        map.on('mouseover', onMapClick);
+          </script>

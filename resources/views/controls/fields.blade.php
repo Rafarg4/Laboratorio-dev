@@ -17,7 +17,6 @@
     {!! Form::select('estado_paciente',array('Sin eleccion' => 'Sin eleccion','Activo' => 'Activo', 'Inactivo' => 'Inactivo','Muerto' => 'Muerto'),null, ['class' => 'form-control' ])!!}
 </div>
 
-
 <!-- Fecha Alta Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('fecha_alta', 'Fecha Alta:') !!}

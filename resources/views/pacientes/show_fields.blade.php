@@ -72,5 +72,25 @@
     {!! Form::label('updated_at', 'Actualizado:') !!}
     <p>{{ $paciente->updated_at }}</p>
 </div>
+   <div class="form-group col-sm-12 pull-left">
+    <div id="mapid"></div>
+</div>
 </li>
 </ul>
+    <style type="text/css">
+                   #mapid { height: 400px; width:1020px; }
+           </style>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" type="text/css">
+            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+          <script>
+            var map = L.map('mapid').setView([{{$paciente->latitud}} , {{$paciente->longitud}}], 15);
+           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+            marker = new L.marker([{{$paciente->latitud}} , {{$paciente->longitud}}]);
+            marker.bindPopup("Paciente:{{$paciente->nombre_apellido}}<br>Barrio:{{$paciente->barrio}}</br>");
+            map.addLayer(marker);
+            marker.openPopup();
+            
+     </script>
