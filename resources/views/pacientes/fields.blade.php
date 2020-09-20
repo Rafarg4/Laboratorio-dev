@@ -85,7 +85,7 @@
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('pacientes.index') }}" class="btn btn-secondary">Cancelar</a>
 </div>
-<style type="text/css">
+<style>
              #mapid { height: 600px; width:1300px; }
            </style>
            
@@ -112,4 +112,4 @@
         };
     
         map.on('mouseover', onMapClick);
-          </script>
+    </script>
