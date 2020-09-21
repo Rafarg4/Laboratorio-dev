@@ -18,7 +18,7 @@
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
-      <h4 class="card-title font-weight-bold mb-2">  <img src="usuario.jpg" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar">Detalles de Usuario</h4>
+      <h4 class="card-title font-weight-bold mb-2">  <img src="quimica.png" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar">Detalles de Usuario</h4>
       <p class="card-text"><i class="fa fa-id-card-alt pr-2"></i>Identificador: {{Auth::user()->id}}</p>
         <p class="card-text"><i class="far fa-user pr-2"></i>Usuario: {{Auth::user()->name}}</p>
          <p class="card-text"><i class="fa fa-at pr-2"></i>Correo: {{Auth::user()->email}}</p>

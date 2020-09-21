@@ -100,7 +100,7 @@
       <div class="col-sm-12 col-sm-2">     
         <div class="card">
          <div class="card-body">
-          <h4 class="card-title"><a><i class="cil-map fa-2x"></i> Ubicacion de pacientes activos</h4>
+          <h4 class="card-title"><a><i class="cil-map fa-2x"></i> <strong>Ubicacion de pacientes activos</strong> </h4>
               <div id="mapid"></div>
               </div>
         </div>

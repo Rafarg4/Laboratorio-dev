@@ -1,20 +1,18 @@
 <!-- Paciente Id Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('paciente_id', 'Nombre Paciente:') !!}
-    {!! Form::select('paciente_id',$pacientes, null, ['class' => 'form-control']) !!}
+    {!! Form::select('paciente_id', $pacientes,null,['class' => 'form-control']) !!}
+</div>
+<!-- Estado Paciente Field -->
+<div class="form-group col-md-6 pull-left">
+    {!! Form::label('estado_paciente', 'Estado Paciente:') !!}
+    {!! Form::select('estado_paciente',array('Sin eleccion' => 'Sin eleccion','Activo' => 'Activo', 'Inactivo' => 'Inactivo','Muerto' => 'Muerto'),null, ['class' => 'form-control' ])!!}
 </div>
 
 <!-- Fecha Analisis Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('fecha_analisis', 'Fecha Analisis:') !!}
     {!! Form::date('fecha_analisis', null, ['class' => 'form-control','id'=>'fecha_analisis']) !!}
-</div>
-
-
-<!-- Estado Paciente Field -->
-<div class="form-group col-md-6 pull-left">
-    {!! Form::label('estado_paciente', 'Estado Paciente:') !!}
-    {!! Form::select('estado_paciente',array('Sin eleccion' => 'Sin eleccion','Activo' => 'Activo', 'Inactivo' => 'Inactivo','Muerto' => 'Muerto'),null, ['class' => 'form-control' ])!!}
 </div>
 
 <!-- Fecha Alta Field -->

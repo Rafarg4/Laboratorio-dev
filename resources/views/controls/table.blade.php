@@ -2,7 +2,7 @@
     <table class="table table-bordered" id="data-table">
         <thead>
             <tr>
-                <th>Nombre Paciente</th>
+        <th>Nombre Paciente</th>
         <th>Fecha Analisis</th>
         <th>Estado Paciente</th>
         <th>Recomendacion</th>
