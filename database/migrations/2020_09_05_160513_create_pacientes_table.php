@@ -26,7 +26,7 @@ class CreatePacientesTable extends Migration
             $table->text('grupo_sanguineo');
             $table->text('enfermedad_referencial');
             $table->text('latitud');
-            $table->text('longuitud');
+            $table->text('longitud');
             $table->timestamps();
             $table->softDeletes();
         });

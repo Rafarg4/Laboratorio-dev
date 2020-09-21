@@ -66,7 +66,7 @@
                                 <a class="nav-link" href="#"><i class="icon-chart"></i> Reporte Usuario</a>
                             </li>
                             <li @click="menu=10" class="nav-item">
-                                <a class="nav-link" href="#"><i class="cil-chart-line"></i> Reporte por Casos</a>
+                                <a class="nav-link" href="{{ action('GraficoController@index') }}"><i class="cil-chart-line"></i> Reporte Graficos</a>
                             </li>
                         </ul>
                     </li>
