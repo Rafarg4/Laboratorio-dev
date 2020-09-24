@@ -32,3 +32,5 @@ Route::get('graficos', 'GraficoController@index')->middleware('auth');
 Route::resource('laboratorios', 'LaboratorioController')->middleware('auth');
 
 Route::resource('controls', 'ControlController')->middleware('auth');
+
+Route::get('historial', 'HistorialController@lista');
