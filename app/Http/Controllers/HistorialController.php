@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\models\Control;
 use DB;
 
 class HistorialController extends Controller
 {
-
 	public function lista(){
     $historial=DB::table('pacientes')
         ->join('controls','controls.id','=', 'pacientes.id')
@@ -15,5 +14,6 @@ class HistorialController extends Controller
         ->where('controls.estado_paciente','Inactivo')
         ->get();
         return view('historial',compact('historial'));
-    }    
+    }  
+    
 }

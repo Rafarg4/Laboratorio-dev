@@ -3,7 +3,7 @@
 @section('content')
 
             <ol class="breadcrumb">
-            <li class="breadcrumb-item"><strong>Historial de Pacientes Inactivos</strong></li>
+            <li class="breadcrumb-item"><strong>Historial de Pacientes Fallecidos</strong></li>
             </ol>
                  <div class="container-fluid">
                      <div class="animated fadeIn">
@@ -13,7 +13,7 @@
                                 <div class="card">
                                      <div class="card-header">
                                          <i class="fa fa-align-justify"></i>
-                                        Lista de Pacientes Recuperados
+                                        Lista de Pacientes Fallecidos
                                                  
                                         </div>
                                     <div class="card-body">
@@ -24,7 +24,7 @@
                                     <th>Id Paciente</th>
                                     <th>Paciente</th>
                                     <th>Barrio</th>
-                                     <th>Telefono</th>
+                                     <th>Edad</th>
                                     <th>Genero</th>
                                     <th>Estado</th>
                                     <th>Comorbilidad</th>
@@ -33,18 +33,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($historial as $historial)
+                                    @foreach($fallecidos as $fallecidos)
                                         <tr>
-                                       
-                                        <td>{{ $historial->id }}</td> 
-                                        <td>{{ $historial->nombre_apellido }}</td>
-                                        <td>{{ $historial->barrio}}</td>
-                                        <td>{{ $historial->telefono }}</td>  
-                                        <td>{{ $historial->genero }}</td> 
-                                        <td><span class="badge badge-primary">{{ $historial->estado_paciente }}</span></td>
-                                         <td>{{ $historial->enfermedad_referencial }}</td>
-                                         <td>{{ $historial->fecha_analisis }}</td>
-                                        <td>{{ $historial->fecha_alta }}</td>  
+                                        <td>{{ $fallecidos->id }}</td> 
+                                        <td>{{ $fallecidos->nombre_apellido }}</td>
+                                        <td>{{ $fallecidos->barrio}}</td>
+                                        <td>{{ $fallecidos->edad }}</td>  
+                                        <td>{{ $fallecidos->genero }}</td> 
+                                        <td><span class="badge badge-danger">{{ $fallecidos->estado_paciente }}</span></td>
+                                         <td>{{ $fallecidos->enfermedad_referencial }}</td>
+                                         <td>{{ $fallecidos->fecha_analisis }}</td>
+                                        <td>{{ $fallecidos->fecha_alta }}</td>  
                                         </div>
                                     </div>
                                         {!! Form::close() !!}

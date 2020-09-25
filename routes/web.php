@@ -35,4 +35,8 @@ Route::resource('laboratorios', 'LaboratorioController')->middleware('auth');
 
 Route::resource('controls', 'ControlController')->middleware('auth');
 
-Route::get('historial', 'HistorialController@lista');
+Route::get('historial', 'HistorialController@lista')->middleware('auth');
+
+Route::get('listafallecidos', 'HistorialFallecidoController@listaFallecidos')->middleware('auth');
+
+Route::get('home', 'HistorialFallecidoController@dashmuerto')->middleware('auth');

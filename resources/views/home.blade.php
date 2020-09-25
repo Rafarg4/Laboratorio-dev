@@ -9,8 +9,8 @@
 <div class="container-fluid">
         <div class="animated fadeIn">
                     <!-- Widgets -->
-        </div>
-              <div class="row">
+        </div> 
+             <div class="row">
                 <div class="col-sm-6 col-md-3">
                   <div class="card">
                     <div class="card-body">
@@ -19,13 +19,15 @@
                           <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-people"></use>
                         </svg>
                       </div>
-                     <div class="text-value-lg"><i class="cil-eyedropper fa-2x"></i> 87</div><small class="text-muted text-uppercase font-weight-bold"> Recuperados</small>
+                   
+                     <div class="text-value-lg"><i class="cil-eyedropper fa-2x"></i><td><span class="badge badge-info">{{$recuperados}}</span></td> </div><small class="text-muted text-uppercase font-weight-bold"> Recuperados</small>
                       <div class="progress progress-xs mt-3 mb-0">
                         <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div>
                   </div>
                 </div>
+                
                 <!-- /.col-->
                 <div class="col-sm-6 col-md-3">
                   <div class="card">
@@ -35,7 +37,7 @@
                           <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-user-follow"></use>
                         </svg>
                       </div>
-                      <div class="text-value-lg"><i class="cil-medical-cross fa-2x"></i> 385</div><small class="text-muted text-uppercase font-weight-bold"> Nuevos casos</small>
+                      <div class="text-value-lg"><i class="cil-medical-cross fa-2x"></i> <span class="badge badge-success">40</span></div><small class="text-muted text-uppercase font-weight-bold"> Nuevos casos</small>
                       <div class="progress progress-xs mt-3 mb-0">
                         <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
@@ -43,6 +45,7 @@
                   </div>
                 </div>
                 <!-- /.col-->
+                  
                 <div class="col-sm-6 col-md-3">
                   <div class="card">
                     <div class="card-body">
@@ -51,12 +54,13 @@
                           <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-basket"></use>
                         </svg>
                       </div>
-                     <div class="text-value-lg"><i class="cil-bed fa-2x"></i> 123</div><small class="text-muted text-uppercase font-weight-bold"> Infectados</small>
+                     <div class="text-value-lg"><i class="cil-bed fa-2x"></i> <span class="badge badge-warning">{{$infectados}}</span></div><small class="text-muted text-uppercase font-weight-bold"> Infectados</small>
                       <div class="progress progress-xs mt-3 mb-0">
                         <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div>
                   </div>
+    
                 </div>
                 <!-- /.col-->
                 <div class="col-sm-6 col-md-3">
@@ -67,7 +71,7 @@
                           <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-chart-pie"></use>
                         </svg>
                       </div>
-                     <div class="text-value-lg"><i class="cil-heart fa-2x"></i> 28%</div><small class="text-muted text-uppercase font-weight-bold"> Recuperados totales</small>
+                     <div class="text-value-lg"><i class="cil-heart fa-2x"></i> <span class="badge badge-primary">28%</span></div><small class="text-muted text-uppercase font-weight-bold"> Recuperados totales</small>
                       <div class="progress progress-xs mt-3 mb-0">
                         <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
@@ -75,6 +79,7 @@
                   </div>
                 </div>
                 <!-- /.col-->
+                   
                 <div class="col-sm-6 col-md-3">
                   <div class="card">
                     <div class="card-body">
@@ -83,12 +88,13 @@
                           <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-speedometer"></use>
                         </svg>
                       </div>
-                      <div class="text-value-lg"><i class="cil-user-unfollow fa-2x"></i> 5</div><small class="text-muted text-uppercase font-weight-bold"> Muertos</small>
+                      <div class="text-value-lg"><i class="cil-user-unfollow fa-2x"></i> <span class="badge badge-danger">{{$muertos}}</span></div><small class="text-muted text-uppercase font-weight-bold"> Muertos</small>
                       <div class="progress progress-xs mt-3 mb-0">
                         <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div>
                   </div>
+                  
                 </div>
           </div>  
       </div>

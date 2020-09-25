@@ -15,7 +15,7 @@
             <tr>
                 <td>{{ $control->paciente->nombre_apellido }}</td>
             <td>{{ $control->fecha_analisis }}</td>
-            <td>{{ $control->estado_paciente }}</td>
+            <td><span class="badge badge-warning">{{ $control->estado_paciente }}</span></td>
             <td>{{ $control->recomendacion }}</td>
             <td>{{ $control->fecha_alta }}</td>
                 <td>

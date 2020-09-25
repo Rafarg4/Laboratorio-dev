@@ -33,7 +33,10 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-layers"></i> Historial</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=5" class="nav-item">
-                                <a class="nav-link" href="{{ action('HistorialController@lista') }}"><i class="cil-list"></i> Historial de paciente</a>
+                                <a class="nav-link" href="{{ action('HistorialController@lista') }}"><i class="cil-eyedropper"></i> Recuperados</a>
+                            </li>
+                            <li @click="menu=5" class="nav-item">
+                                <a class="nav-link" href="{{ action('HistorialFallecidoController@listaFallecidos') }}"><i class="cil-user-unfollow"></i> Fallecidos</a>
                             </li>
                         </ul>
                     </li>
