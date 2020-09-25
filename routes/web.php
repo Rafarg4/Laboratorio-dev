@@ -29,6 +29,8 @@ Route::get('perfiles', 'HomeController@usuario')->middleware('auth');
 
 Route::get('graficos', 'GraficoController@index')->middleware('auth');
 
+Route::get('mapas', 'MapaController@index')->middleware('auth');
+
 Route::resource('laboratorios', 'LaboratorioController')->middleware('auth');
 
 Route::resource('controls', 'ControlController')->middleware('auth');

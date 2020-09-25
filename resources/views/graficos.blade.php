@@ -19,6 +19,11 @@
    <div class="card-body">
     <!-- Title -->
        <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i>  Grafico de los casos por año segun el distrito </h4>
+       </div>
+     </div>
+     <div class="card">
+   <!-- Card content -->
+   <div class="card-body">
          <div class="container">
           <div id="container"></div>
             </div>
@@ -96,10 +101,15 @@
         <div class="card">
          <div class="card-body">
             <h4 class="card-title"><a><i class="cil-wc fa-2x"></i>   Grafico de los casos segun el genero </h4>
-                            <div class="container">
-                               <div id="containers"></div>
-                               </div>
-                                    <script type="text/javascript">
+            </div>
+          </div>
+           <div class="card">
+             <!-- Card content -->
+                 <div class="card-body">
+                      <div class="container">
+                          <div id="containers"></div>
+                           </div>
+                             <script type="text/javascript">
                               Highcharts.chart('containers', {
                 chart: {
                     plotBackgroundColor: null,

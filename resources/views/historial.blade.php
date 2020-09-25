@@ -21,8 +21,6 @@
                                 <table class="table table-bordered" id="data-table">
                                     <thead>
                                         <tr>
-                                    <th>Id Usuario</th>
-                                    <th>Usuario</th>
                                     <th>Id Paciente</th>
                                     <th>Paciente</th>
                                     <th>Barrio</th>
@@ -30,14 +28,14 @@
                                     <th>Genero</th>
                                     <th>Estado</th>
                                     <th>Comorbilidad</th>
+                                     <th>Fecha de Analisis</th>
                                     <th>Fecha de Alta</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($historial as $historial)
                                         <tr>
-                                        <td>{{ $historial->id }}</td>
-                                        <td>{{ $historial->name }}</td>
+                                       
                                         <td>{{ $historial->id }}</td> 
                                         <td>{{ $historial->nombre_apellido }}</td>
                                         <td>{{ $historial->barrio}}</td>
@@ -45,6 +43,7 @@
                                         <td>{{ $historial->genero }}</td> 
                                         <td>{{ $historial->estado_paciente }}</td>
                                          <td>{{ $historial->enfermedad_referencial }}</td>
+                                         <td>{{ $historial->fecha_analisis }}</td>
                                         <td>{{ $historial->fecha_alta }}</td>  
                                         </div>
                                     </div>

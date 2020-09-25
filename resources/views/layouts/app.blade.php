@@ -24,7 +24,6 @@
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/coreui-icons-free@1.0.1-alpha.1/coreui-icons-free.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/maps.css')}}">
 
     <!-- core ui dashboard-->
     <link href="{{ asset('css/dashboard.css') }}"  rel="stylesheet">

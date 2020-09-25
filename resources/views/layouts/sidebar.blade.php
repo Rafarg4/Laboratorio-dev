@@ -68,6 +68,9 @@
                             <li @click="menu=10" class="nav-item">
                                 <a class="nav-link" href="{{ action('GraficoController@index') }}"><i class="cil-chart-line"></i> Reporte Graficos</a>
                             </li>
+                            <li @click="menu=10" class="nav-item">
+                                <a class="nav-link" href="{{ action('MapaController@index') }}"><i class="cil-map"></i> Mapa de Pacientes</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item nav-dropdown">

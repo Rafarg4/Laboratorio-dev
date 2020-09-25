@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 
 class GraficoController extends Controller
 {
-
-
 	public function index(){
     
         return view('graficos');
-}
+  }
 }
