@@ -3,6 +3,66 @@
 <head>
     <meta charset="UTF-8">
        <title>RM|Positivo +</title>
+       <!-- jQuery 3.1.1 -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@2.1.16/dist/js/coreui.min.js"></script>
+@stack('scripts')
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+<!-- Datatables -->
+     
+     <script type="text/javascript" src="{{ asset('js/datatable.js') }}"></script>
+
+     <script type="text/javascript" src="{{ asset('js/buttons.js') }}"></script>
+
+     <script type="text/javascript" src="{{ asset('js/flashexport.js') }}"></script>
+
+     <script type="text/javascript" src="{{ asset('js/jszip.js') }}"></script>
+
+     <script type="text/javascript" src="{{ asset('js/pdfmake.js') }}"></script>
+
+     <script type="text/javascript" src="{{ asset('js/pdffont.js') }}"></script>
+
+     <script type="text/javascript" src="{{ asset('js/html5.js') }}"></script>
+
+     <script type="text/javascript" src="{{ asset('js/print.js') }}"></script>
+@yield('scripts')
+ <script>
+ $(document).ready(function() {
+    $('#data-table').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+        },
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+
+    </script>
+    <style type="text/css">
+        .select2-container--default .select2-selection--single {
+            height: calc(1.5em + .80rem + 2px) !important;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("select").select2();
+        });
+    </script>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 4.1.1 -->
     <!--  leaflt -->
@@ -114,64 +174,5 @@
     </div>
 </footer>
 </body>
-<!-- jQuery 3.1.1 -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@2.1.16/dist/js/coreui.min.js"></script>
-@stack('scripts')
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-<!-- Google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
-<!-- Datatables -->
-     
-     <script type="text/javascript" src="{{ asset('js/datatable.js') }}"></script>
 
-     <script type="text/javascript" src="{{ asset('js/buttons.js') }}"></script>
-
-     <script type="text/javascript" src="{{ asset('js/flashexport.js') }}"></script>
-
-     <script type="text/javascript" src="{{ asset('js/jszip.js') }}"></script>
-
-     <script type="text/javascript" src="{{ asset('js/pdfmake.js') }}"></script>
-
-     <script type="text/javascript" src="{{ asset('js/pdffont.js') }}"></script>
-
-     <script type="text/javascript" src="{{ asset('js/html5.js') }}"></script>
-
-     <script type="text/javascript" src="{{ asset('js/print.js') }}"></script>
-@yield('scripts')
- <script>
- $(document).ready(function() {
-    $('#data-table').DataTable( {
-        "language": {
-            "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
-        },
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-} );
-
-    </script>
-    <style type="text/css">
-        .select2-container--default .select2-selection--single {
-            height: calc(1.5em + .80rem + 2px) !important;
-        }
-    </style>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("select").select2();
-        });
-    </script>
 </html>
