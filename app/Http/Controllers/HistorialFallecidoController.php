@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\models\Control;
+use App\models\Paciente;
 use Illuminate\Http\Request;
 
 class HistorialFallecidoController extends Controller
@@ -28,7 +29,11 @@ class HistorialFallecidoController extends Controller
     $recuperados = Control::select(\DB::raw("COUNT(*) as count"))
                     ->where('controls.estado_paciente','Inactivo')
                     ->pluck('count');
-    return view('home', compact('muertos','infectados','recuperados'));
+    }{
+        $pacientes = Paciente::select(\DB::raw("COUNT(*) as count"))
+                    ->pluck('count');
+              
+    return view('home', compact('muertos','infectados','recuperados','pacientes'));
     }
   } 
 }

@@ -88,7 +88,7 @@
                         <a class="nav-link" href="#"><i class="cil-notes"></i> Manual <span class="badge badge-danger">PDF</span></a>
                     </li>
                     <li @click="menu=12" class="nav-item">
-                        <a class="nav-link" href="#"><i class="icon-info"></i> Acerca de..<span class="badge badge-info">IT</span></a>
+                        <a class="nav-link" href="#"><i class="cil-shield-alt"></i> Backup<span class="badge badge-info">BKP</span></a>
                     </li>
                 </ul>
             </nav>
