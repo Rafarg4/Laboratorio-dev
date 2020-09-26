@@ -58,7 +58,7 @@ class LaboratorioController extends AppBaseController
 
         $laboratorio = $this->laboratorioRepository->create($input);
 
-        Flash::success('Laboratorio saved successfully.');
+        Flash::success('Laboratorio guardado correctamente.');
 
         return redirect(route('laboratorios.index'));
     }
@@ -75,7 +75,7 @@ class LaboratorioController extends AppBaseController
         $laboratorio = $this->laboratorioRepository->find($id);
 
         if (empty($laboratorio)) {
-            Flash::error('Laboratorio not found');
+            Flash::error('Laboratorio no encontrado');
 
             return redirect(route('laboratorios.index'));
         }
@@ -95,7 +95,7 @@ class LaboratorioController extends AppBaseController
         $laboratorio = $this->laboratorioRepository->find($id);
 
         if (empty($laboratorio)) {
-            Flash::error('Laboratorio not found');
+            Flash::error('Laboratorio no encontrado');
 
             return redirect(route('laboratorios.index'));
         }
@@ -116,14 +116,14 @@ class LaboratorioController extends AppBaseController
         $laboratorio = $this->laboratorioRepository->find($id);
 
         if (empty($laboratorio)) {
-            Flash::error('Laboratorio not found');
+            Flash::error('Laboratorio no encontrado');
 
             return redirect(route('laboratorios.index'));
         }
 
         $laboratorio = $this->laboratorioRepository->update($request->all(), $id);
 
-        Flash::success('Laboratorio updated successfully.');
+        Flash::success('Laboratorio actualizado correctamente.');
 
         return redirect(route('laboratorios.index'));
     }
@@ -142,14 +142,14 @@ class LaboratorioController extends AppBaseController
         $laboratorio = $this->laboratorioRepository->find($id);
 
         if (empty($laboratorio)) {
-            Flash::error('Laboratorio not found');
+            Flash::error('Laboratorio no encontrado');
 
             return redirect(route('laboratorios.index'));
         }
 
         $this->laboratorioRepository->delete($id);
 
-        Flash::success('Laboratorio deleted successfully.');
+        Flash::success('Laboratorio eliminado correctamente.');
 
         return redirect(route('laboratorios.index'));
     }

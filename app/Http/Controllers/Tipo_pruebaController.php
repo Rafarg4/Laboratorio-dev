@@ -58,7 +58,7 @@ class Tipo_pruebaController extends AppBaseController
 
         $tipoPrueba = $this->tipoPruebaRepository->create($input);
 
-        Flash::success('Tipo Prueba saved successfully.');
+        Flash::success('Tipo Prueba guardado correctamente.');
 
         return redirect(route('tipoPruebas.index'));
     }
@@ -75,7 +75,7 @@ class Tipo_pruebaController extends AppBaseController
         $tipoPrueba = $this->tipoPruebaRepository->find($id);
 
         if (empty($tipoPrueba)) {
-            Flash::error('Tipo Prueba not found');
+            Flash::error('Tipo Prueba no encontrado');
 
             return redirect(route('tipoPruebas.index'));
         }
@@ -95,7 +95,7 @@ class Tipo_pruebaController extends AppBaseController
         $tipoPrueba = $this->tipoPruebaRepository->find($id);
 
         if (empty($tipoPrueba)) {
-            Flash::error('Tipo Prueba not found');
+            Flash::error('Tipo Prueba no encontrado');
 
             return redirect(route('tipoPruebas.index'));
         }
@@ -116,14 +116,14 @@ class Tipo_pruebaController extends AppBaseController
         $tipoPrueba = $this->tipoPruebaRepository->find($id);
 
         if (empty($tipoPrueba)) {
-            Flash::error('Tipo Prueba not found');
+            Flash::error('Tipo Prueba no encontrado');
 
             return redirect(route('tipoPruebas.index'));
         }
 
         $tipoPrueba = $this->tipoPruebaRepository->update($request->all(), $id);
 
-        Flash::success('Tipo Prueba updated successfully.');
+        Flash::success('Tipo Prueba actualizado correctamente.');
 
         return redirect(route('tipoPruebas.index'));
     }
@@ -142,14 +142,14 @@ class Tipo_pruebaController extends AppBaseController
         $tipoPrueba = $this->tipoPruebaRepository->find($id);
 
         if (empty($tipoPrueba)) {
-            Flash::error('Tipo Prueba not found');
+            Flash::error('Tipo Prueba no encontrado');
 
             return redirect(route('tipoPruebas.index'));
         }
 
         $this->tipoPruebaRepository->delete($id);
 
-        Flash::success('Tipo Prueba deleted successfully.');
+        Flash::success('Tipo Prueba eliminado correctamente.');
 
         return redirect(route('tipoPruebas.index'));
     }

@@ -61,7 +61,7 @@ class ControlController extends AppBaseController
 
         $control = $this->controlRepository->create($input);
 
-        Flash::success('Control saved successfully.');
+        Flash::success('Control Guardado exitosamente.');
 
         return redirect(route('controls.index'));
     }
@@ -78,7 +78,7 @@ class ControlController extends AppBaseController
         $control = $this->controlRepository->find($id);
 
         if (empty($control)) {
-            Flash::error('Control not found');
+            Flash::error('Control no encontrado');
 
             return redirect(route('controls.index'));
         }
@@ -99,7 +99,7 @@ class ControlController extends AppBaseController
         $pacientes = Paciente::pluck('nombre_apellido','id');
 
         if (empty($control)) {
-            Flash::error('Control not found');
+            Flash::error('Control no encontrado');
 
             return redirect(route('controls.index'));
         }
@@ -120,14 +120,14 @@ class ControlController extends AppBaseController
         $control = $this->controlRepository->find($id);
 
         if (empty($control)) {
-            Flash::error('Control not found');
+            Flash::error('Control no encontrado');
 
             return redirect(route('controls.index'));
         }
 
         $control = $this->controlRepository->update($request->all(), $id);
 
-        Flash::success('Control updated successfully.');
+        Flash::success('Control actualizado correctamente.');
 
         return redirect(route('controls.index'));
     }
@@ -153,7 +153,7 @@ class ControlController extends AppBaseController
 
         $this->controlRepository->delete($id);
 
-        Flash::success('Control deleted successfully.');
+        Flash::success('Control eliminado correctamente.');
 
         return redirect(route('controls.index'));
     }

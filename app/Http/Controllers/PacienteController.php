@@ -58,7 +58,7 @@ class PacienteController extends AppBaseController
 
         $paciente = $this->pacienteRepository->create($input);
 
-        Flash::success('Paciente saved successfully.');
+        Flash::success('Paciente guardado correctamente.');
 
         return redirect(route('pacientes.index'));
     }
@@ -75,7 +75,7 @@ class PacienteController extends AppBaseController
         $paciente = $this->pacienteRepository->find($id);
 
         if (empty($paciente)) {
-            Flash::error('Paciente not found');
+            Flash::error('Paciente no encontrado');
 
             return redirect(route('pacientes.index'));
         }
@@ -95,7 +95,7 @@ class PacienteController extends AppBaseController
         $paciente = $this->pacienteRepository->find($id);
 
         if (empty($paciente)) {
-            Flash::error('Paciente not found');
+            Flash::error('Paciente no encontrado');
 
             return redirect(route('pacientes.index'));
         }
@@ -116,14 +116,14 @@ class PacienteController extends AppBaseController
         $paciente = $this->pacienteRepository->find($id);
 
         if (empty($paciente)) {
-            Flash::error('Paciente not found');
+            Flash::error('Paciente no encontrado');
 
             return redirect(route('pacientes.index'));
         }
 
         $paciente = $this->pacienteRepository->update($request->all(), $id);
 
-        Flash::success('Paciente updated successfully.');
+        Flash::success('Paciente actualizado correctamente.');
 
         return redirect(route('pacientes.index'));
     }
@@ -142,14 +142,14 @@ class PacienteController extends AppBaseController
         $paciente = $this->pacienteRepository->find($id);
 
         if (empty($paciente)) {
-            Flash::error('Paciente not found');
+            Flash::error('Paciente no encontrado');
 
             return redirect(route('pacientes.index'));
         }
 
         $this->pacienteRepository->delete($id);
 
-        Flash::success('Paciente deleted successfully.');
+        Flash::success('Paciente eliminado correctamente.');
 
         return redirect(route('pacientes.index'));
     }
