@@ -61,7 +61,7 @@ class ControlController extends AppBaseController
 
         $control = $this->controlRepository->create($input);
 
-        Flash::success('Control Guardado exitosamente.');
+        Flash::success('Control Guardado correctamente.');
 
         return redirect(route('controls.index'));
     }

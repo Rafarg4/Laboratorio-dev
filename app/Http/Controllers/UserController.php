@@ -60,7 +60,7 @@ class UserController extends AppBaseController
 
         $user = $this->userRepository->create($input);
 
-        Flash::success('Usuario Guardado exitosamente.');
+        Flash::success('Usuario Guardado correctamente.');
 
         return redirect(route('users.index'));
     }

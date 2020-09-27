@@ -13,9 +13,19 @@
         <tbody>
         @foreach($controls as $control)
             <tr>
-                <td>{{ $control->paciente->nombre_apellido }}</td>
+            <td>{{ $control->paciente->nombre_apellido }}</td>
             <td>{{ $control->fecha_analisis }}</td>
-            <td><span class="badge badge-warning">{{ $control->estado_paciente }}</span></td>
+            <td>@switch(true)
+            @case($control->estado_paciente == 'Inactivo')
+            <span class="badge badge-primary"> {{ $control->estado_paciente }} </span>
+            @break
+            @case($control->estado_paciente == 'Activo')
+            <span class="badge badge-warning"> {{ $control->estado_paciente }} </span>
+            @break
+            @case($control->estado_paciente == 'Fallecido' )
+            <span class="badge badge-danger"> {{ $control->estado_paciente }} </span>
+            @break
+            @endswitch</td>
             <td>{{ $control->recomendacion }}</td>
             <td>{{ $control->fecha_alta }}</td>
                 <td>

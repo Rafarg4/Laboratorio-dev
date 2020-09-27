@@ -18,7 +18,7 @@
    <!-- Card content -->
    <div class="card-body">
     <!-- Title -->
-       <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i>  Grafico de los casos por año segun el distrito </h4>
+       <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Grafico de los casos por año segun el distrito.</strong> </h4>
        </div>
      </div>
      <div class="card">
@@ -100,7 +100,7 @@
       </div>    
         <div class="card">
          <div class="card-body">
-            <h4 class="card-title"><a><i class="cil-wc fa-2x"></i>   Grafico de los casos segun el genero </h4>
+            <h4 class="card-title"><a><i class="cil-wc fa-2x"></i>   <strong>Grafico de los casos segun el genero.</strong> </h4>
             </div>
           </div>
            <div class="card">
@@ -161,7 +161,7 @@
         </div>    
         <div class="card">
          <div class="card-body">
-            <h4 class="card-title"><a><i class="cil-calendar fa-2x"></i>   Grafico de casos Anuales </h4>
+            <h4 class="card-title"><a><i class="cil-calendar fa-2x"></i>  <strong>Grafico de casos Anuales,</strong> </h4>
             </div>
           </div>
            <div class="card">
