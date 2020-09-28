@@ -18,7 +18,7 @@
    <!-- Card content -->
    <div class="card-body">
     <!-- Title -->
-       <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Grafico de los casos por año segun el distrito.</strong> </h4>
+       <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Grafico de los casos por año segun el Barrio.</strong> </h4>
        </div>
      </div>
      <div class="card">
@@ -33,10 +33,10 @@
                       type: 'bar'
                   },
                   title: {
-                      text: 'Barrios mas afectados'
+                      text: 'Barrios mas afectados.'
                   },
                   subtitle: {
-                      text: 'Listado de casos por barrios por año'
+                      text: 'Listado de casos por barrios por año.'
                   },
                   xAxis: {
                       categories: ['Santa Maria', 'San Isidro', 'San Miguel', 'Quiteria', 'San Antonio '],
@@ -47,7 +47,7 @@
                   yAxis: {
                       min: 0,
                       title: {
-                          text: 'Cantiadad total',
+                          text: 'Cantiadad total.',
                           align: 'high'
                       },
                       labels: {
@@ -55,7 +55,7 @@
                       }
                   },
                   tooltip: {
-                      valueSuffix: ' Casos totales'
+                      valueSuffix: ' Casos totales.'
                   },
                   plotOptions: {
                       bar: {
@@ -80,16 +80,16 @@
                       enabled: false
                   },
                   series: [{
-                      name: 'Año 2017',
+                      name: 'Recuperados',
                       data: [17, 31, 65, 9, 2]
                   }, {
-                      name: 'Año 2018',
+                      name: 'Fallecidos',
                       data: [13, 16, 97, 40, 6]
                   }, {
-                      name: 'Año 2019',
+                      name: 'Nuevos Casos',
                       data: [4, 8, 34, 72, 31]
                   }, {
-                      name: 'Año 2020',
+                      name: 'Infectados',
                       data: [12, 10, 46, 78, 40]
                   }]
               });
@@ -97,7 +97,7 @@
       </script>
     </div>
        
-      </div>    
+      </div>   
         <div class="card">
          <div class="card-body">
             <h4 class="card-title"><a><i class="cil-wc fa-2x"></i>   <strong>Grafico de los casos segun el genero.</strong> </h4>
@@ -110,56 +110,78 @@
                           <div id="containers"></div>
                            </div>
                              <script type="text/javascript">
+                               var masculino =  <?php echo json_encode($masculino) ?>;
+                                var femenino =  <?php echo json_encode($femenino) ?>; 
+                                var otro =  <?php echo json_encode($otro) ?>;  
                               Highcharts.chart('containers', {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false,
-                    type: 'pie'
-                },
-                title: {
-                    text: 'Grafico por genero'
-                },
-                tooltip: {
-                    pointFormat: 'Porcentaje por genero'
-                },
-                accessibility: {
-                    point: {
-                        valueSuffix: '%'
-                    }
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                        }
-                    }
-                },
-                series: [{
-                    name: 'Brands',
-                    colorByPoint: true,
-                    data: [{
-                        name: 'Femenino',
-                        y: 62,
-                        sliced: true,
-                        selected: true
-                    }, {
-                        name: 'Masculino',
-                        y: 84
-                    }, {
-                        name: 'Otros',
-                        y: 4
-                    }]
-                }]
-            });
-                                            
-          </script>
-        </div>
-        </div>    
-        <div class="card">
+                              chart: {
+                      type: 'bar'
+                  },
+                  title: {
+                      text: 'Generos mas afectados'
+                  },
+                  subtitle: {
+                      text: 'Listado de Generos'
+                  },
+                  xAxis: {
+                      categories: ['Generos'],
+                      title: {
+                          text: null
+                      }
+                  },
+                  yAxis: {
+                      min: 0,
+                      title: {
+                          text: 'Cantiadad total',
+                          align: 'high'
+                      },
+                      labels: {
+                          overflow: 'justify'
+                      }
+                  },
+                  tooltip: {
+                      valueSuffix: 'total'
+                  },
+                  plotOptions: {
+                      bar: {
+                          dataLabels: {
+                              enabled: true
+                          }
+                      }
+                  },
+                  legend: {
+                      layout: 'vertical', 
+                      align: 'right',
+                      verticalAlign: 'top',
+                      x: -40,
+                      y: 40,
+                      floating: true,
+                      borderWidth: 1,
+                      backgroundColor:
+                          Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                      shadow: true
+                  },
+                  credits: {
+                      enabled: false
+                  },
+                  series: [{
+                      name: 'Femenino',
+                      data: femenino,
+                  }, {
+                      name: 'Masculino',
+                      data: masculino,
+                  }, {
+                      name: 'Otro',
+                      data: otro,
+              
+                  }]
+              });
+             
+                                             
+</script>
+  </div>
+    </div>    
+      <div class="card">
          <div class="card-body">
             <h4 class="card-title"><a><i class="cil-calendar fa-2x"></i>  <strong>Grafico de casos Anuales,</strong> </h4>
             </div>
@@ -173,75 +195,303 @@
                              <script type="text/javascript">
                               Highcharts.chart('containerss', {
 
+    chart: {
+        type: 'column'
+    },
     title: {
-        text: 'Grafico de casos segun el año, 2010-2016'
+        text: 'Casos totales, Recuperados, Infectados'
     },
-
     subtitle: {
-        text: 'Detalles'
+        text: 'Porcentaje de los casos'
     },
-
+    accessibility: {
+        announceNewData: {
+            enabled: true
+        }
+    },
+    xAxis: {
+        type: 'category'
+    },
     yAxis: {
         title: {
-            text: 'Numero de casos'
+            text: 'Totales'
         }
-    },
 
-    xAxis: {
-        accessibility: {
-            rangeDescription: 'Rango: 2017 to 2020'
-        }
     },
-
     legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'middle'
+        enabled: false
     },
-
     plotOptions: {
         series: {
-            label: {
-                connectorAllowed: false
-            },
-            pointStart: 2017
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
+                format: '{point.y:.1f}%'
+            }
         }
     },
 
-    series: [{
-        name: 'Recuperados totales',
-        data: [43, 53, 57, 6, 97, 11, 13, 15]
-    }, {
-        name: 'Fallecidos',
-        data: [2, 24, 29, 29, 32, 32, 32, 40]
-    }, {
-        name: 'Nuevos Casos',
-        data: [11, 17, 16, 11, 25, 77, 7, 37]
-    }, {
-        name: 'Infectados',
-        data: [null, null, 78, 19, 1, 22, 5, 27]
-    }, {
-        name: 'Recuperados',
-        data: [8, 58, 85, 148, 89, 16, 74, 111]
-    }],
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+    },
 
-    responsive: {
-        rules: [{
-            condition: {
-                maxWidth: 500
-            },
-            chartOptions: {
-                legend: {
-                    layout: 'horizontal',
-                    align: 'center',
-                    verticalAlign: 'bottom'
+    series: [
+        {
+            name: "Detalles",
+            colorByPoint: true,
+            data: [
+                {
+                    name: "Recuperados",
+                    y: 62.74,
+                    drilldown: "Recuperados"
+                },
+                {
+                    name: "Fallecidos",
+                    y: 10.57,
+                    drilldown: "Fallecidos"
+                },
+                {
+                    name: "Casos Nuevo",
+                    y: 7.23,
+                    drilldown: "Casos Nuevo"
+                },
+                {
+                    name: "Otros",
+                    y: 5.58,
+                    drilldown: "Otros"
+                },
+                
+                {
+                     name: "Infectados",
+                    y: 7.62,
+                    drilldown: null
                 }
+            ]
+        }
+    ],
+    drilldown: {
+        series: [
+            {
+                name: "Chrome",
+                id: "Chrome",
+                data: [
+                    [
+                        "v65.0",
+                        0.1
+                    ],
+                    [
+                        "v64.0",
+                        1.3
+                    ],
+                    [
+                        "v63.0",
+                        53.02
+                    ],
+                    [
+                        "v62.0",
+                        1.4
+                    ],
+                    [
+                        "v61.0",
+                        0.88
+                    ],
+                    [
+                        "v60.0",
+                        0.56
+                    ],
+                    [
+                        "v59.0",
+                        0.45
+                    ],
+                    [
+                        "v58.0",
+                        0.49
+                    ],
+                    [
+                        "v57.0",
+                        0.32
+                    ],
+                    [
+                        "v56.0",
+                        0.29
+                    ],
+                    [
+                        "v55.0",
+                        0.79
+                    ],
+                    [
+                        "v54.0",
+                        0.18
+                    ],
+                    [
+                        "v51.0",
+                        0.13
+                    ],
+                    [
+                        "v49.0",
+                        2.16
+                    ],
+                    [
+                        "v48.0",
+                        0.13
+                    ],
+                    [
+                        "v47.0",
+                        0.11
+                    ],
+                    [
+                        "v43.0",
+                        0.17
+                    ],
+                    [
+                        "v29.0",
+                        0.26
+                    ]
+                ]
+            },
+            {
+                name: "Firefox",
+                id: "Firefox",
+                data: [
+                    [
+                        "v58.0",
+                        1.02
+                    ],
+                    [
+                        "v57.0",
+                        7.36
+                    ],
+                    [
+                        "v56.0",
+                        0.35
+                    ],
+                    [
+                        "v55.0",
+                        0.11
+                    ],
+                    [
+                        "v54.0",
+                        0.1
+                    ],
+                    [
+                        "v52.0",
+                        0.95
+                    ],
+                    [
+                        "v51.0",
+                        0.15
+                    ],
+                    [
+                        "v50.0",
+                        0.1
+                    ],
+                    [
+                        "v48.0",
+                        0.31
+                    ],
+                    [
+                        "v47.0",
+                        0.12
+                    ]
+                ]
+            },
+            {
+                name: "Internet Explorer",
+                id: "Internet Explorer",
+                data: [
+                    [
+                        "v11.0",
+                        6.2
+                    ],
+                    [
+                        "v10.0",
+                        0.29
+                    ],
+                    [
+                        "v9.0",
+                        0.27
+                    ],
+                    [
+                        "v8.0",
+                        0.47
+                    ]
+                ]
+            },
+            {
+                name: "Safari",
+                id: "Safari",
+                data: [
+                    [
+                        "v11.0",
+                        3.39
+                    ],
+                    [
+                        "v10.1",
+                        0.96
+                    ],
+                    [
+                        "v10.0",
+                        0.36
+                    ],
+                    [
+                        "v9.1",
+                        0.54
+                    ],
+                    [
+                        "v9.0",
+                        0.13
+                    ],
+                    [
+                        "v5.1",
+                        0.2
+                    ]
+                ]
+            },
+            {
+                name: "Edge",
+                id: "Edge",
+                data: [
+                    [
+                        "v16",
+                        2.6
+                    ],
+                    [
+                        "v15",
+                        0.92
+                    ],
+                    [
+                        "v14",
+                        0.4
+                    ],
+                    [
+                        "v13",
+                        0.1
+                    ]
+                ]
+            },
+            {
+                name: "Opera",
+                id: "Opera",
+                data: [
+                    [
+                        "v50.0",
+                        0.96
+                    ],
+                    [
+                        "v49.0",
+                        0.82
+                    ],
+                    [
+                        "v12.1",
+                        0.14
+                    ]
+                ]
             }
-        }]
+        ]
     }
-
 });
-
+              
       </script>
 </div>
 </br>

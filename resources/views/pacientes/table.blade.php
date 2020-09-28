@@ -2,7 +2,7 @@
     <table class="table table-bordered" id="data-table">
         <thead>
             <tr>
-        <th>Nombre y Apellido</th>
+        <th>Datos Personales</th>
         <th>Genero</th>
         <th>Fecha de Nacimiento</th>
         <th>Edad</th>
