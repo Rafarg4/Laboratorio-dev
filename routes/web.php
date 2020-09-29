@@ -29,7 +29,7 @@ Route::get('perfiles', 'HomeController@usuario')->middleware('auth');
 
 Route::get('graficos', 'GraficoController@grafico')->middleware('auth');
 
-Route::get('mapas', 'MapaController@index')->middleware('auth');
+Route::get('mapas', 'MapaController@mapa')->middleware('auth');
 
 Route::resource('laboratorios', 'LaboratorioController')->middleware('auth');
 
@@ -40,4 +40,6 @@ Route::get('historial', 'HistorialController@lista')->middleware('auth');
 Route::get('listafallecidos', 'HistorialFallecidoController@listaFallecidos')->middleware('auth');
 
 Route::get('home', 'HistorialFallecidoController@dashmuerto')->middleware('auth');
+
+
 

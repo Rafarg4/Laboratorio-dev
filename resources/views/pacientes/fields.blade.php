@@ -50,7 +50,7 @@
 <!-- Barrio Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('barrio', 'Barrio:') !!}
-    {!! Form::text('barrio', null, ['class' => 'form-control']) !!}
+   {!! Form::select('barrio',array('Sin eleccion' => 'Sin eleccion','Encarnacion' => 'Encarnacion', 'Mboi_Ka_e' => 'Mboi_Ka_e','San_Isidro' => 'San_Isidro','Sagrada_Familia' => 'Sagrada_Familia','Ciudad_Nueva' => 'Ciudad_Nueva','Chaipe' => 'Chaipe','Cambyreta' => 'Cambyreta','Santa_Maria' => 'Santa_Maria','Ita_Paso' => 'Ita_Paso','Buena_Vista' => 'Buena_Vista','Fatima' => 'Fatima'),null, ['class' => 'form-control' ])!!}
 </div>
 
 <!-- Telefono Field -->
