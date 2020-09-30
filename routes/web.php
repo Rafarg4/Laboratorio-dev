@@ -41,5 +41,7 @@ Route::get('listafallecidos', 'HistorialFallecidoController@listaFallecidos')->m
 
 Route::get('home', 'HistorialFallecidoController@dashmuerto')->middleware('auth');
 
+Route::get('backups', 'BackupController@index')->middleware('auth');
+
 
 

@@ -18,7 +18,7 @@
    <!-- Card content -->
    <div class="card-body">
     <!-- Title -->
-       <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Grafico de los casos por año segun el Barrio.</strong> </h4>
+       <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Grafico de los casos segun el barrio.</strong> </h4>
        </div>
      </div>
      <div class="card">
@@ -52,7 +52,7 @@
                       text: 'Barrios mas afectados.'
                   },
                   subtitle: {
-                      text: 'Listado de casos por barrios por año.'
+                      text: 'Listado de casos por distrito.'
                   },
                   xAxis: {
                       categories: ['Barrios'],
@@ -121,7 +121,73 @@
     </div>
        
       </div>   
-        <div class="card">
+        
+      <div class="card">
+         <div class="card-body">
+            <h4 class="card-title"><a><i class="cil-calendar fa-2x"></i>  <strong>Grafico de estados de casos.</strong> </h4>
+            </div>
+          </div>
+           <div class="card">
+             <!-- Card content -->
+                 <div class="card-body">
+                      <div class="container">
+                          <div id="containerss"></div>
+                           </div>
+                             <script type="text/javascript">
+                          var muertos =  <?php echo json_encode($muertos) ?>;
+                          var infectados =  <?php echo json_encode($infectados) ?>;
+                          var recuperados =  <?php echo json_encode($recuperados) ?>;
+                         Highcharts.chart('containerss', {
+
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Cantidades totales de Recuperados, Infectados, Muertos'
+    },
+    subtitle: {
+        text: 'Mas detalles'
+    },
+    xAxis: {
+        categories: [
+            'Recuperados',
+            'Infectados',
+            'Fallecidos'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Cantidades'
+        }
+    },
+     
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Recuperados',
+        data: recuperados,
+
+    }, {
+        name: 'Fallecidos',
+        data: muertos,
+
+    }, {
+        name: 'infectados',
+        data: infectados,
+
+    }]
+});
+              
+      </script>
+</div>
+</div>
+<div class="card">
          <div class="card-body">
             <h4 class="card-title"><a><i class="cil-wc fa-2x"></i>   <strong>Grafico de los casos segun el genero.</strong> </h4>
             </div>
@@ -163,7 +229,7 @@
                       }
                   },
                   tooltip: {
-                      valueSuffix: 'total'
+                      valueSuffix: ' total'
                   },
                   plotOptions: {
                       bar: {
@@ -204,69 +270,5 @@
 </script>
   </div>
     </div>    
-      <div class="card">
-         <div class="card-body">
-            <h4 class="card-title"><a><i class="cil-calendar fa-2x"></i>  <strong>Grafico de casos Anuales.</strong> </h4>
-            </div>
-          </div>
-           <div class="card">
-             <!-- Card content -->
-                 <div class="card-body">
-                      <div class="container">
-                          <div id="containerss"></div>
-                           </div>
-                             <script type="text/javascript">
-                          var muertos =  <?php echo json_encode($muertos) ?>;
-                          var infectados =  <?php echo json_encode($infectados) ?>;
-                          var recuperados =  <?php echo json_encode($recuperados) ?>;
-                         Highcharts.chart('containerss', {
-
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: 'Cantidades totales de Recuperados, Infectados, Muertos'
-    },
-    subtitle: {
-        text: 'Mas detalles'
-    },
-    xAxis: {
-        categories: [
-            'Recuperados',
-            'Infectados',
-            'Muertos'
-        ],
-        crosshair: true
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Cantidades'
-        }
-    },
-     
-    plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-        }
-    },
-    series: [{
-        name: 'Recuperados',
-        data: recuperados,
-
-    }, {
-        name: 'Muertos',
-        data: muertos,
-
-    }, {
-        name: 'infectados',
-        data: infectados,
-
-    }]
-});
-              
-      </script>
-</div>
 </br>
 @endsection

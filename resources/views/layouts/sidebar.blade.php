@@ -11,7 +11,7 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-bag"></i> Carga de Datos</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=1" class="nav-item">
-                                <a class="nav-link" href="#"><i class="icon-bag"></i> Posibles Casos </a>
+                                <a class="nav-link" href="#"><i class="icon-bag"></i> Casos Positivos </a>
                             </li>
                             <li @click="menu=2" class="nav-item">
                                 <a class="nav-link" href="{{ route('tipoPruebas.index') }}"><i class="cil-eyedropper"></i> Tipo de Prueba</a>
@@ -69,10 +69,13 @@
                                 <a class="nav-link" href="#"><i class="icon-chart"></i> Reporte Usuario</a>
                             </li>
                             <li @click="menu=10" class="nav-item">
+                                <a class="nav-link" href=""><i class="cil-browser"></i> Reporte Laboratorio</a>
+                            </li>
+                            <li @click="menu=10" class="nav-item">
                                 <a class="nav-link" href="{{ action('GraficoController@grafico') }}"><i class="cil-chart-line"></i> Reporte Graficos</a>
                             </li>
                             <li @click="menu=10" class="nav-item">
-                                <a class="nav-link" href="{{ action('MapaController@mapa') }}"><i class="cil-map"></i> Mapa de Pacientes</a>
+                                <a class="nav-link" href="{{ action('MapaController@mapa') }}"><i class="cil-map"></i> Mapa por distrito</a>
                             </li>
                         </ul>
                     </li>
@@ -88,7 +91,7 @@
                         <a class="nav-link" href="#"><i class="cil-notes"></i> Manual <span class="badge badge-danger">PDF</span></a>
                     </li>
                     <li @click="menu=12" class="nav-item">
-                        <a class="nav-link" href="#"><i class="cil-shield-alt"></i> Backup<span class="badge badge-info">BKP</span></a>
+                        <a class="nav-link" href="{{ action('BackupController@index') }}"><i class="cil-shield-alt"></i> Backup<span class="badge badge-info">SQL</span></a>
                     </li>
                 </ul>
             </nav>
