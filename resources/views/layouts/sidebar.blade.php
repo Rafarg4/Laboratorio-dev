@@ -68,8 +68,8 @@
                             <li @click="menu=9" class="nav-item">
                                 <a class="nav-link" href="#"><i class="icon-chart"></i> Reporte Usuario</a>
                             </li>
-                            <li @click="menu=10" class="nav-item">
-                                <a class="nav-link" href=""><i class="cil-browser"></i> Reporte Laboratorio</a>
+                           <li @click="menu=9" class="nav-item">
+                                <a class="nav-link" href="#"><i class="cil-browser"></i> Reporte Laboratorio</a>
                             </li>
                             <li @click="menu=10" class="nav-item">
                                 <a class="nav-link" href="{{ action('GraficoController@grafico') }}"><i class="cil-chart-line"></i> Reporte Graficos</a>

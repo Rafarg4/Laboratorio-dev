@@ -1,10 +1,7 @@
 @extends('layouts.app')
 <link rel="icon" type="image/png" href="/laboratorio.png" />
 @section('content')
-
-            <ol class="breadcrumb">
-            <li class="breadcrumb-item"><strong>Historial de Pacientes Inactivos</strong></li>
-            </ol>
+  <br>
                  <div class="container-fluid">
                      <div class="animated fadeIn">
                                  @include('flash::message')
@@ -57,6 +54,7 @@
                 <div class="pull-right mr-3">                       
             </div>
         </div>
+          </br>
     </div>
 </div>
 </div>

@@ -37,9 +37,9 @@
                      <div class='btn-group'>
                         <a href="{{ route('pacientes.edit', [$paciente->id]) }}" class='btn btn-ghost-warning btn-sm'><i class="fa fa-edit"></i></a>
                     </div>
-                     <div class='btn-group'>
+                    <!-- <div class='btn-group'>
                         {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'button type="button" class' => 'btn btn-danger btn-rounded btn-sm', 'onclick' => "return confirm('Estas Seguro?')"]) !!}
-                    </div>
+                    </div>-->
                 </div>
                     {!! Form::close() !!}
                 </td>

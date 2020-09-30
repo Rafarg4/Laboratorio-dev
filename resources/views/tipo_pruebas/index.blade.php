@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <ol class="breadcrumb">
+    <!--<ol class="breadcrumb">
         <li class="breadcrumb-item"><strong>Tipo Pruebas</strong></li>
-    </ol>
+    </ol>-->
+      <br>
     <div class="container-fluid">
         <div class="animated fadeIn">
              @include('flash::message')
@@ -23,6 +24,7 @@
                          </div>
                      </div>
                   </div>
+                    </br>
              </div>
          </div>
     </div>
