@@ -31,13 +31,9 @@
                 <td>
                     {!! Form::open(['route' => ['controls.destroy', $control->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('controls.show', [$control->id]) }}" class='btn btn-ghost-info btn-sm'><i class="fa fa-eye"></i></a>
-                    </div>
-                    <div class='btn-group'>
-                        <a href="{{ route('controls.edit', [$control->id]) }}" class='btn btn-ghost-warning btn-sm'><i class="fa fa-edit"></i></a>
-                    </div>
-                    <div class='btn-group'>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-rounded btn-sm', 'onclick' => "return confirm('Estas seguro?')"]) !!}
+                        <a href="{{ route('controls.show', [$control->id]) }}" class='btn-floating btn-sm'><i class="fas fa-eye"></i></a>
+                        <a href="{{ route('controls.edit', [$control->id]) }}" class='btn-floating btn-sm'><i class="fas fa-edit"></i></a>
+                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn-floating btn-sm btn-danger', 'onclick' => "return confirm('Estas seguro?')"]) !!}
                     </div>
 
                     {!! Form::close() !!}

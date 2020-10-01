@@ -32,14 +32,10 @@
                 <td>
                     {!! Form::open(['route' => ['pacientes.destroy', $paciente->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('pacientes.show', [$paciente->id]) }}" class='btn btn-ghost-info btn-sm'><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('pacientes.show', [$paciente->id]) }}" class="btn-floating btn-sm "><i class="fas fa-eye"></i></a>
+                        <a href="{{ route('pacientes.edit', [$paciente->id]) }}" class='btn- btn-sm'><i class="fas fa-edit"></i></a>
+                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'button type="button" class' => 'btn-floating btn-sm btn-danger', 'onclick' => "return confirm('Estas Seguro?')"]) !!}
                     </div>
-                     <div class='btn-group'>
-                        <a href="{{ route('pacientes.edit', [$paciente->id]) }}" class='btn btn-ghost-warning btn-sm'><i class="fa fa-edit"></i></a>
-                    </div>
-                    <!-- <div class='btn-group'>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'button type="button" class' => 'btn btn-danger btn-rounded btn-sm', 'onclick' => "return confirm('Estas Seguro?')"]) !!}
-                    </div>-->
                 </div>
                     {!! Form::close() !!}
                 </td>
