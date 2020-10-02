@@ -35,13 +35,15 @@ Route::resource('laboratorios', 'LaboratorioController')->middleware('auth');
 
 Route::resource('controls', 'ControlController')->middleware('auth');
 
-Route::get('historial', 'HistorialController@lista')->middleware('auth');
+Route::get('historial_recuperados', 'HistorialRecuperadoController@lista')->middleware('auth');
 
 Route::get('listafallecidos', 'HistorialFallecidoController@listaFallecidos')->middleware('auth');
 
+Route::get('historial_activos', 'HistorialActivoController@activo')->middleware('auth');
+
 Route::get('home', 'HistorialFallecidoController@dashmuerto')->middleware('auth');
 
-Route::get('backups', 'BackupController@index')->middleware('auth');
+
 
 
 

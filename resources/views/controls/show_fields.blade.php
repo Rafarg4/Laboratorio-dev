@@ -15,7 +15,20 @@
 <!-- Estado Paciente Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('estado_paciente', 'Estado Paciente:') !!}
-    <p>{{ $control->estado_paciente }}</p>
+    <p>@switch(true)
+            @case($control->estado_paciente == 'Inactivo')
+            <span class="badge badge-primary"> {{ $control->estado_paciente }} </span>
+            @break
+            @case($control->estado_paciente == 'Activo')
+            <span class="badge badge-warning"> {{ $control->estado_paciente }} </span>
+            @break
+            @case($control->estado_paciente == 'Fallecido' )
+            <span class="badge badge-danger"> {{ $control->estado_paciente }} </span>
+            @break
+            @case($control->estado_paciente == 'Sin eleccion' )
+            <span class="badge badge-dark"> {{ $control->estado_paciente }} </span>
+            @break
+            @endswitch</p>
 </div>
 
 <!-- Recomendacion Field -->

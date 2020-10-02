@@ -30,10 +30,13 @@
                         </ul>
                     </li>
                      <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-layers"></i> Historial</a>
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-layers"></i> Historial de casos</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=5" class="nav-item">
-                                <a class="nav-link" href="{{ action('HistorialController@lista') }}"><i class="cil-eyedropper"></i> Recuperados</a>
+                                <a class="nav-link" href="{{ action('HistorialRecuperadoController@lista') }}"><i class="cil-eyedropper"></i> Recuperados</a>
+                            </li>
+                            <li @click="menu=5" class="nav-item">
+                                <a class="nav-link" href="{{ action('HistorialActivoController@activo') }}"><i class="cil-bed"></i> Activos</a>
                             </li>
                             <li @click="menu=5" class="nav-item">
                                 <a class="nav-link" href="{{ action('HistorialFallecidoController@listaFallecidos') }}"><i class="cil-user-unfollow"></i> Fallecidos</a>
@@ -57,9 +60,6 @@
                             <li @click="menu=8" class="nav-item">
                                 <a class="nav-link" href="{{ action('HomeController@usuario') }}"><i class="icon-user-following"></i> Mi Perfil</a>
                             </li>
-                            <li @click="menu=8" class="nav-item">
-                                <a class="nav-link" href="#"><i class="cil-people"></i> Roles</a>
-                            </li>
                         </ul>
                     </li>
                     <li class="nav-item nav-dropdown">
@@ -79,19 +79,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fab fa-audible"></i> Auditoria</a>
-                        <ul class="nav-dropdown-items">
-                            <li @click="menu=6" class="nav-item">
-                                <a class="nav-link" href="#"><i class="cil-book"></i> Auditoria Interna</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li @click="menu=11" class="nav-item">
                         <a class="nav-link" href="#"><i class="cil-notes"></i> Manual <span class="badge badge-danger">PDF</span></a>
-                    </li>
-                    <li @click="menu=12" class="nav-item">
-                        <a class="nav-link" href="{{ action('BackupController@index') }}"><i class="cil-shield-alt"></i> Backup<span class="badge badge-info">SQL</span></a>
                     </li>
                 </ul>
             </nav>

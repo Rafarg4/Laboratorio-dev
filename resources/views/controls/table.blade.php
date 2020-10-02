@@ -25,6 +25,9 @@
             @case($control->estado_paciente == 'Fallecido' )
             <span class="badge badge-danger"> {{ $control->estado_paciente }} </span>
             @break
+            @case($control->estado_paciente == 'Sin eleccion' )
+            <span class="badge badge-dark"> {{ $control->estado_paciente }} </span>
+            @break
             @endswitch</td>
             <td>{{ $control->recomendacion }}</td>
             <td>{{ $control->fecha_alta }}</td>
