@@ -47,3 +47,6 @@ Route::get('home', 'HistorialFallecidoController@dashmuerto')->middleware('auth'
 
 
 
+
+
+Route::resource('casoPositivos', 'Caso_positivoController');

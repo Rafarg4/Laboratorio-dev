@@ -11,7 +11,7 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-bag"></i> Carga de Datos</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=1" class="nav-item">
-                                <a class="nav-link" href="#"><i class="icon-bag"></i> Casos Positivos </a>
+                                <a class="nav-link" href="{{ route('casoPositivos.index') }}"><i class="icon-bag"></i> Casos Positivos </a>
                             </li>
                             <li @click="menu=2" class="nav-item">
                                 <a class="nav-link" href="{{ route('tipoPruebas.index') }}"><i class="cil-eyedropper"></i> Tipo de Prueba</a>

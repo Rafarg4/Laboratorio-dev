@@ -38,3 +38,9 @@
         <span>Controls</span>
     </a>
 </li>
+<li class="nav-item {{ Request::is('casoPositivos*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('casoPositivos.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Caso Positivos</span>
+    </a>
+</li>
