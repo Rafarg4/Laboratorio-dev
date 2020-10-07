@@ -42,7 +42,9 @@ class Paciente extends Model
         'grupo_sanguineo',
         'enfermedad_referencial',
         'latitud', 
-        'longitud'
+        'longitud',
+        'email',
+        'resultado'
     ];
 
     /**
@@ -62,7 +64,9 @@ class Paciente extends Model
         'grupo_sanguineo' => 'string',
         'enfermedad_referencial' => 'string',
         'latitud' => 'string',
-        'longitud' => 'string'
+        'longitud' => 'string',
+        'email' => 'string',
+        'resultado' => 'string'
     ];
 
     /**
@@ -81,7 +85,9 @@ class Paciente extends Model
         'grupo_sanguineo' => 'required',
         'enfermedad_referencial' => 'required',
         'latitud' => 'required',
-        'longitud' => 'required'
+        'longitud' => 'required',
+        'email' => 'required',
+        'resultado' => 'required'
     ];
 
     

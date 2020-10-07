@@ -1,12 +1,12 @@
 <!-- Paciente Id Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('paciente_id', 'Nombre Paciente:') !!}
-    {!! Form::select('paciente_id', $pacientes,null,['class' => 'form-control']) !!}
+    {!! Form::select('paciente_id', $pacientes,null,['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
 <!-- Estado Paciente Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('estado_paciente', 'Estado Paciente:') !!}
-    {!! Form::select('estado_paciente',array('Sin eleccion' => 'Sin eleccion','Activo' => 'Activo', 'Inactivo' => 'Inactivo','Fallecido' => 'Fallecido'),null, ['class' => 'form-control' ])!!}
+    {!! Form::select('estado_paciente',array('Sin eleccion' => 'Sin eleccion','Activo' => 'Activo', 'Inactivo' => 'Inactivo','Fallecido' => 'Fallecido'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
 
 <!-- Fecha Analisis Field -->

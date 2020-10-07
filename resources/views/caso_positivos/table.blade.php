@@ -5,11 +5,11 @@ $('#dtHorizontalExample').DataTable({
 });
 $('.dataTables_length').addClass('bs-select');
 });</script>
-    <table class="table table-striped table-bordered table-sm" id="dtHorizontalExample" cellspacing="0"
+    <table class="table table-bordered" id="dtHorizontalExample" cellspacing="0"
   width="100%">
         <thead>
             <tr>
-                <th>Codigo Region</th>
+        <th>Codigo Region</th>
         <th>Region</th>
         <th>Codigo Distrito</th>
         <th>Distrito</th>
@@ -147,7 +147,7 @@ $('.dataTables_length').addClass('bs-select');
         <th>Paciente Id</th>
         <th>Prueba Id</th>
         <th>Laboratorio Id</th>
-                <th>Action</th>
+                <th><center> <i class="fas fa-user-edit fa-2x"></i></center></th>
             </tr>
         </thead>
         <tbody>
@@ -292,11 +292,12 @@ $('.dataTables_length').addClass('bs-select');
             <td>{{ $casoPositivo->prueba_id }}</td>
             <td>{{ $casoPositivo->laboratorio_id }}</td>
                 <td>
-                    {!! Form::open(['route' => ['casoPositivos.destroy', $casoPositivo->id], 'method' => 'delete']) !!}
+                     {!! Form::open(['route' => ['casoPositivos.destroy', $casoPositivo->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('casoPositivos.show', [$casoPositivo->id]) }}" class='btn btn-ghost-success'><i class="fa fa-eye"></i></a>
-                        <a href="{{ route('casoPositivos.edit', [$casoPositivo->id]) }}" class='btn btn-ghost-info'><i class="fa fa-edit"></i></a>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-ghost-danger', 'onclick' => "return confirm('Estas seguro?')"]) !!}
+                        <a href="{{ route('casoPositivos.show', [$casoPositivo->id]) }}" class='btn-floating btn-sm'><i class="cil-low-vision"></i></a>
+                        <a href="{{ route('casoPositivos.edit', [$casoPositivo->id]) }}" class='btn-floating btn-sm'><i class="cil-color-border"></i></a>
+                        {!! Form::button('<i class="cil-trash"></i>', ['type' => 'submit', ' button type="button" class' => 'btn-floating btn-sm btn-danger', 'onclick' => "return confirm('Estas seguro?')"]) !!}
+                    {!! Form::open(['route' => ['casoPositivos.destroy', $casoPositivo->id], 'method' => 'delete']) !!}
                     </div>
                     {!! Form::close() !!}
                 </td>

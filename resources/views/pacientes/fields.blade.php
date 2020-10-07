@@ -7,7 +7,7 @@
 <!-- Genero Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('genero', 'Genero:') !!}
-   {!! Form::select('genero',array('Sin eleccion' => 'Sin eleccion','Masculino' => 'Masculino', 'Femenino' => 'Femenino','Otro' => 'Otro'),null, ['class' => 'form-control' ])!!}
+   {!! Form::select('genero',array('Sin eleccion' => 'Sin eleccion','Masculino' => 'Masculino', 'Femenino' => 'Femenino','Otro' => 'Otro'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
 <!-- Fechanac Field -->
 <div class="form-group col-sm-6 pull-left">
@@ -50,7 +50,7 @@
 <!-- Barrio Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('barrio', 'Barrio:') !!}
-   {!! Form::select('barrio',array('Sin eleccion' => 'Sin eleccion','Encarnacion' => 'Encarnacion', 'Mboi_Ka_e' => 'Mboi_Ka_e','San_Isidro' => 'San_Isidro','Sagrada_Familia' => 'Sagrada_Familia','Ciudad_Nueva' => 'Ciudad_Nueva','Chaipe' => 'Chaipe','Cambyreta' => 'Cambyreta','Santa_Maria' => 'Santa_Maria','Ita_Paso' => 'Ita_Paso','Buena_Vista' => 'Buena_Vista','Fatima' => 'Fatima'),null, ['class' => 'form-control' ])!!}
+   {!! Form::select('barrio',array('Sin eleccion' => 'Sin eleccion','Encarnacion' => 'Encarnacion', 'Mboi_Ka_e' => 'Mboi_Ka_e','San_Isidro' => 'San_Isidro','Sagrada_Familia' => 'Sagrada_Familia','Ciudad_Nueva' => 'Ciudad_Nueva','Chaipe' => 'Chaipe','Cambyreta' => 'Cambyreta','Santa_Maria' => 'Santa_Maria','Ita_Paso' => 'Ita_Paso','Buena_Vista' => 'Buena_Vista','Fatima' => 'Fatima'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
 
 <!-- Telefono Field -->
@@ -58,17 +58,25 @@
     {!! Form::label('telefono', 'Telefono:') !!}
     {!! Form::number('telefono', null, ['class' => 'form-control']) !!}
 </div>
-
+<div class="form-group col-sm-6 pull-left">
+    {!! Form::label('email', 'Email:') !!}
+    {!! Form::email('email', null, ['class' => 'form-control']) !!}
+</div>
 <!-- Grupo Sanguineo Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('grupo_sanguineo', 'Grupo Sanguineo:') !!}
-   {!! Form::select('grupo_sanguineo',array('Sin eleccion' => 'Sin eleccion','A+' => 'A+', 'A-' => 'A-','B+' => 'B+','B-' => 'B-','AB+' => 'AB+','AB-' => 'AB-','O+' => 'O+','O-' => 'O-'),null, ['class' => 'form-control' ])!!}
+   {!! Form::select('grupo_sanguineo',array('Sin eleccion' => 'Sin eleccion','A+' => 'A+', 'A-' => 'A-','B+' => 'B+','B-' => 'B-','AB+' => 'AB+','AB-' => 'AB-','O+' => 'O+','O-' => 'O-'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
+</div>
+<div class="form-group col-sm-6 pull-left">
+    {!! Form::label('resultado', 'Resultado:') !!}
+    {!! Form::select('resultado',array('Sin eleccion' => 'Sin eleccion','Positivo' => 'Positivo', 'Negativo' => 'Negativo','Otro' => 'Otro'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
 <!-- Enfermedad Referencial Field -->
 <div class="form-group col-sm-12 pull-left">
     {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}
     {!! Form::textarea('enfermedad_referencial', null, ['class' => 'form-control']) !!}
 </div>
+
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('latitud', 'Latitud:') !!}
     {!! Form::text('latitud', null, ['class' => 'form-control']) !!}

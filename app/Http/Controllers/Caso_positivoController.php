@@ -45,7 +45,7 @@ class Caso_positivoController extends AppBaseController
      */
     public function create()
     {
-       $pacientes = Paciente::pluck('apellido','id');
+       $pacientes = Paciente::pluck('nombre_apellido','id');
        $laboratorios =Laboratorio::pluck('nombre_laboratorio', 'id');
        $pruebas =Tipo_prueba::pluck('nombre', 'id');
        return view ('caso_positivos.create',compact('pacientes','pruebas','laboratorios'));

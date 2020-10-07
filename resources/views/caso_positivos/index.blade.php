@@ -1,9 +1,8 @@
 @extends('layouts.app')
-
+<link rel="icon" type="image/png" href="/laboratorio.png" />
 @section('content')
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">Caso Positivos</li>
-    </ol>
+
+    <br>
     <div class="container-fluid">
         <div class="animated fadeIn">
              @include('flash::message')
@@ -12,7 +11,7 @@
                      <div class="card">
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
-                             Caso_positivos
+                             Casos Positivos
                              <a class="pull-right" href="{{ route('casoPositivos.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
                          </div>
                          <div class="card-body">

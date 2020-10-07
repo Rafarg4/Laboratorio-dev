@@ -12,7 +12,7 @@
             <div class="card">
              <div class="card-body">
 
-          <h4 class="card-title"><a><i class="cil-map fa-2x"></i> <strong>Ubicacion de pacientes activos</strong> </h4>
+          <h4 class="card-title"><a><i class="cil-map fa-2x"></i> <strong>Ubicacion de pacientes por distrito</strong> </h4>
           </div>
         </div>
         

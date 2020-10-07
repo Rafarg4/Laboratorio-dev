@@ -41,6 +41,11 @@
     {!! Form::label('telefono', 'Telefono:') !!}
     <p>{{ $paciente->telefono }}</p>
 </div>
+<!-- Email field -->
+<div class="form-group col-md-6 pull-left">
+    {!! Form::label('email', 'Email:') !!}
+    <p>{{ $paciente->email }}</p>
+</div>
 
 <!-- Grupo Sanguineo Field -->
 <div class="form-group col-md-6 pull-left">
@@ -52,6 +57,23 @@
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}
     <p>{{ $paciente->enfermedad_referencial }}</p>
+</div>
+<div class="form-group col-md-6 pull-left">
+    {!! Form::label('resultado', 'Estado Paciente:') !!}
+    <p>@switch(true)
+           @case($paciente->resultado == 'Negativo')
+            <span class="badge badge-primary"> {{ $paciente->resultado }} </span>
+            @break
+            @case($paciente->resultado == 'Positivo')
+            <span class="badge badge-danger"> {{ $paciente->resultado }} </span>
+            @break
+            @case($paciente->resultado == 'Otro' )
+            <span class="badge badge-info"> {{ $paciente->resultado }} </span>
+            @break
+            @case($paciente->resultado == 'Sin eleccion' )
+            <span class="badge badge-dark"> {{ $paciente->resultado }} </span>
+            @break
+            @endswitch</td>
 </div>
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('latitud', 'Latitud:') !!}

@@ -27,6 +27,8 @@ class CreatePacientesTable extends Migration
             $table->text('enfermedad_referencial');
             $table->text('latitud');
             $table->text('longitud');
+            $table->text('email');
+            $table->text('resultado');
             $table->timestamps();
             $table->softDeletes();
         });

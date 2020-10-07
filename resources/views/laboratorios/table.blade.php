@@ -21,9 +21,9 @@
                 <td>
                     {!! Form::open(['route' => ['laboratorios.destroy', $laboratorio->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('laboratorios.show', [$laboratorio->id]) }}" class='btn-floating btn-sm'><i class="fas fa-eye"></i></a>
-                        <a href="{{ route('laboratorios.edit', [$laboratorio->id]) }}" class='btn-floating btn-sm'><i class="fas fa-edit"></i></a>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn-floating btn-sm btn-danger', 'onclick' => "return confirm('Estas Seguro?')"]) !!}
+                        <a href="{{ route('laboratorios.show', [$laboratorio->id]) }}" class='btn-floating btn-sm'><i class="cil-low-vision"></i></a>
+                        <a href="{{ route('laboratorios.edit', [$laboratorio->id]) }}" class='btn-floating btn-sm'><i class="cil-color-border"></i></a>
+                        {!! Form::button('<i class="cil-trash"></i>', ['type' => 'submit', 'class' => 'btn-floating btn-sm btn-danger', 'onclick' => "return confirm('Estas Seguro?')"]) !!}
                     </div>
                 </div>
                     {!! Form::close() !!}

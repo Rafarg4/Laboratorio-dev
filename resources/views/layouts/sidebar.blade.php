@@ -51,6 +51,17 @@
                             </li>
                         </ul>
                     </li>
+                     <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-globe-alt"></i> Mapa de estados</a>
+                        <ul class="nav-dropdown-items">
+                            <li @click="menu=9" class="nav-item">
+                                <a class="nav-link" href="{{ action('MapaPacienteController@index') }}"><i class="cil-location-pin"></i> Mapa Paciente</a>
+                            </li>
+                            <li @click="menu=10" class="nav-item">
+                                <a class="nav-link" href="{{ action('MapaController@mapa') }}"><i class="cil-map"></i> Mapa por distrito</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item nav-dropdown">
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-people"></i> Acceso</a>
                         <ul class="nav-dropdown-items">
@@ -73,9 +84,6 @@
                             </li>
                             <li @click="menu=10" class="nav-item">
                                 <a class="nav-link" href="{{ action('GraficoController@grafico') }}"><i class="cil-chart-line"></i> Reporte Graficos</a>
-                            </li>
-                            <li @click="menu=10" class="nav-item">
-                                <a class="nav-link" href="{{ action('MapaController@mapa') }}"><i class="cil-map"></i> Mapa por distrito</a>
                             </li>
                         </ul>
                     </li>

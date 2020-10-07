@@ -40,7 +40,7 @@
      <script>
      $(document).ready(function() {
         $('#data-table').DataTable( {
-            "pageLength":10,
+            "pageLength":8,
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
             },
