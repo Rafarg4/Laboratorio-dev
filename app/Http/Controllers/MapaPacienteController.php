@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 class MapaPacienteController extends Controller
 {
     public function index()
-    {
-         $mapap= Paciente::all();
+    { 
+    	$mapap= Paciente::where('resultado', '=', 'Positivo')->get();
+         //$mapap= Paciente::all();
         return view('mapa_pacientes',compact(
             'mapap'));
     }

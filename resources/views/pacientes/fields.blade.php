@@ -1,4 +1,3 @@
-
 <!-- Nombre Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
@@ -85,8 +84,12 @@
     {!! Form::label('longitud', 'Longitud:') !!}
     {!! Form::text('longitud', null, ['class' => 'form-control']) !!}
 </div>
-<div class="form-group col-sm-12 pull-left">
+<div class="form-group col-sm-13 pull-left">
+  <div class="card">
+             <div class="card-body">    
   <div id="mapid"></div>
+</div>
+</div>
 </div>
 <!-- Submit Field -->
 <div class="form-group col-sm-12 pull-left">
@@ -94,7 +97,7 @@
     <a href="{{ route('pacientes.index') }}" class="btn btn-secondary">Cancelar</a>
 </div>
 <style>
-             #mapid { height: 600px; width:1300px; }
+             #mapid { height: 600px; width:1355px; }
            </style>
            
           <script>
@@ -120,4 +123,16 @@
         };
     
         map.on('mouseover', onMapClick);
+    </script>
+     <style type="text/css">
+        .select2-container--default .select2-selection--single {
+            height: calc(1.5em + .80rem + 2px) !important;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#select").select2();
+        });
     </script>

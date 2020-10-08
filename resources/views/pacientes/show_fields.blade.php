@@ -94,13 +94,17 @@
     {!! Form::label('updated_at', 'Actualizado:') !!}
     <p>{{ $paciente->updated_at }}</p>
 </div>
-   <div class="form-group col-sm-12 pull-left">
+   <div class="form-group col-sm-13 pull-left">
+  <div class="card">
+             <div class="card-body">
     <div id="mapid"></div>
+</div>
+</div>
 </div>
 </li>
 </ul>
     <style type="text/css">
-                   #mapid { height: 600px; width:1300px; }
+                   #mapid { height: 600px; width:1310px; }
            </style>
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" type="text/css">

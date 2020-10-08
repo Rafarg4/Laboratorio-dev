@@ -7,12 +7,12 @@
              #mapid { height: 680px; }
         </style>
          <br>
-         
-           <div class="col-sm-12 col-sm-2">     
+          <div class="container col-sm-11">
+           <div class="col-sm-12 col-sm-2">   
             <div class="card">
              <div class="card-body">
 
-          <h4 class="card-title"><a><i class="cil-map fa-2x"></i> <strong>Ubicacion de pacientes activos</strong> </h4>
+          <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Ubicacion de pacientes activos</strong> </h4>
           </div>
         </div>
         
@@ -25,6 +25,7 @@
         </div>
         </div>
       </div>
+    </div>
        <script>
              var map = L.map('mapid').setView([-27.33056,  -55.86667], 12);
            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
