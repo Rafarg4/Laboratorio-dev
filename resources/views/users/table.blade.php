@@ -4,6 +4,8 @@
             <tr>
                 <th>Nombre y Apellido </th>
                 <th>Email</th>
+                <th>Creado</th>
+                <th>Actualizado</th>
        
                 <th><center> <i class="fas fa-user-edit fa-2x"></i></center></th>
             </tr>
@@ -13,6 +15,8 @@
             <tr>
                 <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
+               <td>{{ $user->created_at }}</td>
+                  <td>{{ $user->updated_at }}</td>
             
                 <td>
                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}

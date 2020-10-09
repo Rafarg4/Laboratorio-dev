@@ -31,9 +31,12 @@
              var map = L.map('mapid').setView([-27.33056,  -55.86667], 12);
              var grayscale = L.tileLayer( 'http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}')
              var streets = L.tileLayer('http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}')
+             //Barrios este no tocar
+             var fallecidos = L.tileLayer('http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}')
              var baseMaps = {
-                "Grayscale": grayscale,
-                "Streets": streets
+                "Activos": grayscale,
+                "Inactivos": streets,
+                "Fallecidos":fallecidos
             };
             L.control.layers(baseMaps).addTo(map);
            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

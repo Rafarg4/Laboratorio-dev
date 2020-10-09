@@ -28,6 +28,7 @@
                                     <th>Comorbilidad</th>
                                      <th>Fecha de Analisis</th>
                                     <th>Fecha de Alta</th>
+                                     <th><center> <i class="fas fa-user-edit fa-2x"></i></center></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -44,6 +45,10 @@
                                         <td>{{ $fallecidos->fecha_alta }}</td>  
                                         </div>
                                     </div>
+                                    <td>
+                                       {!! Form::open() !!}
+                                     <div class='btn-group'>
+                                      <a href="" class="btn-floating btn-sm "><i class="cil-clipboard fa-2x"></i></a>
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>

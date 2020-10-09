@@ -48,3 +48,10 @@ Route::resource('casoPositivos', 'Caso_positivoController')->middleware('auth');
 Route::get('mapa_pacientes', 'MapaPacienteController@index')->middleware('auth');
 
 Route::get('detalle_activos/{id}', ['as' => 'detalle_activos', 'uses' => 'HistorialRecuperadoController@detalles']);
+
+Route::get('detalle_inactivos/{id}', ['as' => 'detalle_inactivos', 'uses' => 'HistorialRecuperadoController@detalle_inactivo']);
+
+
+
+
+

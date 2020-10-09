@@ -27,7 +27,7 @@
       <script type="text/javascript">
             var map = L.map('mapid').setView([-27.33056,  -55.86667], 12);
 
-          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          L.tileLayer('http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}.png', {
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }).addTo(map);
            @foreach($encarnacion as $encarnacion)

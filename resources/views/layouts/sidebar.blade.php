@@ -33,7 +33,7 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-layers"></i> Historial de casos</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=5" class="nav-item">
-                                <a class="nav-link" href="{{ action('HistorialRecuperadoController@lista') }}"><i class="cil-eyedropper"></i> Recuperados</a>
+                                <a class="nav-link" href="{{ action('HistorialRecuperadoController@lista') }}"><i class="cil-eyedropper"></i> Inactivos</a>
                             </li>
                             <li @click="menu=5" class="nav-item">
                                 <a class="nav-link" href="{{ action('HistorialActivoController@activo') }}"><i class="cil-bed"></i> Activos</a>

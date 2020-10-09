@@ -10,74 +10,73 @@
                                 <div class="card">
                                      <div class="card-header">
                                          <i class="fa fa-align-justify"></i>
-                                       Detalles  de pacientes Activos 
+                                       Detalles de pacientes Inactivos
                                                  
                                         </div>
                                     <div class="card-body">
                                        
                 <ul class="list-group">
 
-
                 <!-- Nombre Field -->
                   <li class="list-group-item">
                  
                 <div class="form-group col-md-6 pull-left">
                     {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
-                    <p>{{ $detalles->nombre_apellido }}</p>
+                    <p>{{ $inactivos->nombre_apellido }}</p>
                 </div>
                 <!-- Genero Field -->
                 <div class="form-group col-md-6 pull-left">
                     {!! Form::label('genero', 'Genero:') !!}
-                    <p>{{ $detalles->genero }}</p>
+                    <p>{{ $inactivos->genero }}</p>
                 </div>
 
                 <!-- Fechanac Field -->
                 <div class="form-group col-md-6 pull-left">
                     {!! Form::label('id', 'Paciente id:') !!}
-                    <p>{{ $detalles->id }}</p>
+                    <p>{{ $inactivos->id }}</p>
                 </div>
 
                 <!-- Edad Field -->
                 <div class="form-group col-md-6 pull-left">
                     {!! Form::label('edad', 'Edad:') !!}
-                    <p>{{ $detalles->edad }}</p>
+                    <p>{{ $inactivos->edad }}</p>
                 </div>
 
                 <!-- Ci Field -->
                 <div class="form-group col-md-6 pull-left">
-                    {!! Form::label('estado_paciente', 'Estado Paciente.:') !!}
-                    <p><span class="badge badge-warning">{{ $detalles->estado_paciente }}</span></p>
+                    {!! Form::label('estado_paciente', 'Estado Paciente:') !!}
+                    <p><span class="badge badge-primary">{{ $inactivos->estado_paciente }}</span></p>
                 </div>
 
                 <!-- Barrio Field -->
                 <div class="form-group col-md-6 pull-left">
                     {!! Form::label('barrio', 'Barrio:') !!}
-                    <p>{{ $detalles->barrio }}</p>
+                    <p>{{ $inactivos->barrio }}</p>
                 </div>
                 <!-- Email field -->
                 <div class="form-group col-md-6 pull-left">
                     {!! Form::label('fecha_alta', 'fecha_alta:') !!}
-                    <p>{{ $detalles->fecha_alta }}</p>
+                    <p>{{ $inactivos->fecha_alta }}</p>
                 </div>
 
                 <!-- Grupo Sanguineo Field -->
                 <div class="form-group col-md-6 pull-left">
                     {!! Form::label('fecha_analisis', 'Fecha de Analisis:') !!}
-                    <p>{{ $detalles->fecha_analisis }}</p>
+                    <p>{{ $inactivos->fecha_analisis }}</p>
                 </div>
 
                 <!-- Enfermedad Referencial Field -->
                 <div class="form-group col-md-6 pull-left">
                     {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}
-                    <p>{{ $detalles->enfermedad_referencial }}</p>
+                    <p>{{ $inactivos->enfermedad_referencial }}</p>
                 </div>
                 <div class="form-group col-md-6 pull-left">
                     {!! Form::label('latitud', 'Latitud:') !!}
-                    <p>{{ $detalles->latitud }}</p>
+                    <p>{{ $inactivos->latitud }}</p>
                 </div>
                 <div class="form-group col-md-6 pull-left">
                     {!! Form::label('longitud', 'Longuitud:') !!}
-                    <p>{{ $detalles->longitud }}</p>
+                    <p>{{ $inactivos->longitud }}</p>
                 </div>
                    <div class="form-group col-sm-13 pull-left">
                   <div class="card">
@@ -87,7 +86,7 @@
                 </div>
 
             </div>
-            <a href="{{ url('historial_activos') }}" class="btn btn-primary">Volver</a>
+             <a href="{{ url('historial_recuperados') }}" class="btn btn-primary">Volver</a>
 
          </div>
 
@@ -100,12 +99,12 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" type="text/css">
             <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
           <script>
-            var map = L.map('mapid').setView([{{$detalles->latitud}} , {{$detalles->longitud}}], 15);
+            var map = L.map('mapid').setView([{{$inactivos->latitud}} , {{$inactivos->longitud}}], 15);
            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }).addTo(map);
-            marker = new L.marker([{{$detalles->latitud}} , {{$detalles->longitud}}]);
-            marker.bindPopup("detalles:{{$detalles->nombre_apellido}}<br>Barrio:{{$detalles->barrio}}</br>");
+            marker = new L.marker([{{$inactivos->latitud}} , {{$inactivos->longitud}}]);
+            marker.bindPopup("Paciente:{{$inactivos->nombre_apellido}}<br>Barrio:{{$inactivos->barrio}}</br>");
             map.addLayer(marker);
             marker.openPopup();
             
