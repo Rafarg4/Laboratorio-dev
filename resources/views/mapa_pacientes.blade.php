@@ -27,9 +27,18 @@
       </div>
     </div>
        <script>
+
              var map = L.map('mapid').setView([-27.33056,  -55.86667], 12);
+             var grayscale = L.tileLayer( 'http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}')
+             var streets = L.tileLayer('http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}')
+             var baseMaps = {
+                "Grayscale": grayscale,
+                "Streets": streets
+            };
+            L.control.layers(baseMaps).addTo(map);
            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+
           }).addTo(map);
            @foreach($mapap as $mapap)
             marker = new L.marker([{{$mapap->latitud}} , {{$mapap->longitud}}]);

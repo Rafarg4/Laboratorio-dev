@@ -15,4 +15,15 @@ class HistorialRecuperadoController extends Controller
         ->get();
         return view('historial_recuperados',compact('historial'));
     } 
+// Consulta de ver detalles de historial
+    public function detalles($id){	
+    $detalles=DB::table('controls')
+        ->join('pacientes','pacientes.id','=', 'controls.paciente_id')
+        ->select('pacientes.nombre_apellido','pacientes.barrio','pacientes.genero', 'pacientes.id','controls.estado_paciente','controls.fecha_alta','pacientes.edad','pacientes.enfermedad_referencial','controls.fecha_analisis','pacientes.longitud','pacientes.latitud')
+        ->where('controls.deleted_at',null)
+        ->where('controls.estado_paciente','Activo')
+        ->where('pacientes.id',$id)
+        ->first();
+        return view('detalle_activos',compact('detalles'));
+    } 
 }
