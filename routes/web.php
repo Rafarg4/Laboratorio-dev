@@ -51,6 +51,7 @@ Route::get('detalle_activos/{id}', ['as' => 'detalle_activos', 'uses' => 'Histor
 
 Route::get('detalle_inactivos/{id}', ['as' => 'detalle_inactivos', 'uses' => 'HistorialRecuperadoController@detalle_inactivo']);
 
+Route::get('detalle_fallecidos/{id}', ['as' => 'detalle_fallecidos', 'uses' => 'HistorialFallecidoController@detalle_fallecido']);
 
 
 

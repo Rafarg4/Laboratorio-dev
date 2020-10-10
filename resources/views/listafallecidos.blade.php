@@ -48,7 +48,7 @@
                                     <td>
                                        {!! Form::open() !!}
                                      <div class='btn-group'>
-                                      <a href="" class="btn-floating btn-sm "><i class="cil-clipboard fa-2x"></i></a>
+                                      <a href="{{ route('detalle_fallecidos', [$fallecidos->id]) }}" class="btn-floating btn-sm "><i class="cil-clipboard fa-2x"></i></a>
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>
