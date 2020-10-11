@@ -95,4 +95,8 @@ class Paciente extends Model
      return $this-> hasMany('App\Models\Control');
 
     }
+     public function caso_positivo (){
+     return $this-> hasMany('App\Models\Caso_positivo');
+
+    }
 }

@@ -49,7 +49,7 @@
                 <td>
                     {!! Form::open(['route' => ['pacientes.destroy', $paciente->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('pacientes.show', [$paciente->id]) }}" class="btn-floating btn-sm "><i class="cil-low-vision"></i></a>
+                        <a href="{{ route('pacientes.show', [$paciente->id]) }}" class="btn-floating btn-sm "><i class="cil-clipboard"></i></a>
                         <a href="{{ route('pacientes.edit', [$paciente->id]) }}" class='btn- btn-sm'><i class="cil-color-border"></i></a>
                         {!! Form::button('<i class="cil-trash"></i>', ['type' => 'submit', 'button type="button" class' => 'btn-floating btn-sm btn-danger', 'onclick' => "return confirm('Estas Seguro?')"]) !!}
                     </div>

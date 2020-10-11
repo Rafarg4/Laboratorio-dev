@@ -14,7 +14,8 @@
                      <div class="col-lg-12">
                          <div class="card">
                              <div class="card-header">
-                                 <strong>Detalles</strong>
+                                <i class="fa fa-align-justify"></i>
+                                 Detalles de Usuario
                                   <a href="{{ route('users.index') }}" class="btn btn-primary">Volver</a>
                              </div>
                              <div class="card-body">

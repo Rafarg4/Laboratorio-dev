@@ -9,8 +9,9 @@
                             <div class="col-lg-12">
                                 <div class="card">
                                      <div class="card-header">
-                                         <i class="fa fa-align-justify"></i>
-                                       Detalles  de pacientes Activos 
+                                        <i class="fa fa-align-justify"></i>
+                                       Detalles de paciente activo 
+                                         <a href="{{ url('historial_activos') }}" class="btn btn-primary">Volver</a>
                                                  
                                         </div>
                                     <div class="card-body">
@@ -21,61 +22,61 @@
                 <!-- Nombre Field -->
                   <li class="list-group-item">
                  
-                <div class="form-group col-md-6 pull-left">
+              <div class="form-group col-md-4 pull-left">
                     {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
                     <p>{{ $detalles->nombre_apellido }}</p>
                 </div>
                 <!-- Genero Field -->
-                <div class="form-group col-md-6 pull-left">
+              <div class="form-group col-md-4 pull-left">
                     {!! Form::label('genero', 'Genero:') !!}
                     <p>{{ $detalles->genero }}</p>
                 </div>
 
                 <!-- Fechanac Field -->
-                <div class="form-group col-md-6 pull-left">
+              <div class="form-group col-md-4 pull-left">
                     {!! Form::label('id', 'Paciente id:') !!}
                     <p>{{ $detalles->id }}</p>
                 </div>
 
                 <!-- Edad Field -->
-                <div class="form-group col-md-6 pull-left">
+              <div class="form-group col-md-4 pull-left">
                     {!! Form::label('edad', 'Edad:') !!}
                     <p>{{ $detalles->edad }}</p>
                 </div>
 
                 <!-- Ci Field -->
-                <div class="form-group col-md-6 pull-left">
+              <div class="form-group col-md-4 pull-left">
                     {!! Form::label('estado_paciente', 'Estado Paciente.:') !!}
                     <p><span class="badge badge-warning">{{ $detalles->estado_paciente }}</span></p>
                 </div>
 
                 <!-- Barrio Field -->
-                <div class="form-group col-md-6 pull-left">
+              <div class="form-group col-md-4 pull-left">
                     {!! Form::label('barrio', 'Barrio:') !!}
                     <p>{{ $detalles->barrio }}</p>
                 </div>
                 <!-- Email field -->
-                <div class="form-group col-md-6 pull-left">
+              <div class="form-group col-md-4 pull-left">
                     {!! Form::label('fecha_alta', 'fecha_alta:') !!}
                     <p>{{ $detalles->fecha_alta }}</p>
                 </div>
 
                 <!-- Grupo Sanguineo Field -->
-                <div class="form-group col-md-6 pull-left">
+              <div class="form-group col-md-4 pull-left">
                     {!! Form::label('fecha_analisis', 'Fecha de Analisis:') !!}
                     <p>{{ $detalles->fecha_analisis }}</p>
                 </div>
 
                 <!-- Enfermedad Referencial Field -->
-                <div class="form-group col-md-6 pull-left">
+              <div class="form-group col-md-4 pull-left">
                     {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}
                     <p>{{ $detalles->enfermedad_referencial }}</p>
                 </div>
-                <div class="form-group col-md-6 pull-left">
+              <div class="form-group col-md-4 pull-left">
                     {!! Form::label('latitud', 'Latitud:') !!}
                     <p>{{ $detalles->latitud }}</p>
                 </div>
-                <div class="form-group col-md-6 pull-left">
+              <div class="form-group col-md-4 pull-left">
                     {!! Form::label('longitud', 'Longuitud:') !!}
                     <p>{{ $detalles->longitud }}</p>
                 </div>
@@ -87,7 +88,7 @@
                 </div>
 
             </div>
-            <a href="{{ url('historial_activos') }}" class="btn btn-primary">Volver</a>
+           
 
          </div>
 
@@ -105,7 +106,7 @@
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }).addTo(map);
             marker = new L.marker([{{$detalles->latitud}} , {{$detalles->longitud}}]);
-            marker.bindPopup("detalles:{{$detalles->nombre_apellido}}<br>Barrio:{{$detalles->barrio}}</br>");
+            marker.bindPopup("detalles:{{$detalles->nombre_apellido}}<br>Barrio:{{$detalles->barrio}}<br>Estado:{{$detalles->estado_paciente}}</br>");
             map.addLayer(marker);
             marker.openPopup();
             

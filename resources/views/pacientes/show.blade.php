@@ -3,7 +3,7 @@
 @section('content')
      <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ route('pacientes.index') }}"><strong>Pacientes  /</strong>
+                <a href="{{ route('pacientes.index') }}"></a><strong>Pacientes  </strong>
             </li>
             <li class="breadcrumb-item active"> Detalles</li>
      </ol>
@@ -14,7 +14,8 @@
                      <div class="col-lg-12">
                          <div class="card">
                              <div class="card-header">
-                                 <strong>Detalles</strong>
+                                <i class="fa fa-align-justify"></i>
+                                 Detalles de Paciente
                                   <a href="{{ route('pacientes.index') }}" class="btn btn-primary">Volver</a>
                              </div>
                              <div class="card-body">

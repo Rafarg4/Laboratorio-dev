@@ -1,8 +1,7 @@
 @extends('layouts.app')
-<link rel="icon" type="image/png" href="/laboratorio.png" />
-@section('content')
 
-    <br>
+@section('content')
+   <br>
     <div class="container-fluid">
         <div class="animated fadeIn">
              @include('flash::message')

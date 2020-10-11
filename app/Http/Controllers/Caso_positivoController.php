@@ -10,8 +10,6 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 use App\Models\Paciente;
-use App\Models\Tipo_prueba;
-use App\Models\Laboratorio;
 
 class Caso_positivoController extends AppBaseController
 {
@@ -45,11 +43,9 @@ class Caso_positivoController extends AppBaseController
      */
     public function create()
     {
-       $pacientes = Paciente::pluck('nombre_apellido','id');
-       $laboratorios =Laboratorio::pluck('nombre_laboratorio', 'id');
-       $pruebas =Tipo_prueba::pluck('nombre', 'id');
-       return view ('caso_positivos.create',compact('pacientes','pruebas','laboratorios'));
-
+        $pacientes= Paciente::pluck('nombre_apellido','id');
+        return view('caso_positivos.create',compact(
+            'pacientes'));
     }
 
     /**
@@ -100,14 +96,15 @@ class Caso_positivoController extends AppBaseController
     public function edit($id)
     {
         $casoPositivo = $this->casoPositivoRepository->find($id);
+         $pacientes = Paciente::pluck('nombre_apellido','id');
+
 
         if (empty($casoPositivo)) {
             Flash::error('Caso Positivo not found');
 
             return redirect(route('casoPositivos.index'));
         }
-
-        return view('caso_positivos.edit')->with('casoPositivo', $casoPositivo);
+         return view('caso_positivos.edit', compact('casoPositivo', 'pacientes',$casoPositivo ));
     }
 
     /**

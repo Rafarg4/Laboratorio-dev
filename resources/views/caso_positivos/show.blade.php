@@ -5,7 +5,7 @@
             <li class="breadcrumb-item">
                 <a href="{{ route('casoPositivos.index') }}">Caso Positivo</a>
             </li>
-            <li class="breadcrumb-item active">Detail</li>
+            <li class="breadcrumb-item active">Detalles</li>
      </ol>
      <div class="container-fluid">
           <div class="animated fadeIn">
@@ -14,8 +14,9 @@
                      <div class="col-lg-12">
                          <div class="card">
                              <div class="card-header">
-                                 <strong>Details</strong>
-                                  <a href="{{ route('casoPositivos.index') }}" class="btn btn-light">Volver</a>
+                                <i class="fa fa-align-justify"></i>
+                                 Detalles de Caso
+                                  <a href="{{ route('casoPositivos.index') }}" class="btn btn-primary">Volver</a>
                              </div>
                              <div class="card-body">
                                  @include('caso_positivos.show_fields')
