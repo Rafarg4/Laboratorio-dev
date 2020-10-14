@@ -13,7 +13,6 @@
         <th>Residente</th>
         <th>Hospedaje</th>
         <th>Telefono Verificado</th>
-        <th>Codigo Departamento</th>
         <th>Departamento</th>
                 <th><center> <i class="fas fa-user-edit fa-2x"></i></center></th>
             </tr>
@@ -32,7 +31,6 @@
             <td>{{ $casoPositivo->residente }}</td>
             <td>{{ $casoPositivo->hospedaje }}</td>
             <td>{{ $casoPositivo->telefono_verificado }}</td>
-            <td>{{ $casoPositivo->codigo_departamento }}</td>
             <td>{{ $casoPositivo->departamento }}</td>
             
             

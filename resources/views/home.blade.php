@@ -30,6 +30,7 @@
                 </div>
                 
                 <!-- /.col-->
+                 @foreach($nuevo_casos as $nuevo_casos)
                 <div class="col-sm-6 col-md-3">
                   <div class="card">
                     <div class="card-body">
@@ -38,13 +39,14 @@
                           <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-user-follow"></use>
                         </svg>
                       </div>
-                      <div class="text-value-lg"><i class="cil-medical-cross fa-2x"></i> <span class="badge badge-success">20</span></div><small class="text-muted text-uppercase font-weight-bold"> Nuevos casos</small>
+                      <div class="text-value-lg"><i class="cil-medical-cross fa-2x"></i> <span class="badge badge-success">{{$nuevo_casos}}</span></div><small class="text-muted text-uppercase font-weight-bold"> Nuevos casos</small>
                       <div class="progress progress-xs mt-3 mb-0">
                         <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div>
                   </div>
                 </div>
+                @endforeach
                 <!-- /.col-->
                    @foreach($infectados as $infectados)
                 <div class="col-sm-6 col-md-3">
@@ -115,6 +117,7 @@
                   </div>
                 </div>
                 @endforeach
+                 @foreach($caso_positivos as $caso_positivos)
                 <div class="col-sm-6 col-md-3">
                   <div class="card">
                     <div class="card-body">
@@ -123,13 +126,14 @@
                           <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-chart-pie"></use>
                         </svg>
                       </div>
-                     <div class="text-value-lg"><i class="cil-hospital fa-2x"></i> <span class="badge badge-light">30</span></div><small class="text-muted text-uppercase font-weight-bold"> Casos totales</small>
+                     <div class="text-value-lg"><i class="cil-hospital fa-2x"></i> <span class="badge badge-light">{{$caso_positivos}}</span></div><small class="text-muted text-uppercase font-weight-bold"> Casos Positivos</small>
                       <div class="progress progress-xs mt-3 mb-0">
                         <div class="progress-bar badge-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div>
                   </div>
                 </div>
+                @endforeach
                 <div class="col-sm-6 col-md-3">
                   <div class="card">
                     <div class="card-body">

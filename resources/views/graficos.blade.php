@@ -143,16 +143,15 @@
         type: 'column'
     },
     title: {
-        text: 'Cantidades totales de Recuperados, Infectados, Muertos'
+        text: 'Cantidades totales de Recuperados, Infectados, Fallecidos.'
     },
     subtitle: {
         text: 'Mas detalles'
     },
     xAxis: {
         categories: [
-            'Recuperados',
-            'Infectados',
-            'Fallecidos'
+            'Detalles',
+            
         ],
         crosshair: true
     },

@@ -115,7 +115,7 @@
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }).addTo(map);
             marker = new L.marker([{{$paciente->latitud}} , {{$paciente->longitud}}]);
-            marker.bindPopup("Paciente:{{$paciente->nombre_apellido}}<br>Barrio:{{$paciente->barrio}}</br>");
+            marker.bindPopup("Paciente:{{$paciente->nombre_apellido}}<br>Barrio:{{$paciente->barrio}}<br>Resultado:{{$paciente->resultado}}</br>");
             map.addLayer(marker);
             marker.openPopup();
             

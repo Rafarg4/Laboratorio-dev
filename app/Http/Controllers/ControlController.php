@@ -43,7 +43,8 @@ class ControlController extends AppBaseController
      */
     public function create()
     {
-       $pacientes= Paciente::pluck('nombre_apellido','id');
+         //Consulta de el listado de pacientes con un especificacion de solo los pacientes positivos con una clausula where y usando el pluck para debolver solo el nombre.
+        $pacientes= Paciente::where('resultado','=','Positivo')->pluck('nombre_apellido','id');
         return view('controls.create',compact(
             'pacientes'));
     }
@@ -146,7 +147,7 @@ class ControlController extends AppBaseController
         $control = $this->controlRepository->find($id);
 
         if (empty($control)) {
-            Flash::error('Control not found');
+            Flash::error('Control no encontrado');
 
             return redirect(route('controls.index'));
         }

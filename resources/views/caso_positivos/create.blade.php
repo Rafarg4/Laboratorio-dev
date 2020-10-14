@@ -14,8 +14,8 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <i class="fa fa-plus-square-o fa-lg"></i>
-                                <strong>Create Caso Positivo</strong>
+                                <i class="fa fa-align-justify"></i>
+                                <strong>Crear Caso Positivo</strong>
                             </div>
                             <div class="card-body">
                                 {!! Form::open(['route' => 'casoPositivos.store']) !!}

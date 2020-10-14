@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\models\Control;
+use App\models\Caso_Positivo;
 use App\models\Paciente;
 use Illuminate\Http\Request;
 
@@ -32,26 +33,40 @@ class HistorialFallecidoController extends Controller
       return view('detalle_fallecidos',compact('fallecidos'));
     } 
 
-// Consultas para el total de muertos, infectado,recuperado, paacientes para el dasboard de la plataforma.
+    // Consultas para el total de muertos, infectado,recuperado, pacientes para el dasboard de la plataforma.
+    //Consulta de los pacientes totales y los casos totales
     
     public function dashmuerto(){
     {
+        //Cantidad de muertos
      $muertos = Control::select(\DB::raw("COUNT(*) as count"))
                     ->where('controls.estado_paciente','Fallecido')
                     ->pluck('count');
-   }{
+    }{
+        //Cantidad de infectados
     $infectados = Control::select(\DB::raw("COUNT(*) as count"))
                     ->where('controls.estado_paciente','Activo')
                     ->pluck('count');
-   }{
-    $recuperados = Control::select(\DB::raw("COUNT(*) as count"))
+    }{
+        //Cantidad de recuperados
+     $recuperados = Control::select(\DB::raw("COUNT(*) as count"))
                     ->where('controls.estado_paciente','Inactivo')
                     ->pluck('count');
     }{
-        $pacientes = Paciente::select(\DB::raw("COUNT(*) as count"))
+        //Cantiadad de Pacientes
+     $pacientes = Paciente::select(\DB::raw("COUNT(*) as count"))
                     ->pluck('count');
-              
-    return view('home', compact('muertos','infectados','recuperados','pacientes'));
+    }{
+        //Cantiadad de casos positivos
+        $caso_positivos = Caso_Positivo::select(\DB::raw("COUNT(*) as count"))
+                    ->pluck('count');
+    }{
+        //Todos los nuevos casos
+        $nuevo_casos = Paciente::select(\DB::raw("COUNT(*) as count"))
+                    ->where('pacientes.resultado','Positivo')
+                    ->pluck('count');
+
+    return view('home', compact('muertos','infectados','recuperados','pacientes','caso_positivos','nuevo_casos'));
     }
   } 
 }

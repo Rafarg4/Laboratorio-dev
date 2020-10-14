@@ -36,18 +36,20 @@
      <script type="text/javascript" src="{{ asset('js/html5.js') }}"></script>
 
      <script type="text/javascript" src="{{ asset('js/print.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('js/bootstrap4.js') }}"></script>
     @yield('scripts')
      <script>
      $(document).ready(function() {
         $('#data-table').DataTable( {
-            "pageLength":8,
+            "pageLength":5,
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
             },
-            dom: 'Bfrtip',
+         /*Botones de impresion 
+         dom: 'Bfrtip',
             buttons: [
                 'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
+            ] */
         } );
 } );
 
@@ -77,8 +79,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Data tables css -->
-    <link href="{{ asset('css/datatable.css') }}"  rel="stylesheet">
+    <!--Data Table filtro negro
+    <link href="{{ asset('css/datatable.css') }}"  rel="stylesheet">-->
+    <link href="{{ asset('css/bootstrap4.5.css') }}"  rel="stylesheet">
     <link href="{{ asset('css/buttons.css') }}"  rel="stylesheet">
+    <link href="{{ asset('css/bootstrap4.css') }}"  rel="stylesheet">
 
     <!-- Theme style -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@coreui/coreui@2.1.16/dist/css/coreui.min.css">
