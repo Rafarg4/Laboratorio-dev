@@ -17,6 +17,7 @@ class PacienteRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
+        'tipo_prueba_id',
         'nombre_apellido',
         'genero',
         'fechanac',
@@ -30,6 +31,7 @@ class PacienteRepository extends BaseRepository
         'longitud',
         'email',
         'resultado'
+        
     ];
 
     /**

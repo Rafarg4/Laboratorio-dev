@@ -16,6 +16,7 @@ class CreatePacientesTable extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('tipo_prueba_id')->unsigned();
             $table->text('nombre_apellido');
             $table->text('genero');
             $table->text('fechanac');
@@ -31,6 +32,7 @@ class CreatePacientesTable extends Migration
             $table->text('resultado');
             $table->timestamps();
             $table->softDeletes();
+            $table->foreign('tipo_prueba_id')->references('id')->on('tipo_pruebas');
         });
     }
 

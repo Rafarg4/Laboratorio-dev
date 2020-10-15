@@ -2,7 +2,7 @@
     <table class="table table-bordered" id="data-table">
         <thead>
             <tr>
-        <th>Nombre Paciente</th>
+        <th>Nro de Caso</th>
         <th>Fecha Analisis</th>
         <th>Estado Paciente</th>
         <th>Recomendacion</th>
@@ -13,7 +13,7 @@
         <tbody>
         @foreach($controls as $control)
             <tr>
-            <td>{{ $control->paciente->nombre_apellido }}</td>
+            <td>{{ $control->paciente->paciente_id }}</td>
             <td>{{ $control->fecha_analisis }}</td>
             <td>@switch(true)
             @case($control->estado_paciente == 'Inactivo')

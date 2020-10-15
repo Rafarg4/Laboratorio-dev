@@ -1,6 +1,6 @@
 <!-- Paciente Id Field -->
 <div class="form-group col-md-6 pull-left">
-    {!! Form::label('paciente_id', 'Nombre Paciente:') !!}
+    {!! Form::label('paciente_id', 'Nro de Caso:') !!}
     {!! Form::select('paciente_id', $pacientes,null,['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
 <!-- Estado Paciente Field -->

@@ -32,6 +32,7 @@ class Paciente extends Model
 
 
     public $fillable = [
+        'tipo_prueba_id',
         'nombre_apellido',
         'genero',
         'fechanac',
@@ -45,6 +46,7 @@ class Paciente extends Model
         'longitud',
         'email',
         'resultado'
+        
     ];
 
     /**
@@ -53,7 +55,9 @@ class Paciente extends Model
      * @var array
      */
     protected $casts = [
+       
         'id' => 'integer',
+        'tipo_prueba_id' => 'integer',
         'nombre_apellido' => 'string',
         'genero' => 'string',
         'fechanac' => 'string',
@@ -67,6 +71,7 @@ class Paciente extends Model
         'longitud' => 'string',
         'email' => 'string',
         'resultado' => 'string'
+        
     ];
 
     /**
@@ -75,6 +80,7 @@ class Paciente extends Model
      * @var array
      */
     public static $rules = [
+        'tipo_prueba_id' => 'required',
         'nombre_apellido' => 'required',
         'genero' => 'required',
         'fechanac' => 'required',
@@ -88,15 +94,12 @@ class Paciente extends Model
         'longitud' => 'required',
         'email' => 'required',
         'resultado' => 'required'
+        
     ];
 
     
-    public function control (){
-     return $this-> hasMany('App\Models\Control');
-
-    }
-     public function caso_positivo (){
-     return $this-> hasMany('App\Models\Caso_positivo');
+     public function tipo_prueba (){
+     return $this-> belongsTo('App\Models\Tipo_prueba');
 
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Control;
-
+use Illuminate\validation\Rule;
 class CreateControlRequest extends FormRequest
 {
 
@@ -23,8 +23,17 @@ class CreateControlRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+  public function rules ()
     {
-        return Control::$rules;
-    }
+        return [
+        'paciente_id' => [
+        'required',
+        Rule::unique('controls')->ignore( $this->route('control'))
+    ],
+        'fecha_analisis' => 'required',
+        'estado_paciente' => 'required',
+        'recomendacion' => 'required',
+        'fecha_alta' => 'required',
+    ];
+ } 
 }

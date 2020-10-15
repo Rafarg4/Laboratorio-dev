@@ -205,5 +205,8 @@ class Caso_positivo extends Model
     public function paciente (){
         return $this-> belongsTo('App\Models\Paciente');
     }
-    
+    public function control (){
+     return $this-> hasMany('App\Models\Control');
+
+    }
 }

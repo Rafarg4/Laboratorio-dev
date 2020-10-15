@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateControlRequest;
 use App\Repositories\ControlRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use App\Models\Paciente;
+use App\Models\Caso_positivo;
 use Flash;
 use Response;
 
@@ -44,7 +44,7 @@ class ControlController extends AppBaseController
     public function create()
     {
          //Consulta de el listado de pacientes con un especificacion de solo los pacientes positivos con una clausula where y usando el pluck para debolver solo el nombre.
-        $pacientes= Paciente::where('resultado','=','Positivo')->pluck('nombre_apellido','id');
+        $pacientes= Caso_positivo::pluck('paciente_id','id');
         return view('controls.create',compact(
             'pacientes'));
     }

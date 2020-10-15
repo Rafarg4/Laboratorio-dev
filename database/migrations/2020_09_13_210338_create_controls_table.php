@@ -23,7 +23,7 @@ class CreateControlsTable extends Migration
             $table->text('fecha_alta');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('paciente_id')->references('id')->on('pacientes');
+            $table->foreign('paciente_id')->references('id')->on('caso_positivos');
         });
     }
 

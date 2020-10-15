@@ -49,6 +49,8 @@ class Tipo_prueba extends Model
         'nombre' => 'required',
         'descripcion' => 'required'
     ];
-
+     public function paciente (){
+        return $this-> hasMany('App\Models\Paciente');
+    }
     
 }

@@ -59,6 +59,10 @@
     <p>{{ $paciente->enfermedad_referencial }}</p>
 </div>
 <div class="form-group col-md-4 pull-left">
+    {!! Form::label('tipo_prueba', 'Tipo de Prueba:') !!}
+    <p>{{ $paciente->tipo_prueba->nombre }}</p>
+</div>
+<div class="form-group col-md-4 pull-left">
     {!! Form::label('resultado', 'Estado Paciente:') !!}
     <p>@switch(true)
            @case($paciente->resultado == 'Negativo')

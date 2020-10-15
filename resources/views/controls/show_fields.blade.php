@@ -2,8 +2,8 @@
 <li class="list-group-item">
 <!-- Paciente Id Field -->
 <div class="form-group col-md-4 pull-left">
-    {!! Form::label('paciente_id', 'Nombre Paciente:') !!}
-    <p>{{ $control->paciente->nombre_apellido }}</p>
+    {!! Form::label('paciente_id', 'Nro de Caso:') !!}
+    <p>{{ $control->paciente->paciente_id }}</p>
 </div>
 
 <!-- Fecha Analisis Field -->

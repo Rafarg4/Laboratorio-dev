@@ -7,6 +7,7 @@ use App\Http\Requests\UpdatePacienteRequest;
 use App\Repositories\PacienteRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use App\Models\Tipo_prueba;
 use Flash;
 use Response;
 
@@ -42,7 +43,9 @@ class PacienteController extends AppBaseController
      */
     public function create()
     {
-        return view('pacientes.create');
+          $pruebas = Tipo_prueba::pluck('nombre','id');
+        return view('pacientes.create',compact(
+            'pruebas')); 
     }
 
     /**
@@ -93,6 +96,8 @@ class PacienteController extends AppBaseController
     public function edit($id)
     {
         $paciente = $this->pacienteRepository->find($id);
+         $pruebas = Tipo_prueba::pluck('nombre','id');
+
 
         if (empty($paciente)) {
             Flash::error('Paciente no encontrado');
@@ -100,7 +105,7 @@ class PacienteController extends AppBaseController
             return redirect(route('pacientes.index'));
         }
 
-        return view('pacientes.edit')->with('paciente', $paciente);
+        return view('pacientes.edit', compact('paciente', 'pruebas'));
     }
 
     /**

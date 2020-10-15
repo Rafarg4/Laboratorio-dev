@@ -63,7 +63,7 @@ class Control extends Model
     ];
 
  public function paciente (){
-        return $this-> belongsTo('App\Models\Paciente');
+        return $this-> belongsTo('App\Models\Caso_positivo');
     }
     
 }
