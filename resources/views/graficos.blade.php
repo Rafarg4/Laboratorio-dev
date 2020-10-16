@@ -137,13 +137,16 @@
                           var muertos =  <?php echo json_encode($muertos) ?>;
                           var infectados =  <?php echo json_encode($infectados) ?>;
                           var recuperados =  <?php echo json_encode($recuperados) ?>;
+                          var eleccion =  <?php echo json_encode($eleccion) ?>;
+                          var otro =  <?php echo json_encode($otro) ?>;
+
                          Highcharts.chart('containerss', {
 
     chart: {
         type: 'column'
     },
     title: {
-        text: 'Cantidades totales de Recuperados, Infectados, Fallecidos.'
+        text: 'Cantidades totales de Recuperados, Infectados, Fallecidos,Sin Elecion, Otros.'
     },
     subtitle: {
         text: 'Mas detalles'
@@ -177,8 +180,14 @@
         data: muertos,
 
     }, {
-        name: 'infectados',
+        name: 'Infectados',
         data: infectados,
+    }, {
+       name: 'Sin eleccion',
+       data: eleccion,
+    }, {
+       name: 'Otro',
+       data: otro,
 
     }]
 });
@@ -259,7 +268,7 @@
                       name: 'Masculino',
                       data: masculino,
                   }, {
-                      name: 'Otro',
+                      name: 'Otros',
                       data: otro,
               
                   }]

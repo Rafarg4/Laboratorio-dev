@@ -11,8 +11,9 @@ class HistorialFallecidoController extends Controller
 {
     //consulta de la vista de fallecidos segun su estado..
     public function listaFallecidos(){
-    $fallecidos=DB::table('controls')
-        ->join('pacientes','pacientes.id','=', 'controls.paciente_id')
+    $fallecidos=DB::table('caso_positivos')
+        ->join('pacientes','pacientes.id','=', 'caso_positivos.paciente_id')
+        ->join('controls','controls.id','=', 'caso_positivos.id')
         ->select('pacientes.nombre_apellido','pacientes.barrio','pacientes.genero', 'pacientes.id','controls.estado_paciente','controls.fecha_alta','pacientes.edad','pacientes.enfermedad_referencial','controls.fecha_analisis')
         ->where('controls.deleted_at',null)
         ->where('controls.estado_paciente','Fallecido')
@@ -23,8 +24,9 @@ class HistorialFallecidoController extends Controller
     //Consulta para la vista de historial y ver los detalles de todos los fallecidos segun su estado.
 
     public function detalle_fallecido($id){
-         $fallecidos=DB::table('controls')
-        ->join('pacientes','pacientes.id','=', 'controls.paciente_id')
+         $fallecidos=DB::table('caso_positivos')
+         ->join('pacientes','pacientes.id','=', 'caso_positivos.paciente_id')
+        ->join('controls','controls.id','=', 'caso_positivos.id')
         ->select('pacientes.nombre_apellido','pacientes.barrio','pacientes.genero', 'pacientes.id','controls.estado_paciente','controls.fecha_alta','pacientes.edad','pacientes.enfermedad_referencial','controls.fecha_analisis','pacientes.longitud','pacientes.latitud')
         ->where('controls.deleted_at',null)
         ->where('controls.estado_paciente','Fallecido')

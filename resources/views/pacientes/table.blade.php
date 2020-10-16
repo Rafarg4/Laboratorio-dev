@@ -9,7 +9,6 @@
         <th>Ci</th>
         <th>Barrio</th>
         <th>Telefono</th>
-        <th>Email</th>
         <th>Grupo Sanguineo</th>
         <th>Comorbilidad</th>
         <th>Prueba</th>
@@ -30,7 +29,6 @@
             <td>{{ $paciente->ci }}</td>
             <td>{{ $paciente->barrio }}</td>
             <td>{{ $paciente->telefono }}</td>
-            <td>{{ $paciente->email }}</td>
             <td>{{ $paciente->grupo_sanguineo }}</td>
             <td>{{ $paciente->enfermedad_referencial }}</td>
               <td>{{ $paciente->tipo_prueba->nombre }}</td>

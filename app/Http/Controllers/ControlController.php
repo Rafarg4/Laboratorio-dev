@@ -97,7 +97,7 @@ class ControlController extends AppBaseController
     public function edit($id)
     {
         $control = $this->controlRepository->find($id);
-        $pacientes = Paciente::pluck('nombre_apellido','id');
+        $pacientes = Caso_positivo::pluck('paciente_id','id');
 
         if (empty($control)) {
             Flash::error('Control no encontrado');

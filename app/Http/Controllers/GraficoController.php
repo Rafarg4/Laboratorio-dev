@@ -79,8 +79,16 @@ class GraficoController extends Controller
     $recuperados = Control::select(\DB::raw("COUNT(*) as count"))
                     ->where('controls.estado_paciente','Inactivo')
                     ->pluck('count');
-   
-    return view('graficos', compact('masculino','femenino','otro','encarnacion','chaipe','cambyreta','mboikae','sanisidro','sagradafamilia','ciudadnueva','santamaria','itapaso','buenavista','fatima','muertos','infectados','recuperados'));
+    }{
+    $eleccion = Paciente::select(\DB::raw("COUNT(*) as count"))
+                    ->where('pacientes.resultado','Sin eleccion')
+                    ->pluck('count'); 
+        }{
+    $otro = Paciente::select(\DB::raw("COUNT(*) as count"))
+                    ->where('pacientes.resultado','Otro')
+                    ->pluck('count');
+
+    return view('graficos', compact('masculino','femenino','otro','encarnacion','chaipe','cambyreta','mboikae','sanisidro','sagradafamilia','ciudadnueva','santamaria','itapaso','buenavista','fatima','muertos','infectados','recuperados','eleccion','otro'));
     }
  }
 }

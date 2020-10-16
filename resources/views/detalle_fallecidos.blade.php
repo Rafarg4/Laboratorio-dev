@@ -10,7 +10,7 @@
                                 <div class="card">
                                      <div class="card-header">
                                          <i class="fa fa-align-justify"></i>
-                                       Detalle de paciente Fallecido <a href="{{ url('historial_activos') }}" class="btn btn-primary">Volver</a>
+                                       Detalle de paciente Fallecido <a href="{{ url('listafallecidos') }}" class="btn btn-primary">Volver</a>
                                                  
                                         </div>
                                     <div class="card-body">
