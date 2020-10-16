@@ -22,297 +22,179 @@
                 <!-- Nombre Field -->
                   <li class="list-group-item">
                  
-              <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
-                    <p>{{ $detalles->nombre_apellido }}</p>
-                </div>
-                <!-- Genero Field -->
-              <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('genero', 'Genero:') !!}
-                    <p>{{ $detalles->genero }}</p>
-                </div>
-                <!-- Edad Field -->
-              <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('edad', 'Edad:') !!}
-                    <p>{{ $detalles->edad }}</p>
-                </div>
+             <table class="table table-bordered" id="data-table">
+                   <tr><th><i class="cil-people fa-2x"></i> Datos Detallados de Paciente.</th>
+                   </tr>
+                    <table class="table table-bordered" id="data-table">
+                      <tr>
+                    <th>Nombre y Apellidos: {{ $detalles->nombre_apellido }}</th>
+                    <th>Genero: {{ $detalles->genero }}</th>
+                    <th>Edad: {{ $detalles->edad }}</th>
+                     <th>Paciente ID: {{ $detalles->id }}</th>
+                  
+            
+            </tr>
+             <tr>
+                  <th>Ci: {{ $detalles->ci }}</th>
+                   <th>Fecha de Nacimiento: {{ $detalles->fechanac }}</th>
+                  <th>Resultado: <span class="badge badge-danger">{{ $detalles->resultado }}</span></th>
+                  <th>Barrio: {{ $detalles->barrio }}</th>
+                </tr>
+               <tr>
+                <th>Email: {{ $detalles->ci }}</th>
+                  <th>Tipo de Prueba: {{ $detalles->grupo_sanguineo }}</th>
+                   <th>Telefono: {{ $detalles->fechanac }}</th>
+                   <th>Grupo Sanguineo: {{ $detalles->grupo_sanguineo }}</th>
+                 </tr>
+                    <tr>
+    
+                   <th>Comorbilidad: {{ $detalles->enfermedad_referencial }}</th>
+                   <th>Latitud: {{ $detalles->latitud }}</th>
+                    <th>Longitud: {{ $detalles->longitud }}</th>
+                    
+                </tr>
+              </table>
+              
+               <table class="table table-bordered" id="data-table">
+                <tr>
+                  <th><i class="cil-address-book fa-2x"></i> Datos del control hecho al Paciente.</th>
+                </tr>
+              </table>
+               <table class="table table-bordered" id="data-table">
+               <tr>
 
-                <!-- Ci Field -->
-              <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('estado_paciente', 'Estado Paciente.:') !!}
-                    <p><span class="badge badge-warning">{{ $detalles->estado_paciente }}</span></p>
-                </div>
+                     <th>Estado: <span class="badge badge-warning">{{ $detalles->estado_paciente }}</span>
+                    <th>Recomendaciones: {{ $detalles->recomendacion }}</th>
+                    <th>Fecha de Alta: {{ $detalles->fecha_alta }}</th>
+                       <th>Fecha de Analisis: {{ $detalles->fecha_analisis }}</th>
+                    </tr>
+               </tr>
+             </table>
+                <table class="table table-bordered" id="data-table">
+                  <th><i class="cil-hospital fa-2x"></i> Datos del Informe detallado de caso.</th>
+               <tr>
+               </table>
+               <table class="table table-bordered" id="data-table">
+                <tr>
+                    <th>Codigo Region: {{ $detalles->codigo }}</th>
 
-                <!-- Barrio Field -->
-              <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('barrio', 'Barrio:') !!}
-                    <p>{{ $detalles->barrio }}</p>
-                </div>
-                <!-- Email field -->
-              <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('fecha_alta', 'fecha_alta:') !!}
-                    <p>{{ $detalles->fecha_alta }}</p>
-                </div>
+                    <th>Region: {{ $detalles->region }}</th>
+                    
+                    <th>Codigo Region: {{ $detalles->codigo_distrito }}</th>
+               
+                    <th>Distrito: {{ $detalles->distrito }}</th>
+                     </tr>
+                <tr>
+                      
+              
+                    <th>Fecha de Notificacion: {{ $detalles->fecha_notificacion }}</th>
+                
+                    <th>Medico: {{ $detalles->medico }}</th>
+            
+                    <th>Edad Media: {{ $detalles->media_edad }}</th>
+               
+                    <th>Residente: {{ $detalles->residente }}</th>
+                     </tr>
+                <tr>
+                      
+                
+                    <th>Hospedaje: {{ $detalles->hospedaje }}</th>
+                   
+                    <th>Telefono Verificado: {{ $detalles->telefono_verificado }}</th>
+    
+                    <th>Codigo Departamento: {{ $detalles->codigo_departamento }}</th>
+            
+                    <th>Departamento: {{ $detalles->departamento }}</th>
+                     </tr>
+                <tr>
+                      
+                
+                    <th>Zona: {{ $detalles->zona }}</th>
+               
+                    <th>Personal de Blanco: {{ $detalles->personal_de_blanco }}</th>
 
-                <!-- Grupo Sanguineo Field -->
-              <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('fecha_analisis', 'Fecha de Analisis:') !!}
-                    <p>{{ $detalles->fecha_analisis }}</p>
-                </div>
+                    <th>Albergue: {{ $detalles->albergue }}</th>
+              
+                    <th>Lugar de Albergue: {{ $detalles->lugar_albergue }}</th>
+                     </tr>
+                <tr>
+                      
+               
+                    <th>Detalles de sintomas de Fiebre: {{ $detalles->sintomas_fiebre }}</th>
+                 
+                    <th>Detalles de Hospitalizacion: {{ $detalles->hospitalizado }}</th>
+                
+                    <th>Detalles de Comorbilidad: {{ $detalles->signo_sintoma }}</th>
+              
+                    <th>Vacuna para la Influenza: {{ $detalles->vacuna_para_la_influenza }}</th>
+                     </tr>
+                <tr>
+                      
+    
+                    <th>Fecha de Vacunacion: {{ $detalles->fecha_vacunacion }}</th>
+        
+                    <th>Viajo Resientemente: {{ $detalles->viajo_resiente }}</th>
+                
+                    <th>Centro de Asistencia de Covid: {{ $detalles->centro_asistencia_covid }}</th>
+                
+                    <th>Centro de Asistencia del Pais: {{ $detalles->centro_asistencia_pais }}</th>
+                     </tr>
+                <tr>
+                      
+              
+                    <th>Centro de Asistencia de la Ciudad: {{ $detalles->centro_asistencia_ciudad }}</th>
+               
+                    <th>Nombre de Centro de Asistencia: {{ $detalles->nombre_centro_asistencia }}</th>
+                
+                    <th>Fecha de Asistencia: {{ $detalles->fecha_asistida }}</th>
+                
+                    <th>Contacto con Animales: {{ $detalles->contacto_con_animales }}</th>
+                     </tr>
+                <tr>
+                      
+                
+                    <th>Contacto con Personas: {{ $detalles->contacto_persona }}</th>
+               
+                    <th>Tipo de Contacto: {{ $detalles->tipo_contacto }}</th>
+               
+                    <th>Otro tipo de Contacto: {{ $detalles->contacto_otro }}</th>
+                
+                    <th>Contacto con Infectado: {{ $detalles->contacto_con_infectado }}</th>
+                     </tr>
+                <tr>
+                      
 
-                <!-- Enfermedad Referencial Field -->
-              <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}
-                    <p>{{ $detalles->enfermedad_referencial }}</p>
-                </div>
-              <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('latitud', 'Latitud:') !!}
-                    <p>{{ $detalles->latitud }}</p>
-                </div>
-              <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('longitud', 'Longuitud:') !!}
-                    <p>{{ $detalles->longitud }}</p>
-                </div>
-                <!-- Codigo Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('codigo', 'Codigo:') !!}
-                    <p>{{ $detalles->codigo }}</p>
-                </div>
-
-                <!-- Region Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('region', 'Region:') !!}
-                    <p>{{ $detalles->region }}</p>
-                </div>
-
-                <!-- Codigo Distrito Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('codigo_distrito', 'Codigo Distrito:') !!}
-                    <p>{{ $detalles->codigo_distrito }}</p>
-                </div>
-
-                <!-- Distrito Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('distrito', 'Distrito:') !!}
-                    <p>{{ $detalles->distrito }}</p>
-                </div>
-
-                <!-- Fecha Notificacion Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('fecha_notificacion', 'Fecha Notificacion:') !!}
-                    <p>{{ $detalles->fecha_notificacion }}</p>
-                </div>
-
-                <!-- Medico Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('medico', 'Medico:') !!}
-                    <p>{{ $detalles->medico }}</p>
-                </div>
-
-                <!-- Media Edad Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('media_edad', 'Media Edad:') !!}
-                    <p>{{ $detalles->media_edad }}</p>
-                </div>
-
-                <!-- Residente Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('residente', 'Residente:') !!}
-                    <p>{{ $detalles->residente }}</p>
-                </div>
-
-                <!-- Hospedaje Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('hospedaje', 'Hospedaje:') !!}
-                    <p>{{ $detalles->hospedaje }}</p>
-                </div>
-
-                <!-- Telefono Verificado Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('telefono_verificado', 'Telefono Verificado:') !!}
-                    <p>{{ $detalles->telefono_verificado }}</p>
-                </div>
-
-                <!-- Codigo Departamento Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('codigo_departamento', 'Codigo Departamento:') !!}
-                    <p>{{ $detalles->codigo_departamento }}</p>
-                </div>
-
-                <!-- Departamento Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('departamento', 'Departamento:') !!}
-                    <p>{{ $detalles->departamento }}</p>
-                </div>
-
-                <!-- Zona Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('zona', 'Zona:') !!}
-                    <p>{{ $detalles->zona }}</p>
-                </div>
-
-                <!-- Personal De Blanco Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('personal_de_blanco', 'Personal De Blanco:') !!}
-                    <p>{{ $detalles->personal_de_blanco }}</p>
-                </div>
-
-                <!-- Albergue Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('albergue', 'Albergue:') !!}
-                    <p>{{ $detalles->albergue }}</p>
-                </div>
-
-                <!-- Lugar Albergue Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('lugar_albergue', 'Lugar Albergue:') !!}
-                    <p>{{ $detalles->lugar_albergue }}</p>
-                </div>
-
-                <!-- Sintomas Fiebre Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('sintomas_fiebre', 'Sintomas Fiebre:') !!}
-                    <p>{{ $detalles->sintomas_fiebre }}</p>
-                </div>
-
-                <!-- Hospitalizado Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('hospitalizado', 'Hospitalizado:') !!}
-                    <p>{{ $detalles->hospitalizado }}</p>
-                </div>
-
-                <!-- Signo Sintoma Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('signo_sintoma', 'Signo Sintoma:') !!}
-                    <p>{{ $detalles->signo_sintoma }}</p>
-                </div>
-
-                <!-- Vacuna Para La Influenza Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('vacuna_para_la_influenza', 'Vacuna Para La Influenza:') !!}
-                    <p>{{ $detalles->vacuna_para_la_influenza }}</p>
-                </div>
-
-                <!-- Fecha Vacunacion Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('fecha_vacunacion', 'Fecha Vacunacion:') !!}
-                    <p>{{ $detalles->fecha_vacunacion }}</p>
-                </div>
-
-                <!-- Viajo Resiente Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('viajo_resiente', 'Viajo Resiente:') !!}
-                    <p>{{ $detalles->viajo_resiente }}</p>
-                </div>
-
-                <!-- Centro Asistencia Covid Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('centro_asistencia_covid', 'Centro Asistencia Covid:') !!}
-                    <p>{{ $detalles->centro_asistencia_covid }}</p>
-                </div>
-
-                <!-- Centro Asistencia Pais Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('centro_asistencia_pais', 'Centro Asistencia Pais:') !!}
-                    <p>{{ $detalles->centro_asistencia_pais }}</p>
-                </div>
-
-                <!-- Centro Asistencia Ciudad Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('centro_asistencia_ciudad', 'Centro Asistencia Ciudad:') !!}
-                    <p>{{ $detalles->centro_asistencia_ciudad }}</p>
-                </div>
-
-                <!-- Nombre Centro Asistencia Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('nombre_centro_asistencia', 'Nombre Centro Asistencia:') !!}
-                    <p>{{ $detalles->nombre_centro_asistencia }}</p>
-                </div>
-
-                <!-- Fecha Asistida Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('fecha_asistida', 'Fecha Asistida:') !!}
-                    <p>{{ $detalles->fecha_asistida }}</p>
-                </div>
-
-                <!-- Contacto Con Animales Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('contacto_con_animales', 'Contacto Con Animales:') !!}
-                    <p>{{ $detalles->contacto_con_animales }}</p>
-                </div>
-
-                <!-- Contacto Persona Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('contacto_persona', 'Contacto Persona:') !!}
-                    <p>{{ $detalles->contacto_persona }}</p>
-                </div>
-
-                <!-- Tipo Contacto Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('tipo_contacto', 'Tipo Contacto:') !!}
-                    <p>{{ $detalles->tipo_contacto }}</p>
-                </div>
-
-                <!-- Contacto Otro Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('contacto_otro', 'Contacto Otro:') !!}
-                    <p>{{ $detalles->contacto_otro }}</p>
-                </div>
-
-                <!-- Contacto Con Infectado Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('contacto_con_infectado', 'Contacto Con Infectado:') !!}
-                    <p>{{ $detalles->contacto_con_infectado }}</p>
-                </div>
-
-                <!-- Dato De Contacto Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('dato_de_contacto', 'Dato De Contacto:') !!}
-                    <p>{{ $detalles->dato_de_contacto }}</p>
-                </div>
-
-                <!-- Toma De Muestra Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('toma_de_muestra', 'Toma De Muestra:') !!}
-                    <p>{{ $detalles->toma_de_muestra }}</p>
-                </div>
-
-                <!-- Laboratorio Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('laboratorio', 'Laboratorio:') !!}
-                    <p>{{ $detalles->laboratorio }}</p>
-                </div>
-
-                <!-- Nro Planilla Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('nro_planilla', 'Nro Planilla:') !!}
-                    <p>{{ $detalles->nro_planilla }}</p>
-                </div>
-
-                <!-- Anho Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('anho', 'Anho:') !!}
-                    <p>{{ $detalles->anho }}</p>
-                </div>
-
-                <!-- Responsable De Carga Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('responsable_de_carga', 'Responsable De Carga:') !!}
-                    <p>{{ $detalles->responsable_de_carga }}</p>
-                </div>
-
-                <!-- Usuario Lugar Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('usuario_lugar', 'Usuario Lugar:') !!}
-                    <p>{{ $detalles->usuario_lugar }}</p>
-                </div>
-                   <div class="form-group col-sm-13 pull-left">
-                  <div class="card">
-                             <div class="card-body">
-                    <div id="mapid"></div>
+                    <th>Datos del Contacto{{ $detalles->dato_de_contacto }}</th>
+                
+                    <th>Toma de Muestra: {{ $detalles->toma_de_muestra }}</th>
+                
+                    <th>Laboratorio: {{ $detalles->laboratorio }}</th>
+                
+                    <th>Numero de Pnatilla:{{ $detalles->nro_planilla }}</th>
+                     </tr>
+                <tr>
+                    
+                
+                    <th>Año{{ $detalles->anho }}</th>
+                
+                    <th>Responsable de Carga: {{ $detalles->responsable_de_carga }}</th>
+                
+                    <th>Usuario de Laboratorio: {{ $detalles->usuario_lugar }}</th>
+                </tr>
+            </table>
+             <table class="table table-bordered" id="data-table">
+              <tr>
+                <th><i class="cil-globe-alt fa-2x"></i> Geolocalizacion exsacta de Paciente.</th>
+              </tr>
+                   
+                   <tr>
+                    <th>
+                     <div id="mapid"></div>
+                     </th>
+                   </tr> 
                    
                 </div>
-
+</table>
             </div>
            
 
@@ -321,7 +203,7 @@
     </li>
     </ul>
     <style type="text/css">
-                   #mapid { height: 600px; width:1310px; }
+                   #mapid { height: 350px; width:1310px; }
            </style>
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" type="text/css">
