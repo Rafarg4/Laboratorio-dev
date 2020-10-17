@@ -4,7 +4,7 @@
 @section('content')
 
 <style type="text/css">
-             #mapid { height: 680px; }
+             #mapid { height: 550px; }
         </style>
          <br>
           <div class="container col-sm-11">
