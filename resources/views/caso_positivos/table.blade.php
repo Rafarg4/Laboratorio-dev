@@ -2,6 +2,7 @@
     <table class="table table-bordered" id="data-table">
         <thead>
             <tr>
+                <th>Nro Caso</th>
         <th>Paciente</th>
         <th>Codigo</th>
         <th>Region</th>
@@ -11,7 +12,6 @@
         <th>Medico</th>
         <th>Media Edad</th>
         <th>Residente</th>
-        <th>Hospedaje</th>
         <th>Telefono Verificado</th>
         <th>Departamento</th>
                 <th><center> <i class="fas fa-user-edit fa-2x"></i></center></th>
@@ -20,7 +20,8 @@
         <tbody>
         @foreach($casoPositivos as $casoPositivo)
             <tr>
-                <td>{{ $casoPositivo->paciente->nombre_apellido }}</td>
+            <td>{{ $casoPositivo->paciente->id }}</td>
+            <td>{{ $casoPositivo->paciente->nombre_apellido }}</td>
             <td>{{ $casoPositivo->codigo }}</td>
             <td>{{ $casoPositivo->region }}</td>
             <td>{{ $casoPositivo->codigo_distrito }}</td>
@@ -29,7 +30,6 @@
             <td>{{ $casoPositivo->medico }}</td>
             <td>{{ $casoPositivo->media_edad }}</td>
             <td>{{ $casoPositivo->residente }}</td>
-            <td>{{ $casoPositivo->hospedaje }}</td>
             <td>{{ $casoPositivo->telefono_verificado }}</td>
             <td>{{ $casoPositivo->departamento }}</td>
             

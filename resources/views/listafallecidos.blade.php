@@ -19,7 +19,7 @@
                                 <table class="table table-bordered" id="data-table">
                                     <thead>
                                         <tr>
-                                    <th>Id Paciente</th>
+                                    <th>Nro Caso</th>
                                     <th>Paciente</th>
                                     <th>Barrio</th>
                                      <th>Edad</th>

@@ -1,28 +1,31 @@
 <ul class="list-group">
-
 <!-- Nombre Field -->
   <li class="list-group-item">
-<div class="form-group col-md-6 pull-left">
-    {!! Form::label('nombre', 'Nombre:') !!}
-    <p>{{ $tipoPrueba->nombre }}</p>
-</div>
+  	 <table class="table table-bordered" id="data-table">
+                <tr>
+                  <th><i class="cil-eyedropper fa-2x"></i> <strong>Detalles de Prueba.</strong></th>
+                </tr>
+              </table>
+<table class="table table-bordered" id="data-table">
+	<tr>
+	<th><strong>Prueba ID: </strong>{{ $tipoPrueba->id }}</th>
+
+
+    <th><strong>Nombre de Prueba: </strong>{{ $tipoPrueba->nombre }}</th>
 
 <!-- Descripcion Field -->
-<div class="form-group col-md-6 pull-left">
-    {!! Form::label('descripcion', 'Descripcion:') !!}
-    <p>{{ $tipoPrueba->descripcion }}</p>
-</div>
+
+    <th><strong>Descripcion: </strong>{{ $tipoPrueba->descripcion }}</th>
 
 <!-- Created At Field -->
-<div class="form-group col-md-6 pull-left">
-    {!! Form::label('created_at', 'Creado:') !!}
-    <p>{{ $tipoPrueba->created_at }}</p>
-</div>
+
+    <th><strong>Creado: </strong>{{ $tipoPrueba->created_at }}</th>
 
 <!-- Updated At Field -->
-<div class="form-group col-md-6 pull-left">
-    {!! Form::label('updated_at', 'Actualizado:') !!}
-    <p>{{ $tipoPrueba->updated_at }}</p>
+
+    <th>Actualizado: {{ $tipoPrueba->updated_at }}</th>
+</tr>
+</table>
 </div>
 </li>
 </ul>

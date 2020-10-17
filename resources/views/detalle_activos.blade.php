@@ -23,168 +23,168 @@
                   <li class="list-group-item">
                  
              <table class="table table-bordered" id="data-table">
-                   <tr><th><i class="cil-people fa-2x"></i> Datos Detallados de Paciente.</th>
+                   <tr><th><i class="cil-people fa-2x"></i> <strong>Datos Detallados de Paciente.</strong></th>
                    </tr>
                     <table class="table table-bordered" id="data-table">
                       <tr>
-                    <th>Nombre y Apellidos: {{ $detalles->nombre_apellido }}</th>
-                    <th>Genero: {{ $detalles->genero }}</th>
-                    <th>Edad: {{ $detalles->edad }}</th>
-                     <th>Paciente ID: {{ $detalles->id }}</th>
+                    <th><strong>Nombre y Apellidos:</strong> {{ $detalles->nombre_apellido }}</th>
+                    <th><strong>Genero:</strong> {{ $detalles->genero }}</th>
+                    <th><strong>Edad:</strong> {{ $detalles->edad }}</th>
+                     <th><strong>Paciente ID:</strong> {{ $detalles->id }}</th>
                   
             
             </tr>
              <tr>
-                  <th>Ci: {{ $detalles->ci }}</th>
-                   <th>Fecha de Nacimiento: {{ $detalles->fechanac }}</th>
-                  <th>Resultado: <span class="badge badge-danger">{{ $detalles->resultado }}</span></th>
-                  <th>Barrio: {{ $detalles->barrio }}</th>
+                  <th><strong>Ci:</strong> {{ $detalles->ci }}</th>
+                   <th><strong>Fecha de Nacimiento:</strong> {{ $detalles->fechanac }}</th>
+                  <th><strong>Resultado:</strong> <span class="badge badge-danger">{{ $detalles->resultado }}</span></th>
+                  <th><strong>Barrio:</strong> {{ $detalles->barrio }}</th>
                 </tr>
                <tr>
-                <th>Email: {{ $detalles->ci }}</th>
-                  <th>Tipo de Prueba: {{ $detalles->grupo_sanguineo }}</th>
-                   <th>Telefono: {{ $detalles->fechanac }}</th>
-                   <th>Grupo Sanguineo: {{ $detalles->grupo_sanguineo }}</th>
+                <th><strong>Email:</strong> {{ $detalles->email }}</th>
+                  <th><strong>Tipo de Prueba: </strong>{{ $detalles->tipo_prueba_id }}</th>
+                   <th><strong>Telefono: </strong>{{ $detalles->telefono }}</th>
+                   <th><strong>Grupo Sanguineo:</strong> {{ $detalles->grupo_sanguineo }}</th>
                  </tr>
                     <tr>
     
-                   <th>Comorbilidad: {{ $detalles->enfermedad_referencial }}</th>
-                   <th>Latitud: {{ $detalles->latitud }}</th>
-                    <th>Longitud: {{ $detalles->longitud }}</th>
+                   <th><strong>Comorbilidad:</strong> {{ $detalles->enfermedad_referencial }}</th>
+                   <th><strong>Latitud:</strong> {{ $detalles->latitud }}</th>
+                    <th><strong>Longitud:</strong> {{ $detalles->longitud }}</th>
                     
                 </tr>
               </table>
               
                <table class="table table-bordered" id="data-table">
                 <tr>
-                  <th><i class="cil-address-book fa-2x"></i> Datos del control hecho al Paciente.</th>
+                  <th><i class="cil-address-book fa-2x"></i> <strong>Datos del control hecho al Paciente.</strong></th>
                 </tr>
               </table>
                <table class="table table-bordered" id="data-table">
                <tr>
 
-                     <th>Estado: <span class="badge badge-warning">{{ $detalles->estado_paciente }}</span>
-                    <th>Recomendaciones: {{ $detalles->recomendacion }}</th>
-                    <th>Fecha de Alta: {{ $detalles->fecha_alta }}</th>
-                       <th>Fecha de Analisis: {{ $detalles->fecha_analisis }}</th>
+                     <th><strong>Estado: <span class="badge badge-warning">{{ $detalles->estado_paciente }}</span>
+                    <th><strong>Recomendaciones:</strong> {{ $detalles->recomendacion }}</th>
+                    <th><strong>Fecha de Alta: </strong>{{ $detalles->fecha_alta }}</th>
+                       <th><strong>Fecha de Analisis: </strong>{{ $detalles->fecha_analisis }}</th>
                     </tr>
                </tr>
              </table>
                 <table class="table table-bordered" id="data-table">
-                  <th><i class="cil-hospital fa-2x"></i> Datos del Informe detallado de caso.</th>
+                  <th><i class="cil-hospital fa-2x"></i> <strong>Datos del Informe detallado de caso.</strong></th>
                <tr>
                </table>
                <table class="table table-bordered" id="data-table">
                 <tr>
-                    <th>Codigo Region: {{ $detalles->codigo }}</th>
+                    <th><strong>Codigo Region:</strong> {{ $detalles->codigo }}</th>
 
-                    <th>Region: {{ $detalles->region }}</th>
+                    <th><strong>Region: </strong>{{ $detalles->region }}</th>
                     
-                    <th>Codigo Region: {{ $detalles->codigo_distrito }}</th>
+                    <th><strong>Codigo Region:</strong> {{ $detalles->codigo_distrito }}</th>
                
-                    <th>Distrito: {{ $detalles->distrito }}</th>
+                    <th><strong>Distrito:</strong> {{ $detalles->distrito }}</th>
                      </tr>
                 <tr>
                       
               
-                    <th>Fecha de Notificacion: {{ $detalles->fecha_notificacion }}</th>
+                    <th><strong>Fecha de Notificacion:</strong> {{ $detalles->fecha_notificacion }}</th>
                 
-                    <th>Medico: {{ $detalles->medico }}</th>
+                    <th><strong>Medico:</strong> {{ $detalles->medico }}</th>
             
-                    <th>Edad Media: {{ $detalles->media_edad }}</th>
+                    <th><strong>Edad Media:</strong> {{ $detalles->media_edad }}</th>
                
-                    <th>Residente: {{ $detalles->residente }}</th>
+                    <th><strong>Residente:</strong> {{ $detalles->residente }}</th>
                      </tr>
                 <tr>
                       
                 
-                    <th>Hospedaje: {{ $detalles->hospedaje }}</th>
+                    <th><strong>Hospedaje:</strong> {{ $detalles->hospedaje }}</th>
                    
-                    <th>Telefono Verificado: {{ $detalles->telefono_verificado }}</th>
+                    <th><strong>Telefono Verificado:</strong> {{ $detalles->telefono_verificado }}</th>
     
-                    <th>Codigo Departamento: {{ $detalles->codigo_departamento }}</th>
+                    <th><strong>Codigo Departamento:</strong> {{ $detalles->codigo_departamento }}</th>
             
-                    <th>Departamento: {{ $detalles->departamento }}</th>
+                    <th><strong>Departamento:</strong> {{ $detalles->departamento }}</th>
                      </tr>
                 <tr>
                       
                 
-                    <th>Zona: {{ $detalles->zona }}</th>
+                    <th><strong>Zona:</strong> {{ $detalles->zona }}</th>
                
-                    <th>Personal de Blanco: {{ $detalles->personal_de_blanco }}</th>
+                    <th><strong>Personal de Blanco:</strong> {{ $detalles->personal_de_blanco }}</th>
 
-                    <th>Albergue: {{ $detalles->albergue }}</th>
+                    <th><strong>Albergue:</strong> {{ $detalles->albergue }}</th>
               
-                    <th>Lugar de Albergue: {{ $detalles->lugar_albergue }}</th>
+                    <th><strong>Lugar de Albergue:</strong> {{ $detalles->lugar_albergue }}</th>
                      </tr>
                 <tr>
                       
                
-                    <th>Detalles de sintomas de Fiebre: {{ $detalles->sintomas_fiebre }}</th>
+                    <th><strong>Detalles de sintomas de Fiebre:</strong> {{ $detalles->sintomas_fiebre }}</th>
                  
-                    <th>Detalles de Hospitalizacion: {{ $detalles->hospitalizado }}</th>
+                    <th><strong>Detalles de Hospitalizacion: </strong>{{ $detalles->hospitalizado }}</th>
                 
-                    <th>Detalles de Comorbilidad: {{ $detalles->signo_sintoma }}</th>
+                    <th><strong>Detalles de Comorbilidad:</strong> {{ $detalles->signo_sintoma }}</th>
               
-                    <th>Vacuna para la Influenza: {{ $detalles->vacuna_para_la_influenza }}</th>
+                    <th><strong>Vacuna para la Influenza:</strong> {{ $detalles->vacuna_para_la_influenza }}</th>
                      </tr>
                 <tr>
                       
     
-                    <th>Fecha de Vacunacion: {{ $detalles->fecha_vacunacion }}</th>
+                    <th><strong>Fecha de Vacunacion:</strong> {{ $detalles->fecha_vacunacion }}</th>
         
-                    <th>Viajo Resientemente: {{ $detalles->viajo_resiente }}</th>
+                    <th><strong>Viajo Resientemente:</strong> {{ $detalles->viajo_resiente }}</th>
                 
-                    <th>Centro de Asistencia de Covid: {{ $detalles->centro_asistencia_covid }}</th>
+                    <th><strong>Centro de Asistencia de Covid:</strong> {{ $detalles->centro_asistencia_covid }}</th>
                 
-                    <th>Centro de Asistencia del Pais: {{ $detalles->centro_asistencia_pais }}</th>
+                    <th><strong>Centro de Asistencia del Pais:</strong> {{ $detalles->centro_asistencia_pais }}</th>
                      </tr>
                 <tr>
                       
               
-                    <th>Centro de Asistencia de la Ciudad: {{ $detalles->centro_asistencia_ciudad }}</th>
+                    <th><strong>Centro de Asistencia de la Ciudad:</strong> {{ $detalles->centro_asistencia_ciudad }}</th>
                
-                    <th>Nombre de Centro de Asistencia: {{ $detalles->nombre_centro_asistencia }}</th>
+                    <th><strong>Nombre de Centro de Asistencia:</strong> {{ $detalles->nombre_centro_asistencia }}</th>
                 
-                    <th>Fecha de Asistencia: {{ $detalles->fecha_asistida }}</th>
+                    <th><strong>Fecha de Asistencia:</strong> {{ $detalles->fecha_asistida }}</th>
                 
-                    <th>Contacto con Animales: {{ $detalles->contacto_con_animales }}</th>
+                    <th><strong>Contacto con Animales:</strong> {{ $detalles->contacto_con_animales }}</th>
                      </tr>
                 <tr>
                       
                 
-                    <th>Contacto con Personas: {{ $detalles->contacto_persona }}</th>
+                    <th><strong>Contacto con Personas:</strong> {{ $detalles->contacto_persona }}</th>
                
-                    <th>Tipo de Contacto: {{ $detalles->tipo_contacto }}</th>
+                    <th><strong>Tipo de Contacto:</strong> {{ $detalles->tipo_contacto }}</th>
                
-                    <th>Otro tipo de Contacto: {{ $detalles->contacto_otro }}</th>
+                    <th><strong>Otro tipo de Contacto:</strong> {{ $detalles->contacto_otro }}</th>
                 
-                    <th>Contacto con Infectado: {{ $detalles->contacto_con_infectado }}</th>
+                    <th><strong>Contacto con Infectado:</strong> {{ $detalles->contacto_con_infectado }}</th>
                      </tr>
                 <tr>
                       
 
-                    <th>Datos del Contacto{{ $detalles->dato_de_contacto }}</th>
+                    <th><strong>Datos del Contacto: </strong>{{ $detalles->dato_de_contacto }}</th>
                 
-                    <th>Toma de Muestra: {{ $detalles->toma_de_muestra }}</th>
+                    <th><strong>Toma de Muestra: </strong>{{ $detalles->toma_de_muestra }}</th>
                 
-                    <th>Laboratorio: {{ $detalles->laboratorio }}</th>
+                    <th><strong>Laboratorio:</strong> {{ $detalles->laboratorio }}</th>
                 
-                    <th>Numero de Pnatilla:{{ $detalles->nro_planilla }}</th>
+                    <th><strong>Numero de Pnatilla: </strong>{{ $detalles->nro_planilla }}</th>
                      </tr>
                 <tr>
                     
                 
-                    <th>Año{{ $detalles->anho }}</th>
+                    <th><strong>Año:</strong> {{ $detalles->anho }}</th>
                 
-                    <th>Responsable de Carga: {{ $detalles->responsable_de_carga }}</th>
+                    <th><strong>Responsable de Carga:</strong> {{ $detalles->responsable_de_carga }}</th>
                 
-                    <th>Usuario de Laboratorio: {{ $detalles->usuario_lugar }}</th>
+                    <th><strong>Usuario de Laboratorio: </strong>{{ $detalles->usuario_lugar }}</th>
                 </tr>
             </table>
              <table class="table table-bordered" id="data-table">
               <tr>
-                <th><i class="cil-globe-alt fa-2x"></i> Geolocalizacion exsacta de Paciente.</th>
+                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exsacta de Paciente.</strong></th>
               </tr>
                    
                    <tr>
@@ -194,7 +194,7 @@
                    </tr> 
                    
                 </div>
-</table>
+              </table>
             </div>
            
 
@@ -219,4 +219,4 @@
             marker.openPopup();
             
      </script>
-     @endsection
+     @endsection  

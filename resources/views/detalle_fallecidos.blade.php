@@ -21,312 +21,188 @@
                 <!-- Nombre Field -->
                   <li class="list-group-item">
                  
-               <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
-                    <p>{{ $fallecidos->nombre_apellido }}</p>
-                </div>
-                <!-- Genero Field -->
-               <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('genero', 'Genero:') !!}
-                    <p>{{ $fallecidos->genero }}</p>
-                </div>
+              <table class="table table-bordered" id="data-table">
+                   <tr><th><i class="cil-people fa-2x"></i> <strong>Datos Detallados de Paciente.</strong></th>
+                   </tr>
+                    <table class="table table-bordered" id="data-table">
+                      <tr>
+                    <th><strong>Nombre y Apellidos:</strong> {{ $fallecidos->nombre_apellido }}</th>
+                    <th><strong>Genero:</strong> {{ $fallecidos->genero }}</th>
+                    <th><strong>Edad:</strong> {{ $fallecidos->edad }}</th>
+                     <th><strong>Paciente ID:</strong> {{ $fallecidos->id }}</th>
+                  
+            
+            </tr>
+             <tr>
+                  <th><strong>Ci:</strong> {{ $fallecidos->ci }}</th>
+                   <th><strong>Fecha de Nacimiento:</strong> {{ $fallecidos->fechanac }}</th>
+                  <th><strong>Resultado:</strong> <span class="badge badge-danger">{{ $fallecidos->resultado }}</span></th>
+                  <th><strong>Barrio:</strong> {{ $fallecidos->barrio }}</th>
+                </tr>
+               <tr>
+                <th><strong>Email:</strong> {{ $fallecidos->email }}</th>
+                  <th><strong>Tipo de Prueba: </strong>{{ $fallecidos->tipo_prueba_id }}</th>
+                   <th><strong>Telefono: </strong>{{ $fallecidos->telefono }}</th>
+                   <th><strong>Grupo Sanguineo:</strong> {{ $fallecidos->grupo_sanguineo }}</th>
+                 </tr>
+                    <tr>
+    
+                   <th><strong>Comorbilidad:</strong> {{ $fallecidos->enfermedad_referencial }}</th>
+                   <th><strong>Latitud:</strong> {{ $fallecidos->latitud }}</th>
+                    <th><strong>Longitud:</strong> {{ $fallecidos->longitud }}</th>
+                    
+                </tr>
+              </table>
+              
+               <table class="table table-bordered" id="data-table">
+                <tr>
+                  <th><i class="cil-address-book fa-2x"></i> <strong>Datos del control hecho al Paciente.</strong></th>
+                </tr>
+              </table>
+               <table class="table table-bordered" id="data-table">
+               <tr>
 
-                <!-- Fechanac Field -->
-               <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('id', 'Paciente id:') !!}
-                    <p>{{ $fallecidos->id }}</p>
-                </div>
+                     <th><strong>Estado: <span class="badge badge-danger">{{ $fallecidos->estado_paciente }}</span>
+                    <th><strong>Recomendaciones:</strong> {{ $fallecidos->recomendacion }}</th>
+                    <th><strong>Fecha de Alta: </strong>{{ $fallecidos->fecha_alta }}</th>
+                       <th><strong>Fecha de Analisis: </strong>{{ $fallecidos->fecha_analisis }}</th>
+                    </tr>
+               </tr>
+             </table>
+                <table class="table table-bordered" id="data-table">
+                  <th><i class="cil-hospital fa-2x"></i> <strong>Datos del Informe detallado de caso.</strong></th>
+               <tr>
+               </table>
+               <table class="table table-bordered" id="data-table">
+                <tr>
+                    <th><strong>Codigo Region:</strong> {{ $fallecidos->codigo }}</th>
 
-                <!-- Edad Field -->
-               <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('edad', 'Edad:') !!}
-                    <p>{{ $fallecidos->edad }}</p>
-                </div>
+                    <th><strong>Region: </strong>{{ $fallecidos->region }}</th>
+                    
+                    <th><strong>Codigo Region:</strong> {{ $fallecidos->codigo_distrito }}</th>
+               
+                    <th><strong>Distrito:</strong> {{ $fallecidos->distrito }}</th>
+                     </tr>
+                <tr>
+                      
+              
+                    <th><strong>Fecha de Notificacion:</strong> {{ $fallecidos->fecha_notificacion }}</th>
+                
+                    <th><strong>Medico:</strong> {{ $fallecidos->medico }}</th>
+            
+                    <th><strong>Edad Media:</strong> {{ $fallecidos->media_edad }}</th>
+               
+                    <th><strong>Residente:</strong> {{ $fallecidos->residente }}</th>
+                     </tr>
+                <tr>
+                      
+                
+                    <th><strong>Hospedaje:</strong> {{ $fallecidos->hospedaje }}</th>
+                   
+                    <th><strong>Telefono Verificado:</strong> {{ $fallecidos->telefono_verificado }}</th>
+    
+                    <th><strong>Codigo Departamento:</strong> {{ $fallecidos->codigo_departamento }}</th>
+            
+                    <th><strong>Departamento:</strong> {{ $fallecidos->departamento }}</th>
+                     </tr>
+                <tr>
+                      
+                
+                    <th><strong>Zona:</strong> {{ $fallecidos->zona }}</th>
+               
+                    <th><strong>Personal de Blanco:</strong> {{ $fallecidos->personal_de_blanco }}</th>
 
-                <!-- Ci Field -->
-               <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('estado_paciente', 'Estado Paciente:') !!}
-                    <p><span class="badge badge-danger">{{ $fallecidos->estado_paciente }}</span></p>
-                </div>
+                    <th><strong>Albergue:</strong> {{ $fallecidos->albergue }}</th>
+              
+                    <th><strong>Lugar de Albergue:</strong> {{ $fallecidos->lugar_albergue }}</th>
+                     </tr>
+                <tr>
+                      
+               
+                    <th><strong>Detalles de sintomas de Fiebre:</strong> {{ $fallecidos->sintomas_fiebre }}</th>
+                 
+                    <th><strong>Detalles de Hospitalizacion: </strong>{{ $fallecidos->hospitalizado }}</th>
+                
+                    <th><strong>Detalles de Comorbilidad:</strong> {{ $fallecidos->signo_sintoma }}</th>
+              
+                    <th><strong>Vacuna para la Influenza:</strong> {{ $fallecidos->vacuna_para_la_influenza }}</th>
+                     </tr>
+                <tr>
+                      
+    
+                    <th><strong>Fecha de Vacunacion:</strong> {{ $fallecidos->fecha_vacunacion }}</th>
+        
+                    <th><strong>Viajo Resientemente:</strong> {{ $fallecidos->viajo_resiente }}</th>
+                
+                    <th><strong>Centro de Asistencia de Covid:</strong> {{ $fallecidos->centro_asistencia_covid }}</th>
+                
+                    <th><strong>Centro de Asistencia del Pais:</strong> {{ $fallecidos->centro_asistencia_pais }}</th>
+                     </tr>
+                <tr>
+                      
+              
+                    <th><strong>Centro de Asistencia de la Ciudad:</strong> {{ $fallecidos->centro_asistencia_ciudad }}</th>
+               
+                    <th><strong>Nombre de Centro de Asistencia:</strong> {{ $fallecidos->nombre_centro_asistencia }}</th>
+                
+                    <th><strong>Fecha de Asistencia:</strong> {{ $fallecidos->fecha_asistida }}</th>
+                
+                    <th><strong>Contacto con Animales:</strong> {{ $fallecidos->contacto_con_animales }}</th>
+                     </tr>
+                <tr>
+                      
+                
+                    <th><strong>Contacto con Personas:</strong> {{ $fallecidos->contacto_persona }}</th>
+               
+                    <th><strong>Tipo de Contacto:</strong> {{ $fallecidos->tipo_contacto }}</th>
+               
+                    <th><strong>Otro tipo de Contacto:</strong> {{ $fallecidos->contacto_otro }}</th>
+                
+                    <th><strong>Contacto con Infectado:</strong> {{ $fallecidos->contacto_con_infectado }}</th>
+                     </tr>
+                <tr>
+                      
 
-                <!-- Barrio Field -->
-               <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('barrio', 'Barrio:') !!}
-                    <p>{{ $fallecidos->barrio }}</p>
-                </div>
-                <!-- Email field -->
-               <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('fecha_alta', 'fecha_alta:') !!}
-                    <p>{{ $fallecidos->fecha_alta }}</p>
-                </div>
-
-                <!-- Grupo Sanguineo Field -->
-               <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('fecha_analisis', 'Fecha de Analisis:') !!}
-                    <p>{{ $fallecidos->fecha_analisis }}</p>
-                </div>
-
-                <!-- Enfermedad Referencial Field -->
-               <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}
-                    <p>{{ $fallecidos->enfermedad_referencial }}</p>
-                </div>
-               <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('latitud', 'Latitud:') !!}
-                    <p>{{ $fallecidos->latitud }}</p>
-                </div>
-               <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('longitud', 'Longuitud:') !!}
-                    <p>{{ $fallecidos->longitud }}</p>
-                </div>
-                 <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('codigo', 'Codigo:') !!}
-                    <p>{{ $fallecidos->codigo }}</p>
-                </div>
-
-                <!-- Region Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('region', 'Region:') !!}
-                    <p>{{ $fallecidos->region }}</p>
-                </div>
-
-                <!-- Codigo Distrito Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('codigo_distrito', 'Codigo Distrito:') !!}
-                    <p>{{ $fallecidos->codigo_distrito }}</p>
-                </div>
-
-                <!-- Distrito Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('distrito', 'Distrito:') !!}
-                    <p>{{ $fallecidos->distrito }}</p>
-                </div>
-
-                <!-- Fecha Notificacion Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('fecha_notificacion', 'Fecha Notificacion:') !!}
-                    <p>{{ $fallecidos->fecha_notificacion }}</p>
-                </div>
-
-                <!-- Medico Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('medico', 'Medico:') !!}
-                    <p>{{ $fallecidos->medico }}</p>
-                </div>
-
-                <!-- Media Edad Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('media_edad', 'Media Edad:') !!}
-                    <p>{{ $fallecidos->media_edad }}</p>
-                </div>
-
-                <!-- Residente Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('residente', 'Residente:') !!}
-                    <p>{{ $fallecidos->residente }}</p>
-                </div>
-
-                <!-- Hospedaje Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('hospedaje', 'Hospedaje:') !!}
-                    <p>{{ $fallecidos->hospedaje }}</p>
-                </div>
-
-                <!-- Telefono Verificado Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('telefono_verificado', 'Telefono Verificado:') !!}
-                    <p>{{ $fallecidos->telefono_verificado }}</p>
-                </div>
-
-                <!-- Codigo Departamento Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('codigo_departamento', 'Codigo Departamento:') !!}
-                    <p>{{ $fallecidos->codigo_departamento }}</p>
-                </div>
-
-                <!-- Departamento Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('departamento', 'Departamento:') !!}
-                    <p>{{ $fallecidos->departamento }}</p>
-                </div>
-
-                <!-- Zona Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('zona', 'Zona:') !!}
-                    <p>{{ $fallecidos->zona }}</p>
-                </div>
-
-                <!-- Personal De Blanco Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('personal_de_blanco', 'Personal De Blanco:') !!}
-                    <p>{{ $fallecidos->personal_de_blanco }}</p>
-                </div>
-
-                <!-- Albergue Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('albergue', 'Albergue:') !!}
-                    <p>{{ $fallecidos->albergue }}</p>
-                </div>
-
-                <!-- Lugar Albergue Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('lugar_albergue', 'Lugar Albergue:') !!}
-                    <p>{{ $fallecidos->lugar_albergue }}</p>
-                </div>
-
-                <!-- Sintomas Fiebre Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('sintomas_fiebre', 'Sintomas Fiebre:') !!}
-                    <p>{{ $fallecidos->sintomas_fiebre }}</p>
-                </div>
-
-                <!-- Hospitalizado Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('hospitalizado', 'Hospitalizado:') !!}
-                    <p>{{ $fallecidos->hospitalizado }}</p>
-                </div>
-
-                <!-- Signo Sintoma Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('signo_sintoma', 'Signo Sintoma:') !!}
-                    <p>{{ $fallecidos->signo_sintoma }}</p>
-                </div>
-
-                <!-- Vacuna Para La Influenza Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('vacuna_para_la_influenza', 'Vacuna Para La Influenza:') !!}
-                    <p>{{ $fallecidos->vacuna_para_la_influenza }}</p>
-                </div>
-
-                <!-- Fecha Vacunacion Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('fecha_vacunacion', 'Fecha Vacunacion:') !!}
-                    <p>{{ $fallecidos->fecha_vacunacion }}</p>
-                </div>
-
-                <!-- Viajo Resiente Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('viajo_resiente', 'Viajo Resiente:') !!}
-                    <p>{{ $fallecidos->viajo_resiente }}</p>
-                </div>
-
-                <!-- Centro Asistencia Covid Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('centro_asistencia_covid', 'Centro Asistencia Covid:') !!}
-                    <p>{{ $fallecidos->centro_asistencia_covid }}</p>
-                </div>
-
-                <!-- Centro Asistencia Pais Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('centro_asistencia_pais', 'Centro Asistencia Pais:') !!}
-                    <p>{{ $fallecidos->centro_asistencia_pais }}</p>
-                </div>
-
-                <!-- Centro Asistencia Ciudad Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('centro_asistencia_ciudad', 'Centro Asistencia Ciudad:') !!}
-                    <p>{{ $fallecidos->centro_asistencia_ciudad }}</p>
-                </div>
-
-                <!-- Nombre Centro Asistencia Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('nombre_centro_asistencia', 'Nombre Centro Asistencia:') !!}
-                    <p>{{ $fallecidos->nombre_centro_asistencia }}</p>
-                </div>
-
-                <!-- Fecha Asistida Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('fecha_asistida', 'Fecha Asistida:') !!}
-                    <p>{{ $fallecidos->fecha_asistida }}</p>
-                </div>
-
-                <!-- Contacto Con Animales Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('contacto_con_animales', 'Contacto Con Animales:') !!}
-                    <p>{{ $fallecidos->contacto_con_animales }}</p>
-                </div>
-
-                <!-- Contacto Persona Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('contacto_persona', 'Contacto Persona:') !!}
-                    <p>{{ $fallecidos->contacto_persona }}</p>
-                </div>
-
-                <!-- Tipo Contacto Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('tipo_contacto', 'Tipo Contacto:') !!}
-                    <p>{{ $fallecidos->tipo_contacto }}</p>
-                </div>
-
-                <!-- Contacto Otro Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('contacto_otro', 'Contacto Otro:') !!}
-                    <p>{{ $fallecidos->contacto_otro }}</p>
-                </div>
-
-                <!-- Contacto Con Infectado Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('contacto_con_infectado', 'Contacto Con Infectado:') !!}
-                    <p>{{ $fallecidos->contacto_con_infectado }}</p>
-                </div>
-
-                <!-- Dato De Contacto Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('dato_de_contacto', 'Dato De Contacto:') !!}
-                    <p>{{ $fallecidos->dato_de_contacto }}</p>
-                </div>
-
-                <!-- Toma De Muestra Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('toma_de_muestra', 'Toma De Muestra:') !!}
-                    <p>{{ $fallecidos->toma_de_muestra }}</p>
-                </div>
-
-                <!-- Laboratorio Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('laboratorio', 'Laboratorio:') !!}
-                    <p>{{ $fallecidos->laboratorio }}</p>
-                </div>
-
-                <!-- Nro Planilla Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('nro_planilla', 'Nro Planilla:') !!}
-                    <p>{{ $fallecidos->nro_planilla }}</p>
-                </div>
-
-                <!-- Anho Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('anho', 'Anho:') !!}
-                    <p>{{ $fallecidos->anho }}</p>
-                </div>
-
-                <!-- Responsable De Carga Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('responsable_de_carga', 'Responsable De Carga:') !!}
-                    <p>{{ $fallecidos->responsable_de_carga }}</p>
-                </div>
-
-                <!-- Usuario Lugar Field -->
-                <div class="form-group col-md-4 pull-left">
-                    {!! Form::label('usuario_lugar', 'Usuario Lugar:') !!}
-                    <p>{{ $fallecidos->usuario_lugar }}</p>
-                </div>
-                   <div class="form-group col-sm-13 pull-left">
-                  <div class="card">
-                             <div class="card-body">
-                    <div id="mapid"></div>
+                    <th><strong>Datos del Contacto: </strong>{{ $fallecidos->dato_de_contacto }}</th>
+                
+                    <th><strong>Toma de Muestra: </strong>{{ $fallecidos->toma_de_muestra }}</th>
+                
+                    <th><strong>Laboratorio: {{ $fallecidos->laboratorio }}</th>
+                
+                    <th><strong>Numero de Pnatilla: </strong>{{ $fallecidos->nro_planilla }}</th>
+                     </tr>
+                <tr>
+                    
+                
+                    <th><strong>Año:</strong> {{ $fallecidos->anho }}</th>
+                
+                    <th><strong>Responsable de Carga:</strong> {{ $fallecidos->responsable_de_carga }}</th>
+                
+                    <th><strong>Usuario de Laboratorio: </strong>{{ $fallecidos->usuario_lugar }}</th>
+                </tr>
+            </table>
+             <table class="table table-bordered" id="data-table">
+              <tr>
+                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exsacta de Paciente.</strong></th>
+              </tr>
+                   
+                   <tr>
+                    <th>
+                     <div id="mapid"></div>
+                     </th>
+                   </tr> 
                    
                 </div>
-
+              </table>
             </div>
-            
+           
 
          </div>
 
     </li>
     </ul>
     <style type="text/css">
-                   #mapid { height: 600px; width:1310px; }
+                   #mapid { height: 350px; width:1310px; }
            </style>
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" type="text/css">
@@ -342,4 +218,4 @@
             marker.openPopup();
             
      </script>
-     @endsection
+     @endsection  

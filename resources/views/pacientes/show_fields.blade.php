@@ -1,70 +1,66 @@
-<ul class="list-group">
+<!--<script type="text/javascript">
+  function printDiv(nombreDiv) {
+     var contenido= document.getElementById(nombreDiv).innerHTML;
+     var contenidoOriginal= document.body.innerHTML;
 
-<!-- Nombre Field -->
+     document.body.innerHTML = contenido;
+
+     window.print();
+
+     document.body.innerHTML = contenidoOriginal;
+}
+</script>
+<input type="button" onclick="printDiv('areaImprimir')" value="Imprimir" />
+<div id="areaImprimir">-->
+
+<ul class="list-group">
   <li class="list-group-item">
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
-    <p>{{ $paciente->nombre_apellido }}</p>
-</div>
+     <table class="table table-bordered" id="data-table">
+                   <tr><th><i class="cil-people fa-2x"></i> <strong>Datos Detallados de Paciente.</strong></th>
+                   </tr>
+
+  <table class="table table-bordered" id="data-table">
+<!-- Nombre Field -->
+ 
+<tr>
+    <th><strong>Datos Personales: </strong>{{ $paciente->nombre_apellido }}</th>
 <!-- Genero Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('genero', 'Genero:') !!}
-    <p>{{ $paciente->genero }}</p>
-</div>
+
+    <th><strong>Genero: </strong>{{ $paciente->genero }}</th>
 
 <!-- Fechanac Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('fechanac', 'Fecha de nacimiento:') !!}
-    <p>{{ $paciente->fechanac }}</p>
-</div>
+
+    <th><strong>Fecha de Nacimiento: </strong>{{ $paciente->fechanac }}</th>
 
 <!-- Edad Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('edad', 'Edad:') !!}
-    <p>{{ $paciente->edad }}</p>
-</div>
 
+    <th><strong>Edad: </strong>{{ $paciente->edad }}</th>
+</tr>
+<tr>
 <!-- Ci Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('ci', 'C.I.:') !!}
-    <p>{{ $paciente->ci }}</p>
-</div>
 
-<!-- Barrio Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('barrio', 'Barrio:') !!}
-    <p>{{ $paciente->barrio }}</p>
-</div>
+    <th><strong>Ci: </strong>{{ $paciente->ci }}</th>
 
-<!-- Telefono Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('telefono', 'Telefono:') !!}
-    <p>{{ $paciente->telefono }}</p>
-</div>
+    <th><strong>Barrio: </strong>{{ $paciente->barrio }}</th>
+
+    <th><strong>Telefono: </strong>{{ $paciente->telefono }}</p>
 <!-- Email field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('email', 'Email:') !!}
-    <p>{{ $paciente->email }}</p>
-</div>
+
+    <th><strong>Email: </strong>{{ $paciente->email }}</th>
+</tr>
 
 <!-- Grupo Sanguineo Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('grupo_sanguineo', 'Grupo Sanguineo:') !!}
-    <p>{{ $paciente->grupo_sanguineo }}</p>
-</div>
+<tr>
+    <th><strong>Grupo Sanguineo: </strong>{{ $paciente->grupo_sanguineo }}</th>
 
 <!-- Enfermedad Referencial Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}
-    <p>{{ $paciente->enfermedad_referencial }}</p>
-</div>
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('tipo_prueba', 'Tipo de Prueba:') !!}
-    <p>{{ $paciente->tipo_prueba->nombre }}</p>
-</div>
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('resultado', 'Estado Paciente:') !!}
-    <p>@switch(true)
+
+    <th>{{ $paciente->enfermedad_referencial }}</rh>
+
+    <th><strong>Tipo de Prueba: </strong>{{ $paciente->tipo_prueba->nombre }}</th>
+
+  
+    <th><strong>Resultado: </strong> @switch(true)
            @case($paciente->resultado == 'Negativo')
             <span class="badge badge-primary"> {{ $paciente->resultado }} </span>
             @break
@@ -77,38 +73,45 @@
             @case($paciente->resultado == 'Sin eleccion' )
             <span class="badge badge-dark"> {{ $paciente->resultado }} </span>
             @break
-            @endswitch</td>
-</div>
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('latitud', 'Latitud:') !!}
-    <p>{{ $paciente->latitud }}</p>
-</div>
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('longitud', 'Longuitud:') !!}
-    <p>{{ $paciente->longitud }}</p>
-</div>
+            @endswitch</th>
+</tr>
+<tr>
+
+    <th><strong>Latitud: </strong>{{ $paciente->latitud }}</th>
+
+    <th><strong>Longitud: </strong> {{ $paciente->longitud }}</th>
+
 <!-- Created At Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('created_at', 'Creado:') !!}
-    <p>{{ $paciente->created_at }}</p>
-</div>
+
+    <th><strong>Creado: </strong>{{ $paciente->created_at }}</th>
+
 
 <!-- Updated At Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('updated_at', 'Actualizado:') !!}
-    <p>{{ $paciente->updated_at }}</p>
-</div>
-   <div class="form-group col-sm-13 pull-left">
-  <div class="card">
-             <div class="card-body">
-    <div id="mapid"></div>
-</div>
-</div>
-</div>
-</li>
-</ul>
+
+    <th><strong>Actualizado: </strong>{{ $paciente->updated_at }}</th>
+</tr>
+
+   <table class="table table-bordered" id="data-table">
+              <tr>
+                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exsacta de Paciente.</strong></th>
+              </tr>
+                   
+                   <tr>
+                    <th>
+                     <div id="mapid"></div>
+                     </th>
+                   </tr> 
+                   
+                </div>
+              </table>
+            </div>
+           
+
+         </div>
+    </li>
+    </ul>
     <style type="text/css">
-                   #mapid { height: 600px; width:1310px; }
+                   #mapid { height: 350px; width:1310px; }
            </style>
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" type="text/css">

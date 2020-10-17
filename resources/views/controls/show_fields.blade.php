@@ -1,21 +1,19 @@
 <ul class="list-group">
 <li class="list-group-item">
+     <table class="table table-bordered" id="data-table">
+                <tr>
+                  <th><i class="cil-address-book fa-2x"></i> <strong>Datos del control hecho al Paciente.</strong></th>
+                </tr>
+              </table>
 <!-- Paciente Id Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('paciente_id', 'Nro de Caso:') !!}
-    <p>{{ $control->paciente->paciente_id }}</p>
-</div>
-
+<table class="table table-bordered" id="data-table">
+                <tr>
+    <th><strong>Nro de Caso: </strong>{{ $control->paciente->paciente_id }}</th>
 <!-- Fecha Analisis Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('fecha_analisis', 'Fecha Analisis:') !!}
-    <p>{{ $control->fecha_analisis }}</p>
-</div>
 
-<!-- Estado Paciente Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('estado_paciente', 'Estado Paciente:') !!}
-    <p>@switch(true)
+    <th><strong>Fecha de Analisis</strong>{{ $control->fecha_analisis }}</th>
+   <th><strong>Control ID: </strong>{{ $control->paciente->paciente_id }}</th>
+    <th><strong>Estado Paciente: </strong>@switch(true)
             @case($control->estado_paciente == 'Inactivo')
             <span class="badge badge-primary"> {{ $control->estado_paciente }} </span>
             @break
@@ -28,31 +26,21 @@
             @case($control->estado_paciente == 'Sin eleccion' )
             <span class="badge badge-dark"> {{ $control->estado_paciente }} </span>
             @break
-            @endswitch</p>
-</div>
+            @endswitch</th>
+</tr>
+<tr>
 
-<!-- Recomendacion Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('recomendacion', 'Recomendacion:') !!}
-    <p>{{ $control->recomendacion }}</p>
+    <!-- Recomendacion Field -->
+     <th><strong>Recomendacion: </strong>{{ $control->recomendacion }}</th>
+     <!-- Fecha Alta Field -->
+    <th><strong>Fecha de Alta: </strong>{{ $control->fecha_alta }}</th>
 </div>
-
-<!-- Fecha Alta Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('fecha_alta', 'Fecha Alta:') !!}
-    <p>{{ $control->fecha_alta }}</p>
-</div>
-
 <!-- Created At Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('created_at', 'Creado:') !!}
-    <p>{{ $control->created_at }}</p>
-</div>
-
+    <th><strong>Creado: </strong>{{ $control->created_at }}</th>
 <!-- Updated At Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('updated_at', 'Actualizado:') !!}
-    <p>{{ $control->updated_at }}</p>
+    <th><strong>Actualizado: </strong>{{ $control->updated_at }}</th>
+</tr>
+</table>
 </div>
 </ul>
 </li>

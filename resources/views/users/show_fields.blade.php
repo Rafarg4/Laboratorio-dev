@@ -2,26 +2,26 @@
 
 <!-- Nombre Field -->
 <li class="list-group-item">
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('name', 'Nombre y Apellido:') !!}
-    <p>{{ $user->name }}</p>
-</div>
+	<table class="table table-bordered" id="data-table">
+                <tr>
+                  <th><i class="cil-contact fa-2x"></i> <strong>Detalles de Ususrio.</strong></th>
+                </tr>
+              </table>
+<table class="table table-bordered" id="data-table">
+	<tr>
+
+    <th><strong>Nombre y Apellido: </strong>{{ $user->name }}</th>
 
 <!-- Email Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('email', 'Email:') !!}
-    <p>{{ $user->email }}</p>
-</div>
+    <th><strong>Email: </strong>{{ $user->email }}</th>
 <!-- Created At Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('created_at', 'Creado:') !!}
-    <p>{{ $user->created_at }}</p>
+
+    <th><strong>Creado: </strong>{{ $user->created_at }}</th>
 </div>
 
-<!-- Updated At Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('updated_at', 'Actualizado:') !!}
-    <p>{{ $user->updated_at }}</p>
+    <th><strong>Actualizado: </strong>{{ $user->updated_at }}</th>
+</tr>
+</table>
 </div>
 </li>
 </ul>
