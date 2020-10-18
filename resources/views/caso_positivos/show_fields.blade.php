@@ -1,255 +1,154 @@
 <ul class="list-group">
-<li class="list-group-item">
+  <li class="list-group-item">
+     <table class="table table-bordered" id="data-table">
+                   <tr><th><i class="cil-people fa-2x"></i> <strong>Datos Detallados de Casos Positivos</strong></th>
+                   </tr>
+               </table>
+<table class="table table-bordered" id="data-table">
+<!-- Nombre Field -->
+<tr>
+
 <!-- Paciente Id Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('paciente_id', 'Paciente:') !!}
-    <p>{{ $casoPositivo->paciente->nombre_apellido }}</p>
-</div>
+<th><strong>Datos Personales: </strong>{{ $casoPositivo->paciente->nombre_apellido }}</th>
 
 <!-- Codigo Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('codigo', 'Codigo:') !!}
-    <p>{{ $casoPositivo->codigo }}</p>
-</div>
+
+<th><strong>Codigo: </strong>{{ $casoPositivo->codigo }}</th>
 
 <!-- Region Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('region', 'Region:') !!}
-    <p>{{ $casoPositivo->region }}</p>
-</div>
+
+<th><strong>Región: </strong>{{ $casoPositivo->region }}</th>
 
 <!-- Codigo Distrito Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('codigo_distrito', 'Codigo Distrito:') !!}
-    <p>{{ $casoPositivo->codigo_distrito }}</p>
-</div>
+
+<th><strong>Codigo: </strong>{{ $casoPositivo->codigo_distrito }}</th>
+</tr>
+<tr>
 
 <!-- Distrito Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('distrito', 'Distrito:') !!}
-    <p>{{ $casoPositivo->distrito }}</p>
-</div>
+<th><strong>Distrito: </strong>{{ $casoPositivo->distrito }}</th>
 
 <!-- Fecha Notificacion Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('fecha_notificacion', 'Fecha Notificacion:') !!}
-    <p>{{ $casoPositivo->fecha_notificacion }}</p>
-</div>
+<th><strong>Fecha Notificación: </strong>{{ $casoPositivo->fecha_notificacion }}</th>
 
 <!-- Medico Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('medico', 'Medico:') !!}
-    <p>{{ $casoPositivo->medico }}</p>
-</div>
+<th><strong>Médico: </strong>{{ $casoPositivo->medico }}</th>
 
 <!-- Media Edad Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('media_edad', 'Media Edad:') !!}
-    <p>{{ $casoPositivo->media_edad }}</p>
-</div>
+<th><strong>Media Edad: </strong>{{ $casoPositivo->media_edad }}</th>
 
+</tr>
+<tr>
 <!-- Residente Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('residente', 'Residente:') !!}
-    <p>{{ $casoPositivo->residente }}</p>
-</div>
+<th><strong>Residente: </strong>{{ $casoPositivo->residente }}</th>
 
 <!-- Hospedaje Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('hospedaje', 'Hospedaje:') !!}
-    <p>{{ $casoPositivo->hospedaje }}</p>
-</div>
+<th><strong>Hospedaje: </strong>{{ $casoPositivo->hospedaje }}</th>
 
 <!-- Telefono Verificado Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('telefono_verificado', 'Telefono Verificado:') !!}
-    <p>{{ $casoPositivo->telefono_verificado }}</p>
-</div>
+<th><strong>Telefono Verificado: </strong>{{ $casoPositivo->telefono_verificado }}</th>
 
 <!-- Codigo Departamento Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('codigo_departamento', 'Codigo Departamento:') !!}
-    <p>{{ $casoPositivo->codigo_departamento }}</p>
-</div>
-
+<th><strong>Codigo Departamento: </strong>{{ $casoPositivo->codigo_departamento }}</th>
+</tr>
+<tr>
 <!-- Departamento Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('departamento', 'Departamento:') !!}
-    <p>{{ $casoPositivo->departamento }}</p>
-</div>
+<th><strong>Departamento: </strong>{{ $casoPositivo->departamento }}</th>
 
 <!-- Zona Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('zona', 'Zona:') !!}
-    <p>{{ $casoPositivo->zona }}</p>
-</div>
+<th><strong>Zona: </strong>{{ $casoPositivo->zona }}</th>
 
 <!-- Personal De Blanco Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('personal_de_blanco', 'Personal De Blanco:') !!}
-    <p>{{ $casoPositivo->personal_de_blanco }}</p>
-</div>
+<th><strong>Personal de Blanco: </strong>{{ $casoPositivo->personal_de_blanco }}</th>
 
 <!-- Albergue Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('albergue', 'Albergue:') !!}
-    <p>{{ $casoPositivo->albergue }}</p>
-</div>
-
+<th><strong>Albergue: </strong>{{ $casoPositivo->albergue }}</th>
+</tr>
+<tr>
 <!-- Lugar Albergue Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('lugar_albergue', 'Lugar Albergue:') !!}
-    <p>{{ $casoPositivo->lugar_albergue }}</p>
-</div>
+<th><strong>Lugar Albergue: </strong>{{ $casoPositivo->lugar_albergue }}</th>
 
 <!-- Sintomas Fiebre Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('sintomas_fiebre', 'Sintomas Fiebre:') !!}
-    <p>{{ $casoPositivo->sintomas_fiebre }}</p>
-</div>
+<th><strong>Sintomas Fiebre: </strong>{{ $casoPositivo->sintomas_fiebre }}</th>
 
 <!-- Hospitalizado Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('hospitalizado', 'Hospitalizado:') !!}
-    <p>{{ $casoPositivo->hospitalizado }}</p>
-</div>
+<th><strong>Hospitalizado: </strong>{{ $casoPositivo->hospitalizado }}</th>
 
 <!-- Signo Sintoma Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('signo_sintoma', 'Signo Sintoma:') !!}
-    <p>{{ $casoPositivo->signo_sintoma }}</p>
-</div>
-
+<th><strong>Signo Sintoma: </strong>{{ $casoPositivo->signo_sintoma }}</th>
+</tr>
+<tr>
 <!-- Vacuna Para La Influenza Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('vacuna_para_la_influenza', 'Vacuna Para La Influenza:') !!}
-    <p>{{ $casoPositivo->vacuna_para_la_influenza }}</p>
-</div>
+<th><strong>Vacuna para la influenza: </strong>{{ $casoPositivo->vacuna_para_la_influenza }}</th>
 
 <!-- Fecha Vacunacion Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('fecha_vacunacion', 'Fecha Vacunacion:') !!}
-    <p>{{ $casoPositivo->fecha_vacunacion }}</p>
-</div>
+<th><strong>Fecha de Vacunación: </strong>{{ $casoPositivo->fecha_vacunacion }}</th>
 
 <!-- Viajo Resiente Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('viajo_resiente', 'Viajo Resiente:') !!}
-    <p>{{ $casoPositivo->viajo_resiente }}</p>
-</div>
+<th><strong>Viajo reciente: </strong>{{ $casoPositivo->viajo_resiente }}</th>
 
 <!-- Centro Asistencia Covid Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('centro_asistencia_covid', 'Centro Asistencia Covid:') !!}
-    <p>{{ $casoPositivo->centro_asistencia_covid }}</p>
-</div>
-
+<th><strong>Centro de asistencia Covid: </strong>{{ $casoPositivo->centro_asistencia_covid }}</th>
+</tr>
+<tr>
 <!-- Centro Asistencia Pais Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('centro_asistencia_pais', 'Centro Asistencia Pais:') !!}
-    <p>{{ $casoPositivo->centro_asistencia_pais }}</p>
-</div>
+<th><strong>Centro de asistena pais: </strong>{{ $casoPositivo->centro_asistencia_pais }}</th>
 
 <!-- Centro Asistencia Ciudad Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('centro_asistencia_ciudad', 'Centro Asistencia Ciudad:') !!}
-    <p>{{ $casoPositivo->centro_asistencia_ciudad }}</p>
-</div>
+<th><strong>Centro de asistencia ciudad: </strong>{{ $casoPositivo->centro_asistencia_ciudad }}</th>
 
 <!-- Nombre Centro Asistencia Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('nombre_centro_asistencia', 'Nombre Centro Asistencia:') !!}
-    <p>{{ $casoPositivo->nombre_centro_asistencia }}</p>
-</div>
+<th><strong>Nombre centro de asistencia: </strong>{{ $casoPositivo->nombre_centro_asistencia }}</th>
 
 <!-- Fecha Asistida Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('fecha_asistida', 'Fecha Asistida:') !!}
-    <p>{{ $casoPositivo->fecha_asistida }}</p>
-</div>
-
+<th><strong>Fecha asistencia: </strong>{{ $casoPositivo->fecha_asistida }}</th>
+</tr>
+<tr>
 <!-- Contacto Con Animales Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('contacto_con_animales', 'Contacto Con Animales:') !!}
-    <p>{{ $casoPositivo->contacto_con_animales }}</p>
-</div>
+<th><strong>Contacto con animales: </strong>{{ $casoPositivo->contacto_con_animales }}</th>
 
 <!-- Contacto Persona Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('contacto_persona', 'Contacto Persona:') !!}
-    <p>{{ $casoPositivo->contacto_persona }}</p>
-</div>
+<th><strong>Contacto persona: </strong>{{ $casoPositivo->contacto_persona }}</th>
 
 <!-- Tipo Contacto Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('tipo_contacto', 'Tipo Contacto:') !!}
-    <p>{{ $casoPositivo->tipo_contacto }}</p>
-</div>
+<th><strong>Tipo contacto: </strong>{{ $casoPositivo->tipo_contacto }}</th>
 
 <!-- Contacto Otro Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('contacto_otro', 'Contacto Otro:') !!}
-    <p>{{ $casoPositivo->contacto_otro }}</p>
-</div>
-
+<th><strong>Contacto otro: </strong>{{ $casoPositivo->contacto_otro }}</th>
+</tr>
+<tr>
 <!-- Contacto Con Infectado Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('contacto_con_infectado', 'Contacto Con Infectado:') !!}
-    <p>{{ $casoPositivo->contacto_con_infectado }}</p>
-</div>
+<th><strong>Contacto con infectado: </strong>{{ $casoPositivo->contacto_con_infectado }}</th>
 
 <!-- Dato De Contacto Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('dato_de_contacto', 'Dato De Contacto:') !!}
-    <p>{{ $casoPositivo->dato_de_contacto }}</p>
-</div>
+<th><strong>Dato de contacto: </strong>{{ $casoPositivo->dato_de_contacto }}</th>
 
 <!-- Toma De Muestra Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('toma_de_muestra', 'Toma De Muestra:') !!}
-    <p>{{ $casoPositivo->toma_de_muestra }}</p>
-</div>
+<th><strong>Toma de muestra: </strong>{{ $casoPositivo->toma_de_muestra }}</th>
 
 <!-- Laboratorio Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('laboratorio', 'Laboratorio:') !!}
-    <p>{{ $casoPositivo->laboratorio }}</p>
-</div>
-
+<th><strong>Laboratorio: </strong>{{ $casoPositivo->laboratorio }}</th>
+</tr>
+<tr>
 <!-- Nro Planilla Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('nro_planilla', 'Nro Planilla:') !!}
-    <p>{{ $casoPositivo->nro_planilla }}</p>
-</div>
+<th><strong>Nro. planilla: </strong>{{ $casoPositivo->nro_planilla }}</th>
 
 <!-- Anho Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('anho', 'Anho:') !!}
-    <p>{{ $casoPositivo->anho }}</p>
-</div>
+<th><strong>Año: </strong>{{ $casoPositivo->anho }}</th>
 
 <!-- Responsable De Carga Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('responsable_de_carga', 'Responsable De Carga:') !!}
-    <p>{{ $casoPositivo->responsable_de_carga }}</p>
-</div>
+<th><strong>Responsable de carga: </strong>{{ $casoPositivo->responsable_de_carga }}</th>
 
 <!-- Usuario Lugar Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('usuario_lugar', 'Usuario Lugar:') !!}
-    <p>{{ $casoPositivo->usuario_lugar }}</p>
-</div>
-
+<th><strong>Usuario lugar: </strong>{{ $casoPositivo->usuario_lugar }}</th>
+</tr>
+<tr>
 <!-- Created At Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('created_at', 'Creado:') !!}
-    <p>{{ $casoPositivo->created_at }}</p>
-</div>
+<th><strong>Creado: </strong>{{ $casoPositivo->created_at }}</th>
 
 <!-- Updated At Field -->
-<div class="form-group col-md-3 pull-left">
-    {!! Form::label('updated_at', 'Actualizado:') !!}
-    <p>{{ $casoPositivo->updated_at }}</p>
-</div>
+<th><strong>Actualizado: </strong>{{ $casoPositivo->updated_at }}</th>
+</tr>
 </ul>
 </li>
+</table>
