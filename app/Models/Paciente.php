@@ -45,7 +45,8 @@ class Paciente extends Model
         'latitud', 
         'longitud',
         'email',
-        'resultado'
+        'resultado',
+        'usuario'
         
     ];
 
@@ -70,7 +71,8 @@ class Paciente extends Model
         'latitud' => 'string',
         'longitud' => 'string',
         'email' => 'string',
-        'resultado' => 'string'
+        'resultado' => 'string',
+         'usuario' => 'string'
         
     ];
 
@@ -93,8 +95,8 @@ class Paciente extends Model
         'latitud' => 'required',
         'longitud' => 'required',
         'email' => 'required',
-        'resultado' => 'required'
-        
+        'resultado' => 'required',
+        'usuario' => 'required'        
     ];
 
     

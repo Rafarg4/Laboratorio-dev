@@ -51,6 +51,7 @@
                    <th><strong>Comorbilidad:</strong> {{ $detalles->enfermedad_referencial }}</th>
                    <th><strong>Latitud:</strong> {{ $detalles->latitud }}</th>
                     <th><strong>Longitud:</strong> {{ $detalles->longitud }}</th>
+                    <th><strong>Usuario:</strong> {{ $detalles->usuario }}</th>
                     
                 </tr>
               </table>

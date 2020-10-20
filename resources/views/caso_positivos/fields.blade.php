@@ -230,8 +230,8 @@
 </div>
 
 <!-- Usuario Lugar Field -->
-<div class="form-group col-md-6 pull-left">
-<label for="usuario_lugar">Peronal de Blanco:</label>
+<div class="form-group col-md-4 pull-left">
+<label for="usuario_lugar">Usuario del Lugar:</label>
             <input type="text" name="usuario_lugar" class="form-control" value="{{ Auth::user()->name }}" readonly>
         </div>
 <!-- Submit Field -->

@@ -50,6 +50,7 @@
                    <th><strong>Comorbilidad:</strong> {{ $fallecidos->enfermedad_referencial }}</th>
                    <th><strong>Latitud:</strong> {{ $fallecidos->latitud }}</th>
                     <th><strong>Longitud:</strong> {{ $fallecidos->longitud }}</th>
+                    <th><strong>Usuario:</strong> {{ $fallecidos->usuario }}</th>
                     
                 </tr>
               </table>

@@ -90,6 +90,10 @@
 
     <th><strong>Actualizado: </strong>{{ $paciente->updated_at }}</th>
 </tr>
+<tr>
+  
+  <th><strong>Usuario: </strong>{{ $paciente->usuario }}</th>
+</tr>
 
    <table class="table table-bordered" id="data-table">
               <tr>

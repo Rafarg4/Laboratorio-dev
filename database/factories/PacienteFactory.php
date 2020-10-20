@@ -22,6 +22,7 @@ $factory->define(Paciente::class, function (Faker $faker) {
         'latitud' => $faker->text,
         'longitud' => $faker->text,
         'email' => $faker->text,
-        'resultado' => $faker->text
+        'resultado' => $faker->text,
+        'usuario' => $faker->text
     ];
 });

@@ -33,6 +33,7 @@ class CreatePacientesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('tipo_prueba_id')->references('id')->on('tipo_pruebas');
+            $table->text('usuario');
         });
     }
 
