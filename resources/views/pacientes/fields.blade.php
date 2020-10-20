@@ -1,3 +1,7 @@
+<div class="form-group col-md-6 pull-left">
+<label for="user_id">Peronal de Blanco:</label>
+            <input type="text" name="user_id" class="form-control" value="{{ Auth::user()->name }}" readonly>
+        </div>
 <!-- Nombre Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}

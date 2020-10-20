@@ -18,7 +18,7 @@
    <!-- Card content -->
    <div class="card-body">
     <!-- Title -->
-       <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Grafico de los casos segun el barrio.</strong> </h4>
+       <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Detalles de los genereso mas afectados.</strong> </h4>
        </div>
      </div>
      <div class="card">

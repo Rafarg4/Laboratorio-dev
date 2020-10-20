@@ -230,11 +230,10 @@
 </div>
 
 <!-- Usuario Lugar Field -->
-<div class="form-group col-md-4 pull-left">
-    {!! Form::label('usuario_lugar', 'Usuario Lugar:') !!}
-    {!! Form::text('usuario_lugar', null, ['class' => 'form-control']) !!}
-</div>
-
+<div class="form-group col-md-6 pull-left">
+<label for="usuario_lugar">Peronal de Blanco:</label>
+            <input type="text" name="usuario_lugar" class="form-control" value="{{ Auth::user()->name }}" readonly>
+        </div>
 <!-- Submit Field -->
 <div class="form-group col-sm-12 pull-left">
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}

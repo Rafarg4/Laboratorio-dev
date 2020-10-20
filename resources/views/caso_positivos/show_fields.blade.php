@@ -1,7 +1,7 @@
 <ul class="list-group">
   <li class="list-group-item">
      <table class="table table-bordered" id="data-table">
-                   <tr><th><i class="cil-people fa-2x"></i> <strong>Datos Detallados de Casos Positivos</strong></th>
+                   <tr><th><i class="cil-hospital fa-2x"></i> <strong>Datos Detallados de Casos Positivos</strong></th>
                    </tr>
                </table>
 <table class="table table-bordered" id="data-table">

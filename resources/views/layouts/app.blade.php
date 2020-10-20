@@ -45,11 +45,17 @@
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
             },
-         /*Botones de impresion 
+         /*
          dom: 'Bfrtip',
             buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ] */
+             {extend:'csv',
+            className: 'btn aqua-gradient'},
+             {extend:'excel',
+            className: 'btn blue-gradient'},
+              {extend:'pdf',
+            className: 'btn peach-gradient'}
+             
+            ]*/ 
         } );
 } );
 
