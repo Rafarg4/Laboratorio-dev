@@ -63,7 +63,7 @@ class Caso_positivoController extends AppBaseController
 
         $casoPositivo = $this->casoPositivoRepository->create($input);
 
-        Flash::success('Caso Positivo saved successfully.');
+        Flash::success('Caso Positivo guardado correctamente.');
 
         return redirect(route('casoPositivos.index'));
     }
@@ -80,7 +80,7 @@ class Caso_positivoController extends AppBaseController
         $casoPositivo = $this->casoPositivoRepository->find($id);
 
         if (empty($casoPositivo)) {
-            Flash::error('Caso Positivo not found');
+            Flash::error('Caso Positivo no encontrado');
 
             return redirect(route('casoPositivos.index'));
         }
@@ -102,7 +102,7 @@ class Caso_positivoController extends AppBaseController
 
 
         if (empty($casoPositivo)) {
-            Flash::error('Caso Positivo not found');
+            Flash::error('Caso Positivo no encontrado');
 
             return redirect(route('casoPositivos.index'));
         }
@@ -122,14 +122,14 @@ class Caso_positivoController extends AppBaseController
         $casoPositivo = $this->casoPositivoRepository->find($id);
 
         if (empty($casoPositivo)) {
-            Flash::error('Caso Positivo not found');
+            Flash::error('Caso Positivo no encontrado');
 
             return redirect(route('casoPositivos.index'));
         }
 
         $casoPositivo = $this->casoPositivoRepository->update($request->all(), $id);
 
-        Flash::success('Caso Positivo updated successfully.');
+        Flash::success('Caso Positivo actualizado correctamente.');
 
         return redirect(route('casoPositivos.index'));
     }
@@ -148,14 +148,14 @@ class Caso_positivoController extends AppBaseController
         $casoPositivo = $this->casoPositivoRepository->find($id);
 
         if (empty($casoPositivo)) {
-            Flash::error('Caso Positivo not found');
+            Flash::error('Caso Positivo no encontrado');
 
             return redirect(route('casoPositivos.index'));
         }
 
         $this->casoPositivoRepository->delete($id);
 
-        Flash::success('Caso Positivo deleted successfully.');
+        Flash::success('Caso Positivo eliminado correctamente.');
 
         return redirect(route('casoPositivos.index'));
     }
