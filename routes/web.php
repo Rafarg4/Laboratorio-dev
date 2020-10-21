@@ -45,6 +45,9 @@ Route::get('home', 'HistorialFallecidoController@dashmuerto')->middleware('auth'
 
 Route::get('mapa_pacientes', 'MapaPacienteController@index')->middleware('auth');
 
+Route::get('reporte_pacientes', 'Reporte_pacienteController@reporte_paciente')->middleware('auth');
+
+Route::get('reporte_positivos', 'Reporte_positivoController@casos_positivos')->middleware('auth');
 
 Route::get('detalle_activos/{id}', ['as' => 'detalle_activos', 'uses' => 'HistorialRecuperadoController@detalles']);
 
