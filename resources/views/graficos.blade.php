@@ -55,7 +55,7 @@
                       text: 'Listado de casos por distrito.'
                   },
                   xAxis: {
-                      categories: ['Barrios'],
+                      categories: ['Octubre','Noviembre','Diciembre','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septimbre'],
                       title: {
                           text: null
                       }

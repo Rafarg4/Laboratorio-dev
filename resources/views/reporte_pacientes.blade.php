@@ -3,13 +3,26 @@
 
 <link rel="icon" type="image/png" href="/laboratorio.png" />
 @section('content')
+<script>
+     $(document).ready(function() {
+        $('#data').DataTable( {
+            "pageLength":6,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+         
+         dom: 'Bfrtip',
+            buttons: [
+             {extend:'csv',
+            className: 'btn aqua-gradient'},
+             {extend:'excel',
+            className: 'btn aqua-gradient'} 
+            ]
+        } );
+} );
 
-<script type="text/javascript">$(document).ready(function () {
-$('#dtHorizontalExample').DataTable({
-"scrollX": true
-});
-$('.dataTables_length').addClass('bs-select');
-});</script>
+    </script>
+
 
      <br>
     <div class="container-fluid">
@@ -20,13 +33,13 @@ $('.dataTables_length').addClass('bs-select');
                      <div class="card">
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
-                             Reporte Pacientes
+                             Reporte de Pacientes
         
                          </div>
                          <div class="card-body">
-                            <div class="table-responsive-sm">
-   <table id="dtHorizontalExample" class="table table-striped table-bordered table-sm" cellspacing="0"
-  width="100%">
+                            
+  <div class="md-card-content" style="overflow-x: auto;">
+  <table class="table table-bordered" id="data">
         <thead>
             <tr>
         <th>Datos Personales</th>

@@ -17,6 +17,7 @@
                                 <i class="fa fa-align-justify"></i>
                                  Detalles de Caso
                                   <a href="{{ route('casoPositivos.index') }}" class="btn btn-primary">Volver</a>
+                                  <button type="button" onclick="printDiv('areaImprimir') "class="btn btn-info"><i class="cil-clipboard"></i> Ficha </button>
                              </div>
                              <div class="card-body">
                                  @include('caso_positivos.show_fields')

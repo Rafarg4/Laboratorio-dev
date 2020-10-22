@@ -55,7 +55,10 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-globe-alt"></i> Mapeado de casos</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=9" class="nav-item">
-                                <a class="nav-link" href="{{ action('MapaPacienteController@index') }}"><i class="cil-location-pin"></i> Mapa Paciente</a>
+                                <a class="nav-link" href="{{ action('MapatodoController@index') }}"><i class="cil-location-pin"></i> Pacientes</a>
+                            </li>
+                            <li @click="menu=9" class="nav-item">
+                                <a class="nav-link" href="{{ action('MapaPacienteController@index') }}"><i class="cil-location-pin"></i> Pacientes Positivos</a>
                             </li>
                             <li @click="menu=10" class="nav-item">
                                 <a class="nav-link" href="{{ action('MapaController@mapa') }}"><i class="cil-map"></i> Mapa por Barrio</a>
@@ -77,10 +80,10 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-pie-chart"></i> Reportes</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=9" class="nav-item">
-                                <a class="nav-link" href="{{ action('Reporte_pacienteController@reporte_paciente') }}"><i class="icon-chart"></i> Reporte Paciente</a>
+                                <a class="nav-link" href="{{ action('Reporte_pacienteController@reporte_paciente') }}"><i class="cil-contact"></i> Pacientes</a>
                             </li>
                            <li @click="menu=9" class="nav-item">
-                                <a class="nav-link" href="{{ action('Reporte_positivoController@casos_positivos') }}"><i class="cil-browser"></i> Reporte Casos Positivos</a>
+                                <a class="nav-link" href="{{ action('Reporte_positivoController@casos_positivos') }}"><i class="icon-bag"></i> Casos Positivos</a>
                             </li>
                             <li @click="menu=10" class="nav-item">
                                 <a class="nav-link" href="{{ action('GraficoController@grafico') }}"><i class="cil-chart-line"></i> Reporte Graficos</a>

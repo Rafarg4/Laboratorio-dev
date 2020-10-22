@@ -12,7 +12,7 @@
             <div class="card">
              <div class="card-body">
 
-          <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Ubicacion de Positivos.</strong> </h4>
+          <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Ubicacion de todos los Pacientes.</strong> </h4>
           </div>
         </div>
         
