@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class HistorialActivoController extends Controller
 {
-        	public function activo(){
+    public function activo(){
     $activos=DB::table('caso_positivos')
         ->join('pacientes','pacientes.id','=', 'caso_positivos.paciente_id')
         ->join('controls','controls.id','=', 'caso_positivos.id')

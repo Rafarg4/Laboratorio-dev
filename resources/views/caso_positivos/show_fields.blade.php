@@ -9,7 +9,7 @@
 <tr>
 
 <!-- Paciente Id Field -->
-<th><strong>Datos Personales: </strong>{{ $casoPositivo->paciente->nombre_apellido }}</th>
+<th><strong>Datos Personales: </strong>{{ $casoPositivo->nombre_apellido }}</th>
 
 <!-- Codigo Field -->
 
@@ -143,11 +143,6 @@
 <th><strong>Usuario lugar: </strong>{{ $casoPositivo->usuario_lugar }}</th>
 </tr>
 <tr>
-<!-- Created At Field -->
-<th><strong>Creado: </strong>{{ $casoPositivo->created_at }}</th>
-
-<!-- Updated At Field -->
-<th><strong>Actualizado: </strong>{{ $casoPositivo->updated_at }}</th>
 </tr>
 </ul>
 </li>
