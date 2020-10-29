@@ -57,10 +57,11 @@
             <span class="badge badge-dark"> {{ $casoPositivo->resultado }} </span>
             @break
             @endswitch</th>
+             <th><strong>Latitud: </strong>{{ $casoPositivo->latitud }}</th>
 </tr>
 <tr>
 
-    <th><strong>Latitud: </strong>{{ $casoPositivo->latitud }}</th>
+   
 
     <th><strong>Longitud: </strong> {{ $casoPositivo->longitud }}</th>
 

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests\CreatePacienteRequest;
 use App\Http\Requests\UpdatePacienteRequest;
 use App\Repositories\PacienteRepository;

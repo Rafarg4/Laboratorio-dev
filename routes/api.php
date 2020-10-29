@@ -19,3 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('pacientes', 'PacienteAPIController');
+
+Route::resource('controls', 'ControlAPIController');
+
+Route::resource('caso_positivos', 'Caso_positivoAPIController');
