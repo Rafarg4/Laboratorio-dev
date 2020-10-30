@@ -91,7 +91,7 @@
                         </ul>
                     </li>
                     <li @click="menu=11" class="nav-item">
-                        <a class="nav-link" href="#"><i class="cil-notes"></i> Manual <span class="badge badge-danger">PDF</span></a>
+                        <a class="nav-link" href="{{ action('ManualController@index') }}"><i class="cil-notes"></i> Manual <span class="badge badge-danger">PDF</span></a>
                     </li>
                 </ul>
             </nav>

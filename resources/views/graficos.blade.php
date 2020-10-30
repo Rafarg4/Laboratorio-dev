@@ -18,7 +18,7 @@
    <!-- Card content -->
    <div class="card-body">
     <!-- Title -->
-       <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Detalles de los genereso mas afectados.</strong> </h4>
+       <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Detalles de los barrios mas afectados.</strong> </h4>
        </div>
      </div>
      <div class="card">
@@ -55,7 +55,7 @@
                       text: 'Listado de casos por distrito.'
                   },
                   xAxis: {
-                      categories: ['Octubre','Noviembre','Diciembre','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septimbre'],
+                      categories: ['Octubre','Noviembre','Diciembre','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre'],
                       title: {
                           text: null
                       }
@@ -146,7 +146,7 @@
         type: 'column'
     },
     title: {
-        text: 'Cantidades totales de Recuperados, Infectados, Fallecidos,Sin Elecion, Otros.'
+        text: 'Cantidades totales de Recuperados, Infectados, Fallecidos, Sin Eleccion, Otros.'
     },
     subtitle: {
         text: 'Mas detalles'
@@ -229,7 +229,7 @@
                   yAxis: {
                       min: 0,
                       title: {
-                          text: 'Cantiadad total',
+                          text: 'Cantidad total',
                           align: 'high'
                       },
                       labels: {
