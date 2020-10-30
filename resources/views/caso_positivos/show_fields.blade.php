@@ -1,3 +1,4 @@
+<div class="table-responsive-sm">
 <ul class="list-group">
   <li class="list-group-item">
      <table class="table table-bordered" id="data-table">
@@ -233,7 +234,7 @@
               </table>
             </div>
          </div>
-   
+   </div>
     <style type="text/css">
                    #mapid { height: 350px; width:1310px; }
            </style>

@@ -126,7 +126,7 @@
     <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
    
     <header class="app-header navbar navbar-expand-lg navbar-light white">
-        <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+        <button class="navbar-toggler sidebar-toggler" type="button" data-toggle="sidebar-show">
           <span class="navbar-toggler-icon"></span>
         </button>
      <a class="navbar-brand" href="{{ url('/home') }}">

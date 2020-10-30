@@ -12,7 +12,7 @@
 </script>
 <input type="button" onclick="printDiv('areaImprimir')" value="Imprimir" />
 <div id="areaImprimir">-->
-
+<div class="table-responsive-sm">
 <ul class="list-group">
   <li class="list-group-item">
      <table class="table table-bordered" id="data-table">
@@ -97,7 +97,7 @@
 
    <table class="table table-bordered" id="data-table">
               <tr>
-                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exsacta de Paciente.</strong></th>
+                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exacta de Paciente.</strong></th>
               </tr>
                    
                    <tr>
@@ -110,7 +110,7 @@
               </table>
             </div>
            
-
+</div>
          </div>
     </li>
     </ul>
