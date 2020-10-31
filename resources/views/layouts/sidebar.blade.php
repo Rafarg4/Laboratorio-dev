@@ -57,9 +57,6 @@
                             <li @click="menu=9" class="nav-item">
                                 <a class="nav-link" href="{{ action('MapatodoController@index') }}"><i class="cil-location-pin"></i> Pacientes</a>
                             </li>
-                            <li @click="menu=9" class="nav-item">
-                                <a class="nav-link" href="{{ action('MapaPacienteController@index') }}"><i class="cil-location-pin"></i> Pacientes Positivos</a>
-                            </li>
                             <li @click="menu=10" class="nav-item">
                                 <a class="nav-link" href="{{ action('MapaController@mapa') }}"><i class="cil-map"></i> Mapa por Barrio</a>
                             </li>

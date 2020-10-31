@@ -75,7 +75,8 @@
                           <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-chart-pie"></use>
                         </svg>
                       </div>
-                     <div class="text-value-lg"><i class="cil-heart fa-2x"></i> <span class="badge badge-primary">48%</span></div><small class="text-muted text-uppercase font-weight-bold"> Recuperados totales</small>
+                     <div class="text-value-lg"><i class="cil-heart fa-2x"></i> <span class="badge badge-primary">
+                     {{number_format((float)($recuperados*100)/$infectados,2, '.', '')}}%</span></div><small class="text-muted text-uppercase font-weight-bold"> Recuperados totales</small>
                       <div class="progress progress-xs mt-3 mb-0">
                         <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
@@ -142,7 +143,7 @@
                           <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-chart-pie"></use>
                         </svg>
                       </div>
-                     <div class="text-value-lg"><i class="cil-sort-ascending fa-2x"></i> <span class="badge badge-dark">+52%</span></div><small class="text-muted text-uppercase font-weight-bold"> Porcentaje de Infectados</small>
+                     <div class="text-value-lg"><i class="cil-sort-ascending fa-2x"></i> <span class="badge badge-dark">{{number_format((float)($infectados*100)/$caso_positivos,2, '.', '')}}%</span></div><small class="text-muted text-uppercase font-weight-bold"> Porcentaje de Infectados</small>
                       <div class="progress progress-xs mt-3 mb-0">
                         <div class="progress-bar badge-dark" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
