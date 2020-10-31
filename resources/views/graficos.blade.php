@@ -138,7 +138,7 @@
                           var infectados =  <?php echo json_encode($infectados) ?>;
                           var recuperados =  <?php echo json_encode($recuperados) ?>;
                           var eleccion =  <?php echo json_encode($eleccion) ?>;
-                          var otro =  <?php echo json_encode($otro) ?>;
+                          var otro_estado =  <?php echo json_encode($otro_estado) ?>;
 
                          Highcharts.chart('containerss', {
 
@@ -187,7 +187,7 @@
        data: eleccion,
     }, {
        name: 'Otro',
-       data: otro,
+       data: otro_estado,
 
     }]
 });
