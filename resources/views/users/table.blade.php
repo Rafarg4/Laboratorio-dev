@@ -2,6 +2,7 @@
     <table class="table table-bordered" id="data-table">
         <thead>
             <tr>
+                 <th>Laboratorio </th>
                 <th>Nombre y Apellido </th>
                 <th>Email</th>
                 <th>Creado</th>
@@ -13,6 +14,7 @@
         <tbody>
         @foreach($users as $user)
             <tr>
+                <td>{{ $user->laboratorio->nombre_laboratorio}}</td>
                 <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
                <td>{{ $user->created_at }}</td>

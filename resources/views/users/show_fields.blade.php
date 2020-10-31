@@ -15,11 +15,13 @@
 <!-- Email Field -->
     <th><strong>Email: </strong>{{ $user->email }}</th>
 <!-- Created At Field -->
+    <th><strong>Laboratorio</strong>{{ $user->laboratorio->nombre_laboratorio }} </th>
 
     <th><strong>Creado: </strong>{{ $user->created_at }}</th>
-</div>
-
-    <th><strong>Actualizado: </strong>{{ $user->updated_at }}</th>
+   
+</tr>
+<tr>
+   <th><strong>Actualizado: </strong>{{ $user->updated_at }}</th>
 </tr>
 </table>
 </div>

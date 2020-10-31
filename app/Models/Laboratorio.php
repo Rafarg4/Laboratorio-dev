@@ -62,5 +62,8 @@ class Laboratorio extends Model
         'representante' => 'required'
     ];
 
-    
+     public function user (){
+     return $this-> hasMany('App\User');
+
+    }
 }

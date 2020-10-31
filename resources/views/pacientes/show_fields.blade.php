@@ -55,7 +55,7 @@
 
 <!-- Enfermedad Referencial Field -->
 
-    <th>{{ $paciente->enfermedad_referencial }}</rh>
+    <th><strong>Comorbilidad: </strong>{{ $paciente->enfermedad_referencial }}</rh>
 
     <th><strong>Tipo de Prueba: </strong>{{ $paciente->tipo_prueba->nombre }}</th>
 

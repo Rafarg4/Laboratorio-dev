@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Flash;
 use Response;
+use App\Models\Laboratorio;
 
 class UserController extends AppBaseController
 {
@@ -43,7 +44,8 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('users.create');
+        $laboratorio =Laboratorio::pluck('nombre_laboratorio','id'); 
+        return view('users.create',compact('laboratorio'));
     }
 
     /**
@@ -95,15 +97,15 @@ class UserController extends AppBaseController
     public function edit($id)
     {
         $user = $this->userRepository->find($id);
-       
-
+        $laboratorio =Laboratorio::pluck('nombre_laboratorio','id');  
+      
         if (empty($user)) {
             Flash::error('Usuario no encontrado');
 
             return redirect(route('users.index'));
         }
 
-        return view('users.edit')->with('user', $user);
+        return view('users.edit',compact('user','laboratorio'));
     }
 
     /**

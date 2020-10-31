@@ -1,3 +1,8 @@
+<!-- Laboratorio Field -->
+<div class="form-group col-md-6 pull-left">
+    {!! Form::label('laboratorio_id', 'Laboratorio:') !!}
+    {!! Form::select('laboratorio_id', $laboratorio,null,['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
+</div>
 <!-- Name Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('name', 'Nombre y Apellido:') !!}
