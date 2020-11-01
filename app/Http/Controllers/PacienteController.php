@@ -29,6 +29,7 @@ class PacienteController extends AppBaseController
      */
     public function index(Request $request)
     {
+        //$pacientes = \Auth::user()->paciente()->get();
         $pacientes = $this->pacienteRepository->all();
 
         return view('pacientes.index')

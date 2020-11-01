@@ -18,7 +18,7 @@
    <!-- Card content -->
    <div class="card-body">
     <!-- Title -->
-       <h4 class="card-title"><a><i class="cil-location-pin fa-2x"></i> <strong>Detalles de los barrios mas afectados.</strong> </h4>
+       <h6 class="card-title"><a><i class="cil-map fa-2x"></i> <strong>Detalles de los barrios mas afectados.</strong> </h6>
        </div>
      </div>
      <div class="card">
@@ -55,7 +55,7 @@
                       text: 'Listado de casos por distrito.'
                   },
                   xAxis: {
-                      categories: ['Octubre','Noviembre','Diciembre','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre'],
+                      categories: ['Nov', 'Dec','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep','Oct'],
                       title: {
                           text: null
                       }
@@ -121,10 +121,78 @@
     </div>
        
       </div>   
-        
+        <div class="card">
+         <div class="card-body">
+            <h6 class="card-title"><a><i class="fas fa-user-clock fa-2x"></i>  <strong>Grafico de estados de casos diarios.</strong> </h6>
+            </div>
+          </div>
+           <div class="card">
+             <!-- Card content -->
+                 <div class="card-body">
+                      <div class="container">
+                          <div id="casos_diarios"></div>
+                           </div>
+                           <script type="text/javascript">
+                            var muertos =  <?php echo json_encode($muertos) ?>;
+                          var infectados =  <?php echo json_encode($infectados) ?>;
+                          var recuperados =  <?php echo json_encode($recuperados) ?>;
+                             Highcharts.chart('casos_diarios', {
+                                chart: {
+                                    type: 'area',
+                                    inverted: true
+                                },
+                                title: {
+                                    text: 'Detalles de los casos diarios'
+                                },
+                                accessibility: {
+                                    keyboardNavigation: {
+                                        seriesNavigation: {
+                                            mode: 'serialize'
+                                        }
+                                    }
+                                },
+                                
+                                xAxis: {
+                                    categories: [
+                                        'Sunday',
+                                        'Tuesday',
+                                        'Wednesday',
+                                        'Thursday',
+                                        'Friday',
+                                        'Saturday',
+                                        'Monday'
+                                    ]
+                                },
+                                yAxis: {
+                                    title: {
+                                        text: 'Cantidades'
+                                    },
+                                    allowDecimals: false,
+                                    min: 0
+                                },
+                                plotOptions: {
+                                    area: {
+                                        fillOpacity: 0.5
+                                    }
+                                },
+                                series: [{
+                                    name: 'Recuperados',
+                                    data: recuperados,
+                                }, {
+                                    name: 'Infectados',
+                                    data: infectados,
+                                 }, {
+                                    name: 'Muertos',
+                                    data: muertos,
+                                }]
+                            });
+              
+                           </script>  
+                         </div>
+                       </div>
       <div class="card">
          <div class="card-body">
-            <h4 class="card-title"><a><i class="cil-calendar fa-2x"></i>  <strong>Grafico de estados de casos.</strong> </h4>
+            <h6 class="card-title"><a><i class="fas fa-procedures fa-2x"></i>  <strong>Cantidades de estados de casos.</strong> </h6>
             </div>
           </div>
            <div class="card">
@@ -152,10 +220,7 @@
         text: 'Mas detalles'
     },
     xAxis: {
-        categories: [
-            'Detalles',
-            
-        ],
+       categories: ['Nov', 'Dec','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep','Oct'],
         crosshair: true
     },
     yAxis: {
@@ -197,7 +262,7 @@
 </div>
 <div class="card">
          <div class="card-body">
-            <h4 class="card-title"><a><i class="cil-wc fa-2x"></i>   <strong>Grafico de los casos segun el genero.</strong> </h4>
+            <h6 class="card-title"><a><i class="cil-wc fa-2x"></i>   <strong>Grafico de los casos segun el genero.</strong> </h6>
             </div>
           </div>
            <div class="card">

@@ -55,7 +55,7 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="cil-globe-alt"></i> Case Mapping</a>
                         <ul class="nav-dropdown-items">
                             <li @click="menu=9" class="nav-item">
-                                <a class="nav-link" href="{{ action('MapatodoController@index') }}"><i class="cil-location-pin"></i> Pacientes</a>
+                                <a class="nav-link" href="{{ action('MapatodoController@index') }}"><i class="cil-location-pin"></i> Filtrado de Casos </a>
                             </li>
                             <li @click="menu=10" class="nav-item">
                                 <a class="nav-link" href="{{ action('MapaController@mapa') }}"><i class="cil-map"></i> Mapa por Barrio</a>
@@ -83,7 +83,7 @@
                                 <a class="nav-link" href="{{ action('Reporte_positivoController@casos_positivos') }}"><i class="cil-list"></i> Casos Positivos</a>
                             </li>
                             <li @click="menu=10" class="nav-item">
-                                <a class="nav-link" href="{{ action('GraficoController@grafico') }}"><i class="cil-bar-chart"></i> Reporte Graficos</a>
+                                <a class="nav-link" href="{{ action('GraficoController@grafico') }}"><i class="cil-bar-chart"></i> Reporte Grafico</a>
                             </li>
                         </ul>
                     </li>

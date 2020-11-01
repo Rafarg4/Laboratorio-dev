@@ -12,7 +12,7 @@
             <div class="card">
              <div class="card-body">
 
-          <h4 class="card-title"><a><i class="cil-map fa-2x"></i> <strong>Ubicacion de pacientes por Barrio</strong> </h4>
+          <h6 class="card-title"><a><i class="cil-map fa-2x"></i> <strong>Ubicacion de pacientes por Barrio.</strong> </h6>
           </div>
         </div>
         
@@ -39,7 +39,7 @@
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 900
+            radius:{{$encarnacion}}90
             }).addTo(map)
               .bindPopup('Encarnacion:{{$encarnacion}} pacientes.')
            @endforeach
@@ -50,7 +50,7 @@
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 1000
+            radius: {{$mboikae}}90
             }).addTo(map)
               .bindPopup('Mboi ka e:{{$mboikae}} pacientes.')
               @endforeach
@@ -60,7 +60,7 @@
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 1000
+            radius: {{$sanisidro}}90
             }).addTo(map)
               .bindPopup('San Isidro:{{$sanisidro}} pacientes.')
               @endforeach
@@ -70,7 +70,7 @@
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 1000
+            radius: {{$sagradafamilia}}90
             }).addTo(map)
               .bindPopup('Sagrada Familia:{{$sagradafamilia}} pacientes.')
               @endforeach
@@ -80,7 +80,7 @@
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 1000
+            radius: {{$ciudadnueva}}90
             }).addTo(map)
               .bindPopup('Ciudad Nueva:{{$ciudadnueva}} pacientes.')
               @endforeach
@@ -90,7 +90,7 @@
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 1000
+            radius: {{$chaipe}}90
             }).addTo(map)
               .bindPopup('Chaipe:{{$chaipe}} pacientes.')
                @endforeach 
@@ -100,7 +100,7 @@
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 1000
+            radius: {{$cambyreta}}90
             }).addTo(map)
               .bindPopup('Cambyreta:{{$cambyreta}} pacientes.')
                 @endforeach
@@ -110,7 +110,7 @@
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 1000
+            radius: {{$santamaria}}90
             }).addTo(map)
               .bindPopup('Santa Maria:{{$santamaria}} pacientes.')
               @endforeach
@@ -120,7 +120,7 @@
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 1000
+            radius: {{$itapaso}}90
             }).addTo(map)
               .bindPopup('Ita Paso:{{$itapaso}} pacientes.')
               @endforeach
@@ -130,7 +130,7 @@
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 1000
+            radius: {{$buenavista}}90
             }).addTo(map)
               .bindPopup('Buena Vista:{{$buenavista}} pacientes.')
               @endforeach
@@ -140,27 +140,10 @@
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 1000
+            radius: {{$fatima}}90
             }).addTo(map)
               .bindPopup('Fatima:{{$fatima}} pacientes.')
               @endforeach
-             /* sin uuso */
-              var circle = L.circle([-27.26853258399277, -55.68042755126953],
-                    {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 1000
-            }).addTo(map)
-              .bindPopup('Alborada:1 pacientes.')
-              var circle = L.circle([-27.300197834139063, -55.95901488675736],
-                    {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 1000
-            }).addTo(map)
-              .bindPopup('San Juan:5 pacientes.') 
           </script>
 
         </div>
