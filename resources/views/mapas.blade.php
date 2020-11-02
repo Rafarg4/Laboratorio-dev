@@ -24,15 +24,90 @@
         </div>
         </div>
       </div>
+      <style type="text/css">
+                .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777;
+
+        }
+        #map {
+              width: 600px;
+              height: 400px;
+            }
+          </style>
+
+          <style>
+            #map {
+              width: 800px;
+              height: 500px;
+            }
+            .info {
+              padding: 6px 8px;
+              font: 14px/16px Arial, Helvetica, sans-serif;
+              background: white;
+              background: rgba(255, 255, 255, 0.8);
+              box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+              border-radius: 5px;
+            }
+            .info h4 {
+              margin: 0 0 5px;
+              color: #777;
+            }
+            .legend {
+              text-align: left;
+              line-height: 18px;
+              color: #555;
+            }
+            .legend i {
+              width: 18px;
+              height: 18px;
+              float: left;
+              margin-right: 8px;
+              opacity: 0.7;
+            }
+
+      </style>
+     <!--Script y css de pantalla completa -->
+      <script type="text/javascript" src="{{ asset('js/Leaflet.fullscreen.min.js') }}"></script>
+       <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+       <!--Script de imprimir -->
+       <script type="text/javascript" src="{{ asset('js/printleaflet.js') }}"></script>
+       <script type="text/javascript" src="{{ asset('js/ leaflet.browser.print.min.js') }}"></script>
+     
       <script type="text/javascript">
-       
-            var map = L.map('mapid').setView([-27.33056,  -55.86667], 12);
+          
+       var info = L.control();
+        var map = L.map('mapid', {
+        fullscreenControl: {
+            pseudoFullscreen: false
+        }
+      }).setView([-27.33056,  -55.86667], 12);
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 
           }).addTo(map);
-           
+       L.control.browserPrint().addTo(map)   
+                    info.onAdd = function (map) {
+              this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+              this.update();
+              return this._div;
+          };
+          // method that we will use to update the control based on feature properties passed
+          info.update = function (props) {
+              this._div.innerHTML = '<h6>Barrios mas afecatdos</h6>' +  (props ?
+                  '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
+                  : ' Santa Maria{{$santamaria}}<br>Fatima{{$fatima}}<br>San Isidro{{$sanisidro}} .');
+          };
 
+          info.addTo(map); 
            @foreach($encarnacion as $encarnacion)
           var circle = L.circle([-27.337004949626625, -55.8664512669202],
                     {

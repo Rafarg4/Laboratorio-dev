@@ -123,6 +123,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
     </head>
+    <style type="text/css">
+       #loading {width: 100%;height: 100%;top: 0px;left: 0px;position: fixed;display: block; z-index: 99}
+       #loading-image {position: absolute;top: 40%;left: 45%;z-index: 100} 
+    </style>
+    <script language="javascript" type="text/javascript">
+        window.onload = function(){ document.getElementById("loading").style.display = "none" }   
+</script>
+    <div id="loading">
+     <img id="loading-image" src="https://hcalloneopinmobiliarias.com.ar/wp-content/uploads/2020/01/loader.gif" alt="Loading..." />
+</div>
     <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
    
     <header class="app-header navbar navbar-expand-lg navbar-light white">
@@ -167,6 +177,7 @@
 </header>
 </ul>
 </header>
+
 </body>
 </ltlink>
 <div class="app-body">
