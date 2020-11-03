@@ -219,6 +219,32 @@
             }).addTo(map)
               .bindPopup('Fatima:{{$fatima}} pacientes.')
               @endforeach
+
+              var circle = L.circle([-27.25005137227032, -55.94940186012537],
+                    {
+            color: 'green',
+            fillColor: '#008000',
+            fillOpacity: 0.5,
+            radius: 190
+            }).addTo(map)
+              .bindPopup('Santo Domingo:0 pacientes.')
+              var circle = L.circle([-27.285502073788038, -55.914955135085634],
+                    {
+            color: 'green',
+            fillColor: '#008000',
+            fillOpacity: 0.5,
+            radius: 190
+            }).addTo(map)
+              .bindPopup('8 de Dicimbre:0 pacientes.')
+               var circle = L.circle([-27.26892252399947, -55.68088531843387],
+                    {
+            color: 'green',
+            fillColor: '#008000',
+            fillOpacity: 0.5,
+            radius: 190
+            }).addTo(map)
+              .bindPopup('Nueva Alborada:0 pacientes.')
+          
           </script>
 
         </div>

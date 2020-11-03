@@ -210,53 +210,59 @@
 
                          Highcharts.chart('containerss', {
 
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: 'Cantidades totales de Recuperados, Infectados, Fallecidos, Sin Eleccion, Otros.'
-    },
-    subtitle: {
-        text: 'Mas detalles'
-    },
-    xAxis: {
-       categories: ['Nov', 'Dec','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep','Oct'],
-        crosshair: true
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Cantidades'
-        }
-    },
-     
-    plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-        }
-    },
-    series: [{
-        name: 'Recuperados',
-        data: recuperados,
+                  chart: {
+                      type: 'column'
+                  },
+                  title: {
+                      text: 'Cantidades totales de Recuperados, Infectados, Fallecidos, Sin Eleccion, Otros.'
+                  },
+                  subtitle: {
+                      text: 'Mas detalles'
+                  },
+                  xAxis: {
+                     categories: ['Sunday',
+                                        'Tuesday',
+                                        'Wednesday',
+                                        'Thursday',
+                                        'Friday',
+                                        'Saturday',
+                                        'Monday'],
+                      crosshair: true
+                  },
+                  yAxis: {
+                      min: 0,
+                      title: {
+                          text: 'Cantidades'
+                      }
+                  },
+                   
+                  plotOptions: {
+                      column: {
+                          pointPadding: 0.2,
+                          borderWidth: 0
+                      }
+                  },
+                  series: [{
+                      name: 'Recuperados',
+                      data: recuperados,
 
-    }, {
-        name: 'Fallecidos',
-        data: muertos,
+                  }, {
+                      name: 'Fallecidos',
+                      data: muertos,
 
-    }, {
-        name: 'Infectados',
-        data: infectados,
-    }, {
-       name: 'Sin eleccion',
-       data: eleccion,
-    }, {
-       name: 'Otro',
-       data: otro_estado,
+                  }, {
+                      name: 'Infectados',
+                      data: infectados,
+                  }, {
+                     name: 'Sin eleccion',
+                     data: eleccion,
+                  }, {
+                     name: 'Otro',
+                     data: otro_estado,
 
-    }]
-});
-              
+                  }]
+              });
+                            
       </script>
 </div>
 </div>
@@ -337,9 +343,7 @@
                       data: otro,
               
                   }]
-              });
-             
-                                             
+              });                                   
 </script>
   </div>
     </div>    
