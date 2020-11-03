@@ -35,7 +35,15 @@
             <div id="collapse30" class="collapse show" role="tabpanel" aria-labelledby="heading30"
               data-parent="#accordionEx5">
               <div class="card-body rgba-black-light white-text z-depth-1">
-                <p class="p-md-4 mb-0">Para generar los casos se deben seguir el orden que presentamos a continuación para tener una mejor experiencia de carga y sea mas agil al momento de crear los casos positivos.</p>
+                <p class="p-md-4 mb-0">Para generar los casos se deben seguir el orden que presentamos a continuación para tener una mejor experiencia de carga y sea mas agil al momento de crear los casos positivos:
+                    <br>
+               <br> Orden de carga</br>      
+               <br> 1- Crear laboratorio con el boton <i class=" fa fa-plus"></i>
+               <br> 2- Crear Usuario con el boton <i class=" fa fa-plus"></i>
+               <br> 3- Crear Tipo de Prueba con el boton <i class=" fa fa-plus"></i>
+               <br> 4- Crear Paciente con el boton <i class=" fa fa-plus"></i>
+               <br> 5- En este punto podemos crear Caso Positivo con el boton <i class=" fa fa-plus"></i></br></p>
+               Observación: Todos los campos son requeridos en el momento de la carga de cualquier formulario, de no completarse algun dato no se guardaran los datos cargados y habra una alerta especificando los campos vacios que falta cargar.
               </div>
             </div>
           </div>
@@ -59,7 +67,7 @@
             <div id="collapse31" class="collapse" role="tabpanel" aria-labelledby="heading31"
               data-parent="#accordionEx5">
               <div class="card-body rgba-black-light white-text z-depth-1">
-                <p class="p-md-4 mb-0">En este punto se debe generar un laboratorio con el boton + que redirecciona a un formulario con los datos necesarios para incorporar un nuevo laboratorio, para que al momento de cargar los casos positivos obtenga los datos del laboratorio de manera automatica.</p>
+                <p class="p-md-4 mb-0">En este punto se debe generar un laboratorio con el boton <i class=" fa fa-plus"></i> que redirecciona a un formulario con los datos necesarios para incorporar un nuevo laboratorio, para que al momento de cargar los casos positivos obtenga los datos del laboratorio de manera automatica.</p>
               </div>
             </div>
           </div>
@@ -83,7 +91,7 @@
             <div id="collapse32" class="collapse" role="tabpanel" aria-labelledby="heading32"
               data-parent="#accordionEx5">
               <div class="card-body rgba-black-light white-text z-depth-1">
-                <p class="p-md-4 mb-0">En este punto se debe generar un laboratorio con el boton + que redirecciona a un formulario con los datos necesarios para incorporar un nuevo laboratorio, para que al momento de cargar los casos positivos obtenga los datos del laboratorio de manera automatica.</p>
+                <p class="p-md-4 mb-0">En este punto se debe generar un usuario con el boton <i class=" fa fa-plus"></i> que redirecciona a un formulario con los datos necesarios para incorporar un nuevo usuario con el rol debido, para que al momento de cargar los casos positivos obtenga los datos del usuario de manera automatica.</p>
               </div>
             </div>
           </div>
@@ -109,7 +117,7 @@
             <div id="collapse33" class="collapse" role="tabpanel" aria-labelledby="heading33"
               data-parent="#accordionEx5">
               <div class="card-body rgba-black-light white-text z-depth-1">
-                <p class="p-md-4 mb-0">En este punto se debe generar un laboratorio con el boton + que redirecciona a un formulario con los datos necesarios para incorporar un nuevo laboratorio, para que al momento de cargar los casos positivos obtenga los datos del laboratorio de manera automatica.</p>
+                <p class="p-md-4 mb-0">En este punto se debe generar los tipos de pruebas existentes para lo cual se agrega con el boton <i class=" fa fa-plus"></i> de esta manera, para que al momento de la carga de pacientes y casos positivos puedan tener de una selección el tipo de prueba precargada automaticamente.  </p>
               </div>
             </div>
           </div>
@@ -133,7 +141,7 @@
             <div id="collapse34" class="collapse" role="tabpanel" aria-labelledby="heading34"
               data-parent="#accordionEx5">
               <div class="card-body rgba-black-light white-text z-depth-1">
-                <p class="p-md-4 mb-0">En este punto se debe generar un laboratorio con el boton + que redirecciona a un formulario con los datos necesarios para incorporar un nuevo laboratorio, para que al momento de cargar los casos positivos obtenga los datos del laboratorio de manera automatica.</p>
+                <p class="p-md-4 mb-0">En este punto se debe generar los pacientes con el boton <i class=" fa fa-plus"></i> que redirecciona a un formulario con los datos necesarios para incorporar un nuevo paciente, para que al momento de cargar los casos positivos obtenga los datos completos del paciente de manera automatica.</p>
               </div>
             </div>
           </div>
@@ -157,7 +165,7 @@
             <div id="collapse35" class="collapse" role="tabpanel" aria-labelledby="heading35"
               data-parent="#accordionEx5">
               <div class="card-body rgba-black-light white-text z-depth-1">
-                <p class="p-md-4 mb-0">En este punto se debe generar un laboratorio con el boton + que redirecciona a un formulario con los datos necesarios para incorporar un nuevo laboratorio, para que al momento de cargar los casos positivos obtenga los datos del laboratorio de manera automatica.</p>
+                <p class="p-md-4 mb-0">Caso Positivo es componente principal del sistema, de ello se obtienen todos los datos estadisticos necesarios para que se pueda accionar de manera eficiente al momento de la toma de decisiones por parte de el ministerio de salud y las instituciones involucradas. Para ello se debe generar un nuevo caso positivo con el boton <i class=" fa fa-plus"></i> que redirecciona a un formulario con los datos necesarios para el registro del nuevo caso y se generen los informes necesarios, todos los campos son requeridos en el momento de la carga.</p>
               </div>
             </div>
           </div>
@@ -181,7 +189,7 @@
             <div id="collapse36" class="collapse" role="tabpanel" aria-labelledby="heading36"
               data-parent="#accordionEx5">
               <div class="card-body rgba-black-light white-text z-depth-1">
-                <p class="p-md-4 mb-0">En este punto se debe generar un laboratorio con el boton + que redirecciona a un formulario con los datos necesarios para incorporar un nuevo laboratorio, para que al momento de cargar los casos positivos obtenga los datos del laboratorio de manera automatica.</p>
+                <p class="p-md-4 mb-0">En este punto se debe generar los controles realizados al paciente con el boton <i class=" fa fa-plus"></i> que redirecciona a un formulario con los datos necesarios para incorporar un nuevo control, para tener un seguimiento del paciente positivo.</p>
               </div>
             </div>
           </div>
