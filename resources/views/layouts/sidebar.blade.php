@@ -82,6 +82,9 @@
                            <li @click="menu=9" class="nav-item">
                                 <a class="nav-link" href="{{ action('Reporte_positivoController@casos_positivos') }}"><i class="cil-list"></i> Casos Positivos</a>
                             </li>
+                             <li @click="menu=9" class="nav-item">
+                                <a class="nav-link" href="{{ action('ReportecontrolController@reportecontrol') }}"><i class="cil-healing"></i> Control</a>
+                            </li>
                             <li @click="menu=10" class="nav-item">
                                 <a class="nav-link" href="{{ action('GraficoController@grafico') }}"><i class="cil-bar-chart"></i> Reporte Grafico</a>
                             </li>
