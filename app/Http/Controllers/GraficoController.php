@@ -66,64 +66,61 @@ class GraficoController extends Controller
                     ->where('pacientes.barrio','Fatima')
                     ->pluck('count');
     }{
-    $muertos = Control::select(\DB::raw("COUNT(*) as count"))
-                    ->whereYear('created_at', date('Y'))
-                    ->where('controls.estado_paciente','Fallecido')
-                    ->groupBy(\DB::raw("created_at"))
-                    ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
-                    ->pluck('count');
+    $muertos = Control::select(DB::raw("COUNT(*) as count"))
+        ->where('controls.estado_paciente','Fallecido')
+        ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
+        ->get()->toArray();
+    $muertos = array_column($muertos, 'count');
     }{
-    $infectados = Control::select(\DB::raw("COUNT(*) as count"))
-                    ->whereYear('created_at', date('Y'))
-                    ->where('controls.estado_paciente','Activo')
-                    ->groupBy(\DB::raw("created_at"))
-                    ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
-                    ->pluck('count');
+    $infectados = Control::select(DB::raw("COUNT(*) as count"))
+        ->where('controls.estado_paciente','Activo')
+        ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
+        ->get()->toArray();
+    $infectados = array_column($infectados, 'count');
     }{
-    $recuperados = Control::select(\DB::raw("COUNT(*) as count"))
-                    ->whereYear('created_at', date('Y'))
-                    ->where('controls.estado_paciente','Inactivo')
-                    ->groupBy(\DB::raw("created_at"))
-                    ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
-                    ->pluck('count');
+     $recuperados = Control::select(DB::raw("COUNT(*) as count"))
+        ->where('controls.estado_paciente','Inactivo')
+        ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
+        ->get()->toArray();
+    $recuperados = array_column($recuperados, 'count');
     }{
-    $eleccion = Control::select(\DB::raw("COUNT(*) as count"))
-                    ->whereYear('created_at', date('Y'))
-                    ->where('controls.estado_paciente','Sin eleccion')
-                    ->groupBy(\DB::raw("created_at"))
-                    ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
-                    ->pluck('count');
+    $eleccion = Control::select(DB::raw("COUNT(*) as count"))
+        ->where('controls.estado_paciente','Sin eleccion')
+        ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
+        ->get()->toArray();
+    $eleccion = array_column($eleccion, 'count');
     }{
-    $otro_estado = Control::select(\DB::raw("COUNT(*) as count"))
-                    ->whereYear('created_at', date('Y'))
-                    ->where('controls.estado_paciente','Otro')
-                    ->groupBy(\DB::raw("created_at"))
-                    ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
-                    ->pluck('count');
+     $otro_estado = Control::select(DB::raw("COUNT(*) as count"))
+        ->where('controls.estado_paciente','Otro')
+        ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
+        ->get()->toArray();
+    $otro_estado = array_column($otro_estado, 'count');
     }{                
-    $positivos = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->whereYear('created_at', date('Y'))
-                    ->where('pacientes.resultado','Positivo')
-                    ->groupBy(\DB::raw("created_at"))
-                    ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
+    $positivos = Paciente::select(DB::raw("COUNT(*) as count"))
+        ->where('pacientes.resultado','Positivo')
+        ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
+        ->get()->toArray();
+    $positivos = array_column($positivos, 'count');
+    }{
+    $negativos = Paciente::select(DB::raw("COUNT(*) as count"))
+        ->where('pacientes.resultado','Negativo')
+       ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
+        ->get()->toArray();
+    $negativos = array_column($negativos, 'count');
+    }{
+         $positotal = Paciente::select(\DB::raw("COUNT(*) as count"))
+         ->where('pacientes.resultado','Positivo')
                     ->pluck('count');
     }{
-     $sineleccion = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->whereYear('created_at', date('Y'))
-                    ->where('pacientes.resultado','Sin Eleccion')
-                    ->groupBy(\DB::raw("created_at"))
-                    ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
+         $negatotal = Paciente::select(\DB::raw("COUNT(*) as count"))
+          ->where('pacientes.resultado','Negativo')
                     ->pluck('count');
     }{
-     $negativos = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->whereYear('created_at', date('Y'))
-                    ->where('pacientes.resultado','Negativo')
-                    ->groupBy(\DB::raw("created_at"))
-                    ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
-                    ->pluck('count');
-
+       $promedio = Paciente::avg('edad');
+       $max = Paciente::max('edad');
+       $min = Paciente::min('edad');
     }{
-    return view('graficos', compact('masculino','femenino','otro','encarnacion','chaipe','cambyreta','mboikae','sanisidro','sagradafamilia','ciudadnueva','santamaria','itapaso','buenavista','fatima','muertos','infectados','recuperados','eleccion','otro_estado','positivos','negativos','sineleccion'));
+    return view('graficos', compact('masculino','femenino','otro','encarnacion','chaipe','cambyreta','mboikae','sanisidro','sagradafamilia','ciudadnueva','santamaria','itapaso','buenavista','fatima','muertos','infectados','recuperados','eleccion','otro_estado','positivos','negativos','positotal','negatotal','promedio','max','min'));
     }
   }
 }

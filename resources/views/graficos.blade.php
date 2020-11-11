@@ -14,11 +14,65 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
  <link rel="icon" type="image/png" href="/laboratorio.png" />
 <div class="container">
+  <div class="card">
+   <!-- Card content -->
+   <div class="card-body">
+    <!-- Title -->
+       <h6 class="card-title"><a><i class="cil-chart-line fa-2x"></i> <strong>Detalles en generales de casos.</strong> </h6>
+       </div>
+     </div>
+       
+  <div class="row">
+     @foreach($positotal as $p)
+  <div class="col-sm-6 col-lg-4">
+    <div class="card" style="max-width: 25rem;">
+      <div class="card-header bg-warning content-center">
+      <i class="fas fa-procedures fa-7x"></i>
+      </div>
+      <div class="card-body row text-center">
+        <div class="vr"></div>
+        <div class="col">
+          <div class="text-value-xl">{{$p}}</div>
+          <div class="text-uppercase text-muted small">Positivos Totales.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    @endforeach
+     @foreach($negatotal as $n)
+   <div class="col-sm-6 col-lg-4">
+    <div class="card" style="max-width: 25rem;">
+      <div class="card-header bg-info content-center">
+       <i class="cil-eyedropper fa-7x"></i>
+      </div>
+      <div class="card-body row text-center">
+        <div class="col">
+          <div class="text-value-xl">{{$n}}</div>
+          <div class="text-uppercase text-muted small">Negativos totales.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endforeach
+   <div class="col-sm-6 col-lg-4">
+    <div class="card" style="max-width: 25rem;">
+      <div class="card-header bg-success content-center">
+     <i class="cil-people fa-7x"></i>
+      </div>
+      <div class="card-body row text-center">
+        <div class="col">
+          <div class="text-value-xl">{{$max}}, {{$min}}, {{ number_format($promedio, 2) }}</div>
+          <div class="text-uppercase text-muted small">Edades: Maxima, minima, promedio.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
  <div class="card">
    <!-- Card content -->
    <div class="card-body">
     <!-- Title -->
-       <h6 class="card-title"><a><i class="cil-map fa-2x"></i> <strong>Detalles de los barrios mas afectados.</strong> </h6>
+       <h6 class="card-title"><a><i class="cil-map fa-2x"></i> <strong>Detalles los barrios mas afectados.</strong> </h6>
        </div>
      </div>
      <div class="card">
@@ -123,7 +177,7 @@
       </div>   
         <div class="card">
          <div class="card-body">
-            <h6 class="card-title"><a><i class="fas fa-user-clock fa-2x"></i>  <strong>Grafico de estados de casos diarios.</strong> </h6>
+            <h6 class="card-title"><a><i class="fas fa-user-clock fa-2x"></i>  <strong>Grafico de estados de casos mensuales.</strong> </h6>
             </div>
           </div>
            <div class="card">
@@ -133,60 +187,60 @@
                           <div id="casos_diarios"></div>
                            </div>
                            <script type="text/javascript">
-                            var muertos =  <?php echo json_encode($muertos) ?>;
-                          var infectados =  <?php echo json_encode($infectados) ?>;
-                          var recuperados =  <?php echo json_encode($recuperados) ?>;
-                             Highcharts.chart('casos_diarios', {
-                                chart: {
-                                    type: 'area',
-                                    inverted: true
-                                },
-                                title: {
-                                    text: 'Detalles de los casos diarios'
-                                },
-                                accessibility: {
-                                    keyboardNavigation: {
-                                        seriesNavigation: {
-                                            mode: 'serialize'
-                                        }
-                                    }
-                                },
-                                
-                                xAxis: {
-                                    categories: [
-                                        'Sunday',
-                                        'Tuesday',
-                                        'Wednesday',
-                                        'Thursday',
-                                        'Friday',
-                                        'Saturday',
-                                        'Monday'
-                                    ]
-                                },
-                                yAxis: {
-                                    title: {
-                                        text: 'Cantidades'
-                                    },
-                                    allowDecimals: false,
-                                    min: 0
-                                },
-                                plotOptions: {
-                                    area: {
-                                        fillOpacity: 0.5
-                                    }
-                                },
-                                series: [{
-                                    name: 'Recuperados',
-                                    data: recuperados,
-                                }, {
-                                    name: 'Infectados',
-                                    data: infectados,
-                                 }, {
-                                    name: 'Muertos',
-                                    data: muertos,
-                                }]
-                            });
-              
+                          
+                          
+           var positivos =  <?php echo json_encode($positivos) ?>;
+            var negativos =  <?php echo json_encode($negativos) ?>;
+               Highcharts.chart('casos_diarios', {
+
+    chart: {
+                      type: 'bar'
+                  },
+                  title: {
+                      text: ' Casos mensaules.'
+                  },
+                  subtitle: {
+                      text: 'Listado de casos mensaules.'
+                  },
+                  xAxis: {
+                      categories: ['Oct','Nov', 'Dec','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                      title: {
+                          text: null
+                      }
+                  },
+                  yAxis: {
+                      min: 0,
+                      title: {
+                          text: 'Cantiadad total.',
+                          align: 'high'
+                      },
+                      labels: {
+                          overflow: 'justify'
+                      }
+                  },
+                  tooltip: {
+                      valueSuffix: ' Casos totales.'
+                  },
+                  plotOptions: {
+                      bar: {
+                          dataLabels: {
+                              enabled: true
+                          }
+                      }
+                  },
+                  
+                      credits: {
+                          enabled: false
+                      },
+                      series: [{
+                          name: 'Negativo',
+                          data: negativos,
+                      }, {
+                          name: 'Positivo',
+                          data: positivos,
+                     
+                  }]
+              });
                            </script>  
                          </div>
                        </div>
@@ -220,13 +274,7 @@
                       text: 'Mas detalles'
                   },
                   xAxis: {
-                     categories: ['Sunday',
-                                        'Tuesday',
-                                        'Wednesday',
-                                        'Thursday',
-                                        'Friday',
-                                        'Saturday',
-                                        'Monday'],
+                     categories: ['Oct','Nov', 'Dec','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
                       crosshair: true
                   },
                   yAxis: {
@@ -317,18 +365,7 @@
                           }
                       }
                   },
-                  legend: {
-                      layout: 'vertical', 
-                      align: 'right',
-                      verticalAlign: 'top',
-                      x: -40,
-                      y: 40,
-                      floating: true,
-                      borderWidth: 1,
-                      backgroundColor:
-                          Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-                      shadow: true
-                  },
+                    
                   credits: {
                       enabled: false
                   },
