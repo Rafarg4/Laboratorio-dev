@@ -151,6 +151,11 @@ class PacienteController extends AppBaseController
 
             return redirect(route('pacientes.index'));
         }
+         if(count($paciente->caso)){
+             Flash::error('Paciente no se puede eliminar ya que esta en uso.');
+
+             return redirect(route('pacientes.index'));
+        }
 
         $this->pacienteRepository->delete($id);
 

@@ -131,7 +131,7 @@
         window.onload = function(){ document.getElementById("loading").style.display = "none" }   
 </script>
     <div id="loading">
-     <img id="loading-image" src="https://hcalloneopinmobiliarias.com.ar/wp-content/uploads/2020/01/loader.gif" alt="Loading..." />
+     <img id="loading-image" src="/loader.gif" alt="Loading..." />
 </div>
     <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
    

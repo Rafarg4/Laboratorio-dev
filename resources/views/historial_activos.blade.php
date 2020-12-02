@@ -49,11 +49,11 @@
                                     <td>
                                        {!! Form::open() !!}
                                      <div class='btn-group'>
-                                      <a href="{{ route('detalle_activos', [$activos->id]) }}" class="btn-floating btn-sm "><i class="cil-clipboard fa-2x"></i></a>
+                                      <a href="{{ route('detalle_activos', [$activos->id]) }}" class="btn-floating btn-sm "><center><i class="cil-clipboard fa-2x"></i></a>
                                         {!! Form::close() !!}
                                       </div>
                                     </td>
-                                </tr>
+                                </tr></center>
                             @endforeach
                             </tbody>
                         </table>

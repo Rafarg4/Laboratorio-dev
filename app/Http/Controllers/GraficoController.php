@@ -12,14 +12,17 @@ class GraficoController extends Controller
 	public function grafico(){
         $masculino = Paciente::select(\DB::raw("COUNT(*) as count"))
         ->where('pacientes.genero','Masculino')
+        ->where('pacientes.resultado','Positivo')
                     ->pluck('count');
     {
     $femenino = Paciente::select(\DB::raw("COUNT(*) as count"))
                     ->where('pacientes.genero','Femenino')
+                    ->where('pacientes.resultado','Positivo')
                     ->pluck('count');
     }{
     $otro = Paciente::select(\DB::raw("COUNT(*) as count"))
                     ->where('pacientes.genero','Otro')
+                    ->where('pacientes.resultado','Positivo')
                     ->pluck('count');
     }{
         $encarnacion = Paciente::select(\DB::raw("COUNT(*) as count"))
@@ -108,17 +111,26 @@ class GraficoController extends Controller
         ->get()->toArray();
     $negativos = array_column($negativos, 'count');
     }{
-         $positotal = Paciente::select(\DB::raw("COUNT(*) as count"))
-         ->where('pacientes.resultado','Positivo')
+    $positotal = Paciente::select(\DB::raw("COUNT(*) as count"))
+    ->where('pacientes.resultado','Positivo')
                     ->pluck('count');
     }{
-         $negatotal = Paciente::select(\DB::raw("COUNT(*) as count"))
-          ->where('pacientes.resultado','Negativo')
+    $negatotal = Paciente::select(\DB::raw("COUNT(*) as count"))
+    ->where('pacientes.resultado','Negativo')
                     ->pluck('count');
     }{
-       $promedio = Paciente::avg('edad');
-       $max = Paciente::max('edad');
-       $min = Paciente::min('edad');
+        //Edad promedio
+       $promedio = DB::table('pacientes')
+       ->where('pacientes.resultado','Positivo')
+       ->avg('edad');
+       //Edad maxima
+       $max = DB::table('pacientes')
+       ->where('pacientes.resultado','Positivo')
+       ->max('edad');
+       //Edad minima
+      $min = DB::table('pacientes')
+       ->where('pacientes.resultado','Positivo')
+       ->min('edad');
     }{
     return view('graficos', compact('masculino','femenino','otro','encarnacion','chaipe','cambyreta','mboikae','sanisidro','sagradafamilia','ciudadnueva','santamaria','itapaso','buenavista','fatima','muertos','infectados','recuperados','eleccion','otro_estado','positivos','negativos','positotal','negatotal','promedio','max','min'));
     }

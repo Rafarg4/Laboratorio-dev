@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use App\Models\Paciente;
 
 class Tipo_pruebaController extends AppBaseController
 {
@@ -146,11 +147,15 @@ class Tipo_pruebaController extends AppBaseController
 
             return redirect(route('tipoPruebas.index'));
         }
+         if(count($tipoPrueba->paciente)){
+             Flash::error('Tipo Prueba no se puede eliminar ya que esta en uso.');
 
+             return redirect(route('tipoPruebas.index'));
+        }
         $this->tipoPruebaRepository->delete($id);
 
-        Flash::success('Tipo Prueba eliminado correctamente.');
+            Flash::success('Tipo Prueba eliminado correctamente.');
 
-        return redirect(route('tipoPruebas.index'));
+            return redirect(route('tipoPruebas.index'));    
     }
 }

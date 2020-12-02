@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<link rel="icon" type="image/png" href="/laboratorio.png" />
 @section('content')
      <ol class="breadcrumb">
             <li class="breadcrumb-item">
