@@ -53,7 +53,7 @@
 <!-- Barrio Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('barrio', 'Barrio:') !!}
-   {!! Form::select('barrio',array('Sin eleccion' => 'Sin eleccion','Encarnacion' => 'Encarnacion', 'Mboi_Ka_e' => 'Mboi_Ka_e','San_Isidro' => 'San_Isidro','Sagrada_Familia' => 'Sagrada_Familia','Ciudad_Nueva' => 'Ciudad_Nueva','Chaipe' => 'Chaipe','Cambyreta' => 'Cambyreta','Santa_Maria' => 'Santa_Maria','Ita_Paso' => 'Ita_Paso','Buena_Vista' => 'Buena_Vista','Fatima' => 'Fatima'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
+   {!! Form::select('barrio',array('Sin eleccion' => 'Sin eleccion','Encarnacion' => 'Encarnacion', 'Mboi_Ka_e' => 'Mboi_Ka_e','San_Isidro' => 'San_Isidro','Sagrada_Familia' => 'Sagrada_Familia','Ciudad_Nueva' => 'Ciudad_Nueva','Chaipe' => 'Chaipe','Cambyreta' => 'Cambyreta','Santa_Maria' => 'Santa_Maria','Ita_Paso' => 'Ita_Paso','Buena_Vista' => 'Buena_Vista','Fatima' => 'Fatima','Santo_Domingo' =>'Santo_Domingo','Nueva_Alborada' =>'Nueva_Alborada','8de_diciembre' =>'8de_diciembre'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
 
 <!-- Telefono Field -->

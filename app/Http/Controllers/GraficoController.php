@@ -10,9 +10,9 @@ use Carbon\Carbon;
 class GraficoController extends Controller
 {
 	public function grafico(){
-        $masculino = Paciente::select(\DB::raw("COUNT(*) as count"))
-        ->where('pacientes.genero','Masculino')
-        ->where('pacientes.resultado','Positivo')
+    $masculino = Paciente::select(\DB::raw("COUNT(*) as count"))
+                    ->where('pacientes.genero','Masculino')
+                    ->where('pacientes.resultado','Positivo')
                     ->pluck('count');
     {
     $femenino = Paciente::select(\DB::raw("COUNT(*) as count"))
@@ -26,48 +26,70 @@ class GraficoController extends Controller
                     ->pluck('count');
     }{
         $encarnacion = Paciente::select(\DB::raw("COUNT(*) as count"))
+        ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
                     ->where('pacientes.barrio','Encarnacion')
-                    ->pluck('count');
+                     ->get()->toArray();
+    $encarnacion = array_column($encarnacion, 'count');
     }{
     $chaipe = Paciente::select(\DB::raw("COUNT(*) as count"))
+     ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
                     ->where('pacientes.barrio','Chaipe')
-                    ->pluck('count');
+                    ->get()->toArray();
+    $chaipe = array_column($chaipe, 'count');
     }{
     $cambyreta = Paciente::select(\DB::raw("COUNT(*) as count"))
+     ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
                     ->where('pacientes.barrio','Cambyreta')
-                    ->pluck('count');
+                     ->get()->toArray();
+    $cambyreta = array_column($cambyreta, 'count');
     }{
     $mboikae = Paciente::select(\DB::raw("COUNT(*) as count"))
+     ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
                     ->where('pacientes.barrio','Mboi_Ka_e')
-                    ->pluck('count');
+                     ->get()->toArray();
+    $mboikae = array_column($mboikae, 'count');
     }{
     $sanisidro = Paciente::select(\DB::raw("COUNT(*) as count"))
+     ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
                     ->where('pacientes.barrio','San_Isidro')
-                    ->pluck('count');
+                    ->get()->toArray();
+    $sanisidro = array_column($sanisidro, 'count');
     }{
     $sagradafamilia = Paciente::select(\DB::raw("COUNT(*) as count"))
+     ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
                     ->where('pacientes.barrio','Sagrada_Familia')
-                    ->pluck('count');
+                    ->get()->toArray();
+    $sagradafamilia = array_column($sagradafamilia, 'count');
     }{
     $ciudadnueva = Paciente::select(\DB::raw("COUNT(*) as count"))
+     ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
                     ->where('pacientes.barrio','Ciudad_Nueva')
-                    ->pluck('count');
+                    ->get()->toArray();
+    $ciudadnueva = array_column($ciudadnueva, 'count');
     }{
     $santamaria = Paciente::select(\DB::raw("COUNT(*) as count"))
+     ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
                     ->where('pacientes.barrio','Santa_Maria')
-                    ->pluck('count');
+                    ->get()->toArray();
+    $santamaria = array_column($santamaria, 'count');
     }{
     $itapaso = Paciente::select(\DB::raw("COUNT(*) as count"))
+     ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
                     ->where('pacientes.barrio','Ita_Paso')
-                    ->pluck('count');
+                    ->get()->toArray();
+    $itapaso = array_column($itapaso, 'count');
     }{
     $buenavista = Paciente::select(\DB::raw("COUNT(*) as count"))
+     ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
                     ->where('pacientes.barrio','Buena_Vista')
-                    ->pluck('count');
+                    ->get()->toArray();
+    $buenavista = array_column($buenavista, 'count');
     }{
     $fatima = Paciente::select(\DB::raw("COUNT(*) as count"))
+     ->groupBy(\DB::raw("extract(MONTH from created_at)", "=", Carbon::now()->month))
                     ->where('pacientes.barrio','Fatima')
-                    ->pluck('count');
+                    ->get()->toArray();
+    $fatima = array_column($fatima, 'count');
     }{
     $muertos = Control::select(DB::raw("COUNT(*) as count"))
         ->where('controls.estado_paciente','Fallecido')

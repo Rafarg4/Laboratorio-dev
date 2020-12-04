@@ -106,10 +106,10 @@
                       text: 'Barrios mas afectados.'
                   },
                   subtitle: {
-                      text: 'Listado de casos por distrito.'
+                      text: 'Listado de casos por Barrio.'
                   },
                   xAxis: {
-                      categories: ['Nov', 'Dec','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep','Oct'],
+                      categories: ['Oct','Nov', 'Dec','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
                       title: {
                           text: null
                       }

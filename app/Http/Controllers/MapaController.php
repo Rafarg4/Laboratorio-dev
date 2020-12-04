@@ -18,6 +18,10 @@ class MapaController extends Controller
     $cambyreta = Paciente::select(\DB::raw("COUNT(*) as count"))
                     ->where('pacientes.barrio','Cambyreta')
                     ->pluck('count');
+                    }{
+    $santo_domingo = Paciente::select(\DB::raw("COUNT(*) as count"))
+                    ->where('pacientes.barrio','Santo_Domingo')
+                    ->pluck('count');
     }{
     $mboikae = Paciente::select(\DB::raw("COUNT(*) as count"))
                     ->where('pacientes.barrio','Mboi_Ka_e')
@@ -50,12 +54,21 @@ class MapaController extends Controller
                     ->where('pacientes.barrio','Buena_Vista')
                     ->pluck('count');
     }{
+    $de_diciembre = Paciente::select(\DB::raw("COUNT(*) as count"))
+                    ->where('pacientes.barrio','8de_diciembre')
+                    ->pluck('count');
+    }{
 
     $fatima = Paciente::select(\DB::raw("COUNT(*) as count"))
                     ->where('pacientes.barrio','Fatima')
                     ->pluck('count');
+     }{
+
+    $nueva_alborada = Paciente::select(\DB::raw("COUNT(*) as count"))
+                    ->where('pacientes.barrio','Nueva_Alborada')
+                    ->pluck('count');
    
-    return view('mapas', compact('encarnacion','chaipe','cambyreta','mboikae','sanisidro','sagradafamilia','ciudadnueva','ciudadnueva','santamaria','itapaso','buenavista','fatima'));
+    return view('mapas', compact('encarnacion','chaipe','cambyreta','mboikae','sanisidro','sagradafamilia','ciudadnueva','ciudadnueva','santamaria','itapaso','buenavista','fatima','santo_domingo','de_diciembre','nueva_alborada'));
     }
  }
 }
