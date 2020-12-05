@@ -45,6 +45,7 @@ Route::get('home', 'HistorialFallecidoController@dashmuerto')->middleware('auth'
 
 Route::get('mapa_todopacientes', 'MapatodoController@index')->middleware('auth');
 
+
 Route::get('reporte_pacientes', 'Reporte_pacienteController@reporte_paciente')->middleware('auth');
 
 Route::get('reporte_positivos', 'Reporte_positivoController@casos_positivos')->middleware('auth');
@@ -64,3 +65,9 @@ Route::resource('casoPositivos', 'Caso_positivoController');
 //Rutas de la api
 Route::get('apipacientes', 'ApipacienteController@index');
 
+
+Route::get('store', 'ApipacienteController@store')->middleware('auth');
+
+Route::get('delete', 'ApipacienteController@delete')->middleware('auth');
+
+Route::get('update', 'ApipacienteController@update')->middleware('auth');

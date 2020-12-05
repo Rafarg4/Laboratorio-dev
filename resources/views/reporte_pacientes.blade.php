@@ -1,11 +1,9 @@
 @extends('layouts.app')
-
-
 <link rel="icon" type="image/png" href="/laboratorio.png" />
 @section('content')
 <script>
      $(document).ready(function() {
-        $('#data').DataTable( {
+        $('#dt').DataTable( {
             "pageLength":6,
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
@@ -39,7 +37,7 @@
                          <div class="card-body">
                             
   <div class="md-card-content" style="overflow-x: auto;">
-  <table class="table table-bordered" id="data">
+  <table class="table table-bordered" id="dt">
         <thead>
             <tr>
         <th>Datos Personales</th>

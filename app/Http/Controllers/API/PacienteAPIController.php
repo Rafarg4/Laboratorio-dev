@@ -102,7 +102,7 @@ class PacienteAPIController extends AppBaseController
 
         $paciente = $this->pacienteRepository->update($input, $id);
 
-        return $this->sendResponse($paciente->toArray(), 'Paciente actualizado correcatmente');
+        return $this->sendResponse($paciente->toArray(), 'Paciente actualizado correctamente');
     }
 
     /**

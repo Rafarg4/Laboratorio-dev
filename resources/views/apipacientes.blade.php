@@ -1,31 +1,36 @@
 @extends('layouts.app')
 <link rel="icon" type="image/png" href="/laboratorio.png" />
 @section('content')
-<div class="container-fluid">
-<div class="container">
-  <br>
-  <h3>Prueba de Api
-  </h3>
-        <div class="animated fadeIn">
-
-        <table class="table table-bordered" id="data-table">
-        <thead>
-            <tr>
+<br>
+  <div class="container-fluid">
+                     <div class="animated fadeIn">
+                                 @include('flash::message')
+  <div class="row">
+   <div class="col-lg-12">
+    <div class="card">
+  <div class="card-header">
+       <i class="fa fa-align-justify"></i>
+        Test Api
+                                                 
+          </div>
+       <div class="card-body">
+        <div class="table-responsive-sm">
+<table class="table table-bordered" id="data-table">
+              <thead>
+              <tr>
                 <th>Nombre </th>
                 <th>Genero</th>
-                 <th>Fecha de nacimiento</th>
-                  <th>Edad</th>
-                   <th>Ci</th>
-                    <th>Barrio</th>
-                     <th>Telefono</th>
-                      <th>Grupo Sanguineo</th>
-                       <th>Enfermedad Referencial</th>
-                        <th>Latitud</th>
-                         <th>Longitud</th>
-                          <th>Email</th>
-                           <th>Resultado</th>
-
-       
+                <th>Fecha de nacimiento</th>
+                <th>Edad</th>
+                <th>Ci</th>
+                <th>Barrio</th>
+                <th>Telefono</th>
+                <th>Grupo Sanguineo</th>
+                <th>Enfermedad Referencial</th>
+                <th>Latitud</th>
+                <th>Longitud</th>
+                <th>Email</th>
+                <th>Resultado</th>       
                 
             </tr>
         </thead>
@@ -53,4 +58,10 @@
     </table>    <!-- Widgets -->
         </div>
       </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+    
 @endsection
