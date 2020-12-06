@@ -66,8 +66,5 @@ Route::resource('casoPositivos', 'Caso_positivoController');
 Route::get('apipacientes', 'ApipacienteController@index');
 
 
-Route::get('store', 'ApipacienteController@store')->middleware('auth');
-
-Route::get('delete', 'ApipacienteController@delete')->middleware('auth');
-
-Route::get('update', 'ApipacienteController@update')->middleware('auth');
+//Ruta para paciente
+Route::resource('/paciente', 'ApipacienteController');

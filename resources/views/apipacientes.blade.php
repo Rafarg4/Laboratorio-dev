@@ -9,12 +9,14 @@
    <div class="col-lg-12">
     <div class="card">
   <div class="card-header">
+    <a href="{{url('paciente/create')}}">Nuevo</a>
        <i class="fa fa-align-justify"></i>
         Test Api
                                                  
           </div>
-       <div class="card-body">
-        <div class="table-responsive-sm">
+         <div class="md-card-content" style="overflow-x: auto;">
+<div class="table-responsive-sm">
+  
 <table class="table table-bordered" id="data-table">
               <thead>
               <tr>
@@ -27,10 +29,10 @@
                 <th>Telefono</th>
                 <th>Grupo Sanguineo</th>
                 <th>Enfermedad Referencial</th>
-                <th>Latitud</th>
-                <th>Longitud</th>
                 <th>Email</th>
-                <th>Resultado</th>       
+                <th>Resultado</th>
+                 <th>Accion</th>       
+                       
                 
             </tr>
         </thead>
@@ -46,13 +48,20 @@
                   <td>{{ $pacientes->telefono}}</td>
                   <td>{{ $pacientes->grupo_sanguineo}}</td>
                   <td>{{ $pacientes->enfermedad_referencial}}</td>
-                  <td>{{ $pacientes->latitud}}</td>
-                  <td>{{ $pacientes->longitud}}</td>
                   <td>{{ $pacientes->email}}</td>
                   <td>{{ $pacientes->resultado}}</td>
-            
-            
-            </tr>
+            <td>
+          <a class="btn btn-light" href="{{url('paciente', $pacientes->id)}}">Ver</a>
+
+          <a class="btn btn-warning" href="{{url('paciente/' . $pacientes->id. '/edit')}}">Editar</a>
+      
+          <form method="post" action="{{url('paciente', $pacientes->id)}}">
+            @csrf()
+            @method('DELETE')
+            <input class="btn btn-danger" type="submit" value="Eliminar" />
+          </form>
+        </td>
+      </tr>
         @endforeach
         </tbody>
     </table>    <!-- Widgets -->
@@ -63,5 +72,4 @@
 </div>
 </div>
 </div>
-    
 @endsection

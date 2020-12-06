@@ -1,33 +1,25 @@
-<!--<script type="text/javascript">
-  function printDiv(nombreDiv) {
-     var contenido= document.getElementById(nombreDiv).innerHTML;
-     var contenidoOriginal= document.body.innerHTML;
+@extends('layouts.app')
 
-     document.body.innerHTML = contenido;
-
-     window.print();
-
-     document.body.innerHTML = contenidoOriginal;
-}
-</script>
-<input type="button" onclick="printDiv('areaImprimir')" value="Imprimir" />
-<div id="areaImprimir">-->
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-<!-- Google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+@section('content')
+ <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href=""></a><strong>Pacientes  </strong>
+            </li>
+            <li class="breadcrumb-item active"> Detalles</li>
+     </ol>
+     <div class="container-fluid">
+          <div class="animated fadeIn">
+                 @include('coreui-templates::common.errors')
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <div class="card">
+                             <div class="card-header">
+                                <i class="fa fa-align-justify"></i>
+                                 Detalles de Paciente
+                                  <a href="{{ route('pacientes.index') }}" class="btn btn-primary">Volver</a>
+                             </div>
+                             <div class="card-body">
+<div class="table-responsive-sm">
 <ul class="list-group">
   <li class="list-group-item">
      <table class="table table-bordered" id="data-table">
@@ -70,9 +62,8 @@
 
 <!-- Enfermedad Referencial Field -->
 
-    <th><strong>Comorbilidad: </strong> {{ $paciente->enfermedad_referencial }}</rh>
+    <th><strong>Comorbilidad: </strong>{{ $paciente->enfermedad_referencial }}</rh>
 
-    <th><strong>Tipo de Prueba: </strong>{{ $paciente->tipo_prueba->nombre }}</th>
 
   
     <th><strong>Resultado: </strong> @switch(true)
@@ -105,14 +96,11 @@
 
     <th><strong>Actualizado: </strong>{{ $paciente->updated_at }}</th>
 </tr>
-<tr>
-  
-  <th><strong>Usuario: </strong>{{ $paciente->usuario }}</th>
-</tr>
+
 
    <table class="table table-bordered" id="data-table">
               <tr>
-                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exsacta de Paciente.</strong></th>
+                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exacta de Paciente.</strong></th>
               </tr>
                    
                    <tr>
@@ -125,10 +113,27 @@
               </table>
             </div>
            
-
+</div>
          </div>
     </li>
     </ul>
+  </th>
+</tr>
+</th>
+</tr>
+</table>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  @endsection
+
     <style type="text/css">
                    #mapid { height: 350px; width:1310px; }
            </style>

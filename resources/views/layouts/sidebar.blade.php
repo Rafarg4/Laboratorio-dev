@@ -93,6 +93,9 @@
                     <li @click="menu=11" class="nav-item">
                         <a class="nav-link" href="{{ action('ManualController@index') }}"><i class="cil-notes"></i> Manual <span class="badge badge-danger">PDF</span></a>
                     </li>
+                    <li @click="menu=11" class="nav-item">
+                        <a class="nav-link" href="{{ action('ApipacienteController@index') }}"><i class="cil-devices"></i> API</a>
+                    </li>
                 </ul>
             </nav>
         
