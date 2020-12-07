@@ -20,6 +20,7 @@
                             <div class="card-body">
 <form action="{{url('paciente')}}" method="post">
 @csrf()
+
 <!-- Nombre Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
@@ -92,6 +93,8 @@
     {!! Form::label('resultado', 'Resultado:') !!}
     {!! Form::select('resultado',array('Sin eleccion' => 'Sin eleccion','Positivo' => 'Positivo', 'Negativo' => 'Negativo','Otro' => 'Otro'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
+<!-- Tipo Prueba Field -->
+
 <!-- Enfermedad Referencial Field -->
 <div class="form-group col-sm-12 pull-left">
     {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}
@@ -106,28 +109,10 @@
     {!! Form::label('longitud', 'Longitud:') !!}
     {!! Form::text('longitud', null, ['class' => 'form-control']) !!}
 </div>
-
-<div class="form-group col-sm-6 pull-left">
-    {!! Form::label('created_at', 'created_at:') !!}
-    {!! Form::date('created_at', null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group col-sm-6 pull-left">
-    {!! Form::label('updated_at', 'updated_at:') !!}
-    {!! Form::date('updated_at', null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group col-sm-6 pull-left">
-    {!! Form::label('deletd_at', 'deletd_at:') !!}
-    {!! Form::date('deletd_at', null, ['class' => 'form-control']) !!}
-</div>
-
-
 <div class="form-group col-sm-13 pull-left">
   <div class="card">
              <div class="card-body">    
   <div id="mapid"></div>
-</div>
 </div>
 </div>
 <!-- Submit Field -->
@@ -182,6 +167,4 @@
         $(document).ready(function(){
             $("#select").select2();
         });
-    </script> 
-
-                                 
+    </script>

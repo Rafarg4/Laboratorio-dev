@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+
 class ApipacienteController extends Controller
 {
     private $client;
@@ -24,11 +25,10 @@ class ApipacienteController extends Controller
     }
     public function create(){
 
-        return view('paciente');
+       return view('paciente');
     }
     public function store (Request $request)
     {
-
         $this->client->post('pacientes',[
 
         'json' => $request->all()
@@ -37,13 +37,13 @@ class ApipacienteController extends Controller
         return redirect ('/paciente');
     }
 
-    public function show($id)
+    public function show($id) 
     {
         $respuesta = $this->client->get($id);
 
         $pacientes = $respuesta->getBody();
 
-        return view('ver',compact('pacientes'));
+         return redirect(route('ver'));
     }
 
     public function edit ($id)
@@ -56,7 +56,7 @@ class ApipacienteController extends Controller
         return view('editar',compact('pacientes'));
     }
 
-     public function update (Request $request, $id)
+    public function update (Request $request, $id)
      {
 
         $this->client->put('pacientes/' . $id,[
@@ -68,8 +68,10 @@ class ApipacienteController extends Controller
 
     }
     public function destroy ($id){
+
        $this->client->delete('pacientes/' .$id);
-         return redirect('apipacientes');
+
+        return redirect('apipacientes');
     }
    
 }

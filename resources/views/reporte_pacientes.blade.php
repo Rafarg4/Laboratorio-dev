@@ -1,24 +1,42 @@
 @extends('layouts.app')
 <link rel="icon" type="image/png" href="/laboratorio.png" />
 @section('content')
-<script>
-     $(document).ready(function() {
-        $('#dt').DataTable( {
-            "pageLength":6,
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
-            },
-         
-         dom: 'Bfrtip',
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#data thead tr').clone(true).appendTo( '#data  thead' );
+    $('#data thead tr:eq(1) th').each( function (i) {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );
+ 
+        $( 'input', this ).on( 'keyup change', function () {
+            if ( table.column(i).search() !== this.value ) {
+                table
+                    .column(i)
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+ 
+    var table = $('#data').DataTable( {
+        orderCellsTop: true,
+        fixedHeader: true,
+        autoFill: true,
+        scrollX: true,
+        dom: 'Bfrtip',
             buttons: [
              {extend:'csv',
             className: 'btn aqua-gradient'},
              {extend:'excel',
             className: 'btn aqua-gradient'} 
             ]
-        } );
-} );
+    } );
 
+
+
+} )
     </script>
 
 
@@ -37,7 +55,7 @@
                          <div class="card-body">
                             
   <div class="md-card-content" style="overflow-x: auto;">
-  <table class="table table-bordered" id="dt">
+  <table class="table table-bordered" id="data">
         <thead>
             <tr>
         <th>Datos Personales</th>

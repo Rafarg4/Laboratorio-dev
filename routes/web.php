@@ -68,3 +68,4 @@ Route::get('apipacientes', 'ApipacienteController@index');
 
 //Ruta para paciente
 Route::resource('/paciente', 'ApipacienteController');
+
