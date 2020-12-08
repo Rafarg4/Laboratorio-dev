@@ -8,22 +8,22 @@
               </table>
 <table class="table table-bordered" id="data-table">
 	<tr>
-	<th><strong>Prueba ID: </strong>{{ $tipoPrueba->id }}</th>
+	<th><strong>Prueba ID: </strong>{{ $tipoPruebas->id }}</th>
 
 
-    <th><strong>Nombre de Prueba: </strong>{{ $tipoPrueba->nombre }}</th>
+    <th><strong>Nombre de Prueba: </strong>{{ $tipoPruebas->nombre }}</th>
 
 <!-- Descripcion Field -->
 
-    <th><strong>Descripcion: </strong>{{ $tipoPrueba->descripcion }}</th>
+    <th><strong>Descripcion: </strong>{{ $tipoPruebas->descripcion }}</th>
 
 <!-- Created At Field -->
 
-    <th><strong>Creado: </strong>{{ $tipoPrueba->created_at }}</th>
+    <th><strong>Creado: </strong>{{ $tipoPruebas->created_at }}</th>
 
 <!-- Updated At Field -->
 
-    <th>Actualizado: {{ $tipoPrueba->updated_at }}</th>
+    <th>Actualizado: {{ $tipoPruebas->updated_at }}</th>
 </tr>
 </table>
 </div>

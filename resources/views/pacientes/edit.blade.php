@@ -18,12 +18,9 @@
                               <strong>Editar Paciente</strong>
                           </div>
                           <div class="card-body">
-                              {!! Form::model($pacientes, ['route' => ['paciente.update', $pacientes->id], 'method' => 'patch']) !!}
+                              {!! Form::model($pacientes, ['route' => ['pacientes.update', $pacientes->id], 'method' => 'patch']) !!}
 
-                              <div class="form-group col-md-6 pull-left">
-<label for="usuario">Usuario:</label>
-            <input type="text" name="usuario" class="form-control" value="{{ Auth::user()->name }}" readonly>
-        </div>
+                            
 <!-- Nombre Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}

@@ -57,8 +57,6 @@
 
     <th><strong>Comorbilidad: </strong>{{ $pacientes->enfermedad_referencial }}</rh>
 
-   
-
   
     <th><strong>Resultado: </strong> @switch(true)
            @case($pacientes->resultado == 'Negativo')
@@ -92,7 +90,8 @@
 </tr>
 <tr>
   
-  <th><strong>Usuario: </strong>{{ $pacientes->usuario }}</th>
+  <th><strong>Usuario: </strong>{{$pacientes->usuario}}</th>
+  <th><strong> Tipo de Prueba:</strong>{{ $pacientes->tipo_prueba_id }} </th>
 </tr>
 
    <table class="table table-bordered" id="data-table">

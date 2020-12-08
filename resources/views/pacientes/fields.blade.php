@@ -5,17 +5,17 @@
 <!-- Nombre Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
-    {!! Form::text('nombre_apellido', null, ['class' => 'form-control']) !!}
+    {!! Form::text('nombre_apellido', null, ['required', 'class' => 'form-control']) !!}
+</div>
+<!-- Fechanac Field -->
+<div class="form-group col-sm-6 pull-left">
+    {!! Form::label('fechanac', 'Fecha de nacimiento:') !!}
+    {!! Form::date('fechanac', null, ['required', 'class' => 'form-control','id'=>'fechanac']) !!}
 </div>
 <!-- Genero Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('genero', 'Genero:') !!}
    {!! Form::select('genero',array('Sin eleccion' => 'Sin eleccion','Masculino' => 'Masculino', 'Femenino' => 'Femenino','Otro' => 'Otro'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
-</div>
-<!-- Fechanac Field -->
-<div class="form-group col-sm-6 pull-left">
-    {!! Form::label('fechanac', 'Fecha de nacimiento:') !!}
-    {!! Form::date('fechanac', null, ['class' => 'form-control','id'=>'fechanac']) !!}
 </div>
 <!-- Scrpit de calcular edad  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -41,29 +41,27 @@
 <!-- Edad Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('edad', 'Edad:') !!}
-    {!! Form::number('edad', null, ['class' => 'form-control']) !!}
+    {!! Form::number('edad', null, ['required', 'class' => 'form-control']) !!}
 </div>
 
 <!-- Ci Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('ci', 'C.I.:') !!}
-    {!! Form::number('ci', null, ['class' => 'form-control']) !!}
+    {!! Form::number('ci', null, ['required', 'class' => 'form-control']) !!}
 </div>
-
+<!-- Telefono Field -->
+<div class="form-group col-sm-6 pull-left">
+    {!! Form::label('telefono', 'Telefono:') !!}
+    {!! Form::number('telefono', null, ['required', 'class' => 'form-control']) !!}
+</div>
 <!-- Barrio Field -->
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('barrio', 'Barrio:') !!}
    {!! Form::select('barrio',array('Sin eleccion' => 'Sin eleccion','Encarnacion' => 'Encarnacion', 'Mboi_Ka_e' => 'Mboi_Ka_e','San_Isidro' => 'San_Isidro','Sagrada_Familia' => 'Sagrada_Familia','Ciudad_Nueva' => 'Ciudad_Nueva','Chaipe' => 'Chaipe','Cambyreta' => 'Cambyreta','Santa_Maria' => 'Santa_Maria','Ita_Paso' => 'Ita_Paso','Buena_Vista' => 'Buena_Vista','Fatima' => 'Fatima','Santo_Domingo' =>'Santo_Domingo','Nueva_Alborada' =>'Nueva_Alborada','8de_diciembre' =>'8de_diciembre'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
-
-<!-- Telefono Field -->
-<div class="form-group col-sm-6 pull-left">
-    {!! Form::label('telefono', 'Telefono:') !!}
-    {!! Form::number('telefono', null, ['class' => 'form-control']) !!}
-</div>
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('email', 'Email:') !!}
-    {!! Form::email('email', null, ['class' => 'form-control']) !!}
+    {!! Form::email('email', null, ['required', 'class' => 'form-control']) !!}
 </div>
 <!-- Grupo Sanguineo Field -->
 <div class="form-group col-sm-6 pull-left">
@@ -82,16 +80,16 @@
 <!-- Enfermedad Referencial Field -->
 <div class="form-group col-sm-12 pull-left">
     {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}
-    {!! Form::textarea('enfermedad_referencial', null, ['class' => 'form-control']) !!}
+    {!! Form::textarea('enfermedad_referencial', null, ['required', 'class' => 'form-control']) !!}
 </div>
 
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('latitud', 'Latitud:') !!}
-    {!! Form::text('latitud', null, ['class' => 'form-control']) !!}
+    {!! Form::text('latitud', null, ['required', 'class' => 'form-control']) !!}
 </div>
 <div class="form-group col-sm-6 pull-left">
     {!! Form::label('longitud', 'Longitud:') !!}
-    {!! Form::text('longitud', null, ['class' => 'form-control']) !!}
+    {!! Form::text('longitud', null, ['required', 'class' => 'form-control']) !!}
 </div>
 <div class="form-group col-sm-13 pull-left">
   <div class="card">

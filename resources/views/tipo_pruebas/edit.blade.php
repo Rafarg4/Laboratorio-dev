@@ -18,7 +18,7 @@
                               <strong>Editar Tipo Prueba</strong>
                           </div>
                           <div class="card-body">
-                              {!! Form::model($tipoPrueba, ['route' => ['tipoPruebas.update', $tipoPrueba->id], 'method' => 'patch']) !!}
+                              {!! Form::model($tipoPruebas, ['route' => ['tipoPruebas.update', $tipoPruebas->id], 'method' => 'patch']) !!}
 
                               @include('tipo_pruebas.fields')
 

@@ -10,152 +10,89 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 use App\Models\Paciente;
-
+use GuzzleHttp\Client;
 class Tipo_pruebaController extends AppBaseController
 {
-    /** @var  Tipo_pruebaRepository */
-    private $tipoPruebaRepository;
+     private $client;
 
-    public function __construct(Tipo_pruebaRepository $tipoPruebaRepo)
-    {
-        $this->tipoPruebaRepository = $tipoPruebaRepo;
+    public function __construct(){
+    //Ruta de api para consumir pacientes.
+    $this->client = new Client (['base_uri'=>'http://127.0.0.1:6060/api/']);
+
     }
 
-    /**
-     * Display a listing of the Tipo_prueba.
-     *
-     * @param Request $request
-     *
-     * @return Response
-     */
-    public function index(Request $request)
+    public function index ()
     {
-        $tipoPruebas = $this->tipoPruebaRepository->all();
+        $repuesta=$this->client->get('tipo_pruebas');
 
-        return view('tipo_pruebas.index')
-            ->with('tipoPruebas', $tipoPruebas);
+        $tipoPruebas = json_decode($repuesta->getBody()->getContents());
+       
+        return view('tipo_pruebas.index',compact('tipoPruebas'));
+
     }
-
-    /**
-     * Show the form for creating a new Tipo_prueba.
-     *
-     * @return Response
-     */
-    public function create()
-    {
+    public function create(){
+       
         return view('tipo_pruebas.create');
     }
-
-    /**
-     * Store a newly created Tipo_prueba in storage.
-     *
-     * @param CreateTipo_pruebaRequest $request
-     *
-     * @return Response
-     */
-    public function store(CreateTipo_pruebaRequest $request)
+    public function store (Request $request)
     {
-        $input = $request->all();
+        $this->client->post('tipo_pruebas',[
 
-        $tipoPrueba = $this->tipoPruebaRepository->create($input);
+        'json' => $request->all()
+        ]);
 
-        Flash::success('Tipo Prueba guardado correctamente.');
+        Flash::success('Prueba guardado correctamente.');
+
+         return redirect(route('tipoPruebas.index'));
+    }
+
+     public function show($id)
+    {
+        $respuesta = $this->client->get('tipo_pruebas/' .$id);
+
+        $tipoPruebas = $respuesta->getBody();
+
+        return view('tipo_pruebas.show', ['tipoPruebas' => json_decode($tipoPruebas)]);
+    }
+
+    public function edit ($id)
+    {
+
+        $repuesta=$this->client->get('tipo_pruebas/' .$id);
+
+        $tipoPruebas = json_decode($repuesta->getBody()->getContents());
+
+       
+        return view('tipo_pruebas.edit',compact('tipoPruebas'));
+    }
+
+    public function update (Request $request, $id)
+     {
+
+        $this->client->put('tipo_pruebas/' . $id,[
+
+        'json' => $request->all()
+        ]);
+
+        Flash::success('Prueba Actualizado guardado correctamente.');
 
         return redirect(route('tipoPruebas.index'));
+
     }
+    public function destroy ($id){
 
-    /**
-     * Display the specified Tipo_prueba.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function show($id)
-    {
-        $tipoPrueba = $this->tipoPruebaRepository->find($id);
+       $this->client->delete('tipo_pruebas/' .$id);
 
-        if (empty($tipoPrueba)) {
-            Flash::error('Tipo Prueba no encontrado');
+       Flash::error('Prueba Eliminado correctamente.');
 
-            return redirect(route('tipoPruebas.index'));
-        }
-
-        return view('tipo_pruebas.show')->with('tipoPrueba', $tipoPrueba);
+       return redirect(route('tipoPruebas.index'));
     }
-
-    /**
-     * Show the form for editing the specified Tipo_prueba.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $tipoPrueba = $this->tipoPruebaRepository->find($id);
-
-        if (empty($tipoPrueba)) {
-            Flash::error('Tipo Prueba no encontrado');
-
-            return redirect(route('tipoPruebas.index'));
-        }
-
-        return view('tipo_pruebas.edit')->with('tipoPrueba', $tipoPrueba);
-    }
-
-    /**
-     * Update the specified Tipo_prueba in storage.
-     *
-     * @param int $id
-     * @param UpdateTipo_pruebaRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdateTipo_pruebaRequest $request)
-    {
-        $tipoPrueba = $this->tipoPruebaRepository->find($id);
-
-        if (empty($tipoPrueba)) {
-            Flash::error('Tipo Prueba no encontrado');
-
-            return redirect(route('tipoPruebas.index'));
-        }
-
-        $tipoPrueba = $this->tipoPruebaRepository->update($request->all(), $id);
-
-        Flash::success('Tipo Prueba actualizado correctamente.');
-
-        return redirect(route('tipoPruebas.index'));
-    }
-
-    /**
-     * Remove the specified Tipo_prueba from storage.
-     *
-     * @param int $id
-     *
-     * @throws \Exception
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        $tipoPrueba = $this->tipoPruebaRepository->find($id);
-
-        if (empty($tipoPrueba)) {
-            Flash::error('Tipo Prueba no encontrado');
-
-            return redirect(route('tipoPruebas.index'));
-        }
-         if(count($tipoPrueba->paciente)){
-             Flash::error('Tipo Prueba no se puede eliminar ya que esta en uso.');
-
-             return redirect(route('tipoPruebas.index'));
-        }
-        $this->tipoPruebaRepository->delete($id);
-
-            Flash::success('Tipo Prueba eliminado correctamente.');
-
-            return redirect(route('tipoPruebas.index'));    
-    }
+   
 }
+
+
+
+
+
+
+   

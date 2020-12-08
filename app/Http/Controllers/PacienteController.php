@@ -46,6 +46,8 @@ class PacienteController extends AppBaseController
         'json' => $request->all()
         ]);
 
+        Flash::success('Paciente guardado correctamente.');
+
          return redirect(route('pacientes.index'));
     }
 
@@ -64,6 +66,7 @@ class PacienteController extends AppBaseController
         $repuesta=$this->client->get('pacientes/' .$id);
 
         $pacientes = json_decode($repuesta->getBody()->getContents());
+
        
         return view('pacientes.edit',compact('pacientes'));
     }
@@ -76,12 +79,16 @@ class PacienteController extends AppBaseController
         'json' => $request->all()
         ]);
 
-        return redirect ('pacientes.edit');
+        Flash::success('Paciente Actualizado guardado correctamente.');
+
+        return redirect(route('pacientes.index'));
 
     }
     public function destroy ($id){
 
        $this->client->delete('pacientes/' .$id);
+
+       Flash::error('Paciente Eliminado correctamente.');
 
        return redirect(route('pacientes.index'));
     }
