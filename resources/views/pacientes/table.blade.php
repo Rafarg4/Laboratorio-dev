@@ -31,7 +31,7 @@
             <td>{{ $paciente->telefono }}</td>
             <td>{{ $paciente->grupo_sanguineo }}</td>
             <td>{{ $paciente->enfermedad_referencial }}</td>
-              <td>{{ $paciente->tipo_prueba->nombre }}</td>
+              <td>{{ $paciente->tipo_prueba }}</td>
             <td>@switch(true)
             @case($paciente->resultado == 'Negativo')
             <span class="badge badge-primary"> {{ $paciente->resultado }} </span>

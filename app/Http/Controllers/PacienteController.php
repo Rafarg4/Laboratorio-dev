@@ -6,161 +6,84 @@ use App\Http\Requests\UpdatePacienteRequest;
 use App\Repositories\PacienteRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use App\Models\Tipo_prueba;
 use Flash;
 use Response;
-
+use GuzzleHttp\Client;
 class PacienteController extends AppBaseController
 {
-    /** @var  PacienteRepository */
-    private $pacienteRepository;
+    private $client;
 
-    public function __construct(PacienteRepository $pacienteRepo)
-    {
-        $this->pacienteRepository = $pacienteRepo;
+    private $pruebas;
+
+    public function __construct(){
+    //Ruta de api para consumir pacientes.
+    $this->client = new Client (['base_uri'=>'http://127.0.0.1:6060/api/']);
+    //Ruta para obtener los tipos de pruebas en pacientes.
+    $this->pruebas = new Client (['base_uri'=>'http://127.0.0.1:6060/pruebas']);
     }
 
-    /**
-     * Display a listing of the Paciente.
-     *
-     * @param Request $request
-     *
-     * @return Response
-     */
-    public function index(Request $request)
+    public function index ()
     {
-        //$pacientes = \Auth::user()->paciente()->get();
-        $pacientes = $this->pacienteRepository->all();
+        $repuesta=$this->client->get('pacientes');
 
-        return view('pacientes.index')
-            ->with('pacientes', $pacientes);
+        $pacientes = json_decode($repuesta->getBody()->getContents());
+       
+        return view('pacientes.index',compact('pacientes'));
+
+    }
+    public function create(){
+
+        $repuesta=$this->pruebas->get('pruebas');
+
+        $pruebas = json_decode($repuesta->getBody()->getContents());
+       
+        return view('pacientes.create',compact('pruebas'));
+    }
+    public function store (Request $request)
+    {
+        $this->client->post('pacientes',[
+
+        'json' => $request->all()
+        ]);
+
+         return redirect(route('pacientes.index'));
     }
 
-    /**
-     * Show the form for creating a new Paciente.
-     *
-     * @return Response
-     */
-    public function create()
+     public function show($id)
     {
-          $pruebas = Tipo_prueba::pluck('nombre','id');
-        return view('pacientes.create',compact(
-            'pruebas')); 
+        $respuesta = $this->client->get('pacientes/' .$id);
+
+        $pacientes = $respuesta->getBody();
+
+        return view('pacientes.show', ['pacientes' => json_decode($pacientes)]);
     }
 
-    /**
-     * Store a newly created Paciente in storage.
-     *
-     * @param CreatePacienteRequest $request
-     *
-     * @return Response
-     */
-    public function store(CreatePacienteRequest $request)
+    public function edit ($id)
     {
-        $input = $request->all();
 
-        $paciente = $this->pacienteRepository->create($input);
+        $repuesta=$this->client->get('pacientes/' .$id);
 
-        Flash::success('Paciente guardado correctamente.');
-
-        return redirect(route('pacientes.index'));
+        $pacientes = json_decode($repuesta->getBody()->getContents());
+       
+        return view('pacientes.edit',compact('pacientes'));
     }
 
-    /**
-     * Display the specified Paciente.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function show($id)
-    {
-        $paciente = $this->pacienteRepository->find($id);
+    public function update (Request $request, $id)
+     {
 
-        if (empty($paciente)) {
-            Flash::error('Paciente no encontrado');
+        $this->client->put('pacientes/' . $id,[
 
-            return redirect(route('pacientes.index'));
-        }
+        'json' => $request->all()
+        ]);
 
-        return view('pacientes.show')->with('paciente', $paciente);
+        return redirect ('pacientes.edit');
+
     }
+    public function destroy ($id){
 
-    /**
-     * Show the form for editing the specified Paciente.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $paciente = $this->pacienteRepository->find($id);
-         $pruebas = Tipo_prueba::pluck('nombre','id');
+       $this->client->delete('pacientes/' .$id);
 
-
-        if (empty($paciente)) {
-            Flash::error('Paciente no encontrado');
-
-            return redirect(route('pacientes.index'));
-        }
-
-        return view('pacientes.edit', compact('paciente', 'pruebas'));
+       return redirect(route('pacientes.index'));
     }
-
-    /**
-     * Update the specified Paciente in storage.
-     *
-     * @param int $id
-     * @param UpdatePacienteRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdatePacienteRequest $request)
-    {
-        $paciente = $this->pacienteRepository->find($id);
-
-        if (empty($paciente)) {
-            Flash::error('Paciente no encontrado');
-
-            return redirect(route('pacientes.index'));
-        }
-
-        $paciente = $this->pacienteRepository->update($request->all(), $id);
-
-        Flash::success('Paciente actualizado correctamente.');
-
-        return redirect(route('pacientes.index'));
-    }
-
-    /**
-     * Remove the specified Paciente from storage.
-     *
-     * @param int $id
-     *
-     * @throws \Exception
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        $paciente = $this->pacienteRepository->find($id);
-
-        if (empty($paciente)) {
-            Flash::error('Paciente no encontrado');
-
-            return redirect(route('pacientes.index'));
-        }
-         if(count($paciente->caso)){
-             Flash::error('Paciente no se puede eliminar ya que esta en uso.');
-
-             return redirect(route('pacientes.index'));
-        }
-
-        $this->pacienteRepository->delete($id);
-
-        Flash::success('Paciente eliminado correctamente.');
-
-        return redirect(route('pacientes.index'));
-    }
+   
 }

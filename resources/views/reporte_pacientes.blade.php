@@ -21,6 +21,10 @@
     } );
  
     var table = $('#data').DataTable( {
+       "pageLength":7,
+       "language": {
+       "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+       },
         orderCellsTop: true,
         fixedHeader: true,
         autoFill: true,

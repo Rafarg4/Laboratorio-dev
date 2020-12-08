@@ -8,10 +8,11 @@ use GuzzleHttp\Client;
 class ApipacienteController extends Controller
 {
     private $client;
-
+    private $pruebas;
     public function __construct(){
 
     $this->client = new Client (['base_uri'=>'http://127.0.0.1:6060/api/']);
+    $this->pruebas = new Client (['base_uri'=>'http://127.0.0.1:6060/pruebas']);
     }
 
     public function index ()
@@ -25,7 +26,11 @@ class ApipacienteController extends Controller
     }
     public function create(){
 
-       return view('paciente');
+        $repuesta=$this->pruebas->get('pruebas');
+
+        $pruebas = json_decode($repuesta->getBody()->getContents());
+       
+        return view('paciente',compact('pruebas'));
     }
     public function store (Request $request)
     {

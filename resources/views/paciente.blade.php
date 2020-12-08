@@ -20,7 +20,11 @@
                             <div class="card-body">
 <form action="{{url('paciente')}}" method="post">
 @csrf()
-
+<!-- Tipo Prueba Field -->
+<div class="form-group col-md-6 pull-left">
+    {!! Form::label('tipo_prueba', 'Tipo de prueba:') !!}
+    {!! Form::select('tipo_prueba', $pruebas,null,['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
+</div>
 <!-- Nombre Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('nombre_apellido', 'Nombres y Apellidos:') !!}
