@@ -10,43 +10,37 @@ use Illuminate\Http\Request;
 use App\Models\Caso_positivo;
 use Flash;
 use Response;
+use GuzzleHttp\Client;
 
 class ControlController extends AppBaseController
 {
-    /** @var  ControlRepository */
-    private $controlRepository;
+    private $client;
 
-    public function __construct(ControlRepository $controlRepo)
-    {
-        $this->controlRepository = $controlRepo;
+    private $caso_pacientes;
+
+    public function __construct(){
+    //Ruta de api para consumir pacientes.
+    $this->client = new Client (['base_uri'=>'http://127.0.0.1:6060/api/']);
+    //Ruta para obtener los tipos de pacientes en pacientes.
+    $this->caso_pacientes = new Client (['base_uri'=>'http://127.0.0.1:6060/caso_pacientes']);
     }
 
-    /**
-     * Display a listing of the Control.
-     *
-     * @param Request $request
-     *
-     * @return Response
-     */
-    public function index(Request $request)
+    public function index ()
     {
-        $controls = $this->controlRepository->all();
+        $repuesta=$this->client->get('controles');
 
-        return view('controls.index')
-            ->with('controls', $controls);
+        $controls = json_decode($repuesta->getBody()->getContents());
+       
+        return view('controls.index',compact('controls'));
+
     }
+    public function create(){
 
-    /**
-     * Show the form for creating a new Control.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-         //Consulta de el listado de pacientes con un especificacion de solo los pacientes positivos con una clausula where y usando el pluck para debolver solo el nombre.
-        $pacientes= Caso_positivo::pluck('paciente_id','id');
-        return view('controls.create',compact(
-            'pacientes'));
+        $repuesta=$this->caso_pacientes->get('caso_pacientes');
+
+        $pacientes = json_decode($repuesta->getBody()->getContents());
+       
+        return view('controls.create',compact('pacientes'));
     }
 
     /**
@@ -56,15 +50,16 @@ class ControlController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreateControlRequest $request)
+    public function store (Request $request)
     {
-        $input = $request->all();
+        $this->client->post('controles',[
 
-        $control = $this->controlRepository->create($input);
+        'json' => $request->all()
+        ]);
 
-        Flash::success('Control Guardado correctamente.');
+        Flash::success('Control guardado correctamente.');
 
-        return redirect(route('controls.index'));
+         return redirect(route('controls.index'));
     }
 
     /**
@@ -74,17 +69,13 @@ class ControlController extends AppBaseController
      *
      * @return Response
      */
-    public function show($id)
+       public function show($id)
     {
-        $control = $this->controlRepository->find($id);
+        $respuesta = $this->client->get('controles/' .$id);
 
-        if (empty($control)) {
-            Flash::error('Control no encontrado');
+        $controls = $respuesta->getBody();
 
-            return redirect(route('controls.index'));
-        }
-
-        return view('controls.show')->with('control', $control);
+        return view('controls.show', ['controls' => json_decode($controls)]);
     }
 
     /**
@@ -94,68 +85,42 @@ class ControlController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+   public function edit ($id)
     {
-        $control = $this->controlRepository->find($id);
-        $pacientes = Caso_positivo::pluck('paciente_id','id');
 
-        if (empty($control)) {
-            Flash::error('Control no encontrado');
+        $repuesta=$this->client->get('controles/' .$id);
 
-            return redirect(route('controls.index'));
-        }
+        $controls = json_decode($repuesta->getBody()->getContents());
 
-        return view('controls.edit', compact('control', 'pacientes'));
+        $repuesta=$this->caso_pacientes->get('caso_pacientes');
+
+        $pacientes = json_decode($repuesta->getBody()->getContents());
+
+       
+        return view('controls.edit',compact('controls','pacientes'));
     }
 
-    /**
-     * Update the specified Control in storage.
-     *
-     * @param int $id
-     * @param UpdateControlRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdateControlRequest $request)
-    {
-        $control = $this->controlRepository->find($id);
+    public function update (Request $request, $id)
+     {
 
-        if (empty($control)) {
-            Flash::error('Control no encontrado');
+        $this->client->put('controles/' . $id,[
 
-            return redirect(route('controls.index'));
-        }
+        'json' => $request->all()
+        ]);
 
-        $control = $this->controlRepository->update($request->all(), $id);
-
-        Flash::success('Control actualizado correctamente.');
+        Flash::success('Control Actualizado guardado correctamente.');
 
         return redirect(route('controls.index'));
+
     }
+    public function destroy ($id){
 
-    /**
-     * Remove the specified Control from storage.
-     *
-     * @param int $id
-     *
-     * @throws \Exception
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        $control = $this->controlRepository->find($id);
+       $this->client->delete('controles/' .$id);
 
-        if (empty($control)) {
-            Flash::error('Control no encontrado');
+       Flash::error('Control Eliminado correctamente.');
 
-            return redirect(route('controls.index'));
-        }
-
-        $this->controlRepository->delete($id);
-
-        Flash::success('Control eliminado correctamente.');
-
-        return redirect(route('controls.index'));
+       return redirect(route('controls.index'));
     }
+   
 }
+

@@ -13,7 +13,7 @@
         <tbody>
         @foreach($controls as $control)
             <tr>
-            <td>{{ $control->paciente->paciente_id }}</td>
+            <td>{{ $control->paciente_id }}</td>
             <td>{{ $control->fecha_analisis }}</td>
             <td>@switch(true)
             @case($control->estado_paciente == 'Inactivo')

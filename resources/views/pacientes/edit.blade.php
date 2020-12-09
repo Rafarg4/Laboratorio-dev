@@ -94,7 +94,10 @@
     {!! Form::select('resultado',array('Sin eleccion' => 'Sin eleccion','Positivo' => 'Positivo', 'Negativo' => 'Negativo','Otro' => 'Otro'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
 <!-- Tipo Prueba Field -->
-
+<div class="form-group col-md-6 pull-left">
+    {!! Form::label('tipo_prueba_id', 'Tipo de prueba:') !!}
+    {!! Form::select('tipo_prueba_id', $pruebas,null,['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
+</div>
 <!-- Enfermedad Referencial Field -->
 <div class="form-group col-sm-12 pull-left">
     {!! Form::label('enfermedad_referencial', 'Comorbilidad:') !!}

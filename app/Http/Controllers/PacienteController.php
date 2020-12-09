@@ -67,8 +67,11 @@ class PacienteController extends AppBaseController
 
         $pacientes = json_decode($repuesta->getBody()->getContents());
 
-       
-        return view('pacientes.edit',compact('pacientes'));
+        $repuesta=$this->pruebas->get('pruebas');
+
+        $pruebas = json_decode($repuesta->getBody()->getContents());
+
+        return view('pacientes.edit',compact('pacientes','pruebas'));
     }
 
     public function update (Request $request, $id)

@@ -18,7 +18,7 @@
                               <strong>Editar Control</strong>
                           </div>
                           <div class="card-body">
-                              {!! Form::model($control, ['route' => ['controls.update', $control->id], 'method' => 'patch']) !!}
+                              {!! Form::model($controls, ['route' => ['controls.update', $controls->id], 'method' => 'patch']) !!}
 
                               @include('controls.fields')
 

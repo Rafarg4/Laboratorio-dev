@@ -3,7 +3,6 @@
     {!! Form::label('paciente_id', 'Paciente:') !!}
     {!! Form::select('paciente_id', $pacientes, null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
-
 <!-- Codigo Field -->
 <div class="form-group col-md-4 pull-left">
     {!! Form::label('codigo', 'Codigo:') !!}
@@ -15,7 +14,6 @@
     {!! Form::label('region', 'Region:') !!}
     {!! Form::text('region', null, ['class' => 'form-control']) !!}
 </div>
-
 <!-- Codigo Distrito Field -->
 <div class="form-group col-md-4 pull-left">
     {!! Form::label('codigo_distrito', 'Codigo Distrito:') !!}
@@ -130,8 +128,8 @@
 </div>
 <!-- Viajo Resiente Field -->
 <div class="form-group col-md-4 pull-left">
-    {!! Form::label('viajo_resiente', 'Viajo Resiente:') !!}
-    {!! Form::text('viajo_resiente', null, ['class' => 'form-control']) !!}
+    {!! Form::label('viajo_reciente', 'Viajo Reciente:') !!}
+    {!! Form::text('viajo_reciente', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Centro Asistencia Covid Field -->

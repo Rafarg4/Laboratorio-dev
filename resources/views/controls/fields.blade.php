@@ -12,19 +12,19 @@
 <!-- Fecha Analisis Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('fecha_analisis', 'Fecha Analisis:') !!}
-    {!! Form::date('fecha_analisis', null, ['class' => 'form-control','id'=>'fecha_analisis']) !!}
+    {!! Form::date('fecha_analisis', null, ['required', 'class' => 'form-control']) !!}
 </div>
 
 <!-- Fecha Alta Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('fecha_alta', 'Fecha Alta:') !!}
-    {!! Form::date('fecha_alta', null, ['class' => 'form-control','id'=>'fecha_alta']) !!}
+    {!! Form::date('fecha_alta', null, ['required', 'class' => 'form-control']) !!}
 </div>
 
 <!-- Recomendacion Field -->
 <div class="form-group col-md-6 pull-left">
     {!! Form::label('recomendacion', 'Recomendacion:') !!}
-    {!! Form::textarea('recomendacion', null, ['class' => 'form-control']) !!}
+    {!! Form::textarea('recomendacion', null, ['required', 'class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

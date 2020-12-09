@@ -18,7 +18,7 @@
                               <strong>Edit Caso Positivo</strong>
                           </div>
                           <div class="card-body">
-                              {!! Form::model($casoPositivo, ['route' => ['casoPositivos.update', $casoPositivo->id], 'method' => 'patch']) !!}
+                              {!! Form::model($casoPositivos, ['route' => ['casoPositivos.update', $casoPositivos->id], 'method' => 'patch']) !!}
 
                               @include('caso_positivos.fields')
 

@@ -2,8 +2,8 @@
     <table class="table table-bordered" id="data-table">
         <thead>
             <tr>
-                <th>Nro Caso</th>
-        <th>Paciente</th>
+                
+        <th>Codigo Paciente </th>
         <th>Codigo</th>
         <th>Region</th>
         <th>Codigo Distrito</th>
@@ -20,8 +20,7 @@
         <tbody>
         @foreach($casoPositivos as $casoPositivo)
             <tr>
-            <td>{{ $casoPositivo->paciente->id }}</td>
-            <td>{{ $casoPositivo->paciente->nombre_apellido }}</td>
+            <td>{{ $casoPositivo->paciente_id }}</td>
             <td>{{ $casoPositivo->codigo }}</td>
             <td>{{ $casoPositivo->region }}</td>
             <td>{{ $casoPositivo->codigo_distrito }}</td>

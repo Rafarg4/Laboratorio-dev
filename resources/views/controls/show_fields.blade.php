@@ -8,37 +8,37 @@
 <!-- Paciente Id Field -->
 <table class="table table-bordered" id="data-table">
                 <tr>
-    <th><strong>Nro de Caso: </strong>{{ $control->paciente->paciente_id }}</th>
+    <th><strong>Nro de Caso: </strong>--</th>
 <!-- Fecha Analisis Field -->
 
-    <th><strong>Fecha de Analisis</strong>{{ $control->fecha_analisis }}</th>
-   <th><strong>Control ID: </strong>{{ $control->paciente->paciente_id }}</th>
+    <th><strong>Fecha de Analisis</strong>{{ $controls->fecha_analisis }}</th>
+   <th><strong>controls ID: </strong>{{ $controls->paciente_id }}</th>
     <th><strong>Estado Paciente: </strong>@switch(true)
-            @case($control->estado_paciente == 'Inactivo')
-            <span class="badge badge-primary"> {{ $control->estado_paciente }} </span>
+            @case($controls->estado_paciente == 'Inactivo')
+            <span class="badge badge-primary"> {{ $controls->estado_paciente }} </span>
             @break
-            @case($control->estado_paciente == 'Activo')
-            <span class="badge badge-warning"> {{ $control->estado_paciente }} </span>
+            @case($controls->estado_paciente == 'Activo')
+            <span class="badge badge-warning"> {{ $controls->estado_paciente }} </span>
             @break
-            @case($control->estado_paciente == 'Fallecido' )
-            <span class="badge badge-danger"> {{ $control->estado_paciente }} </span>
+            @case($controls->estado_paciente == 'Fallecido' )
+            <span class="badge badge-danger"> {{ $controls->estado_paciente }} </span>
             @break
-            @case($control->estado_paciente == 'Sin eleccion' )
-            <span class="badge badge-dark"> {{ $control->estado_paciente }} </span>
+            @case($controls->estado_paciente == 'Sin eleccion' )
+            <span class="badge badge-dark"> {{ $controls->estado_paciente }} </span>
             @break
             @endswitch</th>
 </tr>
 <tr>
 
     <!-- Recomendacion Field -->
-     <th><strong>Recomendacion: </strong>{{ $control->recomendacion }}</th>
+     <th><strong>Recomendacion: </strong>{{ $controls->recomendacion }}</th>
      <!-- Fecha Alta Field -->
-    <th><strong>Fecha de Alta: </strong>{{ $control->fecha_alta }}</th>
+    <th><strong>Fecha de Alta: </strong>{{ $controls->fecha_alta }}</th>
 </div>
 <!-- Created At Field -->
-    <th><strong>Creado: </strong>{{ $control->created_at }}</th>
+    <th><strong>Creado: </strong>{{ $controls->created_at }}</th>
 <!-- Updated At Field -->
-    <th><strong>Actualizado: </strong>{{ $control->updated_at }}</th>
+    <th><strong>Actualizado: </strong>{{ $controls->updated_at }}</th>
 </tr>
 </table>
 </div>
