@@ -1,6 +1,113 @@
 <ul class="list-group">
   <li class="list-group-item">
      <table class="table table-bordered" id="data-table">
+                   <tr><th><i class="cil-people fa-2x"></i> <strong>Datos Detallados de Paciente.</strong></th>
+                   </tr>
+
+  <table class="table table-bordered" id="data-table">
+<!-- Nombre Field -->
+ 
+<tr>
+    <th><strong>Datos Personales: </strong>{{ $casoPositivo->nombre_apellido }}</th>
+<!-- Genero Field -->
+
+    <th><strong>Genero: </strong>{{ $casoPositivo->genero }}</th>
+
+<!-- Fechanac Field -->
+
+    <th><strong>Fecha de Nacimiento: </strong>{{ $casoPositivo->fechanac }}</th>
+
+<!-- Edad Field -->
+
+    <th><strong>Edad: </strong>{{ $casoPositivo->edad }}</th>
+</tr>
+<tr>
+<!-- Ci Field -->
+
+    <th><strong>Ci: </strong>{{ $casoPositivo->ci }}</th>
+
+    <th><strong>Barrio: </strong>{{ $casoPositivo->barrio }}</th>
+
+    <th><strong>Telefono: </strong>{{ $casoPositivo->telefono }}</p>
+<!-- Email field -->
+
+    <th><strong>Email: </strong>{{ $casoPositivo->email }}</th>
+</tr>
+
+<!-- Grupo Sanguineo Field -->
+<tr>
+    <th><strong>Grupo Sanguineo: </strong>{{ $casoPositivo->grupo_sanguineo }}</th>
+
+<!-- Enfermedad Referencial Field -->
+
+    <th>{{ $casoPositivo->enfermedad_referencial }}</rh>
+
+    <th><strong>Tipo de Prueba: </strong>{{ $casoPositivo->tipo_prueba->nombre }}</th>
+
+  
+    <th><strong>Resultado: </strong> @switch(true)
+           @case($casoPositivo->resultado == 'Negativo')
+            <span class="badge badge-primary"> {{ $casoPositivo->resultado }} </span>
+            @break
+            @case($casoPositivo->resultado == 'Positivo')
+            <span class="badge badge-danger"> {{ $casoPositivo->resultado }} </span>
+            @break
+            @case($casoPositivo->resultado == 'Otro' )
+            <span class="badge badge-info"> {{ $casoPositivo->resultado }} </span>
+            @break
+            @case($casoPositivo->resultado == 'Sin eleccion' )
+            <span class="badge badge-dark"> {{ $casoPositivo->resultado }} </span>
+            @break
+            @endswitch</th>
+</tr>
+<tr>
+
+    <th><strong>Latitud: </strong>{{ $casoPositivo->latitud }}</th>
+
+    <th><strong>Longitud: </strong> {{ $casoPositivo->longitud }}</th>
+
+<!-- Created At Field -->
+
+  
+  <th><strong>Usuario: </strong>{{ $casoPositivo->usuario }}</th>
+</tr>
+
+   <table class="table table-bordered" id="data-table">
+              <tr>
+                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exsacta de Paciente.</strong></th>
+              </tr>
+                   
+                   <tr>
+                    <th>
+                     <div id="mapid"></div>
+                     </th>
+                   </tr> 
+                   
+                </div>
+              </table>
+            </div>
+           
+
+         </div>
+   
+    <style type="text/css">
+                   #mapid { height: 350px; width:1310px; }
+           </style>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" type="text/css">
+            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+          <script>
+            var map = L.map('mapid').setView([{{$casoPositivo->latitud}} , {{$casoPositivo->longitud}}], 15);
+           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+            marker = new L.marker([{{$casoPositivo->latitud}} , {{$casoPositivo->longitud}}]);
+            marker.bindPopup("casoPositivo:{{$casoPositivo->nombre_apellido}}<br>Barrio:{{$casoPositivo->barrio}}<br>Resultado:{{$casoPositivo->resultado}}</br>");
+            map.addLayer(marker);
+            marker.openPopup();
+            
+     </script>
+     <table class="table table-bordered" id="data-table">
                    <tr><th><i class="cil-hospital fa-2x"></i> <strong>Datos Detallados de Casos Positivos</strong></th>
                    </tr>
                </table>

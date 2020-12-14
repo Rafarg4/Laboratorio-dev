@@ -120,9 +120,19 @@
 <!-- Vacuna Para La Influenza Field -->
 <div class="form-group col-md-4 pull-left">
     {!! Form::label('vacuna_para_la_influenza', 'Vacuna Para La Influenza:') !!}
-    {!! Form::date('vacuna_para_la_influenza', null, ['class' => 'form-control']) !!}
+    {!! Form::select('vacuna_para_la_influenza',array('Sin eleccion' => 'Sin eleccion','SI' => 'SI', 'NO' => 'NO'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione'])!!}
 </div>
-
+<script type="text/javascript">
+    $( function() {
+    $("#vacuna_para_la_influenza").change( function() {
+        if ($(this).val() === "SI") {
+            $("#fecha_vacunacion").prop("disabled", false);
+        } else {
+            $("#fecha_vacunacion").prop("disabled", true);
+        }
+    });
+});
+</script>
 <!-- Fecha Vacunacion Field -->
 <div class="form-group col-md-4 pull-left">
     {!! Form::label('fecha_vacunacion', 'Fecha Vacunacion:') !!}
@@ -137,9 +147,26 @@
 <!-- Centro Asistencia Covid Field -->
 <div class="form-group col-md-4 pull-left">
     {!! Form::label('centro_asistencia_covid', 'Centro Asistencia Covid:') !!}
-    {!! Form::text('centro_asistencia_covid', null, ['class' => 'form-control']) !!}
+    {!! Form::select('centro_asistencia_covid', array('Sin eleccion' => 'Sin eleccion','SI' => 'SI', 'NO' => 'NO'),null, ['required', 'class' => 'form-control','placeholder'=>'Seleccione']) !!}
 </div>
 
+<script type="text/javascript">
+    $( function() {
+    $("#centro_asistencia_covid").change( function() {
+        if ($(this).val() === "SI") {
+            $("#centro_asistencia_pais").prop("disabled", false);
+            $("#centro_asistencia_ciudad").prop("disabled", false);
+            $("#nombre_centro_asistencia").prop("disabled", false);
+            $("#fecha_asistida").prop("disabled", false);
+        } else {
+            $("#centro_asistencia_pais").prop("disabled", true);
+            $("#centro_asistencia_ciudad").prop("disabled", true);
+            $("#nombre_centro_asistencia").prop("disabled", true);
+            $("#fecha_asistida").prop("disabled", true);
+        }
+    });
+});
+</script>
 <!-- Centro Asistencia Pais Field -->
 <div class="form-group col-md-4 pull-left">
     {!! Form::label('centro_asistencia_pais', 'Centro Asistencia Pais:') !!}
@@ -219,7 +246,7 @@
 
 <!-- Anho Field -->
 <div class="form-group col-md-4 pull-left">
-    {!! Form::label('anho', 'Anho:') !!}
+    {!! Form::label('anho', 'Año:') !!}
     {!! Form::number('anho', null, ['class' => 'form-control']) !!}
 </div>
 
