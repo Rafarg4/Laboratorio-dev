@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','laboratorio_id',
     ];
 
     /**
@@ -37,8 +37,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
      public static $rules = [
+        'laboratorio_id' => 'required',
         'name' => 'required',
         'email' => 'required',
         'password' => 'required|min:5'
          ];
+
+      public function laboratorio (){
+       return $this-> belongsTo('App\Models\Laboratorio');
+
+    }
 }

@@ -104,4 +104,8 @@ class Paciente extends Model
      return $this-> belongsTo('App\Models\Tipo_prueba');
 
     }
+    public function caso (){
+     return $this-> hasMany('App\Models\Caso_positivo');
+
+    }
 }

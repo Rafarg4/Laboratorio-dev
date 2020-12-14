@@ -2,6 +2,20 @@
 <link rel="icon" type="image/png" href="/laboratorio.png" />
 @section('content')
   <br>
+  <!--script para imprimir fichas de pacientes-->
+<script type="text/javascript">
+  function printDiv(nombreDiv) {
+     var contenido= document.getElementById(nombreDiv).innerHTML;
+     var contenidoOriginal= document.body.innerHTML;
+
+     document.body.innerHTML = contenido;
+
+     window.print();
+
+     document.body.innerHTML = contenidoOriginal;
+}
+</script>
+<div id="areaImprimir">
                  <div class="container-fluid">
                      <div class="animated fadeIn">
                                  @include('flash::message')
@@ -10,7 +24,9 @@
                                 <div class="card">
                                      <div class="card-header">
                                          <i class="fa fa-align-justify"></i>
-                                       Detalle de paciente Inactivo  <a href="{{ url('historial_recuperados') }}" class="btn btn-primary">Volver</a>
+                                       Detalle de paciente Inactivo 
+                                        <a href="{{ url('historial_recuperados') }}" class="btn btn-primary"><i class="cil-chevron-left"></i></a>
+                                         <button type="button" onclick="printDiv('areaImprimir') "class="btn btn-danger"><i class="cil-clipboard"></i></button>
                                                  
                                         </div>
                                     <div class="card-body">
@@ -184,7 +200,7 @@
             </table>
              <table class="table table-bordered" id="data-table">
               <tr>
-                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exsacta de Paciente.</strong></th>
+                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exacta de Paciente.</strong></th>
               </tr>
                    
                    <tr>

@@ -47,10 +47,12 @@
                                     </div>
                                     <td>
                                        {!! Form::open() !!}
+                                       <center>
                                      <div class='btn-group'>
                                       <a href="{{ route('detalle_fallecidos', [$fallecidos->id]) }}" class="btn-floating btn-sm "><i class="cil-clipboard fa-2x"></i></a>
                                         {!! Form::close() !!}
-                                    </td>
+                                    </div>
+                                    </td></center>
                                 </tr>
                             @endforeach
                             </tbody>

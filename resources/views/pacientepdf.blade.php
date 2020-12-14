@@ -12,7 +12,22 @@
 </script>
 <input type="button" onclick="printDiv('areaImprimir')" value="Imprimir" />
 <div id="areaImprimir">-->
-<div class="table-responsive-sm">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 <ul class="list-group">
   <li class="list-group-item">
      <table class="table table-bordered" id="data-table">
@@ -55,7 +70,7 @@
 
 <!-- Enfermedad Referencial Field -->
 
-    <th><strong>Comorbilidad: </strong>{{ $paciente->enfermedad_referencial }}</rh>
+    <th><strong>Comorbilidad: </strong> {{ $paciente->enfermedad_referencial }}</rh>
 
     <th><strong>Tipo de Prueba: </strong>{{ $paciente->tipo_prueba->nombre }}</th>
 
@@ -97,7 +112,7 @@
 
    <table class="table table-bordered" id="data-table">
               <tr>
-                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exacta de Paciente.</strong></th>
+                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exsacta de Paciente.</strong></th>
               </tr>
                    
                    <tr>
@@ -110,7 +125,7 @@
               </table>
             </div>
            
-</div>
+
          </div>
     </li>
     </ul>

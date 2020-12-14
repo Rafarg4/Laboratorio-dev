@@ -1,3 +1,4 @@
+<div class="table-responsive-sm">
 <ul class="list-group">
   <li class="list-group-item">
      <table class="table table-bordered" id="data-table">
@@ -40,9 +41,13 @@
 
 <!-- Enfermedad Referencial Field -->
 
+<<<<<<< HEAD
     <th>{{ $casoPositivo->enfermedad_referencial }}</rh>
 
     <th><strong>Tipo de Prueba: </strong>{{ $casoPositivo->tipo_prueba->nombre }}</th>
+=======
+    <th><strong>Comorbilidad: </strong>{{ $casoPositivo->enfermedad_referencial }}</th>
+>>>>>>> 46b42b4c05b9c016feff6226ef2759c62f429f76
 
   
     <th><strong>Resultado: </strong> @switch(true)
@@ -59,19 +64,31 @@
             <span class="badge badge-dark"> {{ $casoPositivo->resultado }} </span>
             @break
             @endswitch</th>
+<<<<<<< HEAD
 </tr>
 <tr>
 
     <th><strong>Latitud: </strong>{{ $casoPositivo->latitud }}</th>
+=======
+             <th><strong>Latitud: </strong>{{ $casoPositivo->latitud }}</th>
+</tr>
+<tr>
+
+   
+>>>>>>> 46b42b4c05b9c016feff6226ef2759c62f429f76
 
     <th><strong>Longitud: </strong> {{ $casoPositivo->longitud }}</th>
 
 <!-- Created At Field -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> 46b42b4c05b9c016feff6226ef2759c62f429f76
   
   <th><strong>Usuario: </strong>{{ $casoPositivo->usuario }}</th>
 </tr>
 
+<<<<<<< HEAD
    <table class="table table-bordered" id="data-table">
               <tr>
                 <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exsacta de Paciente.</strong></th>
@@ -107,6 +124,9 @@
             marker.openPopup();
             
      </script>
+=======
+   
+>>>>>>> 46b42b4c05b9c016feff6226ef2759c62f429f76
      <table class="table table-bordered" id="data-table">
                    <tr><th><i class="cil-hospital fa-2x"></i> <strong>Datos Detallados de Casos Positivos</strong></th>
                    </tr>
@@ -254,3 +274,36 @@
 </ul>
 </li>
 </table>
+<table class="table table-bordered" id="data-table">
+              <tr>
+                <th><i class="cil-globe-alt fa-2x"></i> <strong>Geolocalizacion exacta de Caso Positivo.</strong></th>
+              </tr>
+                   
+                   <tr>
+                    <th>
+                     <div id="mapid"></div>
+                     </th>
+                   </tr> 
+                   
+                </div>
+              </table>
+            </div>
+         </div>
+   </div>
+    <style type="text/css">
+                   #mapid { height: 350px; width:1310px; }
+           </style>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" type="text/css">
+            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+          <script>
+            var map = L.map('mapid').setView([{{$casoPositivo->latitud}} , {{$casoPositivo->longitud}}], 15);
+           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+            marker = new L.marker([{{$casoPositivo->latitud}} , {{$casoPositivo->longitud}}]);
+            marker.bindPopup("Caso:{{$casoPositivo->nombre_apellido}}<br>Barrio:{{$casoPositivo->barrio}}<br>Resultado:{{$casoPositivo->resultado}}</br>");
+            map.addLayer(marker);
+            marker.openPopup();
+            
+     </script>

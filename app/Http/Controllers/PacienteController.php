@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests\CreatePacienteRequest;
 use App\Http\Requests\UpdatePacienteRequest;
 use App\Repositories\PacienteRepository;
@@ -30,6 +29,7 @@ class PacienteController extends AppBaseController
      */
     public function index(Request $request)
     {
+        //$pacientes = \Auth::user()->paciente()->get();
         $pacientes = $this->pacienteRepository->all();
 
         return view('pacientes.index')
@@ -150,6 +150,11 @@ class PacienteController extends AppBaseController
             Flash::error('Paciente no encontrado');
 
             return redirect(route('pacientes.index'));
+        }
+         if(count($paciente->caso)){
+             Flash::error('Paciente no se puede eliminar ya que esta en uso.');
+
+             return redirect(route('pacientes.index'));
         }
 
         $this->pacienteRepository->delete($id);
