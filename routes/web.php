@@ -27,6 +27,8 @@ Route::resource('pacientes', 'PacienteController')->middleware('auth');
 
 Route::get('perfiles', 'HomeController@usuario')->middleware('auth');
 
+Route::get('graficos_personalizado', 'GraficoPersonalisadoController@personalizado')->middleware('auth');
+
 Route::get('graficos', 'GraficoController@grafico')->middleware('auth');
 
 Route::get('mapas', 'MapaController@mapa')->middleware('auth');
