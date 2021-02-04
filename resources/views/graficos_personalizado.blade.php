@@ -90,9 +90,8 @@
   $(document).ready(function () {
     // Create DataTable
     var table = $('#example').DataTable({
-        dom: 'Pfrtip',
-    });
- 
+        dom: 'Pfrtip',   
+     });
     // Create the chart with initial data
     var container = $('#contenedor').insertBefore(table.table().container());
  

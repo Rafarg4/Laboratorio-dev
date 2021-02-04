@@ -8,11 +8,11 @@
 <!-- Paciente Id Field -->
 <table class="table table-bordered" id="data-table">
                 <tr>
-    <th><strong>Nro de Caso: </strong>--</th>
+    <th><strong>Paciente: </strong>{{ $controls->nombre_apellido }}</th>
 <!-- Fecha Analisis Field -->
 
     <th><strong>Fecha de Analisis</strong>{{ $controls->fecha_analisis }}</th>
-   <th><strong>controls ID: </strong>{{ $controls->paciente_id }}</th>
+   <th><strong>Nro de Caso: </strong>{{ $controls->paciente_id }}</th>
     <th><strong>Estado Paciente: </strong>@switch(true)
             @case($controls->estado_paciente == 'Inactivo')
             <span class="badge badge-primary"> {{ $controls->estado_paciente }} </span>
@@ -34,11 +34,10 @@
      <th><strong>Recomendacion: </strong>{{ $controls->recomendacion }}</th>
      <!-- Fecha Alta Field -->
     <th><strong>Fecha de Alta: </strong>{{ $controls->fecha_alta }}</th>
+     <th><strong>Creado: </strong>{{ $controls->created_at }}</th>
+      <th><strong>Actualizado: </strong>{{ $controls->updated_at }}</th>
+    
 </div>
-<!-- Created At Field -->
-    <th><strong>Creado: </strong>{{ $controls->created_at }}</th>
-<!-- Updated At Field -->
-    <th><strong>Actualizado: </strong>{{ $controls->updated_at }}</th>
 </tr>
 </table>
 </div>

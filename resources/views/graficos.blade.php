@@ -79,7 +79,7 @@
    <!-- Card content -->
    <div class="card-body">
          <div class="container">
-          <div id="container"></div>
+            <div id="container" style="min-width: 10px; height: 450px; margin: 0 auto"></div>
             </div>
                 <script type="text/javascript">
                   var encarnacion =  <?php echo json_encode($encarnacion) ?>;
@@ -184,7 +184,7 @@
              <!-- Card content -->
                  <div class="card-body">
                       <div class="container">
-                          <div id="casos_diarios"></div>
+                          <div id="casos_diarios" style="min-width: 10px; height: 450px; margin: 0 auto"></div>
                            </div>
                            <script type="text/javascript">
                           
@@ -253,7 +253,7 @@
              <!-- Card content -->
                  <div class="card-body">
                       <div class="container">
-                          <div id="containerss"></div>
+                          <div id="containerss" style="min-width: 10px; height: 450px; margin: 0 auto"></div>
                            </div>
                              <script type="text/javascript">
                           var muertos =  <?php echo json_encode($muertos) ?>;
@@ -323,7 +323,7 @@
              <!-- Card content -->
                  <div class="card-body">
                       <div class="container">
-                          <div id="containers"></div>
+                          <div id="containers" style="min-width: 10px; height: 450px; margin: 0 auto"></div>
                            </div>
                              <script type="text/javascript">
                                var masculino =  <?php echo json_encode($masculino) ?>;
