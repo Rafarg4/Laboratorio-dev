@@ -82,7 +82,7 @@ class PacienteController extends AppBaseController
         'json' => $request->all()
         ]);
 
-        Flash::success('Paciente Actualizado guardado correctamente.');
+        Flash::success('Paciente Actualizado correctamente.');
 
         return redirect(route('pacientes.index'));
 

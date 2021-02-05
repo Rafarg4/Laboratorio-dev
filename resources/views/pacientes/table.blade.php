@@ -10,9 +10,9 @@
         <th>Barrio</th>
         <th>Telefono</th>
         <th>Grupo Sanguineo</th>
-        <th>Comorbilidad</th>
         <th>Prueba</th>
         <th>Resutado</th>
+        <th>Usuario</th>
         
         
 
@@ -30,8 +30,7 @@
             <td>{{ $paciente->barrio }}</td>
             <td>{{ $paciente->telefono }}</td>
             <td>{{ $paciente->grupo_sanguineo }}</td>
-            <td>{{ $paciente->enfermedad_referencial }}</td>
-              <td>{{ $paciente->tipo_prueba_id }}</td>
+              <td>{{ $paciente->nombre }}</td>
             <td>@switch(true)
             @case($paciente->resultado == 'Negativo')
             <span class="badge badge-primary"> {{ $paciente->resultado }} </span>
@@ -46,7 +45,7 @@
             <span class="badge badge-dark"> {{ $paciente->resultado }} </span>
             @break
             @endswitch</td>
-          
+            <td>{{ $paciente->usuario }}</td>
                 <td>
                     {!! Form::open(['route' => ['pacientes.destroy', $paciente->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

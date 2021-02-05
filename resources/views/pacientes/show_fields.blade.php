@@ -91,7 +91,7 @@
 <tr>
   
   <th><strong>Usuario: </strong>{{$pacientes->usuario}}</th>
-  <th><strong> Tipo de Prueba:</strong>{{ $pacientes->tipo_prueba_id }} </th>
+  <th><strong> Tipo de Prueba:</strong>{{ $pacientes->nombre }} </th>
 </tr>
 
    <table class="table table-bordered" id="data-table">

@@ -64,6 +64,7 @@
         <thead>
             <tr>
         <th>Nro de Caso</th>
+         <th>Paciente</th>
         <th>Fecha Analisis</th>
         <th>Estado Paciente</th>
         <th>Recomendacion</th>
@@ -75,7 +76,8 @@
         <tbody>
         @foreach($control as $control)
             <tr>
-            <td>{{ $control->paciente->paciente_id }}</td>
+            <td>{{ $control->paciente_id }}</td>
+            <td>{{ $control->nombre_apellido }}</td>
             <td>{{ $control->fecha_analisis }}</td>
             <td>@switch(true)
             @case($control->estado_paciente == 'Inactivo')

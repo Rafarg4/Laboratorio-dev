@@ -86,8 +86,8 @@
         <tbody>
         @foreach($casos as $casoPositivo)
             <tr>
-            <td>{{ $casoPositivo->paciente->id }}</td>
-            <td>{{ $casoPositivo->paciente->nombre_apellido }}</td>
+            <td>{{ $casoPositivo->id }}</td>
+            <td>{{ $casoPositivo->nombre_apellido }}</td>
             <td>{{ $casoPositivo->codigo }}</td>
             <td>{{ $casoPositivo->region }}</td>
             <td>{{ $casoPositivo->codigo_distrito }}</td>
@@ -109,7 +109,7 @@
             <td>{{ $casoPositivo->signo_sintoma }}</td>
             <td>{{ $casoPositivo->vacuna_para_la_influenza }}</td>
             <td>{{ $casoPositivo->fecha_vacunacion }}</td>
-            <td>{{ $casoPositivo->viajo_resiente }}</td>
+            <td>{{ $casoPositivo->viajo_reciente }}</td>
             <td>{{ $casoPositivo->centro_asistencia_covid }}</td>
             <td>{{ $casoPositivo->centro_asistencia_pais }}</td>
             <td>{{ $casoPositivo->centro_asistencia_ciudad }}</td>
