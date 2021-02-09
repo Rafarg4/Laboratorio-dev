@@ -17,60 +17,98 @@
         
                          </div>
                          <div class="card-body">
-    <div id="contenedor" style="min-width: 10px; height: 450px; margin: 0 auto"></div>                       
+    <div id="contenedor" style="min-width: 20px; height: 450px; margin: 0 auto"></div>                       
   <div class="md-card-content" style="overflow-x: auto;">
   <table class="table table-bordered" id="example">
         <thead>
             <tr>
-        <th>Datos Personales</th>
-        <th>Genero</th>
-        <th>Fecha de Nacimiento</th>
-        <th>Edad</th>
-        <th>Ci</th>
-        <th>Barrio</th>
-        <th>Telefono</th>
-        <th>Grupo Sanguineo</th>
-        <th>Comorbilidad</th>
-        <th>Prueba</th>
-        <th>Resutado</th>
-        <th>Email</th>
-        <th>Latitud</th>
-        <th>Longitud</th>
-        <th>Usuario</th>
-
+        <th>Nro Caso</th>
+        <th>Paciente</th>
+        <th>Codigo</th>
+        <th>Region</th>
+        <th>Codigo Distrito</th>
+        <th>Distrito</th>
+        <th>Fecha Notificacion</th>
+        <th>Medico</th>
+        <th>Media Edad</th>
+        <th>Residente</th>
+        <th>Hospedaje</th>
+        <th>Telefono Verificado</th>
+        <th>Codigo Departamento</th>
+        <th>Departamento</th>
+        <td>Zona</td>
+        <td>Personal de blanco</td>
+        <td>Albergue</td>
+        <td>Lugar albergue</td>
+        <td>Sintomas de fiebre</td>
+        <td>Hospitalizado</td>
+        <td>Signo y sintoma</td>
+        <td>Vacuna para la influenza</td>
+        <td>Fecha vacunacion</td>
+        <td>Viaje residente</td>
+        <td>Centro asistencia: covid</td>
+        <td>Centro asistencia: pais</td>
+        <td>Centro asistencia: ciudad</td>
+        <td>Nombre centro de asistencia</td>
+        <td>Fecha asistida</td>
+        <td>Contacto con animales</td>
+        <td>Contacto persona</td>
+        <td>Tipo contacto</td>
+        <td>Contacto con infectado</td>
+        <td>Dato de contacto</td>
+        <td>Toma de muestra</td>
+        <td>Laboratorio</td>
+        <td>Nro planilla</td>
+        <td>Año</td>
+        <td>Responsable de carga</td>
+        <td>Usuario lugar</td>
+                
             </tr>
         </thead>
         <tbody>
-        @foreach($reporte as $paciente)
+        @foreach($reporte as $casoPositivo)
             <tr>
-                <td>{{ $paciente->nombre_apellido }}</td>
-            <td>{{ $paciente->genero }}</td>
-            <td>{{ $paciente->fechanac }}</td>
-            <td>{{ $paciente->edad }}</td>
-            <td>{{ $paciente->ci }}</td>
-            <td>{{ $paciente->barrio }}</td>
-            <td>{{ $paciente->telefono }}</td>
-            <td>{{ $paciente->grupo_sanguineo }}</td>
-            <td>{{ $paciente->enfermedad_referencial }}</td>
-              <td>{{ $paciente->tipo_prueba->nombre }}</td>
-            <td>@switch(true)
-            @case($paciente->resultado == 'Negativo')
-            <span class="badge badge-primary"> {{ $paciente->resultado }} </span>
-            @break
-            @case($paciente->resultado == 'Positivo')
-            <span class="badge badge-danger"> {{ $paciente->resultado }} </span>
-            @break
-            @case($paciente->resultado == 'Otro' )
-            <span class="badge badge-info"> {{ $paciente->resultado }} </span>
-            @break
-            @case($paciente->resultado == 'Sin eleccion' )
-            <span class="badge badge-dark"> {{ $paciente->resultado }} </span>
-            @break
-            @endswitch</td>
-            <td>{{ $paciente->email }}</td>
-            <td>{{ $paciente->latitud }}</td>
-            <td>{{ $paciente->longitud }}</td>
-            <td>{{ $paciente->usuario }}</td>
+            <td>{{ $casoPositivo->id }}</td>
+            <td>{{ $casoPositivo->nombre_apellido }}</td>
+            <td>{{ $casoPositivo->codigo }}</td>
+            <td>{{ $casoPositivo->region }}</td>
+            <td>{{ $casoPositivo->codigo_distrito }}</td>
+            <td>{{ $casoPositivo->distrito }}</td>
+            <td>{{ $casoPositivo->fecha_notificacion }}</td>
+            <td>{{ $casoPositivo->medico }}</td>
+            <td>{{ $casoPositivo->media_edad }}</td>
+            <td>{{ $casoPositivo->residente }}</td>
+            <td>{{ $casoPositivo->hospedaje }}</td>
+            <td>{{ $casoPositivo->telefono_verificado }}</td>
+            <td>{{ $casoPositivo->codigo_departamento }}</td>
+            <td>{{ $casoPositivo->departamento }}</td>
+            <td>{{ $casoPositivo->zona }}</td>
+            <td>{{ $casoPositivo->personal_de_blanco }}</td>
+            <td>{{ $casoPositivo->albergue }}</td>
+            <td>{{ $casoPositivo->lugar_albergue }}</td>
+            <td>{{ $casoPositivo->sintomas_fiebre }}</td>
+            <td>{{ $casoPositivo->hospitalizado }}</td>
+            <td>{{ $casoPositivo->signo_sintoma }}</td>
+            <td>{{ $casoPositivo->vacuna_para_la_influenza }}</td>
+            <td>{{ $casoPositivo->fecha_vacunacion }}</td>
+            <td>{{ $casoPositivo->viajo_reciente }}</td>
+            <td>{{ $casoPositivo->centro_asistencia_covid }}</td>
+            <td>{{ $casoPositivo->centro_asistencia_pais }}</td>
+            <td>{{ $casoPositivo->centro_asistencia_ciudad }}</td>
+            <td>{{ $casoPositivo->nombre_centro_asistencia }}</td>
+            <td>{{ $casoPositivo->fecha_asistida}}</td>
+            <td>{{ $casoPositivo->contacto_con_animales }}</td>
+            <td>{{ $casoPositivo->contacto_persona }}</td>
+            <td>{{ $casoPositivo->tipo_contacto }}</td>
+            <td>{{ $casoPositivo->contacto_con_infectado }}</td>
+            <td>{{ $casoPositivo->dato_de_contacto }}</td>
+            <td>{{ $casoPositivo->toma_de_muestra }}</td>
+            <td>{{ $casoPositivo->laboratorio }}</td>
+            <td>{{ $casoPositivo->nro_planilla }}</td>
+            <td>{{ $casoPositivo->anho }}</td>
+            <td>{{ $casoPositivo->responsable_de_carga }}</td>
+            <td>{{ $casoPositivo->usuario_lugar }}</td>
+
             </tr>
         @endforeach
         </tbody>
@@ -134,7 +172,7 @@ function chartData(table) {
  
     // Count the number of entries for each position
     table
-        .column(0, { search: 'applied' })
+        .column(1, { search: 'applied' })
         .data()
         .each(function (val) {
             if (counts[val]) {

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 <link rel="icon" type="image/png" href="/laboratorio.png" />
 @section('content')
  <script type="text/javascript">
