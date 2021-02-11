@@ -6,64 +6,102 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 class MapaController extends Controller
 {
-    public function mapa(){
-                    $encarnacion = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Encarnacion')
-                    ->pluck('count');
-    {
-    $chaipe = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Chaipe')
-                    ->pluck('count');
-    }{
-    $cambyreta = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Cambyreta')
-                    ->pluck('count');
-    }{
-    $santo_domingo = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Santo_Domingo')
-                    ->pluck('count');
-    }{
-    $mboikae = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Mboi_Ka_e')
-                    ->pluck('count');
-    }{
-    $sanisidro = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','San_Isidro')
-                    ->pluck('count');
-    }{
-    $sagradafamilia = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Sagrada_Familia')
-                    ->pluck('count');
-    }{
-     $ciudadnueva = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Ciudad_Nueva')
-                    ->pluck('count');
-    }{
-    $santamaria = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Santa_Maria')
-                    ->pluck('count');
-    }{
+    private $encarnacion;
+    private $cambyreta;
+    private $ciudadnueva;
+    private $fatima;
+    private $itapaso;
+    private $mboikae;
+    private $sagradafamilia;
+    private $sanisidro;
+    private $santamaria;
+    private $chaipe;
+    private $buenavista;
+    private $santo_domingo;
+    private $nueva_alborada;
+     private $de_diciembre;
 
-    $itapaso = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Ita_Paso')
-                    ->pluck('count');
-    }{
-    $buenavista = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Buena_Vista')
-                    ->pluck('count');
-    }{
-    $de_diciembre = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','8de_diciembre')
-                    ->pluck('count');
-    }{
-    $fatima = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Fatima')
-                    ->pluck('count');
-     }{
-    $nueva_alborada = Paciente::select(\DB::raw("COUNT(*) as count"))
-                    ->where('pacientes.barrio','Nueva_Alborada')
-                    ->pluck('count');
-    return view('mapas', compact('encarnacion','chaipe','cambyreta','mboikae','sanisidro','sagradafamilia','ciudadnueva','santamaria','itapaso','buenavista','fatima','santo_domingo','de_diciembre','nueva_alborada'));
+    public function __construct(){
+
+    $this->encarnacion = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/encarnacion']);
+    $this->buenavista = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/buenavista']);
+    $this->cambyreta = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/cambyreta']);
+    $this->ciudadnueva = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/ciudadnueva']);
+    $this->fatima = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/fatima']);
+    $this->itapaso = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/itapaso']);
+    $this->mboikae = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/mboikae']);
+    $this->sagradafamilia = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/sagradafamilia']);
+    $this->sanisidro = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/sanisidro']);
+    $this->santamaria = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/santamaria']);
+    $this->chaipe = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/chaipe']);
+    $this->santo_domingo = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/santo_domingo']);
+    $this->nueva_alborada = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/nueva_alborada']);
+    $this->de_diciembre = new Client (['base_uri'=>'http://127.0.0.1:6060/mapa_barrios/de_diciembre']);
+    
     }
-}
+
+    public function mapa ()
+    {
+        // mapa_Barrios
+
+        //
+        $repuesta=$this->encarnacion->get('encarnacion');
+
+        $encarnacion = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->buenavista->get('buenavista');
+
+        $buenavista = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->cambyreta->get('cambyreta');
+
+        $cambyreta = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->ciudadnueva->get('ciudadnueva');
+
+        $ciudadnueva = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->fatima->get('fatima');
+
+        $fatima = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->itapaso->get('itapaso');
+
+        $itapaso = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->mboikae->get('mboikae');
+
+        $mboikae = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->sagradafamilia->get('sagradafamilia');
+
+        $sagradafamilia = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->sanisidro->get('sanisidro');
+
+        $sanisidro = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->santamaria->get('santamaria');
+
+        $santamaria = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->chaipe->get('chaipe');
+
+        $chaipe = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->santo_domingo->get('santo_domingo');
+
+        $santo_domingo = json_decode($repuesta->getBody()->getContents());
+        //
+        $repuesta=$this->nueva_alborada->get('nueva_alborada');
+
+        $nueva_alborada = json_decode($repuesta->getBody()->getContents());
+         //
+        $repuesta=$this->de_diciembre->get('de_diciembre');
+
+        $de_diciembre = json_decode($repuesta->getBody()->getContents());
+        
+        return view('mapas', compact('encarnacion','chaipe','cambyreta','mboikae','sanisidro','sagradafamilia','ciudadnueva','santamaria','itapaso','buenavista','fatima','nueva_alborada','santo_domingo','de_diciembre'));
+
+    }
 }

@@ -43,7 +43,7 @@ Route::get('listafallecidos', 'HistorialFallecidoController@listaFallecidos')->m
 
 Route::get('historial_activos', 'HistorialActivoController@activo')->middleware('auth');
 
-Route::get('home', 'HistorialFallecidoController@dashmuerto')->middleware('auth');
+Route::get('home', 'DashboardController@dashmuerto')->middleware('auth');
 
 Route::get('mapa_todopacientes', 'MapatodoController@index')->middleware('auth');
 
@@ -56,7 +56,7 @@ Route::get('reporte_control', 'ReportecontrolController@reportecontrol')->middle
 
 Route::get('manuals', 'ManualController@index')->middleware('auth');
 
-Route::get('detalle_activos/{id}', ['as' => 'detalle_activos', 'uses' => 'HistorialRecuperadoController@detalles']);
+Route::get('detalle_activos/{id}', ['as' => 'detalle_activos', 'uses' => 'HistorialActivoController@detalle']);
 
 Route::get('detalle_inactivos/{id}', ['as' => 'detalle_inactivos', 'uses' => 'HistorialRecuperadoController@detalle_inactivo']);
 

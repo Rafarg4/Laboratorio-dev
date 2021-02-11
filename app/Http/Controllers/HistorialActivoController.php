@@ -3,17 +3,34 @@
 namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
-
+use GuzzleHttp\Client; 
 class HistorialActivoController extends Controller
 {
-    public function activo(){
-    $activos=DB::table('caso_positivos')
-        ->join('pacientes','pacientes.id','=', 'caso_positivos.paciente_id')
-        ->join('controls','controls.id','=', 'caso_positivos.id')
-        ->select('pacientes.nombre_apellido','pacientes.barrio','pacientes.genero', 'pacientes.id','controls.estado_paciente','controls.fecha_alta','pacientes.telefono','pacientes.enfermedad_referencial','controls.fecha_analisis')
-        ->where('controls.estado_paciente','Activo')
-        ->where('controls.deleted_at',null)
-        ->get();
+    private $client;
+    private $detalles;
+    public function __construct(){
+    //Ruta de api para consumir pacientes.
+    $this->client = new Client (['base_uri'=>'http://127.0.0.1:6060/historial/historial_activos']);
+    $this->detalles = new Client (['base_uri'=>'http://127.0.0.1:6060/historial/detalle_activos']);
+    }
+
+    public function activo ()
+    {
+        $repuesta=$this->client->get('historial_activos');
+
+        $activos = json_decode($repuesta->getBody()->getContents());
+       
         return view('historial_activos',compact('activos'));
-    } 
+
+    }
+     public function detalle ($id)
+    {
+    
+         $repuesta=$this->detalles->get('detalle_activos/' .$id);
+
+        $detalles = json_decode($repuesta->getBody()->getContents());
+       
+        return view('detalle_activos',compact('detalles'));
+
+    }
 }

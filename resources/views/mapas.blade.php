@@ -102,13 +102,13 @@
           };
           // method that we will use to update the control based on feature properties passed
           info.update = function (props) {
-              this._div.innerHTML = '<h6>Barrios mas afecatdos</h6>' +  (props ?
+              this._div.innerHTML = '<h6>Mapeado de casos totales por barrios</h6>' +  (props ?
                   '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
-                  : ' Santa Maria {{$santamaria}}.<br>Fatima {{$fatima}}.<br>San Isidro {{$sanisidro}} .');
+                  : ' Mapa detallado de los casos por barrio <br> segun el rango de expasion del virus .');
           };
 
           info.addTo(map); 
-           @foreach($encarnacion as $encarnacion)
+          
           var circle = L.circle([-27.337004949626625, -55.8664512669202],
                     {
               @switch(true)
@@ -127,9 +127,9 @@
              @endswitch
             }).addTo(map)
               .bindPopup('Encarnacion:{{$encarnacion}} pacientes.')
-           @endforeach
+        
 
-           @foreach($mboikae as $mboikae) 
+          
          var circle = L.circle([-27.319619683648703, -55.88392256875523],
                     {
               @switch(true)
@@ -148,9 +148,9 @@
              @endswitch
             }).addTo(map)
               .bindPopup('Mboi ka e:{{$mboikae}} pacientes.')
-              @endforeach
+            
 
-           @foreach($sanisidro as $sanisidro)
+          
          var circle = L.circle([-27.384266881102295, -55.823650377569734],
                     {
              @switch(true)
@@ -169,9 +169,8 @@
              @endswitch
             }).addTo(map)
               .bindPopup('San Isidro:{{$sanisidro}} pacientes.')
-              @endforeach
-
-           @foreach($sagradafamilia as $sagradafamilia) 
+           
+           
          var circle = L.circle([-27.37017510957327, -55.844497689977295],
                     {
             @switch(true)
@@ -190,9 +189,8 @@
              @endswitch
             }).addTo(map)
               .bindPopup('Sagrada Familia:{{$sagradafamilia}} pacientes.')
-              @endforeach
+              
 
-          @foreach($ciudadnueva as $ciudadnueva)
          var circle = L.circle([-27.352422344233265, -55.8535003673751],
                     {
              @switch(true)
@@ -211,9 +209,9 @@
              @endswitch
             }).addTo(map)
               .bindPopup('Ciudad Nueva:{{$ciudadnueva}} pacientes.')
-              @endforeach
+              
 
-         @foreach($chaipe as $chaipe)
+       
          var circle = L.circle([-27.30929907159278, -55.84188461070881],
                     {
             @switch(true)
@@ -232,9 +230,9 @@
              @endswitch
             }).addTo(map)
               .bindPopup('Chaipe:{{$chaipe}} pacientes.')
-               @endforeach 
+                
 
-          @foreach($cambyreta as $cambyreta)
+         
          var circle = L.circle([-27.359401831819117, -55.76108931913041],
                     {
             @switch(true)
@@ -253,9 +251,9 @@
              @endswitch
             }).addTo(map)
               .bindPopup('Cambyreta:{{$cambyreta}} pacientes.')
-                @endforeach
+                
 
-          @foreach($santamaria as $santamaria)   
+         
          var circle = L.circle([-27.286366591508596, -55.8185577322729],
                     {
            @switch(true)
@@ -274,9 +272,9 @@
              @endswitch
             }).addTo(map)
               .bindPopup('Santa Maria:{{$santamaria}} pacientes.')
-              @endforeach
+              
 
-          @foreach($itapaso as $itapaso)
+         
          var circle = L.circle([-27.272838774583402, -55.928955076960854],
                     {
              @switch(true)
@@ -295,9 +293,9 @@
              @endswitch
             }).addTo(map)
               .bindPopup('Ita Paso:{{$itapaso}} pacientes.')
-              @endforeach
+              
 
-            @foreach($buenavista as $buenavista)
+           
          var circle = L.circle([-27.35787721652415, -55.853843690129004],
                     {
              @switch(true)
@@ -316,9 +314,9 @@
              @endswitch
             }).addTo(map)
               .bindPopup('Buena Vista:{{$buenavista}} pacientes.')
-              @endforeach
+              
 
-            @foreach($fatima as $fatima)
+         
           var circle = L.circle([-27.367464949196265, -55.83219529828057],
                     {
              @switch(true)
@@ -337,9 +335,8 @@
              @endswitch
             }).addTo(map)
               .bindPopup('Fatima:{{$fatima}} pacientes.')
-              @endforeach
+              
 
-              @foreach($santo_domingo as $santo_domingo)
               var circle = L.circle([-27.25005137227032, -55.94940186012537],
               {
               @switch(true)
@@ -358,9 +355,9 @@
              @endswitch
             }).addTo(map)
               .bindPopup('Santo Domingo:{{$santo_domingo}} pacientes.')
-              @endforeach
+              
 
-              @foreach($de_diciembre as $de_diciembre)
+          
               var circle = L.circle([-27.285502073788038, -55.914955135085634],
                     {
              @switch(true)
@@ -378,10 +375,10 @@
              @break
              @endswitch
             }).addTo(map)
-             @endforeach
+             
               .bindPopup('8 de Dicimbre:{{$de_diciembre}} pacientes.')
 
-              @foreach($nueva_alborada as  $nueva_alborada)
+             
                var circle = L.circle([-27.26892252399947, -55.68088531843387],
                     {
             @switch(true)
@@ -399,7 +396,7 @@
              @break
              @endswitch
             }).addTo(map)
-               @endforeach
+               
               .bindPopup('Nueva Alborada:{{$nueva_alborada}} pacientes.')
           
           </script>
