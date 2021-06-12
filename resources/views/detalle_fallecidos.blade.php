@@ -148,7 +148,7 @@
     
                     <th><strong>Fecha de Vacunacion:</strong> {{ $fallecidos->fecha_vacunacion }}</th>
         
-                    <th><strong>Viajo Resientemente:</strong> {{ $fallecidos->viajo_resiente }}</th>
+                    <th><strong>Viajo Resientemente:</strong> {{ $fallecidos->viajo_reciente }}</th>
                 
                     <th><strong>Centro de Asistencia de Covid:</strong> {{ $fallecidos->centro_asistencia_covid }}</th>
                 

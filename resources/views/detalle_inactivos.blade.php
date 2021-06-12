@@ -149,7 +149,7 @@
     
                     <th><strong>Fecha de Vacunacion:</strong> {{ $inactivos->fecha_vacunacion }}</th>
         
-                    <th><strong>Viajo Resientemente:</strong> {{ $inactivos->viajo_resiente }}</th>
+                    <th><strong>Viajo Resientemente:</strong> {{ $inactivos->viajo_reciente }}</th>
                 
                     <th><strong>Centro de Asistencia de Covid:</strong> {{ $inactivos->centro_asistencia_covid }}</th>
                 

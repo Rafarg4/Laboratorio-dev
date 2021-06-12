@@ -16,10 +16,24 @@
                              <div class="card-header">
                                 <i class="fa fa-align-justify"></i>
                                  Detalles de Caso
-                                  <a href="{{ route('casoPositivos.index') }}" class="btn btn-primary">Volver</a>
-                                  <button type="button" onclick="printDiv('areaImprimir') "class="btn btn-info"><i class="cil-clipboard"></i> Ficha </button>
+                                  <a href="{{ route('casoPositivos.index') }}" class="btn btn-primary"><i class="cil-chevron-left"></i></a>
+                                   <button type="button" onclick="printDiv('areaImprimir') "class="btn btn-danger"><i class="cil-clipboard"></i></button>
                              </div>
                              <div class="card-body">
+                                <!--script para imprimir fichas de pacientes-->
+                                <script type="text/javascript">
+                                  function printDiv(nombreDiv) {
+                                     var contenido= document.getElementById(nombreDiv).innerHTML;
+                                     var contenidoOriginal= document.body.innerHTML;
+
+                                     document.body.innerHTML = contenido;
+
+                                     window.print();
+
+                                     document.body.innerHTML = contenidoOriginal;
+                                }
+                                </script>
+                                <div id="areaImprimir">
                                  @include('caso_positivos.show_fields')
                              </div>
                          </div>
@@ -27,4 +41,5 @@
                  </div>
           </div>
     </div>
+</div>
 @endsection

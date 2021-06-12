@@ -2,30 +2,10 @@
 
 <link rel="icon" type="image/png" href="/laboratorio.png" />
 @section('content')
-  <script type="text/javascript">
-      $(document).ready(function() {
-    // Setup - add a text input to each footer cell
-    $('#data thead tr').clone(true).appendTo( '#data  thead' );
-    $('#data thead tr:eq(1) th').each( function (i) {
-        var title = $(this).text();
-        $(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );
- 
-        $( 'input', this ).on( 'keyup change', function () {
-            if ( table.column(i).search() !== this.value ) {
-                table
-                    .column(i)
-                    .search( this.value )
-                    .draw();
-             }
-            
-        } );
-         } );
-    } )
-</script>
 <script>
      $(document).ready(function() {
         $('#data').DataTable( {
-            "pageLength":4,
+            "pageLength":5,
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
             },

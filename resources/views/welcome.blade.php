@@ -24,7 +24,17 @@
          <link rel="icon" type="image/png" href="/laboratorio.png"/>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+</head>
+<style type="text/css">
+       #loading {width: 100%;height: 100%;top: 0px;left: 0px;position: fixed;display: block; z-index: 99}
+       #loading-image {position: absolute;top: 40%;left: 45%;z-index: 100} 
+    </style>
+    <script language="javascript" type="text/javascript">
+        window.onload = function(){ document.getElementById("loading").style.display = "none" }   
+</script>
+    <div id="loading">
+     <img id="loading-image" src="/loader.gif" alt="Loading..." />
+</div>
         <!-- Styles -->
     <div class="container my-5 z-depth-1">
 
@@ -62,4 +72,5 @@
   <!--Section: Content-->
 
     </body>
+  
 </html>

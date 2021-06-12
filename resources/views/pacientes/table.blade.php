@@ -45,7 +45,7 @@
             <span class="badge badge-dark"> {{ $paciente->resultado }} </span>
             @break
             @endswitch</td>
-            <td>{{ $paciente->usuario }}</td>
+            <td>{{ $paciente->user_id }}</td>
                 <td>
                     {!! Form::open(['route' => ['pacientes.destroy', $paciente->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

@@ -18,15 +18,12 @@ class Caso_positivoController extends AppBaseController
 
     private $pacientes;
 
-    private $positivos;
-
     public function __construct(){
     //Ruta de api para consumir casos positivos.
     $this->client = new Client (['base_uri'=>'http://127.0.0.1:6060/api/']);
     //Ruta para obtener los pacientes .
     $this->pacientes = new Client (['base_uri'=>'http://127.0.0.1:6060/pacientes']);
-    //Obtener los datos del paciente y caso positivo.
-    $this->positivos = new Client (['base_uri'=>'http://127.0.0.1:6060/positivos']);
+   
     }
 
     public function index ()
@@ -91,7 +88,7 @@ class Caso_positivoController extends AppBaseController
         'json' => $request->all()
         ]);
 
-        Flash::success('Caso Actualizado guardado correctamente.');
+        Flash::success('Caso Actualizado correctamente.');
 
         return redirect(route('casoPositivos.index'));
 

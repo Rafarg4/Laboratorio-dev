@@ -108,7 +108,7 @@ class ControlController extends AppBaseController
         'json' => $request->all()
         ]);
 
-        Flash::success('Control Actualizado guardado correctamente.');
+        Flash::success('Control Actualizado correctamente.');
 
         return redirect(route('controls.index'));
 

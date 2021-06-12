@@ -26,14 +26,14 @@ class HistorialFallecidoController extends Controller
         return view('listafallecidos',compact('fallecidos'));
 
     }
-     public function detalle_inactivo ($id)
+     public function detalle_fallecido ($id)
     {
     
          $repuesta=$this->fallecidos->get('detalle_fallecidos/' .$id);
 
         $fallecidos = json_decode($repuesta->getBody()->getContents());
        
-        return view('detalle_fallecidos',compact('inactivos'));
+        return view('detalle_fallecidos',compact('fallecidos'));
 
     } 
 }
